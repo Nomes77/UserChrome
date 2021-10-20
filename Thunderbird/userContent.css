@@ -1,0 +1,14 @@
+/* MESSAGEQUOTES */
+blockquote[type=cite] {
+  color: black !important;
+  border:none !important;
+}
+
+/* MESSAGE */
+*|*:link {
+  color: rgb(0, 102, 212) !important;
+}
+a.moz-txt-link-freetext[href^="mailto:"] {
+  color: black !important;
+  text-decoration-line: none !important;
+}
