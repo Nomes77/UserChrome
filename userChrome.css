@@ -96,11 +96,11 @@
       --win-toolbarbutton-hover-background: rgb(220, 220, 220);
       --win-toolbarbutton-active-background: rgb(207, 207, 207);
       --win-toolbar-field-focus-border-color: rgb(143, 177, 229);
-      --win-toolbar-field-hover-border-color: rgb(20, 204, 204);
+      --win-toolbar-field-hover-border-color: rgb(204, 204, 204);
       --win-urlbar-popup-accent-color: rgb(0, 85, 215);
       --win-focus-outline-color: rgb(131, 131, 131);
       --win-checkbox-border-color: rgb(146, 146, 146);
-      --win-checkbox-unchecked-hover-bgcolor: rgb(107, 107, 107); /* var(--win-field-bgcolor) */
+      --win-checkbox-unchecked-hover-bgcolor: var(--win-field-bgcolor); /* rgb(107, 107, 107) */
       --win-checkbox-unchecked-active-bgcolor: rgb(169, 169, 169);
       --win-checkbox-checked-bgcolor: rgb(118, 118, 118);
       --win-checkbox-checked-hover-bgcolor: rgb(97, 97, 97);
@@ -134,7 +134,7 @@
         --win-accent-hover-color: rgb(0, 120, 212);
         --win-accent-active-color: rgb(0, 92, 163);
         --win-checkbox-border-color: rgb(133, 133, 133);
-        --win-checkbox-unchecked-hover-bgcolor: rgb(172, 172, 172); /* var(--win-field-bgcolor)*/
+        --win-checkbox-unchecked-hover-bgcolor: var(--win-field-bgcolor); /* rgb(172, 172, 172) */
         --win-checkbox-unchecked-active-bgcolor: rgb(110, 110, 110);
         --win-checkbox-checked-bgcolor: rgb(167, 167, 167);
         --win-checkbox-checked-hover-bgcolor: rgb(188, 188, 188);
@@ -374,16 +374,16 @@
     --in-content-link-color-active: var(--blue-80);
     --in-content-link-color-visited: var(--blue-60);
     /* button background states are also used for checkboxes and radiobuttons */
-    --in-content-button-text-color: var(--in-content-text-color);
-    --in-content-button-text-color-hover: var(--in-content-text-color);
-    --in-content-button-background: rgba(207, 207, 216, 0.33);
-    --in-content-button-background-hover: rgba(207, 207, 216, 0.66);
-    --in-content-button-background-active: rgb(207, 207, 216);
-    --in-content-primary-button-text-color: rgb(251, 251, 254);
+    --in-content-button-text-color: rgb(0, 0, 0);
+    --in-content-button-text-color-hover: var(--in-content-button-text-color);
+    --in-content-button-background: rgb(218, 218, 218);
+    --in-content-button-background-hover: rgb(238, 238, 238);
+    --in-content-button-background-active: rgb(242, 242, 242);
+    --in-content-primary-button-text-color: rgb(255, 255, 255);
     --in-content-primary-button-text-color-hover: var(--in-content-primary-button-text-color);
-    --in-content-primary-button-background: #0061e0;
-    --in-content-primary-button-background-hover: #0250bb;
-    --in-content-primary-button-background-active: #053e94;
+    --in-content-primary-button-background: rgb(0, 120, 212);
+    --in-content-primary-button-background-hover: rgb(0, 108, 190);
+    --in-content-primary-button-background-active: rgb(22, 131, 216);
     --in-content-danger-button-background: #e22850;
     --in-content-danger-button-background-hover: #c50042;
     --in-content-danger-button-background-active: #810220;
@@ -399,15 +399,15 @@
     --in-content-table-header-color: #ffffff;
     --in-content-sidebar-width: 240px;
     --dialog-warning-text-color: var(--red-60);
-    --checkbox-border-color: var(--in-content-box-border-color);
-    --checkbox-unchecked-bgcolor: var(--in-content-button-background);
-    --checkbox-unchecked-hover-bgcolor: var(--in-content-button-background-hover);
-    --checkbox-unchecked-active-bgcolor: var(--in-content-button-background-active);
-    --checkbox-checked-bgcolor: var(--in-content-primary-button-background);
-    --checkbox-checked-color: var(--in-content-primary-button-text-color);
+    --checkbox-border-color: rgb(146, 146, 146);
+    --checkbox-unchecked-bgcolor: rgb(255, 255, 255);
+    --checkbox-unchecked-hover-bgcolor: rgb(255, 255, 255);
+    --checkbox-unchecked-active-bgcolor: rgb(169, 169, 169);
+    --checkbox-checked-bgcolor: rgb(118, 118, 118);
+    --checkbox-checked-color: rgb(255, 255, 255);
     --checkbox-checked-border-color: transparent;
-    --checkbox-checked-hover-bgcolor: var(--in-content-primary-button-background-hover);
-    --checkbox-checked-active-bgcolor: var(--in-content-primary-button-background-active);
+    --checkbox-checked-hover-bgcolor: rgb(97, 97, 97);
+    --checkbox-checked-active-bgcolor: rgb(131, 131, 131);
     --blue-40: #45a1ff;
     --blue-50: #0a84ff;
     --blue-60: #0060df;
@@ -459,14 +459,14 @@
       --in-content-border-hover: rgba(249, 249, 250, 0.3);
       --in-content-border-invalid: rgb(255, 132, 139);
       --in-content-error-text-color: #ff9aa2;
-      --in-content-button-background: rgb(43, 42, 51);
-      --in-content-button-background-hover: rgb(82, 82, 94);
-      --in-content-button-background-active: rgb(91, 91, 102);
+      --in-content-button-background: rgb(43, 43, 43);
+      --in-content-button-background-hover: rgb(84, 84, 84);
+      --in-content-button-background-active: rgb(72, 72, 72);
       --in-content-icon-color: rgb(251, 251, 254);
-      --in-content-primary-button-text-color: rgb(43, 42, 51);
-      --in-content-primary-button-background: rgb(0, 221, 255);
-      --in-content-primary-button-background-hover: rgb(128, 235, 255);
-      --in-content-primary-button-background-active: rgb(170, 242, 255);
+      --in-content-primary-button-text-color: rgb(43, 43, 43);
+      --in-content-primary-button-background: rgb(0, 108, 190);
+      --in-content-primary-button-background-hover: rgb(0, 120, 212);
+      --in-content-primary-button-background-active: rgb(0, 92, 163);
       --in-content-danger-button-background: #ff848b;
       --in-content-danger-button-background-hover: #ffbdc5;
       --in-content-danger-button-background-active: #ffdfe7;
@@ -1341,8 +1341,8 @@
   /*= URL, Search Bar =========================================================== I'VE CHANGED =*/
   #urlbar:hover:not([focused="true"]) > #urlbar-background,
   #searchbar:hover:not(:focus-within) {
-    border-color: var(--win-toolbar-field-hover-border-color);
-    box-shadow: 0px 0px 3px var(--win-toolbar-field-hover-border-color);
+    border: 1px solid var(--win-toolbar-field-hover-border-color) !important;
+    box-shadow: 0px 0px 3px var(--win-toolbar-field-hover-border-color) !important;
   }
   /*= Downloads Panel ==========================================================================*/
   /* Accent Color for downloaded item */
@@ -1361,21 +1361,51 @@
     filter: grayscale(100%) !important;
   }
   /*= Animate ==================================================================================*/
-  /* Background Color */
+  /*- Background Color -------------------------------------------------------*/
   button,
   toolbarbutton,
-  menu,
-  menuitem,
   stack,
   vbox,
-  .subviewbutton,
   .toolbarbutton-icon {
     transition: background-color 1s var(--animation-easing-function) !important;
   }
-  /* URL / Search Bar */
+  button:hover,
+  toolbarbutton:hover,
+  stack:hover,
+  vbox:hover,
+  .toolbarbutton-icon:hover {
+    transition: background-color 0.25s var(--animation-easing-function) !important;
+  }
+  menu,
+  menuitem,
+  .subviewbutton {
+    /* treechildren::-moz-tree-row: Can't apply */
+    transition: background-color 0.5s var(--animation-easing-function) !important;
+  }
+  menu:hover,
+  menuitem:hover,
+  .subviewbutton:hover {
+    transition: background-color 0.1s var(--animation-easing-function) !important;
+  }
+  /*- URL / Search Bar -------------------------------------------------------*/
   #urlbar-background,
   #searchbar {
     transition: border-color 0.5s var(--animation-easing-function), background-color 1s var(--animation-easing-function) !important;
+  }
+  #urlbar-background:hover,
+  #searchbar:hover {
+    transition: border-color 0.5s var(--animation-easing-function), background-color 1s var(--animation-easing-function) !important;
+  }
+  /*- Arrow - Edit Bookmark Popup --------------------------------------------*/
+  #editBookmarkPanelRows .expander-up .button-icon,
+  #editBookmarkPanelRows .expander-down .button-icon {
+    transition: transform 0.1s var(--animation-easing-function) !important;
+  }
+  #editBookmarkPanelRows .expander-up {
+    list-style-image: url("chrome://global/skin/icons/arrow-down.svg") !important;
+  }
+  #editBookmarkPanelRows .expander-up .button-icon {
+    transform: rotate(180deg);
   }
   /** Reduce Padding ****************************************************************************/
   /*= Root - Reduce Padding ====================================================================*/
@@ -1815,7 +1845,7 @@
     /* Box */
     display: block !important;
     position: absolute !important;
-    z-index: 1 !important;
+    z-index: -1 !important;
     /* Shape */
     width: var(--tab-corner-rounding) !important;
     height: 100% !important;
@@ -3478,11 +3508,11 @@
 
   /* Github: https://raw.githubusercontent.com/sapierens/firefox-edge/master/FirefoxEdgeLight.css ***********/
   /* TABBROWSER-TAB *****************************************************************************************/
-  /** Delete Gap after last Pinned Tab **********************************************************************/
+  /*= Delete Gap after last Pinned Tab =====================================================================*/
   #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
     margin-inline-start: 1px !important;
   }
-  /** Tabs Content Color ************************************************************************************/
+  /*= Tabs Content Color ===================================================================================*/
   @media (-moz-toolbar-prefers-color-scheme: dark) {
     .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
     .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
@@ -3495,13 +3525,13 @@
       color: black !important;
     }
   }
-  /** Tabs Icons on Hover (Tooltip) *************************************************************************/
+  /*= Tabs Icons on Hover (Tooltip) ========================================================================*/
   @media (-moz-proton-places-tooltip) {
     #places-tooltip-insecure-icon {
       list-style-image: url("./icons/warning-filled.svg") !important;
     }
   }
-  /** Favicon Non-Favicon Tabs ******************************************************************************/
+  /*= Favicon Non-Favicon Tabs =============================================================================*/
   .tabbrowser-tab .tab-icon-image:not([src]) {
     display: inline !important;
     list-style-image: url("./icons/document.svg") !important;
@@ -3512,7 +3542,7 @@
   .tabbrowser-tab[label$=".pdf"] .tab-icon-image:not([src]) {
     list-style-image: url("./icons/pdf.svg") !important;
   }
-  /** Favicon New Tab ***************************************************************************************/
+  /*= Favicon New Tab ======================================================================================*/
   .tabbrowser-tab[label="Nieuw tabblad"] .tab-icon-image,
   .tabbrowser-tab[label="Privénavigatie"] .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
     /* fill: transparent; */ 
@@ -3521,12 +3551,12 @@
     /* background-repeat: no-repeat; */
     /* background-position: center; */
   }
-  /** New Tab Icon ******************************************************************************************/
+  /*= New Tab Icon =========================================================================================*/
   #tabs-newtab-button,
   #TabsToolbar #new-tab-button {
     list-style-image: url("./icons/add.svg") !important;
   }
-  /** All Tabs Icons ****************************************************************************************/
+  /*= All Tabs Icons =======================================================================================*/
   .all-tabs-button {
     list-style-image: url("./icons/document.svg") !important;
   }
@@ -3639,12 +3669,12 @@
     --mbarstyler-url-font-size: 12.5px; /* [12px - 16px] */
   }
   /*= URL bar enlargement or lack thereof ==================================================================*/
-  /* Compute new position, width, and padding */
+  /*- Compute new position, width, and padding -------------------------------*/
   #urlbar[breakout][breakout-extend] {
     left: calc(0px - var(--mbarstyler-popout-pixels)) !important;
     width: calc(100% + (2 * var(--mbarstyler-popout-pixels))) !important;
   }
-  /* Prevent shift of URL bar contents */
+  /*- Prevent shift of URL bar contents --------------------------------------*/
   #urlbar[breakout][breakout-extend] > #urlbar-input-container {
     margin-bottom: calc(-3px + -1px + var(--mbarstyler-popout-pixels)) !important;
   }
@@ -3653,11 +3683,11 @@
     border-top: none !important;
   }
   /*= Font Sizes ===========================================================================================*/
-  /* Title font-size */
+  /*- Title font-size --------------------------------------------------------*/
   .urlbarView-row .urlbarView-title {
     font-size: var(--mbarstyler-title-font-size) !important;
   }
-  /* URL + action font-size */
+  /*- URL + action font-size -------------------------------------------------*/
   .urlbarView-row .urlbarView-secondary,
   .urlbarView-row .urlbarView-url,
   .urlbarView-row .urlbarView-action {
@@ -3752,6 +3782,12 @@
   #pageAction-panel-bookmark[starred],
   #star-button[starred] {
     list-style-image: url("./icons/star-filled.svg") !important;
+  }
+  .urlbar-page-action,
+  #urlbar-go-button,
+  .search-go-button {
+    width: 22px !important; /* Changed because of --urlbar-min-height set to 32px instead of 26 px */
+    height: 22px !important;
   }
   /** Identity Box Border ***********************************************************************************/
   #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover,:active,[open]),
