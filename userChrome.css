@@ -8,7 +8,7 @@
   :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"]) {
     --lwt-accent-color: rgb(229, 229, 235) !important; /* Original: rgb(240, 240, 244) */
   }
-  @media not all and ((-moz-os-version: windows-win7) or  (-moz-os-version: windows-win8)) {
+  @media not all and ((-moz-os-version: windows-win7) or (-moz-gtk-csd-available)) {
     /*  Level 4  */
     :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"]) #navigator-toolbox {
       background-color: var(--lwt-accent-color) !important;
@@ -190,7 +190,7 @@
       --urlbar-box-hover-bgcolor: var(--win-urlbar-box-hover-bgcolor) !important;
       --urlbar-box-active-bgcolor: var(--win-hover-active-bgcolor) !important;
       /* --urlbar-box-focus-bgcolor: var(--win-hover-active-bgcolor) !important; */
-      --urlbar-icon-fill-opacity: 1 !important;
+      /* --urlbar-icon-fill-opacity: 1 !important; */
       /* Checkbox */
       --checkbox-checked-color: var(--win-field-bgcolor) !important;
       --checkbox-checked-bgcolor: var(--win-checkbox-checked-bgcolor) !important; /* --win-accent-color */
@@ -269,7 +269,7 @@
       --sidebar-text-color: var(--win-text-color) !important;
       --sidebar-border-color: var(--win-sidebar-border-color) !important;
     }
-    @media (-moz-toolbar-prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
       .sidebar-panel[style="--newtab-background-color: rgba(43, 42, 51, 1); --newtab-text-primary-color: rgba(251, 251, 254, 1); --lwt-sidebar-background-color: rgb(56, 56, 61); --lwt-sidebar-text-color: rgba(249, 249, 250, 1);"],
       body[lwt-sidebar][style="--newtab-background-color: rgba(43, 42, 51, 1); --newtab-text-primary-color: rgba(251, 251, 254, 1); --lwt-sidebar-background-color: rgb(56, 56, 61); --lwt-sidebar-text-color: rgba(249, 249, 250, 1);"],
       .sidebar-panel[style="--newtab-background-color: rgb(43, 42, 51); --newtab-text-primary-color: rgba(251, 251, 254, 1); --lwt-sidebar-background-color: rgb(56, 56, 61); --lwt-sidebar-text-color: rgba(249, 249, 250, 1);"], /* Nightly */
@@ -291,7 +291,7 @@
     :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"]):not(:-moz-lwtheme) {
       --lwt-accent-color: var(--win-bgcolor) !important;
     }
-    @media (-moz-toolbar-prefers-color-scheme: dark) {
+    @media (toolbar-prefers-color-scheme: dark) {
       :root[lwt-default-theme-in-dark-mode][lwthemetextcolor="bright"] {
         --toolbar-bgcolor: var(--win-component-bgcolor) !important; /* Original: rgba(43, 42, 51, 1) */
       }
@@ -346,7 +346,7 @@
      https://github.com/mozilla/gecko-dev/blob/master/browser/themes/addons/light/manifest.json
      https://github.com/mozilla/gecko-dev/blob/master/browser/themes/addons/dark/manifest.json
   */
-  /*= Default Colors - Hardcorded ==============================================================*/
+  /*= Default Colors - Hardcorded =============================================== I'VE CHANGED =*/
   /* Based on chrome://global/skin/in-content/common.css */
   :host,
   :root {
@@ -445,7 +445,7 @@
     --card-outline-color: var(--grey-30);
     --card-shadow-hover: var(--card-shadow), 0 0 0 5px var(--card-outline-color);
   }
-  @media (-moz-toolbar-prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     :host,
     :root {
       /* Keep these in sync with layout/base/PresShell.cpp, and plaintext.css */
@@ -598,7 +598,7 @@
       --menu-border-color: #cfcfd8;
       --menuitem-hover-background-color: #e0e0e6;
     }
-    @media (-moz-toolbar-prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
       :root {
         --menu-border-color: rgba(107, 107, 107, 0.3);
         --menu-color: #fbfbfe;
@@ -659,7 +659,7 @@
   url("chrome://browser/content/pageinfo/pageInfo.xhtml")
   {
     /*- Overwrite ------------------------------------------------------------*/
-    @media (-moz-toolbar-prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
       :root {
         --in-content-page-background: #42414d;
       }
@@ -1341,7 +1341,7 @@
   /*= URL, Search Bar =========================================================== I'VE CHANGED =*/
   #urlbar:hover:not([focused="true"]) > #urlbar-background,
   #searchbar:hover:not(:focus-within) {
-    border: 1px solid var(--win-toolbar-field-hover-border-color) !important;
+    border: 1.5px solid var(--win-toolbar-field-hover-border-color) !important;
     box-shadow: 0px 0px 3px var(--win-toolbar-field-hover-border-color) !important;
   }
   /*= Downloads Panel ==========================================================================*/
@@ -1387,10 +1387,35 @@
   .subviewbutton:hover {
     transition: background-color 0.1s var(--animation-easing-function) !important;
   }
+  /*- Pinned Tab ---------------------------------------------- I'VE CHANHED -*/
+  #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:not([collapsed]) {
+    /* -moz-box-flex may be caused #tabbrowser-tabs[closebuttons] */
+    transition: -moz-box-flex 0.2s var(--animation-easing-function),
+      margin-inline-start 0.2s var(--animation-easing-function),
+      min-width 0.1s ease-out, max-width 0.1s ease-out !important;
+    max-width: var(--tab-max-width, 240px);
+  }
+  #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned] {
+    transition: -moz-box-flex 0.2s var(--animation-easing-function),
+      margin-inline-start 0.2s var(--animation-easing-function) !important;
+  }
+  #tabbrowser-tabs:not([movingtab]) .tab-content {
+    transition: padding-inline 0.2s var(--animation-easing-function) !important;
+  }
+  #tabbrowser-tabs:not([movingtab]) .tab-content::before,
+  #tabbrowser-tabs:not([movingtab]) .tab-content::after {
+    transition: width 0.2s var(--animation-easing-function), transform 0.2s var(--animation-easing-function) !important;
+  }
+  #tabbrowser-tabs:not([movingtab]) .tab-content .tab-label-container {
+    transition: width 0.3s var(--animation-easing-function) !important;
+  }
+  #tabbrowser-tabs:not([movingtab]) .tab-content .tab-icon-image {
+    transition: all 0.3s var(--animation-easing-function) !important;
+  }
   /*- URL / Search Bar -------------------------------------------------------*/
   #urlbar-background,
   #searchbar {
-    transition: border-color 0.5s var(--animation-easing-function), background-color 1s var(--animation-easing-function) !important;
+    transition: border-color 1s var(--animation-easing-function), background-color 1.5s var(--animation-easing-function) !important;
   }
   #urlbar-background:hover,
   #searchbar:hover {
@@ -1434,7 +1459,7 @@
     /* Panel - Like Original */
     --arrowpanel-menuitem-padding: 8px !important; /* Original: 8px */
   }
-  /*= Tab Bar - Reduce Width, Show more tabs =================================== I'VE CHANEGED =*/
+  /*= Tab Bar - Reduce Width, Show more tabs ==================================== I'VE CHANGED =*/
   /* for First Tab Space */
   :root {
     --space-left-tabbar: 7px; /* If you want drag space, set to 8px */
@@ -1485,17 +1510,20 @@
     --toolbarbutton-outer-padding: 1px; /* Original: 2px*/
   }
   /* Tab - Max Size */
+  :root {
+    --tab-max-width: 240px;
+  }
   .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) {
-    max-width: 241px !important; /* Original: 240, 225px */
+    max-width: var(--tab-max-width) !important; /* Original: 225px */
   }
   /* neighbouring tabs should "pinch" together */
   .tabbrowser-tab {
-    padding-inline: 1px !important;
+    padding-inline: 0px !important; /* 1px */
   }
   .tabbrowser-tab:not([last-visible-tab]) {
-    margin-inline-end: -0.5px !important;
+    margin-inline-end: -.5px !important;
   }
-  /*= Tab Bar - Reduce Height, Show more contents ============================== I'VE CHANEGED =*/
+  /*= Tab Bar - Reduce Height, Show more contents =============================== I'VE CHANGED =*/
   /* for Extra Drag Space */
   :root {
     --space-above-tabbar: 8px; /* If you want drag space, set to 8px */
@@ -1836,8 +1864,8 @@
   }
   /** Selected Tab - Bottom Rounded Corner ******************************************************/
   #tabbrowser-tabs {
-    --tab-corner-rounding: 4px; /* 10px looks about like chromium - 17px looks close to Australis tabs */
-    --tab-corner-padding: 1px;
+    --tab-corner-rounding: 3px; /* 10px looks about like chromium - 17px looks close to Australis tabs */
+    --tab-corner-padding: 0px;
     --tab-corner-position: calc(var(--tab-corner-padding) - var(--tab-corner-rounding));
   }
   :root:not([customizing="true"]) tab[visuallyselected] > stack::before,
@@ -1845,18 +1873,23 @@
     /* Box */
     display: block !important;
     position: absolute !important;
-    z-index: -1 !important;
+    z-index: 1 !important;
     /* Shape */
     width: var(--tab-corner-rounding) !important;
     height: 100% !important;
     /* Color */
     fill: var(--toolbar-bgcolor) !important;
-    stroke: var(--tabs-border-color, transparent) !important;
+    stroke: var(--tab-line-color, var(--tabs-border-color, rgba(128, 128, 142, 0.9))) !important;
     -moz-context-properties: fill, stroke !important;
     /* Image */
     background-size: var(--tab-corner-rounding);
     background-repeat: no-repeat;
     background-position-y: bottom;
+  }
+  :root:not([customizing="true"]) #TabsToolbar[brighttext] tab[visuallyselected] > stack::before,
+  :root:not([customizing="true"]) #TabsToolbar[brighttext] tab[visuallyselected] > stack::after {
+    /* As Selected Tab - Box Shadow */
+    stroke: var(--toolbar-color) !important;
   }
   tab[visuallyselected] > stack::before {
     left: var(--tab-corner-position) !important;
@@ -1956,8 +1989,17 @@
     > .tab-close-button:not([selected="true"]) {
     display: -moz-inline-box !important;
   }
-  #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([visuallyselected], :hover) .tab-close-button {
+  #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([visuallyselected]) .tab-close-button {
     visibility: collapse !important;
+    opacity: 0;
+    /* Animation - Fade out */
+    transition: opacity 0.1s var(--animation-easing-function) !important;
+  }
+  #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:hover .tab-close-button {
+    visibility: visible !important;
+    opacity: 1;
+    /* Animation - Fade in */
+    transition: opacity 0.25s var(--animation-easing-function) !important;
   }
   /* Closed Button's icon thicker */
   .tabbrowser-tab .tab-content > .close-icon {
@@ -3382,7 +3424,8 @@
   }
   #sync-reauthitem {
   }
-  #webDeveloperMenu {
+  #webDeveloperMenu, /* Legacy */
+  #browserToolsMenu {
     --menuitem-image: url("./icons/wrench.svg");
   }
   #menu_pageInfo {
