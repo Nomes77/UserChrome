@@ -8,7 +8,7 @@
   :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"]) {
     --lwt-accent-color: rgb(229, 229, 235) !important; /* Original: rgb(240, 240, 244) */
   }
-  @media not all and ((-moz-os-version: windows-win7) or (-moz-gtk-csd-available)) {
+  @media not all and ((-moz-os-version: windows-win7) or (-moz-os-version: windows-win8) or (-moz-gtk-csd-available)) {
     /*  Level 4  */
     :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"]) #navigator-toolbox {
       background-color: var(--lwt-accent-color) !important;
@@ -66,8 +66,17 @@
   #navigator-toolbox:-moz-lwtheme {
     --tabs-border-color: rgba(0, 0, 0, 0.3);
   }
+  /** OS - Compatibility ************************************************************************/
+  /*= Linux- Global Menubar Active Color =======================================================*/
+  @media (-moz-gtk-csd-available) {
+    #main-menubar > menu[open="true"],
+    #main-menubar > menu[_moz-menuactive="true"] {
+      color: inherit !important; /* Original: -moz-menubarhovertext */
+      background-color: color-mix(in srgb, currentColor 20%, transparent) !important; /* Original: -moz-menuhover */
+    }
+  }
   /** System Default Theme **********************************************************************/
-  /*= Windows10 - UWP like color =============================================== I'VE CHANEGED =*/
+  /*= Windows10 - UWP like color ================================================ I'VE CHANGED =*/
   @media (-moz-os-version: windows-win10) {
     :root:not(:-moz-lwtheme) {
       --win-text-color: rgb(0, 0, 0);
@@ -1391,8 +1400,7 @@
   #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:not([collapsed]) {
     /* -moz-box-flex may be caused #tabbrowser-tabs[closebuttons] */
     transition: -moz-box-flex 0.2s var(--animation-easing-function),
-      margin-inline-start 0.2s var(--animation-easing-function),
-      min-width 0.1s ease-out, max-width 0.1s ease-out !important;
+      margin-inline-start 0.2s var(--animation-easing-function), min-width 0.1s ease-out, max-width 0.1s ease-out !important;
     max-width: var(--tab-max-width, 240px);
   }
   #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned] {
@@ -1420,6 +1428,22 @@
   #urlbar-background:hover,
   #searchbar:hover {
     transition: border-color 0.5s var(--animation-easing-function), background-color 1s var(--animation-easing-function) !important;
+  }
+  /*- Sidebar ----------------------------------------------------------------*/
+  #sidebar-box {
+    /* like #sidebar-box > #sidebar */
+    min-width: 14em;
+    width: 18em;
+    max-width: 36em;
+    /* Animation */
+    transition: margin-inline-start 0.25s var(--animation-easing-function), opacity 0.25s ease-in-out, visibility 0s linear !important;
+  }
+  #sidebar-box[hidden="true"] {
+    display: -moz-box !important;
+    margin-inline-start: -18em;
+    opacity: 0;
+    visibility: collapse;
+    transition-delay: 0s, 0s, 0.25s !important;
   }
   /*- Arrow - Edit Bookmark Popup --------------------------------------------*/
   #editBookmarkPanelRows .expander-up .button-icon,
@@ -1518,7 +1542,10 @@
   }
   /* neighbouring tabs should "pinch" together */
   .tabbrowser-tab {
-    padding-inline: 0px !important; /* 1px */
+    padding-inline: 0px !important;
+  }
+  .tabbrowser-tab[first-visible-tab="true"] {
+    padding-inline-start: 1px !important;
   }
   .tabbrowser-tab:not([last-visible-tab]) {
     margin-inline-end: -.5px !important;
@@ -1870,6 +1897,7 @@
   }
   :root:not([customizing="true"]) tab[visuallyselected] > stack::before,
   :root:not([customizing="true"]) tab[visuallyselected] > stack::after {
+    content: "" !important;
     /* Box */
     display: block !important;
     position: absolute !important;
@@ -1901,16 +1929,25 @@
     background-image: url("./icons/tab-bottom-corner-right.svg");
   }
   @media (-moz-gtk-csd-available) {
-    /* Don't enabled at GTK */
-    :root:not([customizing="true"])[lwtheme="true"] tab[visuallyselected] > stack::before,
-    :root:not([customizing="true"])[lwtheme="true"] tab[visuallyselected] > stack::after {
-      content: "" !important;
+    /* Fill color for GTK */
+    :root:not([customizing="true"]):not([lwtheme="true"]) tab[visuallyselected] > stack::before,
+    :root:not([customizing="true"]):not([lwtheme="true"]) tab[visuallyselected] > stack::after {
+      /* As GTK Toolbar's background-color + backround-image
+       * --toolbar-non-lwt-bgcolor: -moz-dialog;
+       * --toolbar-non-lwt-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
+       */
+      fill: color-mix(in srgb, rgb(255, 255, 255) 15%, -moz-dialog) !important;
+      stroke: transparent !important;
     }
-  }
-  @media not all and (-moz-gtk-csd-available) {
-    :root:not([customizing="true"]) tab[visuallyselected] > stack::before,
-    :root:not([customizing="true"]) tab[visuallyselected] > stack::after {
-      content: "" !important;
+    :root:not([customizing="true"]):not([lwtheme="true"])
+      #TabsToolbar[brighttext]
+      tab[visuallyselected]
+      > stack::before,
+    :root:not([customizing="true"]):not([lwtheme="true"])
+      #TabsToolbar[brighttext]
+      tab[visuallyselected]
+      > stack::after {
+      stroke: transparent !important;
     }
   }
   /** Unselected Tab - Divide line ********************************************** I'VE CHANGED **/
@@ -1925,18 +1962,19 @@
     position: absolute;
     /* Position */
     top: 50%;
-    transform: translateX(-2.5px) translateY(calc(-50% + 1px));
+    transform: translateX(0px) translateY(calc(-50% + 1px)); /* -2.5px */
     /* Bar shape */
     width: 1px;
     height: 20px;
     /* Bar Color */
     opacity: var(--tab-separator-opacity);
     transition: opacity 0.2s var(--animation-easing-function); /* cubic-bezier(.07, .95, 0, 1) */
-    background-color: color-mix(
+    background-image: linear-gradient(to right, rgb(154, 164, 177), rgb(204, 209, 216));
+    /* background-color: color-mix(
       in srgb,
       currentColor 20%,
       transparent
-    ); /*  Replace var(--toolbarseparator-color) - Hard coded for compatibility */
+    ); */ /* Replace var(--toolbarseparator-color) - Hard coded for compatibility */
   }
   #tabs-newtab-button:is(:hover, [open])::before {
     content: "";
