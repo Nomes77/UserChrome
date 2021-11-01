@@ -116,7 +116,7 @@
       --win-checkbox-checked-active-bgcolor: rgb(131, 131, 131);
       --win-urlbar-box-hover-bgcolor: rgb(230, 230, 230);
     }
-    @media (-moz-toolbar-prefers-color-scheme: dark) {
+    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
       :root:not(:-moz-lwtheme),
       :root[lwt-default-theme-in-dark-mode] {
         --win-text-color: rgb(255, 255, 255);
@@ -278,13 +278,13 @@
       --sidebar-text-color: var(--win-text-color) !important;
       --sidebar-border-color: var(--win-sidebar-border-color) !important;
     }
-    @media (prefers-color-scheme: dark) {
+    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
       .sidebar-panel[style="--newtab-background-color: rgba(43, 42, 51, 1); --newtab-text-primary-color: rgba(251, 251, 254, 1); --lwt-sidebar-background-color: rgb(56, 56, 61); --lwt-sidebar-text-color: rgba(249, 249, 250, 1);"],
       body[lwt-sidebar][style="--newtab-background-color: rgba(43, 42, 51, 1); --newtab-text-primary-color: rgba(251, 251, 254, 1); --lwt-sidebar-background-color: rgb(56, 56, 61); --lwt-sidebar-text-color: rgba(249, 249, 250, 1);"],
       .sidebar-panel[style="--newtab-background-color: rgb(43, 42, 51); --newtab-text-primary-color: rgba(251, 251, 254, 1); --lwt-sidebar-background-color: rgb(56, 56, 61); --lwt-sidebar-text-color: rgba(249, 249, 250, 1);"], /* Nightly */
       body[lwt-sidebar][style="--newtab-background-color: rgb(43, 42, 51); --newtab-text-primary-color: rgba(251, 251, 254, 1); --lwt-sidebar-background-color: rgb(56, 56, 61); --lwt-sidebar-text-color: rgba(249, 249, 250, 1);"] {
         /* Only darkmode has more: --newtab-background-color-secondary: rgba(66, 65, 77, 1); */
-        --lwt-sidebar-background-color: var(--win-sidebar-bgcolor) !important;
+        --lwt-sidebar-background-color: transparent !important; /* var(--win-sidebar-bgcolor) */
         --lwt-sidebar-text-color: var(--win-text-color) !important;
       }
     }
@@ -300,7 +300,7 @@
     :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"]):not(:-moz-lwtheme) {
       --lwt-accent-color: var(--win-bgcolor) !important;
     }
-    @media (toolbar-prefers-color-scheme: dark) {
+    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
       :root[lwt-default-theme-in-dark-mode][lwthemetextcolor="bright"] {
         --toolbar-bgcolor: var(--win-component-bgcolor) !important; /* Original: rgba(43, 42, 51, 1) */
       }
@@ -454,7 +454,7 @@
     --card-outline-color: var(--grey-30);
     --card-shadow-hover: var(--card-shadow), 0 0 0 5px var(--card-outline-color);
   }
-  @media (prefers-color-scheme: dark) {
+  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
     :host,
     :root {
       /* Keep these in sync with layout/base/PresShell.cpp, and plaintext.css */
@@ -607,7 +607,7 @@
       --menu-border-color: #cfcfd8;
       --menuitem-hover-background-color: #e0e0e6;
     }
-    @media (prefers-color-scheme: dark) {
+    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
       :root {
         --menu-border-color: rgba(107, 107, 107, 0.3);
         --menu-color: #fbfbfe;
@@ -668,7 +668,7 @@
   url("chrome://browser/content/pageinfo/pageInfo.xhtml")
   {
     /*- Overwrite ------------------------------------------------------------*/
-    @media (prefers-color-scheme: dark) {
+    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
       :root {
         --in-content-page-background: #42414d;
       }
@@ -1969,7 +1969,8 @@
     /* Bar Color */
     opacity: var(--tab-separator-opacity);
     transition: opacity 0.2s var(--animation-easing-function); /* cubic-bezier(.07, .95, 0, 1) */
-    background-image: linear-gradient(to right, rgb(154, 164, 177), rgb(204, 209, 216));
+    background-image: linear-gradient(to right, currentColor 30%, currentColor 60%);
+    /* background-image: linear-gradient(to right, rgb(154, 164, 177), rgb(204, 209, 216)); */
     /* background-color: color-mix(
       in srgb,
       currentColor 20%,
@@ -3591,16 +3592,18 @@
   /* TABBROWSER-TAB *****************************************************************************************/
   /*= Delete Gap after last Pinned Tab =====================================================================*/
   #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
-    margin-inline-start: 1px !important;
+    margin-inline-start: 0px !important;
   }
   /*= Tabs Content Color ===================================================================================*/
-  @media (-moz-toolbar-prefers-color-scheme: dark) {
+  /* @media (-moz-toolbar-prefers-color-scheme: dark) { */
+  :root[lwthemetextcolor=dark] {
     .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
     .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
       color: white !important;
     }
   }
-  @media (-moz-toolbar-prefers-color-scheme: light) {
+  /* @media (-moz-toolbar-prefers-color-scheme: light) { */
+  :root[lwthemetextcolor=bright] {
     .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
     .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
       color: black !important;
