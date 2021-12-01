@@ -104,9 +104,10 @@
       --win-hover-active-bgcolor: rgb(193, 193, 193); /* also button-bgcolor */
       --win-field-bgcolor: rgb(255, 255, 255);
       --win-component-bgcolor: rgb(247, 247, 247);
+      --win-border-color: rgb(190, 190, 190); /* #8a8a8a; =rgb(138, 138, 138)*/
+      --win-tab-seperator-color: linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%));
       --win-sidebar-bgcolor: var(--win-field-bgcolor);
       --win-sidebar-hover-bgcolor: rgb(242, 242, 242);
-      --win-sidebar-border-color: rgb(190, 190, 190); /* #8a8a8a; =rgb(138, 138, 138)*/
       --win-sidebar-button-hover-bgcolor: var(--win-hover-bgcolor); /* #b8b8b8; =rgb(184, 184, 184)*/
       --win-sidebar-button-hover-active-bgcolor: var(--win-hover-active-bgcolor); /* #a3a3a3; =rgb(163, 163, 163)*/
       --win-button-border: rgb(107, 107, 107); /* rgb(116, 116, 116) */
@@ -144,9 +145,10 @@
         --win-hover-active-bgcolor: rgb(69, 69, 69)/* #454545; also button-bgcolor */
         --win-field-bgcolor: rgb(43, 43, 43);
         --win-component-bgcolor: rgb(59, 59, 59); /* #171717*/
+        --win-border-color: #5b5b5b;
+        --win-tab-seperator-color: linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%));
         --win-sidebar-bgcolor: var(--win-field-bgcolor);
         --win-sidebar-hover-bgcolor: #353535;
-        --win-sidebar-border-color: #5b5b5b;
         --win-sidebar-button-hover-bgcolor: var(--win-hover-bgcolor);
         --win-sidebar-button-hover-active-bgcolor: var(--win-hover-active-bgcolor);
         --win-button-border: rgb(110, 110, 110); /* #8f8f8f */
@@ -190,7 +192,7 @@
       --tab-selected-bgcolor: unset !important;
       --tab-icon-overlay-fill: var(--win-text-color) !important;
       --tab-icon-overlay-stroke: var(--win-field-bgcolor) !important;
-      --tab-line-color: var(--win-button-border) !important;
+      --tab-line-color: Highlight !important;
       --tabs-border-color: transparent !important;
       /* Toolbar */
       --toolbar-color: var(--win-text-color) !important;
@@ -203,7 +205,7 @@
       --toolbar-field-focus-color: var(--win-text-color) !important;
       --toolbar-field-focus-background-color: var(--win-field-bgcolor) !important; /* --win-component-bgcolor */
       --toolbar-field-focus-border-color: var(--win-toolbar-field-focus-border-color) !important; /* --win-accent-color */
-      --toolbarseparator-color: var(--win-bgcolor) !important;
+      --toolbarseparator-color: var(--win-tab-seperator-color) !important;
       /* Toolbarbutton */
       --toolbarbutton-hover-background: var(--win-toolbarbutton-hover-background) !important; /* var(--win-hover-bgcolor) */
       --toolbarbutton-active-background: var(--win-toolbarbutton-active-background) !important; /* --win-hover-active-bgcolor */
@@ -230,7 +232,6 @@
       /* Arrowpanel */
       --arrowpanel-color: var(--win-text-color) !important;
       --arrowpanel-background: var(--win-field-bgcolor) !important; /* --win-component-bgcolor */
-      --arrowpanel-border-color: var(--win-bgcolor) !important;
       --arrowpanel-dimmed: color-mix(in srgb, currentColor 12%, transparent) !important;
       --arrowpanel-dimmed-further: color-mix(in srgb, currentColor 20%, transparent) !important;
       --arrowpanel-dimmed-even-further: color-mix(in srgb, currentColor 27%, transparent) !important;
@@ -242,7 +243,6 @@
       --panel-disabled-color: var(--win-disabled-color) !important;
       --panel-shortcut-color: var(--win-shorcut-text-color) !important;
       --panel-description-color: var(--win-shorcut-text-color) !important;
-      --panel-separator-color: var(--win-bgcolor) !important;
       --panelview-toolbarbutton-focus-box-shadow: inset 0 0 0 2px var(--focus-outline-color) !important;
       /* AutoComplete Popup */
       --autocomplete-popup-color: var(--win-accent-content-color) !important; /* --win-text-color */
@@ -267,6 +267,18 @@
       --lwt-accent-color: var(--win-bgcolor) !important;
       --chrome-content-separator-color: var(--win-bgcolor) !important;
       --focus-outline-color: var(--win-focus-outline-color) !important; /* --win-accent-color */
+    }
+    #navigator-toolbox:not(:-moz-lwtheme) {
+      background: var(--lwt-accent-color) !important;
+    }
+    /*- Separator ------------------------------------------------------------*/
+    :root:not(:-moz-lwtheme) {
+      --arrowpanel-border-color: var(--win-bgcolor) !important;
+      --panel-separator-color: var(--win-bgcolor) !important;
+    }
+    :root[lwt-default-theme-in-dark-mode] {
+      --arrowpanel-border-color: var(--win-border-color) !important;
+      --panel-separator-color: var(--win-border-color) !important;
     }
     /*- Menu -----------------------------------------------------------------*/
     html#main-window menupopup:not(:-moz-lwtheme) {
@@ -293,7 +305,7 @@
     :root[lwt-default-theme-in-dark-mode] #sidebar-box {
       --sidebar-background-color: var(--win-sidebar-bgcolor) !important;
       --sidebar-text-color: var(--win-text-color) !important;
-      --sidebar-border-color: var(--win-sidebar-border-color) !important;
+      --sidebar-border-color: var(--win-border-color) !important;
     }
     @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
       .sidebar-panel[style="--newtab-background-color: rgba(43, 42, 51, 1); --newtab-text-primary-color: rgba(251, 251, 254, 1); --lwt-sidebar-background-color: rgb(56, 56, 61); --lwt-sidebar-text-color: rgba(249, 249, 250, 1);"],
@@ -554,7 +566,7 @@
   }
   /* Default theme color preservation */
   :root[lwtheme-mozlightdark] menupopup:not(#BMB_bookmarksPopup, [placespopup="true"]),
-  :root[lwtheme-mozlightdark] menupopup:is(#goPopup, #bookmarksMenuPopup) {
+  :root[lwtheme-mozlightdark] menupopup:is(#goPopup, #historyMenuPopup, #bookmarksMenuPopup) {
     --menu-color: var(--toolbar-color, var(--in-content-page-color)) !important;
     --arrowpanel-background: var(
       --toolbar-bgcolor,
@@ -639,12 +651,13 @@
   #editBMPanel_namePicker,
   #editBMPanel_tagsField {
     --input-bgcolor: var(--arrowpanel-background, Field);
+    --input-color: var(--arrowpanel-color, FieldText);
   }
   /*== Sidebar - Field Color ===================================================================*/
   .sidebar-panel[lwt-sidebar] #search-box,
   body[lwt-sidebar] xul|search-textbox.tabsFilter {
     appearance: none !important;
-    padding: 8px 11px !important;
+    padding: 5px 8px !important;
     border: 1px solid color-mix(in srgb, currentColor 30%, transparent) !important;
     border-radius: 4px;
 
@@ -1832,9 +1845,6 @@
     /* Original: 0.5em */
     padding-block: var(--menu-padding) !important;
   }
-  menupopup > menu {
-    padding-inline-start: 0.5em;
-  }
   @supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
     :root:not([uidensity="touch"]) .menu-text,
     :root:not([uidensity="touch"]) .menu-iconic-text {
@@ -2086,8 +2096,7 @@
     height: 20px;
     /* Bar Color */
     opacity: 0;
-    background-image: linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%));
-    /* background-color: var(--toolbarseparator-color); */
+    background-image: var(--toolbarseparator-color);
   }
   .tabbrowser-tab:not([visuallyselected], [multiselected], :hover, :first-child) .tab-background::before,
   #tabs-newtab-button:not(:hover, [open])::before {
@@ -2716,6 +2725,11 @@
   #BMB_bookmarksPopup > .bookmark-item menupopup > menuitem.openintabs-menuitem {
     --menuitem-image: url("./icons/window-new.svg");
   }
+  @media (-moz-windows-non-native-menus) {
+    menu.bookmark-item menupopup {
+      --nested-margin: 6px !important;
+    }
+  }
   /*= protections-popup ======================================================== I'VE CHANGED ==*/
   #protections-popup-settings-button > .protections-popup-settings-icon,
   #protections-popup-show-report-button > .protections-popup-show-report-icon {
@@ -2758,9 +2772,9 @@
     > menupopup
     > menu:not(.menu-iconic, .in-menulist, [type="checkbox"], [checked="true"]),
   #main-menubar > menu,
-  menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
+  menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
     menuitem:not(.menuitem-iconic, .in-menulist, [type="checkbox"], [checked="true"]),
-  menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
+  menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
     menu:not(.menu-iconic, .in-menulist, [type="checkbox"], [checked="true"]),
   menupopup:is(#organizeButtonPopup, #maintenanceButtonPopup) > menuitem,
   menupopup:is(#viewMenuPopup, #maintenanceButtonPopup) > menu,
@@ -2821,9 +2835,9 @@
     :not(menu, #ContentSelectDropdown, #context-navigation)
       > menupopup
       > menu:not(.menu-iconic, [type="checkbox"], [checked="true"], .in-menulist),
-    menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
+    menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
       menuitem:not(.menuitem-iconic, .in-menulist, [type="checkbox"], [checked="true"], .bookmark-item),
-    menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
+    menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
       menu:not(.menu-iconic, .in-menulist, [type="checkbox"], [checked="true"]),
     menupopup:is(#organizeButtonPopup, #maintenanceButtonPopup) > menuitem,
     menupopup:is(#viewMenuPopup, #maintenanceButtonPopup) > menu,
@@ -2833,7 +2847,7 @@
     }
   }
   /*= Bookmark Menu - Layout ===================================================================*/
-  /* #goPoup, #bookmarksMenuPopup: looks like global menu
+  /* #goPopup(Legacy of historyMenuPoup), #historyMenuPopup, #bookmarksMenuPopup: looks like global menu
    * #BMB_bookmarksPopup: looks like arrow panel
    */
   /* Empty Menu */
@@ -3847,14 +3861,18 @@
   }
   #bookmarks-menu-button {
     list-style-image: url("./icons/star-line-horizontal.svg") !important;
+  }
+  html[id="main-window"]:not([customizing="true"]) #bookmarks-menu-button {
     transform: translateX(32px);
   }
   #nav-bar-overflow-button {
     list-style-image: url("./icons/extension.svg") !important;
+  }
+  html[id="main-window"]:not([customizing="true"]) #nav-bar-overflow-button {
     transform: translateX(-32px);
   }
   @media (-moz-toolbar-prefers-color-scheme: dark) {
-    #PanelUI-button::before {
+    html[id="main-window"][chromehidden=""][tabsintitlebar="true"] #PanelUI-button::before {
       /* Box Model */
       content: "";
       display: block;
@@ -3870,7 +3888,7 @@
     }
   }
   @media (-moz-toolbar-prefers-color-scheme: light) {
-    #PanelUI-button::before {
+    html[id="main-window"][chromehidden=""][tabsintitlebar="true"] #PanelUI-button::before {
       /* Box Model */
       content: "";
       display: block;
@@ -4172,10 +4190,10 @@
     display: none !important;
     visibility: collapse !important;
   }
-  panelmultiview[mainViewId="widget-overflow-mainView"] panelview > .toolbarbutton[id="overflowMenu-customize-button"] {
+  /* panelmultiview[mainViewId="widget-overflow-mainView"] panelview > .toolbarbutton#overflowMenu-customize-button {
     display: none !important;
     visibility: collapse !important;
-  }
+  } */ /* somehow this doesn't work */
   /* SIDEBAR ************************************************************************************************/
   #sidebar-box[sidebarcommand="viewBookmarksSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon {
     list-style-image: url("./icons/star-line-horizontal.svg") !important;
