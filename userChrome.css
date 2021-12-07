@@ -1923,7 +1923,7 @@
   :root[uidensity="compact"] #protections-popup-multiView #protections-popup-footer {
     padding: 3px 0 20px !important;
   }
-  /* Button and disabed category in Protection popup */
+  /* Button and disabled category in Protection popup */
   :root[uidensity="compact"] #protections-popup-multiView .protections-popup-footer-button,
   :root[uidensity="compact"] #protections-popup-multiView .protections-popup-category {
     height: 20px !important;
@@ -3871,34 +3871,26 @@
   html[id="main-window"]:not([customizing="true"]) #nav-bar-overflow-button {
     transform: translateX(-32px);
   }
+  html[id="main-window"][chromehidden=""] #PanelUI-button::before {
+    /* Box Model */
+    content: "";
+    display: block;
+    position: absolute;
+    /* Position */
+    top: calc((var(--urlbar-toolbar-height) - 18px) / 2);
+    transform: translateX(-33px);
+    /* Bar shape */
+    width: 2px;
+    height: 18px;
+  }
   @media (-moz-toolbar-prefers-color-scheme: dark) {
-    html[id="main-window"][chromehidden=""][tabsintitlebar="true"] #PanelUI-button::before {
-      /* Box Model */
-      content: "";
-      display: block;
-      position: absolute;
-      /* Position */
-      top: calc((var(--urlbar-toolbar-height) - 18px) / 2);
-      transform: translateX(-33px);
-      /* Bar shape */
-      width: 2px;
-      height: 18px;
+    html[id="main-window"][chromehidden=""] #PanelUI-button::before {
       /* Bar Color */
       background-color: rgb(99, 99, 99) !important;
     }
   }
   @media (-moz-toolbar-prefers-color-scheme: light) {
-    html[id="main-window"][chromehidden=""][tabsintitlebar="true"] #PanelUI-button::before {
-      /* Box Model */
-      content: "";
-      display: block;
-      position: absolute;
-      /* Position */
-      top: calc((var(--urlbar-toolbar-height) - 18px) / 2);
-      transform: translateX(-33px);
-      /* Bar shape */
-      width: 2px;
-      height: 18px;
+    html[id="main-window"][chromehidden=""] #PanelUI-button::before {
       /* Bar Color */
       background-color: rgb(218, 218, 218) !important;
     }
