@@ -285,9 +285,16 @@ toolbar.inline-toolbar.chromeclass-toolbar {
 }
 toolbar.inline-toolbar.chromeclass-toolbar > toolbarbutton {
   margin-top: 0.5px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
 }
 toolbar.inline-toolbar.chromeclass-toolbar > toolbaritem {
   margin-top: -3.5px !important;
+}
+toolbar[mode="full"] .toolbarbutton-1:not([hideWebExtensionLabel="true"]) {
+  min-width: 0px !important;
 }
 toolbar.inline-toolbar.chromeclass-toolbar > toolbarseparator {
   margin-top: 1.5px !important;
@@ -536,6 +543,9 @@ treechildren::-moz-tree-image(attachmentCol, attach) {
 .delete-button {
   list-style-image: url("images/delete.png") !important;
 }
+.delete-button > .toolbarbutton-text {
+  display: none !important;
+}
 .junk-button image[label="Niet ongewenst"] {
   list-style-image: url("images/no-spam.png") !important;
 }
@@ -549,9 +559,8 @@ treechildren::-moz-tree-image(attachmentCol, attach) {
   list-style-image: url("images/file.png") !important;
   min-width: 18px !important;
 }
-#button-file > toolbarbutton-text {
+#button-file > .toolbarbutton-text {
   display: none !important;
-  visibility: collapse !important;
 }
 #button-file > dropmarker {
   visibility: collapse !important;
