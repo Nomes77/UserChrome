@@ -48,6 +48,11 @@
    */
   --lwt-toolbarbutton-icon-fill-attention: var(--button-primary-bgcolor, rgb(0, 120, 215));
 }
+/*= Disabled menu background color ===========================================================*/
+menuitem[disabled],
+menu[disabled] {
+  background-color: transparent !important;
+}
 /*= Remove Tab Border ========================================================================*/
 /* Light Theme */
 #TabsToolbar:not([brighttext])
@@ -1948,7 +1953,7 @@ menupopup > menu {
   background-image: linear-gradient(transparent, transparent),
     linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image, none) !important;
 }
-/* Multi Selected Color */
+/** Multi Selected Color - More Contrast ******************************************************/
 #tabbrowser-tabs:not([movingtab])
   > #tabbrowser-arrowscrollbox
   > .tabbrowser-tab
@@ -2049,6 +2054,7 @@ tab[visuallyselected] > stack::after {
 .tabbrowser-tab:not([visuallyselected], [multiselected], :hover, :first-child) .tab-background::before,
 #tabs-newtab-button:not(:hover, [open])::before {
   opacity: var(--tab-separator-opacity);
+  opacity: var(--tab-separator-opacity);
 }
 #navigator-toolbox
   .tabbrowser-tab:is([visuallyselected], [multiselected], :hover)
@@ -2068,7 +2074,7 @@ tab[visuallyselected] > stack::after {
   #tabbrowser-arrowscrollbox[overflowing]
   tab.tabbrowser-tab[first-visible-unpinned-tab]
   .tab-background::before {
-  opacity: 0 !important;
+   opacity: 0 !important;
 }
 /* Animate */
 @media (prefers-reduced-motion: no-preference) {
