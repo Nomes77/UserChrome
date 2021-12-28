@@ -2054,7 +2054,6 @@ tab[visuallyselected] > stack::after {
 .tabbrowser-tab:not([visuallyselected], [multiselected], :hover, :first-child) .tab-background::before,
 #tabs-newtab-button:not(:hover, [open])::before {
   opacity: var(--tab-separator-opacity);
-  opacity: var(--tab-separator-opacity);
 }
 #navigator-toolbox
   .tabbrowser-tab:is([visuallyselected], [multiselected], :hover)
@@ -2074,7 +2073,7 @@ tab[visuallyselected] > stack::after {
   #tabbrowser-arrowscrollbox[overflowing]
   tab.tabbrowser-tab[first-visible-unpinned-tab]
   .tab-background::before {
-   opacity: 0 !important;
+  opacity: 0 !important;
 }
 /* Animate */
 @media (prefers-reduced-motion: no-preference) {
