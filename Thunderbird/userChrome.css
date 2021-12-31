@@ -7,10 +7,9 @@
   --win-toolbarbutton-hover-background: linear-gradient(rgb(255, 248, 211), rgb(255, 208, 145));
   --win-toolbarbutton-active-background: linear-gradient(rgb(254, 138, 72), rgb(255, 208, 145));
   --win-button-active-background-open: linear-gradient(rgb(227, 239, 255), rgb(129, 168, 225));
-}
+  --win-dark-blue-border: 1px rgb(0, 45, 150) solid;
 
 /* COMMON */
-:host, :root {
   --in-content-button-background: rgb(225, 225, 225) !important;
   --in-content-button-background-hover: rgb(229, 241, 251) !important;
   --in-content-button-background-active: rgb(204, 228, 247) !important;
@@ -51,11 +50,11 @@ menubar > menu[open="true"] {
   border-bottom: 1px solid transparent;
 }
 menubar > menu:hover {
-  background-color: none !important;
+  background-color: unset !important;
   background-image: var(--win-toolbarbutton-hover-background) !important;
 }
 menubar > menu:is(:active,[open="true"]) {
-  background-color: none !important;
+  background-color: unset !important;
   background-image: var(--win-button-active-background-open) !important;
 }
 menubar > menu > menupopup menu:hover,
@@ -280,23 +279,27 @@ treechildren::-moz-tree-cell-text(folderNameCol, specialFolder-Inbox, newMessage
   --toolbarbutton-active-bordercolor: var(--win-border-color) !important;
 }
 /* toolbarbutton */
-toolbar.inline-toolbar.chromeclass-toolbar {
+.toolbarbutton-1 .toolbarbutton-icon,
+.toolbarbutton-menubutton-button > .toolbarbutton-icon {
+  padding: 0px !important;
+}
+toolbar.chromeclass-toolbar { /* toolbar.inline-toolbar */
   height: 24px !important;
 }
-toolbar.inline-toolbar.chromeclass-toolbar > toolbarbutton {
+toolbar.chromeclass-toolbar > toolbarbutton { /* toolbar.inline-toolbar */
   margin-top: 0.5px !important;
   margin-left: 0px !important;
   margin-right: 0px !important;
   padding-left: 2px !important;
   padding-right: 2px !important;
 }
-toolbar.inline-toolbar.chromeclass-toolbar > toolbaritem {
+toolbar.chromeclass-toolbar > toolbaritem { /* toolbar.inline-toolbar */
   margin-top: -3.5px !important;
 }
 toolbar[mode="full"] .toolbarbutton-1:not([hideWebExtensionLabel="true"]) {
   min-width: 0px !important;
 }
-toolbar.inline-toolbar.chromeclass-toolbar > toolbarseparator {
+toolbar.chromeclass-toolbar > toolbarseparator { /* toolbar.inline-toolbar */
   margin-top: 1.5px !important;
   margin-bottom: 5.5px !important;
   background-image: linear-gradient(to right, black, white) !important;
@@ -384,11 +387,10 @@ menulist[open="true"] {
   --toolbar-color: var(--toolbar-non-lwt-textcolor);
   --panelui-subview-transition-duration: 150ms;
 }
-#LW-background-box:-moz-lwtheme,
-#ab-toolbox:-moz-lwtheme,
-#compose-toolbox:-moz-lwtheme {
+#compose-toolbox {
   background-color: unset !important; /* var(--lwt-accent-color); */
-  background-image: var(--toolbar-bgimage) !important; /* var(--lwt-additional-images); */
+  background-image: linear-gradient(to right, rgb(158, 190, 245), rgb(158, 190, 245), rgb(195, 217, 250), rgb(195, 217, 250), rgb(195, 217, 250)) !important;
+                    /* var(--toolbar-bgimage); var(--lwt-additional-images); */
   background-repeat: var(--lwt-background-tiling);
   background-position: var(--lwt-background-alignment);
 }
@@ -398,11 +400,11 @@ menulist[open="true"] {
   border: 2px rgb(195, 217, 250) solid !important;
 }
 #folderPaneBox {
-  border: 1px rgb(0, 45, 150) solid !important;
+  border: var(--win-dark-blue-border) !important;
 }
 #folderPaneHeader {
   background-color: rgb(174, 201, 247) !important;
-  border-bottom: 1px rgb(0, 45, 150) solid !important;
+  border-bottom: var(--win-dark-blue-border) !important;
 }
 #folderpane_splitter {
   border: 6px rgb(195, 217, 250) solid !important;
@@ -411,7 +413,7 @@ menulist[open="true"] {
   visibility: hidden !important;
 }
 #messengerBox #messagesBox {
-  border: 1px rgb(0, 45, 150) solid !important;
+  border: var(--win-dark-blue-border) !important;
   border-left: 5px rgb(0, 45, 150) solid !important;
 }
 /* ::::: thread decoration ::::: */
@@ -485,6 +487,27 @@ treecols#threadCols[slot="treecols"] {
   border-bottom: 1px solid rgb(212, 212, 212) !important;
 }
 
+/* TABMAIL */
+.tabmail-tab[type="accountManager"] {
+  list-style-image: url("images/accounts.ico") !important;
+}
+.tabmail-tab[type="glodaSearch"] {
+  list-style-image: url("images/search.ico") !important;
+}
+.tab-content[selected="true"] {
+  background-image: linear-gradient(rgb(89, 135, 214), rgb(2, 55, 146)) !important;
+  /* background-color: rgb(48,98,182) !important; */
+  color: white !important;
+}
+.tab-content .tab-label {
+  font-size: larger;
+  font-weight: bolder;
+  transform: translateY(-1px);
+}
+.tabmail-tab[type="tasks"] {
+  list-style-image: url("images/tasks.ico") !important;
+}
+
 /* MESSAGEICONS */
 /* ..... read column ..... */
 treechildren::-moz-tree-image(unreadButtonColHeader) {
@@ -524,6 +547,9 @@ treechildren::-moz-tree-image(attachmentCol, attach) {
 }
 
 /* PRIMARY_TOOLBAR */
+.mail-toolbox {
+  border-bottom: var(--win-dark-blue-border) !important
+}
 /* ::::: Mail Toolbars and Menubars ::::: */
 #button-newmsg {
   list-style-image: url("images/new-mail.ico") !important;
@@ -638,9 +664,30 @@ menuitem.subviewbutton:not([disabled])[_moz-menuactive],
   border: 1px solid var(--win-border-color) !important;
 }
 
+/* MESSAGEWINDOW */
+@media (-moz-os-version: windows-win10) and (-moz-windows-default-theme) {
+  #menubar-items > #mail-menubar > menu {
+    appearance: none !important;
+  }
+}
+
 /* MESSAGEHEADER */
+.headerName,
+#attachmentSize {
+  color: black !important;
+}
+.headerValue,
+.dateLabel {
+  font-size: 11px;
+}
 expandedHeadersBox {
   background-color: rgb(240, 240, 240) !important;
+}
+#expandedHeadersTopBox html|th,
+#expandedHeadersBottomBox html|th {
+  text-align: left !important;
+  padding-top: 2px !important;
+  font-size: 11px;
 }
 /* ::::: msg header buttons ::::: */
 .hdrReplyToSenderButton,
@@ -668,7 +715,7 @@ expandedHeadersBox {
   list-style-image: url("images/save.png") !important;
 }
 
-/* MESSEGE-BAR */
+/* MESSEGEBAR */
 :host([message-bar-type=infobar]) {
   --close-icon-size: 18px !important;
 }
@@ -676,28 +723,7 @@ expandedHeadersBox {
   height: 24px !important;
 }
 
-/* TABMAIL */
-.tabmail-tab[type="accountManager"] {
-  list-style-image: url("images/accounts.ico") !important;
-}
-.tabmail-tab[type="glodaSearch"] {
-  list-style-image: url("images/search.ico") !important;
-}
-.tab-content[selected="true"] {
-  background-image: linear-gradient(rgb(89, 135, 214), rgb(2, 55, 146)) !important;
-  /* background-color: rgb(48,98,182) !important; */
-  color: white !important;
-}
-.tab-content .tab-label {
-  font-size: larger;
-  font-weight: bolder;
-  transform: translateY(-1px);
-}
-.tabmail-tab[type="tasks"] {
-  list-style-image: url("images/tasks.ico") !important;
-}
-
-/* COMPOSE_WINDOW */
+/* COMPOSEWINDOW */
 #button-send {
   list-style-image: url("images/sendmail.ico") !important;
 }
@@ -726,6 +752,41 @@ expandedHeadersBox {
   list-style-image: url("images/print.png") !important;
 }
 
+/* MESSENGERCOMPOSE */
+#identityLabel-box,
+.address-label-container,
+#subjectLabel-box {
+  width: 6em !important;
+}
+/* .aw-firstColBox {
+  width: 0px !important;
+} */
+#msgIdentity,
+.address-container,
+#msgSubject {
+  min-height: unset !important;
+}
+#msgIdentity,
+.address-container {
+  height: 24px !important;
+}
+#msgSubject {
+  height: 22px !important;
+}
+.address-container > .address-input {
+  padding-block: unset !important;
+}
+#compose-toolbox {
+  border-bottom: var(--win-dark-blue-border) !important;
+}
+#compose-toolbox > toolbar {
+  background-color: unset !important;
+  background-image: var(--toolbar-non-lwt-bgimage) !important;
+}
+#compose-toolbar-sizer {
+  border-bottom-color: rgb(130, 135, 144)!important;
+}
+
 /* EXTENSIONS */
 popupset > panel#webextension-remote-preload-panel {
   scale: 80%;
@@ -734,4 +795,51 @@ popupset > panel#webextension-remote-preload-panel {
 :is(menupopup, panel)[type="arrow"] {
   --panel-border-radius: 0px !important;
   --panel-padding: 0.5px !important;
+}
+
+/* ACCOUNTCENTRAL */
+#accountLogo {
+  background-image: url("images/server.ico") !important;
+}
+#accountLogo[type="none"] {
+  background-image: url("images/home.ico") !important;
+}
+#settingsButton::before {
+  background-image: url("images/accounts.ico") !important;
+  background-size: contain;
+}
+#readButton::before {
+  background-image: url("images/inbox.ico") !important;
+  background-size: contain;
+}
+#composeButton::before {
+  background-image: url("images/new-mail.ico") !important;
+  background-size: contain;
+}
+#searchButton::before {
+  background-image: url("images/search.ico") !important;
+  background-size: contain;
+}
+#filterButton::before {
+  background-image: url("images/filter.png") !important;
+}
+#setupEmail::before {
+  background-image: url("images/read.ico") !important;
+}
+#setupCalendar::before {
+  background-image: url("images/calender.ico") !important;
+}
+#setupAddressBook::before {
+  background-image: url("images/address-book.png") !important;
+}
+
+/* PREFERENCES */
+#category-compose > .category-icon {
+  list-style-image: url("images/new-mail.ico") !important;
+}
+#category-calendar > .category-icon {
+  list-style-image: url("images/calender.ico") !important;
+}
+.account-icon {
+  list-style-image: url("images/accounts.ico") !important;
 }
