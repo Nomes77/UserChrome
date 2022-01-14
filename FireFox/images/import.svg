@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" style="fill: context-fill; fill-opacity: context-fill-opacity;" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+  <g>
+    <path d="m15.5,2a0.5,0.5 0 0 1 0.5,0.5l0,11a0.5,0.5 0 0 1 -1,0l0,-11a0.5,0.5 0 0 1 0.5,-0.5z"/>
+    <path d="m0,8a0.5,0.5 0 0 1 0.5,-0.5l10.793,0l-3.147,-3.146a0.5,0.5 0 0 1 0.708,-0.708l4,4a0.5,0.5 0 0 1 0.146,0.351l0,0.006c0,0.127 -0.05,0.254 -0.146,0.35l-4,4a0.5,0.5 0 0 1 -0.708,-0.707l3.147,-3.146l-10.793,0a0.5,0.5 0 0 1 -0.5,-0.5z"/>
+  </g>
+</svg>
