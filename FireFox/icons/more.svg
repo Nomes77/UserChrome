@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" style="fill: context-fill; fill-opacity: context-fill-opacity;" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
-  <g>
-    <path d="m4.25,8a1.25,1.25 0 1 1 -2.5,0a1.25,1.25 0 0 1 2.5,0z"/>
-    <path d="m9.25,8a1.25,1.25 0 1 1 -2.5,0a1.25,1.25 0 0 1 2.5,0z"/>
-    <path d="m13,9.25a1.25,1.25 0 1 0 0,-2.5a1.25,1.25 0 0 0 0,2.5z"/>
-  </g>
-</svg>
