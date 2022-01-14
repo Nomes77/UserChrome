@@ -1,0 +1,26 @@
+/*= Bookmark Menu - Layout ===================================================================*/
+/* #goPopup(Legacy of historyMenuPoup), #historyMenuPopup, #bookmarksMenuPopup: looks like global menu
+ * #BMB_bookmarksPopup: looks like arrow panel
+ */
+/* Empty Menu */
+menupopup menupopup[emptyplacesresult] .menu-text,
+#PersonalToolbar menupopup[emptyplacesresult] .menu-text {
+  margin-inline-start: 0 !important;
+}
+/* Bookmark Popup - As Arrow Panel */
+#BMB_bookmarksPopup,
+#PersonalToolbar {
+  --context-menu-background-padding: var(--arrowpanel-menuitem-padding);
+}
+/* Windows */
+@media (-moz-os-version: windows-win10) {
+  /* Bookmark Popup - None icon menu */
+  menupopup:is(#BMB_bookmarksPopup)  menuitem:not(.menuitem-iconic, [disabled="true"]),
+  menupopup:is(#BMB_bookmarksPopup)  menu:not(.menu-iconic),
+  #PersonalToolbar menupopup[placespopup="true"] menuitem:not(.menuitem-iconic, [disabled="true"]),
+  #PersonalToolbar menupopup[placespopup="true"] menu:not(.menu-iconic) {
+    margin-inline: var(--arrowpanel-menuitem-padding) !important;
+    padding-inline-start: calc(var(--arrowpanel-menuicon-padding) + var(--context-menu-text-padding)) !important;
+    background-position: left calc(var(--arrowpanel-menuicon-padding)) center !important;
+  }
+}

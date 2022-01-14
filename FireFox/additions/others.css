@@ -1,0 +1,6 @@
+/* Other Problems ************************************************************/
+findbar > .findbar-container > description[class="findbar-label findbar-find-status"] {
+  width: 190px;
+  margin-top: -2px !important;
+  margin-bottom: -2px !important;
+}

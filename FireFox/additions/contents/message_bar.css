@@ -1,0 +1,8 @@
+/* Message_Bar ***************************************************************/
+:host {
+  --info-icon-url: url("./../../images/info.svg") !important;
+  --warn-icon-url: url("./../../images/warning-filled.svg") !important;
+  --success-icon-url: url("./../../images/check.svg") !important;
+  --error-icon-url: url("./../../images/error-filled.svg") !important;
+  --close-icon-url: url("./../../images/dismiss.svg") !important;
+}

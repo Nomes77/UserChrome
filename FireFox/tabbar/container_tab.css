@@ -1,0 +1,57 @@
+/** Container Tab - Color line at icon's bottom ******************************* I'VE CHANGED **/
+.tab-context-line {
+  display: none;
+}
+.tab-content::before {
+  /* Box Model */
+  content: "";
+  display: block;
+  position: absolute !important;
+  transform: translateY(10px) !important;
+  /* Shape */
+  border-bottom: 2px solid var(--identity-icon-color);
+  width: calc(16px + 10%);
+}
+.tabbrowser-tab:hover:not([pinned], [visuallyselected]) .tab-content::before {
+  width: calc(16px + 15%);
+}
+.tabbrowser-tab[visuallyselected]:not([pinned]) .tab-content::before {
+  width: calc(16px + 30%);
+}
+/* Animate */
+@media (prefers-reduced-motion: no-preference) {
+  .tab-content:not([titlechanged])::before {
+    transition: 0.15s var(--animation-easing-function) !important;
+    transition-property: width, opacity;
+  }
+}
+/* Pinned Tab */
+.tabbrowser-tab[pinned] .tab-content::before {
+  width: 16px;
+}
+/* Pinned Tab - Titlechanged Indicator override */
+.tabbrowser-tab:is([image], [pinned])[usercontextid] > .tab-stack > .tab-content[attention]:not([selected="true"]) {
+  /* Original: radial-gradient(circle, var(--attention-icon-color), var(--attention-icon-color) 2px, transparent 2px); */
+  --dotted-identity-image: radial-gradient(
+    circle,
+    var(--identity-icon-color),
+    var(--identity-icon-color) 2px,
+    transparent 2px
+  );
+  background-image: var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image) !important;
+  background-position-x: 32%, 50%, 70% !important;
+}
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
+  background-image: none !important;
+}
+:root[uidensity="compact"]
+  .tabbrowser-tab:is([image], [pinned])[usercontextid]
+  > .tab-stack
+  > .tab-content[attention]:not([selected="true"]),
+:root[uidensity="compact"]
+  .tabbrowser-tab[usercontextid]
+  > .tab-stack
+  > .tab-content[pinned][titlechanged]:not([selected="true"]) {
+  /* Original: radial-gradient(circle, var(--attention-icon-color), var(--attention-icon-color) 2px, transparent 2px); */
+  background-position-x: 30%, 50%, 70% !important;
+}
