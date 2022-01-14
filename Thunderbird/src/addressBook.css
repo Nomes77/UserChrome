@@ -1,0 +1,42 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  /* ADDRESSBOOK */
+  #ab-toolbox {
+    background-color: unset !important;
+    background-image: linear-gradient(to right, rgb(158, 190, 245), rgb(158, 190, 245), rgb(195, 217, 250), rgb(195, 217, 250), rgb(195, 217, 250)) !important;
+    border-bottom: var(--win-dark-blue-border) !important;
+  }
+  #ab-toolbox > toolbar:not([type="menubar"]) {
+    background-image: var(--toolbar-non-lwt-bgimage) !important;
+  }
+  /* ::::: primary toolbar buttons ::::: */
+  #button-newcard {
+    list-style-image: url("./../images/contacts.ico") !important; 
+  }
+  #button-newlist {
+    list-style-image: url("./../images/contacts-group.ico") !important;
+  }
+  #button-newmessage {
+    list-style-image: url("./../images/new-mail.ico") !important;
+  }
+  #button-abdelete {
+    list-style-image: url("./../images/delete.png") !important;
+  }
+  /* ::::: directory pane icons ::::: */
+  treechildren::-moz-tree-image(DirCol) {
+    list-style-image: url("./../images/contacts.ico") !important; 
+    height: 16px;
+  }
+  treechildren::-moz-tree-image(DirCol, IsMailList-true) {
+    list-style-image: url("./../images/contacts-group.ico") !important; 
+    height: 16px;
+  }
+  /* ::::: results pane ::::: */
+  treechildren::-moz-tree-image(GeneratedName) {
+    list-style-image: url("./../images/contacts.ico") !important; 
+    height: 16px;
+  }
+  treechildren::-moz-tree-image(GeneratedName, MailList) {
+    list-style-image: url("./../images/contacts-group.ico") !important; 
+    height: 16px;
+  }
+}

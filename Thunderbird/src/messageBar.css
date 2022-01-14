@@ -1,0 +1,14 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  /* MESSAGEBAR */
+  :host {
+    --draft-icon-url: url("./../images/new-mail.ico") !important;
+    --junk-icon-url: url("./../images/spam.png") !important;
+    --attachment-icon-url: url("./../images/attachment.png") !important;
+  }
+  :host([message-bar-type=infobar]) {
+    --close-icon-size: 18px !important;
+  }
+  .container.infobar {
+    height: 24px !important;
+  }
+}

@@ -1,0 +1,65 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  /* MENU */
+  /* ::::: menu/menuitem ::::: */
+  menubar > menu {
+    border: 1px solid transparent;
+  }
+  menubar > menu:is(:hover,:active,[open="true"]) {
+    border: 1px solid var(--win-border-color);
+  }
+  menubar > menu[open="true"] {
+    border-bottom: 1px solid transparent;
+  }
+  menubar > menu:hover {
+    background-color: unset !important;
+    background-image: var(--win-toolbarbutton-hover-background) !important;
+  }
+  menubar > menu:is(:active,[open="true"]) {
+    background-color: unset !important;
+    background-image: var(--win-button-active-background-open) !important;
+  }
+  menubar > menu > menupopup menu:hover,
+  menubar > menu > menupopup menuitem:hover,
+  menubar > menu > menupopup menuitem:active { /* --win-menuitem-active-background-color */
+    background-color: var(--win-menuitem-hover-background-color) !important;
+  }
+  /* ::::: menu/menuitems in popups ::::: */
+  menupopup {
+    border: 1px solid var(--panel-border-color) var(--panel-border-radius) !important;
+    --panel-border-radius: 0px !important;
+    --panel-border-color: var(--win-border-color) !important;
+  }
+  :is(panel, menupopup)::part(content) {
+    border-radius: var(--panel-border-radius);
+    border: 1px solid var(--win-border-color) !important;
+  }
+  menupopup menu,
+  menupopup menuitem {
+    border: 1px solid transparent;
+  }
+  menupopup menu:is(:hover,:active,[open="true"]),
+  menupopup menuitem:is(:hover,:active,[open="true"]) {
+    border: 1px solid var(--win-border-color) !important;
+    background-color: var(--win-menuitem-hover-background-color) !important;
+  }
+  menupopup menu:not([open="true"]):active,
+  menupopup menuitem:active {
+    background-color: var(--win-menuitem-hover-background-color) !important; /* --win-menuitem-active-background-color */
+  }
+  /* ::::: menu/menuitems in menulist popups ::::: */
+  menulist > menupopup > menuitem[_moz-menuactive="true"],
+  menulist > menupopup > menu[_moz-menuactive="true"],
+  menulist > menupopup > menuitem:is(:hover,:active),
+  menulist > menupopup > menu:is(:hover,:active) {
+    background-color: rgb(0, 120, 215) !important;
+    color: white !important;
+    border: 1px solid transparent !important;
+  }
+
+  @media (-moz-windows-non-native-menus) {
+    menupopup {
+      --panel-border-radius: 0px !important;
+      border-radius: 0px !important;
+    }
+  }
+}

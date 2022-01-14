@@ -1,0 +1,46 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  /* ACCOUNTCENTRAL */
+  #accountLogo {
+    background-image: url("./../../images/server.ico") !important;
+  }
+  #accountLogo[type="none"] {
+    background-image: url("./../../images/home.ico") !important;
+  }
+  #accountLogo[type="rss"],
+  #setupFeeds::before,
+  #rssSubscriptionButton:before,
+  #nntpSubscriptionButton:before {
+    background-image: url("./../../images/feeds.ico") !important;
+  }
+  #setupEmail::before {
+    background-image: url("./../images/read.ico") !important;
+  }
+  #setupCalendar::before {
+    background-image: url("./../images/calender.ico") !important;
+  }
+  #setupAddressBook::before {
+    background-image: url("./../images/address-book.ico") !important;
+  }
+  #supportLink::before {
+    background-image: url("./../images/help.png") !important;
+  }
+  #settingsButton::before {
+    background-image: url("./../images/accounts.ico") !important;
+    background-size: contain;
+  }
+  #readButton::before {
+    background-image: url("./../images/inbox.ico") !important;
+    background-size: contain;
+  }
+  #composeButton::before {
+    background-image: url("./../images/new-mail.ico") !important;
+    background-size: contain;
+  }
+  #searchButton::before {
+    background-image: url("./../images/search.ico") !important;
+    background-size: contain;
+  }
+  #filterButton::before {
+    background-image: url("./../images/filter.png") !important;
+  }
+}

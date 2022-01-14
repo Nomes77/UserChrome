@@ -1,0 +1,12 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  /* PREFERENCES */
+  #category-compose > .category-icon {
+    list-style-image: url("./../images/new-mail.ico") !important;
+  }
+  #category-calendar > .category-icon {
+    list-style-image: url("./../images/calender.ico") !important;
+  }
+  .account-icon {
+    list-style-image: url("./../images/accounts.ico") !important;
+  }
+}

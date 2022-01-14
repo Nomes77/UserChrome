@@ -1,0 +1,8 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  /* MESSAGEWINDOW */
+  @media (-moz-os-version: windows-win10) and (-moz-windows-default-theme) {
+    #menubar-items > #mail-menubar > menu {
+      appearance: none !important;
+    }
+  }
+}

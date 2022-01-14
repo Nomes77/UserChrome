@@ -1,0 +1,59 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  /* MAILWINDOW */
+  /* ::::: thread decoration ::::: */
+  treecol#unreadButtonColHeader > .treecol-icon {
+    color: transparent !important;
+    background-image: url("./../images/unread-top.ico") !important;
+    background-size: 12px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  treecol#attachmentCol > .treecol-icon {
+    color: transparent !important;
+    background-image: url("./../images/attachment-col.png") !important;
+    background-size: 12px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  /* ..... read column ..... */
+  treechildren::-moz-tree-image(unreadButtonColHeader) {
+    list-style-image: url("./../images/read.ico") !important;
+    height: 14px !important;
+    width: 14px !important;
+  }
+  treechildren::-moz-tree-image(unreadButtonColHeader, unread) {
+    list-style-image: url("./../images/unread.ico") !important;
+    height: 14px !important;
+    width: 14px !important;
+    stroke-opacity: 0 !important;
+  }
+  /* ..... attachment column ..... */
+  treechildren::-moz-tree-image(attachmentCol, attach) {
+    list-style-image: url("./../images/attachment.png") !important;
+    height: 14px !important;
+    width: 14px !important;
+  }
+  /* ..... folder pane adjustments ..... */
+  #folderPaneBox {
+    border: var(--win-dark-blue-border) !important;
+  }
+  #folderPaneHeader {
+    background-color: rgb(174, 201, 247) !important;
+    border-bottom: var(--win-dark-blue-border) !important;
+  }
+  /* ..... splitter adjustments ..... */
+  #folderpane_splitter {
+    border: 6px rgb(195, 217, 250) solid !important;
+  }
+  /* ..... message pane adjustments ..... */
+  #messengerBox {
+    border: 2px rgb(195, 217, 250) solid !important;
+  }
+  #messengerBox #messagesBox #threadpane-splitter[state="collapsed"] {
+    visibility: hidden !important;
+  }
+  #messengerBox #messagesBox {
+    border: var(--win-dark-blue-border) !important;
+    border-left: 5px rgb(0, 45, 150) solid !important;
+  }
+}

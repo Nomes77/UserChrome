@@ -1,14 +1,8 @@
-/* MESSAGEQUOTES */
-blockquote[type=cite] {
-  color: black !important;
-  border:none !important;
-}
-
-/* MESSAGE */
-*|*:link {
-  color: rgb(0, 102, 212) !important;
-}
-a.moz-txt-link-freetext[href^="mailto:"] {
-  color: black !important;
-  text-decoration-line: none !important;
-}
+/** FOLDERMENUS **********************/
+@import "./src/folderMenus.css";
+/** FOLDERPANE ***********************/
+@import "./src/folderPane.css";
+/** PREFERENCES **********************/
+@import "./src/preferences.css";
+/** MESSAGE **************************/
+@import "./src/message.css";

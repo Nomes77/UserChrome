@@ -1,0 +1,188 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+/* MESSENGERCOMPOSE */
+#compose-toolbox {
+  background-color: unset !important; /* var(--lwt-accent-color); */
+  background-image: linear-gradient(to right, rgb(158, 190, 245), rgb(158, 190, 245), rgb(195, 217, 250), rgb(195, 217, 250), rgb(195, 217, 250)) !important;
+                    /* var(--toolbar-bgimage); var(--lwt-additional-images); */
+  border-bottom: var(--win-dark-blue-border) !important;
+}
+#composeToolbar2.chromeclass-toolbar {
+  height: 24px;
+}
+#composeToolbar2 toolbarbutton {
+  max-height: 20px !important;
+}
+#compose-toolbox > toolbar:not([type="menubar"]) {
+  background-image: var(--toolbar-non-lwt-bgimage) !important;
+  padding: 1px !important;
+  padding-left: var(--win-menu-toolbar-space) !important;
+}
+#compose-toolbar-sizer {
+  border-bottom-color: rgb(130, 135, 144)!important;
+}
+.autocomplete-richlistitem:hover,
+.autocomplete-richlistitem[selected] {
+  background-color: rgb(0, 120, 215) !important;
+  color: white !important;
+}
+.autocomplete-richlistitem[type="local-abook"] > .ac-site-icon {
+  list-style-image: url("./../images/contacts.ico") !important;
+}
+#attachmentNotificationBox > hbox > .messageImage {
+  list-style-image: url("./../images/attachment.png") !important;
+}
+html#msgcomposeWindow .statusbar {
+  display: none;
+}
+#identityLabel-box,
+.address-label-container,
+#subjectLabel-box {
+  width: 6em !important;
+}
+#msgIdentity,
+.address-container,
+#msgSubject {
+  min-height: unset !important;
+}
+#msgIdentity,
+.address-container {
+  height: 22px !important;
+}
+#msgSubject {
+  height: 20px !important;
+}
+.address-container > .address-input {
+  padding-block: unset !important;
+}
+.address-pill {
+  margin-inline-end: 0px !important;
+  margin-inline-start: 0px;
+  padding-inline: 4px !important;
+  margin-block: 0px !important;
+  height: 18px;
+  text-decoration-line: underline;
+}
+.address-pill:not(.editing) {
+  box-shadow: none !important;
+}
+.address-pill:not([selected], :hover, :focus, .editing, .invalid-address) {
+  background-color: transparent !important;
+}
+/* ::::: icons ::::: */
+#button-send {
+  list-style-image: url("./../images/compose-toolbar.png") !important;
+  -moz-image-region: rect(24px 24px 48px 0px);
+}
+#button-contacts {
+  list-style-image: url("./../images/contacts.ico") !important;
+}
+#spellingButton {
+  list-style-image: url("./../images/compose-toolbar.png") !important;
+  -moz-image-region: rect(24px 72px 48px 48px);
+}
+#button-attach {
+  list-style-image: url("./../images/compose-toolbar.png") !important;
+  -moz-image-region: rect(24px 96px 48px 72px);
+}
+#button-save {
+  list-style-image: url("./../images/compose-toolbar.png") !important;
+  -moz-image-region: rect(24px 144px 48px 120px);
+}
+#quoteButton {
+  list-style-image: url("./../images/compose-toolbar.png") !important;
+  -moz-image-region: rect(24px 168px 48px 144px);
+}
+#cut-button {
+  list-style-image: url("./../images/compose-toolbar.png") !important;
+  -moz-image-region: rect(24px 192px 48px 168px);
+}
+#copy-button {
+  list-style-image: url("./../images/compose-toolbar.png") !important;
+  -moz-image-region: rect(24px 216px 48px 192px);
+}
+#paste-button {
+  list-style-image: url("./../images/compose-toolbar.png") !important;
+  -moz-image-region: rect(24px 240px 48px 216px);
+}
+#button-print {
+  list-style-image: url("./../images/print.png") !important;
+}
+/* ::::: format toolbar ::::: */
+#FormatToolbar > toolbarbutton:not(#AbsoluteFontSizeButton, #removeStylingButton) {
+  list-style-image: url("./../images/format-buttons.png") !important;
+}
+#DecreaseFontSizeButton {
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+#IncreaseFontSizeButton {
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+#boldButton {
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+#italicButton {
+  -moz-image-region: rect(0px 64px 16px 48px);
+}
+#underlineButton {
+  -moz-image-region: rect(0px 80px 16px 64px);
+}
+#ulButton {
+  -moz-image-region: rect(0px 96px 16px 80px);
+}
+#olButton {
+  -moz-image-region: rect(0px 112px 16px 96px);
+}
+#olButton[disabled="true"] {
+  -moz-image-region: rect(32px 112px 48px 96px) !important;
+}
+#outdentButton {
+  -moz-image-region: rect(0px 128px 16px 112px);
+}
+#indentButton {
+  -moz-image-region: rect(0px 144px 16px 128px);
+}
+#AlignPopupButton {
+  -moz-image-region: rect(0px 176px 16px 160px);
+}
+#InsertPopupButton {
+  -moz-image-region: rect(0px 256px 16px 240px);
+}
+#smileButtonMenu {
+  -moz-image-region: rect(0px 304px 16px 288px);
+}
+/* ..... align menu ..... */
+#AlignPopup > menuitem {
+  list-style-image: url("./../images/format-buttons.png") !important;
+}
+#AlignLeftItem, #AlignPopupButton[state="left"] {
+  -moz-image-region: rect(0px 160px 16px 144px) !important;
+}
+#AlignCenterItem, #AlignPopupButton[state="center"] {
+  -moz-image-region: rect(0px 176px 16px 160px) !important;
+}
+#AlignRightItem, #AlignPopupButton[state="right"] {
+  -moz-image-region: rect(0px 192px 16px 176px) !important;
+}
+#AlignJustifyItem, #AlignPopupButton[state="justify"] {
+  -moz-image-region: rect(0px 208px 16px 192px) !important;
+}
+/* ..... insert menu ..... */
+#InsertPopup > menuitem {
+  list-style-image: url("./../images/format-buttons.png") !important;
+}
+#InsertLinkItem {
+  -moz-image-region: rect(0px 224px 16px 208px) !important;
+}
+#InsertAnchorItem {
+  -moz-image-region: rect(0px 240px 16px 224px) !important;
+}
+#InsertImageItem {
+  -moz-image-region: rect(0px 256px 16px 240px) !important;
+}
+#InsertHRuleItem {
+  -moz-image-region: rect(0px 272px 16px 256px) !important;
+}
+#InsertTableItem {
+  -moz-image-region: rect(0px 288px 16px 272px) !important;
+}
+}

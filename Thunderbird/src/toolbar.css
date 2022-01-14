@@ -1,0 +1,19 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  /* TOOLBAR */
+  @media (-moz-windows-compositor) and (-moz-windows-default-theme) {
+    #navigation-toolbox:not(:-moz-lwtheme),
+    #tabs-toolbar {
+      background-image: linear-gradient(to right, rgb(158, 190, 245), rgb(158, 190, 245), rgb(195, 217, 250), rgb(195, 217, 250), rgb(195, 217, 250)) !important;
+    }
+  }
+  #tabs-toolbar {
+    /* height: 28px !important; */
+    padding-left: 2px !important;
+  }
+  #calendar-tab-button, #newMsgButton-calendar-menuitem {
+    list-style-image: url("./../images/calender.ico") !important;
+  }
+  #task-tab-button, #newMsgButton-task-menuitem {
+    list-style-image: url("./../images/tasks.ico") !important;
+  }
+}
