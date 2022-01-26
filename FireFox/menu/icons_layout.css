@@ -11,13 +11,10 @@ menupopup menu:not([type="checkbox"], [type="radio"]),
 :not(menu, #ContentSelectDropdown)
   > menupopup
   > menu:not(.menu-iconic, .in-menulist, [type="checkbox"], [checked="true"]),
-#main-menubar > menu,
-menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
+menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
   menuitem:not(.menuitem-iconic, .in-menulist, [type="checkbox"], [checked="true"]),
-menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
+menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #goPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
   menu:not(.menu-iconic, .in-menulist, [type="checkbox"], [checked="true"]),
-menupopup:is(#organizeButtonPopup, #maintenanceButtonPopup) > menuitem,
-menupopup:is(#viewMenuPopup, #maintenanceButtonPopup) > menu,
 #blockedPopupDontShowMessage {
   /* Color */
   -moz-context-properties: fill, fill-opacity !important;
@@ -25,7 +22,7 @@ menupopup:is(#viewMenuPopup, #maintenanceButtonPopup) > menu,
   /* Layout */
   background-size: 16px !important;
   background-repeat: no-repeat !important;
-  background-image: var(--menuitem-image);
+  background-image: var(--menuitem-image) !important;
 }
 /* Padding */
 :root {

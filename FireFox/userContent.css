@@ -3,7 +3,7 @@
 
 /** Fully Dark Mode ***********************************************************/
 /*= Fully Dark Mode - Dark Mode Colors =======================================*/
-@import "./theme/proton_color.css";
+/* @import "./theme/proton_color.css"; */
 
 /** Fully Proton Mode *********************************************************/
 @import "./contents/proton_contents.css";
