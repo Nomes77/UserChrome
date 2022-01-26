@@ -9,13 +9,12 @@
     text-decoration-line: none !important;
   }
   #appcontent > editor body {
-    font-size: 120pt !important;
+    font-size: 12pt !important;
     font-family: Times New Roman;
   }
-  #msgcomposeWindow {
+  #msgcomposeWindow 
     #appcontent > editor > html > body:not(body > .moz-cite-prefix, body > blockquote) {
       font-size: 12px !important;
       font-family: Times New Roman;
-    }
   } */
 }

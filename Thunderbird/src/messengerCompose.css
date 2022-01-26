@@ -108,7 +108,7 @@ html#msgcomposeWindow .statusbar {
   list-style-image: url("./../images/print.png") !important;
 }
 /* ::::: format toolbar ::::: */
-#FormatToolbar > toolbarbutton:not(#AbsoluteFontSizeButton, #removeStylingButton) {
+#FormatToolbar > toolbarbutton:not(#AbsoluteFontSizeButton, #removeStylingButton, #ulButton, #olButton, #outdentButton, #indentButton, #AlignPopupButton) {
   list-style-image: url("./../images/format-buttons.png") !important;
 }
 #DecreaseFontSizeButton {
@@ -127,22 +127,24 @@ html#msgcomposeWindow .statusbar {
   -moz-image-region: rect(0px 80px 16px 64px);
 }
 #ulButton {
-  -moz-image-region: rect(0px 96px 16px 80px);
+  list-style-image: url("./../images/ul.png") !important;
+  /* -moz-image-region: rect(0px 96px 16px 80px); */
 }
 #olButton {
-  -moz-image-region: rect(0px 112px 16px 96px);
-}
-#olButton[disabled="true"] {
-  -moz-image-region: rect(32px 112px 48px 96px) !important;
+  list-style-image: url("./../images/ol.png") !important;
+  /* -moz-image-region: rect(0px 112px 16px 96px); */
 }
 #outdentButton {
-  -moz-image-region: rect(0px 128px 16px 112px);
+  list-style-image: url("./../images/outdent.png") !important;
+  /* -moz-image-region: rect(0px 128px 16px 112px); */
 }
 #indentButton {
-  -moz-image-region: rect(0px 144px 16px 128px);
+  list-style-image: url("./../images/indent.png") !important;
+  /* -moz-image-region: rect(0px 144px 16px 128px); */
 }
 #AlignPopupButton {
-  -moz-image-region: rect(0px 176px 16px 160px);
+  list-style-image: url("./../images/align_center.png") !important;
+  /* -moz-image-region: rect(0px 176px 16px 160px); */
 }
 #InsertPopupButton {
   -moz-image-region: rect(0px 256px 16px 240px);
@@ -151,20 +153,17 @@ html#msgcomposeWindow .statusbar {
   -moz-image-region: rect(0px 304px 16px 288px);
 }
 /* ..... align menu ..... */
-#AlignPopup > menuitem {
-  list-style-image: url("./../images/format-buttons.png") !important;
-}
 #AlignLeftItem, #AlignPopupButton[state="left"] {
-  -moz-image-region: rect(0px 160px 16px 144px) !important;
+  list-style-image: url("./../images/align_left.png") !important;
 }
 #AlignCenterItem, #AlignPopupButton[state="center"] {
-  -moz-image-region: rect(0px 176px 16px 160px) !important;
+  list-style-image: url("./../images/align_center.png") !important;
 }
 #AlignRightItem, #AlignPopupButton[state="right"] {
-  -moz-image-region: rect(0px 192px 16px 176px) !important;
+  list-style-image: url("./../images/align_right.png") !important;
 }
 #AlignJustifyItem, #AlignPopupButton[state="justify"] {
-  -moz-image-region: rect(0px 208px 16px 192px) !important;
+  list-style-image: url("./../images/align_justify.png") !important;
 }
 /* ..... insert menu ..... */
 #InsertPopup > menuitem {
