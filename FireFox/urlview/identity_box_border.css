@@ -1,0 +1,18 @@
+/*= Identity Box Border ======================================================================*/
+:root:is([style="--lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"], [style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
+  #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, :active, [open=true])::after,
+  #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not(:hover, :active, [open=true])::after {
+    /* Box Model */
+    content: "";
+    display: contents;
+    position: absolute;
+    /* Position */
+    top: calc((var(--urlbar-height) - 18px) / 2);
+    transform: translateX(5px);
+    /* Bar shape */
+    width: 1.75px;
+    height: 18px;
+    /* Bar Color */
+    opacity: var(--tab-separator-opacity);
+    background-color: rgb(150, 150, 150) !important;
+}

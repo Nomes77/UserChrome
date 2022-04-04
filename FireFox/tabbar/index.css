@@ -1,0 +1,16 @@
+/** Tab Bar - Connect to window ******************************************************/
+@import "./connect_to_window.css";
+/** Selected Tab *********************************************************************/
+@import "./selected_tab.css";
+/** Unselected Tab - Divide line ************************************* I'VE CHANGED **/
+@import "./unselected_tab.css";
+/** Unloaded Tab - Contents Opacity **************************************************/
+@import "./unload_tab.css";
+/** Clipped tabs ***************************************************** I'VE CHANGED **/
+@import "./clipped_tab.css";
+/** Sound Tab ******************************************************** I'VE CHANGED **/
+@import "./sound_tab/show_with_favicons.css";
+/** PictureInPicture Tab - Show PIP Icon ***************************** I'VE CHANGED **/
+@import "./picture_in_picture_tab.css";
+/** Container Tab - Color line at icon's bottom ********************** I'VE CHANGED **/
+@import "./container_tab.css";

@@ -1,0 +1,4 @@
+/* Unloaded Tab - Contents Opacity ************************************************************/
+#tabbrowser-tabs .tabbrowser-tab[pending] .tab-content {
+  opacity: 0.6;
+}

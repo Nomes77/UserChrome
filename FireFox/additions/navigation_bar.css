@@ -1,0 +1,73 @@
+/* NAVIGATION BAR HIDE ************************************************************************************/
+@import "navigation_bar_hide.css";
+/* NAVIGATION BAR *****************************************************************************************/
+#nav-bar-customization-target {
+  height: 40px !important;
+}
+/*= Margin nav bar icons =================================================================================*/
+#nav-bar-customization-target {
+  --margin-nav-bar-icons: 4px !important;
+}
+#back-button,
+#forward-button,
+#stop-reload-button {
+  margin-left: var(--margin-nav-bar-icons) !important;
+  margin-right: var(--margin-nav-bar-icons) !important;
+}
+/*= Nav bar icons ========================================================================================*/
+#back-button {
+  list-style-image: url("./../images/arrow-left.svg") !important;
+}
+#forward-button {
+  list-style-image: url("./../images/arrow-right.svg") !important;
+}
+#stop-button {
+  list-style-image: url("./../images/dismiss.svg") !important;
+}
+#reload-button {
+  list-style-image: url("./../images/reload.svg") !important;
+}
+#reload-button:not([displaystop]),
+#reload-button[displaystop] + #stop-button {
+  visibility: visible !important;
+}
+#downloads-button,
+#downloads-indicator-anchor {
+  list-style-image: url("./../images/downloads.svg") !important;
+}
+#history-panelmenu {
+  list-style-image: url("./../images/history.svg") !important;
+}
+#bookmarks-menu-button {
+  list-style-image: url("./../images/star-line-horizontal.svg") !important;
+}
+html[id="main-window"]:not([customizing="true"]) #bookmarks-menu-button {
+  transform: translateX(calc(2 * var(--toolbarbutton-inner-padding) + 2 * var(--toolbarbutton-outer-padding) + 16px)); /* compact 32px */
+}
+#nav-bar-overflow-button {
+  list-style-image: url("./../images/extension.svg") !important;
+}
+html[id="main-window"]:not([customizing="true"]) #nav-bar-overflow-button {
+  transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2 * var(--toolbarbutton-outer-padding) - 16px)); /* compact -32px */
+}
+html[id="main-window"][chromehidden=""] #PanelUI-button::before {
+  /* Box Model */
+  content: "";
+  display: block;
+  position: absolute;
+  /* Position */
+  top: calc(var(--urlbar-toolbar-height) / 4);
+  transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2.5 * var(--toolbarbutton-outer-padding) - 16px)); /* compact -33px */
+  /* Bar shape */
+  width: 1.75px;
+  height: calc(var(--urlbar-toolbar-height) / 2);
+  /* Bar Color */
+  background-color: rgb(218, 218, 218);
+}
+html[id="main-window"][chromehidden=""]:is([style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"]) #PanelUI-button::before {
+  /* Bar Color Dark Mode */
+  background-color: rgb(99, 99, 99) !important;
+}
+#PanelUI-menu-button {
+  list-style-image: url("./../images/menu-button.svg") !important;
+}

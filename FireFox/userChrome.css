@@ -1,0 +1,71 @@
+/* Firefox Proton userChrome.css tweaks **********************************************/
+/* Github: https://github.com/black7375/Firefox-UI-Fix/blob/master/userChrome.css ****/
+/** Default Theme - Contrast *********************************************************/
+@import "./theme/built_in.css";
+/** Theme - Compatibility ************************************************************/
+@import "./theme/theme_compatibility.css";
+/** System Default Theme *************************************************************/
+@import "./theme/system_default_theme.css";
+/** Fully Theme Mode *****************************************************************/
+/* Default Themes
+   https://github.com/mozilla/gecko-dev/blob/master/toolkit/mozapps/extensions/default-theme/manifest.json
+   https://github.com/mozilla/gecko-dev/blob/master/browser/themes/addons/light/manifest.json
+   https://github.com/mozilla/gecko-dev/blob/master/browser/themes/addons/dark/manifest.json
+*/
+/*= Default Colors - Hard Coded ========================= I'VE CHANGED =*/
+@import "./theme/proton_color.css";
+/*== Menu Color ========================================================*/
+@import "./theme/fully_color.css";
+/* Fully Dark Mode *******************************************************************/
+@import "./theme/fully_dark.css";
+/* Proton Theme Mode *****************************************************************/
+@import "./theme/proton_chrome.css";
+/** Decoration ***********************************************************************/
+@import "./decoration/index.css";
+/** Reduce Padding *************************************************** I'VE CHANGED **/
+@import "./padding/index.css";
+/** Tab Bar UI ******************************************************* I'VE CHANGED **/
+@import "./tabbar/index.css";
+/** URL View UI ****************************************************** I'VE CHANGED **/
+@import "./urlview/index.css";
+/** Fullscreen - Overlap toolbar *****************************************************/
+@import "./tabbar/fullscreen.css";
+/** Library - Icons Replace ****************************************** I'VE CHANGED **/
+@import "./library/chrome.css";
+/** Panel - Icons ********************************************************************/
+/*= Padding ============================================================*/
+@import "./panel/icon_padding.css";
+/*= Panel =============================================== I'VE CHANGED =*/
+@import "./icons/panel.css";
+/** Menu - Icons Layout ********************************************** I'VE CHANGED **/
+@import "./menu/icons_layout.css";
+/*= Bookmark Menu - Layout =============================================*/
+@import "./menu/bookmark_layout.css";
+/** Context Menu - Icons ********************************************* I'VE CHANGED **/
+@import "./icons/context_menu.css";
+/** Global Menu ****************************************************** I'VE CHANGED **/
+@import "./icons/global_menu.css";
+/** Library Menu ***************************************************** I'VE CHANGED **/
+@import "./icons/library.css";
+
+/* MY ADDITIONS based on: ************************************************************************/
+/* Github: https://raw.githubusercontent.com/sapierens/firefox-edge/master/FirefoxEdgeLight.css **/
+/* TABBROWSER-TAB ********************************************************************************/
+@import "./additions/tabbrowser_tab.css";
+/* NAVIGATION BAR ********************************************************************************/
+@import "./additions/navigation_bar.css";
+/* EXTENSION POPUP *******************************************************************************/
+@import "./additions/extension_popup.css";
+/* SIDEBAR ***************************************************************************************/
+@import "./additions/sidebar.css";
+/* MENU-LEFT *************************************************************************************/
+@import "./additions/menu_left.css";
+/* PRIVATE MODE **********************************************************************************/
+@import "./additions/private_mode.css";
+/* Other Problems ********************************************************************************/
+@import "./additions/others.css";
+
+@import "./additions/zavety_Chrome.css";
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+@namespace html "http://www.w3.org/1999/xhtml";

@@ -1,0 +1,46 @@
+/*= Tab Bar - Reduce Height, Show more contents =============================== I'VE CHANGED =*/
+/* for Extra Drag Space */
+@import url("./drag_space.css");
+/* Toolbar Height */
+#tabbrowser-arrowscrollbox {
+  --tabbar-max-height: 38px;
+  max-height: calc(var(--tabbar-max-height) + var(--space-above-tabbar));
+}
+:root[uidensity="compact"] #tabbrowser-arrowscrollbox {
+  --tabbar-max-height: 32px;
+}
+:root[uidensity="touch"] #tabbrowser-arrowscrollbox {
+  --tabbar-max-height: 45px;
+}
+:root {
+  --tab-min-height: 29px !important; /* Original 36px */
+}
+:root[uidensity=compact] {
+  --tab-min-height: 29px;
+}
+:root[uidensity=touch] {
+  --tab-min-height: 36px !important; /* Original 41px */
+}
+/* Scroll Button - Size Fix */
+:root #tabbrowser-arrowscrollbox {
+  --scrollbtn-vertical-padding: 3px;
+  --scrollbtn-vertical-border: 2px;
+  --scrollbtn-border-radius: 7px;
+}
+#scrollbutton-up,
+#scrollbutton-down {
+  /* Original: var(--toolbarbutton-inner-padding) calc(var(--toolbarbutton-inner-padding) - 6px) = 9px */
+  /* https://github.com/mozilla/gecko-dev/blob/71b1259afd1cdaf41871ae675c2dadb967ea5b34/browser/themes/shared/toolbarbuttons.inc.css#L142 */
+  padding-top: var(--scrollbtn-vertical-padding, var(--toolbarbutton-inner-padding)) !important;
+  padding-bottom: var(--scrollbtn-vertical-padding, var(--toolbarbutton-inner-padding)) !important;
+  /* Original: 4px */
+  border-top-width: var(--scrollbtn-vertical-border, 4px) !important;
+  border-bottom-width: var(--scrollbtn-vertical-border, 4px) !important;
+  /* Original: calc(var(--tab-border-radius) + 4px) = 8px */
+  border-radius: var(--scrollbtn-border-radius, calc(var(--tab-border-radius) + 4px)) !important;
+}
+:root[tabsintitlebar]:not([uidensity="compact"]) #toolbar-menubar[autohide="true"] {
+  height: calc(
+    var(--tab-min-height) - var(--tabs-navbar-shadow-size) - 2px
+  ); /* Compact: 28px, Normal: 33px, Touch: 38px */
+}

@@ -1,0 +1,13 @@
+/* for Extra Drag Space */
+@supports -moz-bool-pref("userChrome.padding.drag_space") {
+  :root {
+    --space-above-tabbar: 8px; /* If you want drag space, set to 8px */
+  }
+  :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"] {
+    height: calc(var(--tab-min-height) + var(--space-above-tabbar));
+  }
+  :root[sizemode="normal"][chromehidden~="menubar"] #TabsToolbar > .toolbar-items,
+  :root[sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar > .toolbar-items {
+    padding-top: var(--space-above-tabbar) !important;
+  }
+}

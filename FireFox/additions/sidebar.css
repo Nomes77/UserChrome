@@ -1,0 +1,7 @@
+/* SIDEBAR *******************************************************************/
+#sidebar-box[sidebarcommand="viewBookmarksSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon {
+  list-style-image: url("./../images/star-line-horizontal.svg") !important;
+}
+#sidebar-box[sidebarcommand="viewHistorySidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon {
+  list-style-image: url("./../images/history.svg") !important;
+}

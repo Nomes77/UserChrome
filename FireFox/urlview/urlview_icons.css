@@ -1,0 +1,95 @@
+/*= URL View Icons ===========================================================================*/
+:root:is([style="--lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"])
+  .urlbarView-favicon[src="page-icon:chrome://global/"],
+  .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+    fill: transparent !important;
+    background-image: url("./../images/globe-light.svg") !important;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#urlbar.searchButton > #urlbar-input-container > #urlbar-search-button {
+  background-image: url("./../images/search-glass.svg") !important;
+}
+#identity-icon {
+  list-style-image: url("./../images/info.svg") !important;
+}
+#identity-box[pageproxystate="valid"].chromeUI #identity-icon {
+  list-style-image: url("chrome://branding/content/icon16.png") !important;
+}
+@media (min-resolution: 1.1dppx) {
+  #identity-box[pageproxystate="valid"].chromeUI #identity-icon {
+    list-style-image: url("chrome://branding/content/icon32.png") !important;
+  }
+}
+#identity-box[pageproxystate="valid"].localResource #identity-icon {
+  list-style-image: url("./../images/document.svg") !important;
+}
+#urlbar:not(.searchButton) > #urlbar-input-container > #identity-box[pageproxystate="invalid"] #identity-icon {
+  list-style-image: url("./../images/search-glass.svg") !important;
+}
+#urlbar[actiontype="extension"] > #urlbar-input-container > #identity-box #identity-icon,
+#identity-box[pageproxystate="valid"].extensionPage #identity-icon {
+  list-style-image: url("./../images/extension.svg") !important;
+}
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon,
+#identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
+  list-style-image: url("./../images/lock.svg") !important;
+}
+#identity-box[pageproxystate="valid"].weakCipher #identity-icon,
+#identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon,
+#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon,
+#identity-box[pageproxystate="valid"].certUserOverridden #identity-icon,
+#identity-box[pageproxystate="valid"].certErrorPage #identity-icon {
+  list-style-image: url("./../images/warning-filled.svg") !important;
+  fill: var(--win-error-color) !important;
+}
+#identity-box[pageproxystate="valid"].notSecure #identity-icon,
+#identity-box[pageproxystate="valid"].mixedActiveContent #identity-icon,
+#identity-box[pageproxystate="valid"].httpsOnlyErrorPage #identity-icon {
+  list-style-image: url("./../images/warning-filled.svg") !important;
+}
+.identity-popup-security-connection {
+  background-image: url("./../images/warning-filled.svg") !important;
+}
+#identity-popup[connection=chrome] .identity-popup-security-connection {
+  background-image: url("chrome://branding/content/icon48.png") !important;
+}
+#identity-popup[connection=file] .identity-popup-security-connection {
+  background-image: url("./../images/document.svg") !important;
+}
+#identity-popup[connection^=secure] .identity-popup-security-connection {
+  background-image: url("./../images/lock.svg") !important;
+}
+#identity-popup[ciphers=weak] .identity-popup-security-connection,
+#identity-popup[mixedcontent~=passive-loaded][isbroken] .identity-popup-security-connection,
+#identity-popup[connection=secure-cert-user-overridden] .identity-popup-security-connection,
+#identity-popup[connection=cert-error-page] .identity-popup-security-connection {
+  background-image: url("./../images/warning-filled.svg") !important;
+  fill: var(--win-error-color) !important;
+}
+#identity-popup[connection=net-error-page] .identity-popup-security-connection {
+  background-image: url("./../images/info.svg") !important;
+}
+#identity-popup[mixedcontent~=active-loaded][isbroken] .identity-popup-security-connection {
+  background-image: url("chrome://browser/skin/controlcenter/mcb-disabled.svg") !important;
+}
+#identity-popup[connection=extension] .identity-popup-security-connection {
+  background-image: url("./../images/extension.svg") !important;
+}
+#urlbar-go-button {
+  visibility: collapse !important;
+}
+#pageAction-panel-bookmark,
+#star-button {
+  list-style-image: url("./../images/star-add.svg") !important;
+}
+#pageAction-panel-bookmark[starred],
+#star-button[starred] {
+  list-style-image: url("./../images/star-filled.svg") !important;
+}
+.urlbar-page-action,
+#urlbar-go-button,
+.search-go-button {
+  width: 22px !important; /* Changed because of --urlbar-min-height set to 32px instead of 26 px */
+  height: 22px !important;
+}

@@ -1,0 +1,4 @@
+/*= Tool Bar - Button Padding ================================================================*/
+:root[uidensity="compact"] {
+  --toolbarbutton-outer-padding: 2px !important; /* Original: 3px, General is 2px */
+}

@@ -1,0 +1,36 @@
+/*= URL Bar - MegaBar Style =================================================== I'VE CHANGED =*/
+@supports -moz-bool-pref("userChrome.padding.megabar_style") {
+  /*- General Preferences ------------------------------------------------------------*/
+  :root {
+    /* Number of pixels of enlargement when URL bar is focused */
+    --mbarstyler-popout-pixels: 0px; /* [0px - 7px] */
+    / * Font sizes (default: 13.8px for title, 10.2px for URL) */
+    --mbarstyler-title-font-size: 13.8px; /* [13px - 18px] */
+    --mbarstyler-url-font-size: 12.5px; /* [12px - 16px] */
+  }
+  /*- URL bar enlargement or lack thereof --------------------------------------------*/
+  /* Compute new position, width, and padding */
+  #urlbar[breakout][breakout-extend] {
+    left: calc(0px - var(--mbarstyler-popout-pixels)) !important;
+    width: calc(100% + (2 * var(--mbarstyler-popout-pixels))) !important;
+  }
+  /* Prevent shift of URL bar contents */
+  #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+    margin-bottom: calc(-3px + -1px + var(--mbarstyler-popout-pixels)) !important;
+  }
+  /*- Prevent top border line --------------------------------------------------------*/
+  #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
+    border-top: none !important;
+  }
+  /*- Font Sizes ---------------------------------------------------------------------*/
+  /* Title font-size */
+  .urlbarView-row .urlbarView-title {
+    font-size: var(--mbarstyler-title-font-size) !important;
+  }
+  /* URL + action font-size */
+  .urlbarView-row .urlbarView-secondary,
+  .urlbarView-row .urlbarView-url,
+  .urlbarView-row .urlbarView-action {
+    font-size: var(--mbarstyler-url-font-size) !important;
+  }
+}

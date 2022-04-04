@@ -1,0 +1,17 @@
+/** Clipped tabs - Always show tab icon  ************************************** I'VE CHANGED **/
+.tab-icon-image:not([src], [busy], [progress]) {
+  display: -moz-inline-box !important;
+}
+.tab-icon-image:not([src]),
+.tab-icon-image:-moz-broken {
+  content: url("./../../images/document.svg") !important;
+  /* list-style-image: url("./../../images/document.svg") !important; */
+}
+.tabbrowser-tab[label$=".pdf"] .tab-icon-image:not([src]) {
+  list-style-image: url("./../../images/pdf.svg") !important;
+}
+/*= Favicon New Tab ===========================================================================*/
+.tabbrowser-tab[label="Nieuw tabblad"] .tab-icon-image,
+.tabbrowser-tab[label="Privénavigatie"] .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
+  content: url("./../../images/new-tab.svg") !important;
+}

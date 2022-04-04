@@ -1,0 +1,13 @@
+/* PDF_Viewer ****************************************************************/
+@-moz-document regexp("^((file:\/\/\/)|(chrome:\/\/)).*\/$") {
+  :root {
+    --toolbarButton-menuArrow-icon: url("./../../images/menu.svg") !important;
+    --toolbarButton-zoomOut-icon:url("./../../images/zoom-out.svg") !important;
+    --toolbarButton-zoomIn-icon: url("./../../images/zoom-in.svg") !important;
+    --toolbarButton-print-icon: url("./../../images/print.svg") !important;
+    --toolbarButton-openFile-icon: url("./../../images/folder.svg") !important;
+    --toolbarButton-download-icon: url("./../../images/downloads.svg") !important;
+    --toolbarButton-bookmark-icon: url("./../../images/star-add.svg") !important;
+    --toolbarButton-search-icon: url("./../../images/search-glass.svg") !important;
+  }
+}
