@@ -1,0 +1,99 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  @media (-moz-windows-default-theme) {
+  /* MENU */
+  menu[disabled="true"],
+  menuitem[disabled="true"],
+  menu[_moz-menuactive="true"][disabled="true"],
+  menuitem[_moz-menuactive="true"][disabled="true"] {
+    opacity: var(--win-disabled-icon-opacity) !important;
+    background-color: unset !important;
+  }
+  /* ::::: menu/menuitem ::::: */
+  menubar > menu {
+    border: 1px solid transparent;
+    color: var(--win-black-color) !important;
+  }
+  menubar > menu:hover:not(:active,[open="true"],[disabled="true"]) {
+    background-color: unset !important;
+    background-image: var(--win-toolbarbutton-hover-background) !important;
+    border: 1px solid var(--win-menubar-border-color) !important;
+  }
+  menubar > menu:is(:active,[open="true"]) {
+    background-color: unset !important;
+    background-image: var(--win-button-active-background-open) !important;
+    border-bottom: 1px solid transparent !important;
+    border-top: 1px solid var(--win-menubar-border-color) !important;
+    border-left: 1px solid var(--win-menubar-border-color) !important;
+    border-right: 1px solid var(--win-menubar-border-color) !important;
+  }
+  menubar > menu > menupopup menu:hover:not([disabled="true"]),
+  menubar > menu > menupopup menuitem:hover:not([disabled="true"]),
+  menubar > menu > menupopup menuitem:active { /* --win-menuitem-active-background-color */
+    background-color: var(--win-menuitem-hover-background-color) !important;
+  }
+  /* ::::: menu/menuitems in popups ::::: */
+  menupopup {
+    border: 1px solid var(--panel-border-color) var(--panel-border-radius) !important;
+    --panel-border-radius: var(--win-border-radius) !important;
+    --panel-border-color: var(--win-menuitem-border-color) !important;
+  }
+  :is(panel, menupopup)::part(content) {
+    border-radius: var(--panel-border-radius);
+    border: 1px solid var(--win-menuitem-border-color) !important;
+  }
+  menupopup menu,
+  menupopup menuitem {
+    border: 1px solid transparent;
+    color: var(--lwt-text-color) !important;
+  }
+  menupopup menu:is(:hover,[open="true"]):not([disabled="true"]),
+  menupopup menuitem:is(:hover,[open="true"]):not([disabled="true"]) {
+    border: 1px solid var(--win-menuitem-border-color) !important;
+    background-color: var(--win-menuitem-hover-background-color) !important;
+    color: var(--win-black-color) !important;
+  }
+  menupopup menu:active:not([open="true"]),
+  menupopup menuitem:active {
+    border: 1px solid var(--win-menuitem-border-color) !important;
+    background-color: var(--win-menuitem-hover-background-color) !important; /* --win-menuitem-active-background-color */
+    color: var(--win-black-color) !important;
+  }
+  /* ::::: menu/menuitems in menulist popups ::::: */
+  menulist > menupopup > menuitem[_moz-menuactive="true"],
+  menulist > menupopup > menu[_moz-menuactive="true"],
+  menulist > menupopup > menuitem:is(:hover,:active),
+  menulist > menupopup > menu:is(:hover,:active) {
+    background-color: rgb(0, 120, 215) !important;
+    color: var(--win-white-color) !important;
+    border: 1px solid transparent !important;
+  }
+  @media (-moz-windows-non-native-menus) {
+    menupopup {
+      --panel-border-radius: var(--win-border-radius) !important;
+      border-radius: var(--win-border-radius) !important;
+    }
+  }
+  /* ::::: menulist popups (from 'messenger') ::::: */
+  menulist {
+    min-height: 20px !important;
+    margin-block: 2px !important;
+    border: 1px solid rgb(171, 173, 179) !important;
+    border-radius: var(--win-border-radius) !important;
+    background-color: var(--win-theme-color) !important;
+    transition: none !important;
+  }
+  /* Override the not existing rule in menu.css */
+  menulist:not([disabled="true"],[open="true"]):hover {
+    background-color: none !important;
+    border-color: var(--win-menuitem-border-color) !important;
+  }
+  menulist[open="true"] {
+    background-color: none !important;
+    background-image: var(--win-toolbarbutton-active-background) !important;
+    border-color: var(--win-menuitem-border-color) !important;
+  }
+  menulist[open="true"]:focus-within {
+    color: var(--win-black-color) !important;
+  }
+  }
+}

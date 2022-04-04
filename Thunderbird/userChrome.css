@@ -1,0 +1,29 @@
+/** VARIABLES ************************/
+@import "./src/variables.css";
+/** MESSENGER ************************/
+@import "./src/messenger.css";
+/** MENU *****************************/
+@import "./src/menu.css";
+/** FOLDERPANE ***********************/
+@import "./src/folderPane.css";
+/** MAILWINDOW ***********************/
+@import "./src/mailWindow.css";
+/** TREE *****************************/
+@import "./src/tree.css";
+/** TABMAIL **************************/
+@import "./src/tabmail.css";
+/** TOOLBAR **************************/
+@import "./src/toolbar.css";
+/** PANELUI **************************/
+@import "./src/panelUi.css";
+/** MESSAGEWINDOW ********************/
+@import "./src/messageWindow.css";
+/** MESSAGEHEADER ********************/
+@import "./src/messageHeader.css";
+/** MESSENGERCOMPOSE *****************/
+@import "./src/messengerCompose.css";
+/** EXTENSIONS ***********************/
+@import "./src/extensions.css";
+
+/** ICONS ****************************/
+@import "./src/icons.css";

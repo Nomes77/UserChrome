@@ -1,0 +1,69 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  @media (-moz-windows-default-theme) {
+    /** VARIABLES **********************************************************************/
+    :host, :root {
+      --lwt-text-color: rgb(0, 0, 0) !important;
+      --lwt-toolbar-field-focus-color: rgb(0, 0, 0) !important;
+      --sidebar-text-color: rgb(0, 0, 0) !important;
+      --win-theme-color: rgb(255, 255, 255);
+      --win-black-color: rgb(0, 0, 0);
+      --win-white-color: rgb(255, 255, 255);
+      --win-toolbox-background-color: unset;
+      --win-toolbox-background-image: linear-gradient(to right, rgb(158, 190, 245), rgb(158, 190, 245), rgb(195, 217, 250), rgb(195, 217, 250), rgb(195, 217, 250));
+      --win-toolbar-background-color: none;
+      --win-toolbar-background-image: linear-gradient(rgb(221, 235, 254), rgb(131, 170, 227));
+      --win-menubar-border-color: rgb(0, 0, 128);
+      --win-menuitem-border-color: var(--win-menubar-border-color);
+      --win-menuitem-hover-background-color: rgb(255, 238, 193);
+      --win-menuitem-active-background-color: rgb(254, 162, 95);
+      --win-menuitem-disabled-hover-background-color: unset;
+      --win-toolbarbutton-hover-background: linear-gradient(rgb(255, 248, 211), rgb(255, 208, 145));
+      --win-toolbarbutton-active-background: linear-gradient(rgb(254, 138, 72), rgb(255, 208, 145));
+      --win-toolbarbutton-checked-background: linear-gradient(rgb(255, 215, 143), rgb(255, 172, 85));
+      --win-button-active-background-open: linear-gradient(rgb(227, 239, 255), rgb(129, 168, 225));
+      --win-window-dark-blue-border: 1px rgb(0, 45, 150) solid;
+      --win-disabled-icon-opacity: 0.6;
+      --win-border-radius: 0px;
+      --win-toolbar-height: 24px;
+      --win-menu-toolbar-space: 2px;
+      --win-header-background-color: rgb(240, 240, 240);
+    }
+    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+      :host, :root {
+        --lwt-text-color: rgb(255, 255, 255) !important;
+        --lwt-toolbar-field-focus-color: rgb(255, 255, 255) !important;
+        --sidebar-text-color: rgb(255, 255, 255) !important;
+        --win-theme-color: rgb(0, 0, 0);
+        --win-menuitem-border-color: rgb(0, 255, 0);
+        --win-header-background-color: rgb(15, 15, 15);
+       }
+    }
+    /** COMMON *************************************************************************/
+    :host, :root {
+      --in-content-button-background: rgb(225, 225, 225) !important;
+      --in-content-button-background-hover: rgb(229, 241, 251) !important;
+      --in-content-button-background-active: rgb(204, 228, 247) !important;
+      --in-content-button-border-radius: 0px !important;
+      --in-content-focus-outline-color: var(--button-border-color) !important;
+    }
+    /** GLOBAL *************************************************************************/
+    :root {
+      --arrowpanel-border-radius: 4px !important;
+      --arrowpanel-padding: 8px !important;
+      --arrowpanel-dimmed: var(--win-menuitem-hover-background-color) !important;
+      --arrowpanel-dimmed-further: var(--win-menuitem-active-background-color) !important;
+      --arrowpanel-dimmed-even-further: var(--win-menuitem-active-background-color) !important;
+    }
+    @media (-moz-windows-non-native-menus) {
+      :host, :root {
+        /* Override some menu color variables for light browser themes. */
+        --menuitem-hover-background-color: var(--win-menuitem-hover-background-color) !important;
+        --menuitem-disabled-hover-background-color: var(--win-menuitem-disabled-hover-background-color) !important;;
+        --menu-border-color: var(--win-border-color) !important;
+        /* Declare menu colors for dark themes, but don't override anything yet. */
+        --dark-menuitem-hover-background-color: var(--win-menuitem-hover-background-color) !important;
+        --dark-menuitem-disabled-hover-background-color: var(--win-menuitem-disabled-hover-background-color) !important;
+      }
+    }
+  }
+}

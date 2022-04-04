@@ -1,0 +1,9 @@
+/** FOLDERPANE ***********************/
+@import "./src/folderPane.css";
+/** MESSAGE **************************/
+@import "./src/message.css";
+/** PREFERENCES **********************/
+@import "./src/preferences.css";
+
+/** ICONS ****************************/
+@import "./src/icons.css";

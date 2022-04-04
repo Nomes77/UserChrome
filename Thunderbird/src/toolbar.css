@@ -1,0 +1,55 @@
+/** TOOLBAR ****************************************************************************/
+@supports -moz-bool-pref("outlook2003.theme") {
+  @media (-moz-windows-default-theme) {
+    /* ToolBox */
+    #navigation-toolbox,
+    .mail-toolbox,
+    #compose-toolbox,
+    #ab-toolbox,
+    #tabs-toolbar {
+      background-color: var(--win-toolbox-background-color) !important;
+      background-image: var(--win-toolbox-background-image) !important;
+      color: var(--win-black-color) !important;
+    }
+    .mail-toolbox,  /* Somehow it has a strange double border, don't know how to fix */
+    #compose-toolbox,
+    #ab-toolbox {
+      border-bottom: var(--win-window-dark-blue-border) !important;
+    }
+    /* ToolBar Height */
+    toolbox > toolbar:not([type="menubar"]) {
+      height: var(--win-toolbar-height);
+    }
+    #compose-toolbox > toolbar:not([type="menubar"]) toolbarbutton {
+      max-height: calc(var(--win-toolbar-height) - 2px);
+    }
+    .mail-toolbox > toolbar:not([type="menubar"]),
+    #compose-toolbox > toolbar:not([type="menubar"]),
+    #ab-toolbox > toolbar:not([type="menubar"]) {
+      padding: 1px 1px !important;
+    }
+    /* Margin Left of ToolBar */
+    #tabs-toolbar {
+      padding-left: var(--win-menu-toolbar-space) !important;
+    }
+    :is(#navigation-toolbox, #compose-toolbox, #ab-toolbox) > toolbar > #menubar-items {
+      margin-left: var(--win-menu-toolbar-space) !important;
+    }
+    .mail-toolbox > toolbar:not([type="menubar"]) {
+      margin-left: calc(var(--win-menu-toolbar-space) - 1px) !important;
+    }
+    #mailContent > #mail-toolbox > toolbar:not([type="menubar"]) {
+      margin-left: calc(var(--win-menu-toolbar-space) - 3px) !important;
+    }
+    #compose-toolbox > toolbar:not([type="menubar"]),
+    #ab-toolbox > toolbar:not([type="menubar"]) {
+      padding-left: var(--win-menu-toolbar-space) !important;
+    }
+    /* ToolBar Background */
+    .mail-toolbox > toolbar:not([type="menubar"]),
+    #compose-toolbox > toolbar:not([type="menubar"]),
+    #ab-toolbox > toolbar:not([type="menubar"]) {
+      background-image: var(--win-toolbar-background-image) !important;
+    }
+  }
+}
