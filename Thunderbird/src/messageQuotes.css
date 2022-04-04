@@ -1,8 +1,0 @@
-@supports -moz-bool-pref("outlook2003.theme") {
-  /* MESSAGEQUOTES */
-  /* blockquote[type=cite] {
-    color: black !important;
-    border: none !important;
-    padding: 0.4ex 0ex !important;
-  } */
-}
