@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .style-puzzle-piece {
+        fill: url('#gradient-linear-puzzle-piece');
+      }
+      .style-badge-shadow {
+        fill: #0d131a;
+        fill-opacity: .15;
+      }
+      .style-badge-background {
+        fill: #fff;
+      }
+      .style-badge-inside {
+        fill: #55cc3d;
+      }
+      .style-badge-icon {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="gradient-linear-puzzle-piece" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#66cc52" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#60bf4c" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <path class="style-puzzle-piece" d="m37.32092,0a9.21735,7.86838 0 0 1 9.21735,7.86838l-0.00373,1.68836l13.1767,0a3.73172,3.18558 0 0 1 3.73172,3.18558l-0.00373,11.14634l-5.70953,0.00319a9.21735,7.86838 0 0 0 -9.19496,7.34913l-0.01866,0.51925l0,0.19113a9.21735,7.86838 0 0 0 8.60908,7.85245l0.60827,0.01593l5.7058,-0.00319l0.00373,11.16227a3.73172,3.18558 0 0 1 -3.73172,3.18558l-13.1767,-0.00319l0,1.68199a9.21735,7.86838 0 1 1 -18.43096,0l0,-1.68199l-13.17297,0a3.73172,3.18558 0 0 1 -3.73172,-3.18558l-0.00373,-11.24828l-1.97781,0a9.21735,7.86838 0 0 1 0,-15.73676l1.98154,0l0,-11.24828a3.73172,3.18558 0 0 1 3.73172,-3.18558l13.17297,0l0,-1.68836a9.21735,7.86838 0 0 1 9.21735,-7.86838z"/>
+  <svg width="32" height="32" x="32" y="0">
+    <ellipse class="style-badge-shadow" rx="14" ry="15" cx="16" cy="17"/>
+    <circle class="style-badge-background" r="15" cy="15" cx="16"/>
+    <circle class="style-badge-inside" r="12" cy="15" cx="16"/>
+    <path class="style-badge-icon" d="M22.7,16.1l-5.6,5.5C16.8,21.9,16.4,22,16,22c-0.4,0-0.7-0.1-1-0.4 l-5.6-5.5C8.8,15.5,8.9,15,9.8,15l3.2,0V9c0-0.6,0.5-1,1.1-1h4c0.6,0,1,0.4,1,1v6h3.2C23.1,15,23.3,15.5,22.7,16.1z"/>
+  </svg>
+</svg>
