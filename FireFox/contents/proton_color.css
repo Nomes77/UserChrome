@@ -1,0 +1,13 @@
+/*= Proton color ============================================== I'VE CHANGED =*/
+@-moz-document url-prefix("about:"),
+               url-prefix("view-source"),
+               regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
+  @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent") {
+    :host,
+    :root {
+      --in-content-primary-button-background: -moz-accent-color !important;
+      --in-content-primary-button-background-hover: color-mix(in srgb, black 10%, -moz-accent-color) !important;
+      --in-content-primary-button-background-active: color-mix(in srgb, black 20%, -moz-accent-color) !important;
+    }
+  }
+}

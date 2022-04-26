@@ -1,0 +1,31 @@
+/* Private Mode **********************************************************************/
+@supports -moz-bool-pref("userChrome+Content.additions.private_mode") {
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    .tab-background:is([selected], [multiselected]),
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    .browser-toolbar:not(.titlebar-color) {
+      background-color: black !important;
+  }
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    toolbar#nav-bar.browser-toolbar toolbarbutton:not(:hover, :active, [open="true"]) {
+      fill: white !important;
+  }
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    tab:is([selected]) > stack::before,
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    tab:is([selected]) > stack::after {
+      fill: black !important;
+  }
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    .tabbrowser-tab .tab-icon-image,
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    .tabbrowser-tab > .tab-stack > .tab-content:not([pinned]),
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    .tabbrowser-tab[pinned][visuallyselected]:hover .close-icon {
+      color: white !important;
+  }
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
+      color: black !important;
+  }
+}

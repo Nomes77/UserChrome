@@ -1,0 +1,46 @@
+/** Rounding ********************************************************** I'VE CHANGED */
+@supports -moz-bool-pref("userChrome+Content.rounding.square") {
+  :root {
+    --tab-border-radius: 0 !important;
+    --toolbarbutton-border-radius: 0 !important;
+    --panel-border-radius 0 !important;
+    /* Original: 4px */
+    --arrowpanel-border-radius: 0 !important;
+    --arrowpanel-menuitem-border-radius: 0 !important;
+    --subviewbutton-border-radius: 0 !important;
+  }
+  button {
+    border-radius: 0 !important;
+  }
+  #tabbrowser-tabs {
+    --tab-corner-rounding: 0px !important;
+  }
+  /* Fix Tab bar button radius */
+  #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button) > .toolbarbutton-icon,
+  #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button) > .toolbarbutton-text,
+  #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button) > .toolbarbutton-badge-stack,
+  .tab-close-button {
+    --tab-border-radius: var(--toolbarbutton-border-radius) !important;
+  }
+  #tabs-newtab-button > .toolbarbutton-icon {
+    border-radius: 0 !important;
+  }
+  xul|menupopup {
+    border-radius: 0 !important;
+  }
+  xul|menulist:not([native]),
+  xul|menulist > xul|menupopup xul|menu,
+  xul|menulist > xul|menupopup xul|menuitem {
+    border-radius: 0 !important;
+  }
+  html|select[size][multiple],
+  xul|listheader,
+  xul|richlistbox,
+  html|input {
+    border-radius: 0 !important;
+  }
+  .checkbox-check,
+  xul|*.radio-check {
+    border-radius: 0 !important;
+  }
+}

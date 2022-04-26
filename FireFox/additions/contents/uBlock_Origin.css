@@ -1,0 +1,13 @@
+/* uBlock Origin *********************************************************************/
+@-moz-document url-prefix("moz-extension://48257024-52cf-4295-81fc-991effeb0c07") {
+  @supports -moz-bool-pref("userChrome+Content.additions.uBlock_Origin.hide_default_unused") {
+    body.hideUnused div#lists > .groupEntry.hideUnused > .listEntries > .listEntry.isDefault.unused {
+      display: none !important;
+    }
+  }
+  @supports -moz-bool-pref("userChrome+Content.additions.uBlock_Origin.show_shortcuts") {
+    .tabButton[data-pane="shortcuts.html"] {
+      display: inline-block !important;
+    }
+  }
+}

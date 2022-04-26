@@ -1,0 +1,27 @@
+/* About_Config **********************************************************************/
+@-moz-document url("about:config") {
+  .title {
+    background-image: url("./../../images/warning-filled.svg") !important;
+  }
+  #about-config-search {
+    background-image: url("./../../images/search-glass.svg") !important;
+  }
+  .button-add {
+    background-image: url("./../../images/add.svg") !important;
+  }
+  .button-save {
+    background-image: url("./../../images/check.svg") !important;
+   }
+  .button-edit {
+    background-image: url("./../../images/edit.svg") !important;
+  }
+  .button-toggle {
+    background-image: url("chrome://global/content/aboutconfig/toggle.svg");
+  }
+  .button-delete {
+    background-image: url("./../../images/delete.svg") !important;
+  }
+  .button-reset {
+     background-image: url("./../../images/undo.svg") !important;
+  }
+}

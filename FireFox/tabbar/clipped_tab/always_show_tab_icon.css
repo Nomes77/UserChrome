@@ -1,0 +1,43 @@
+/*- Clipped tabs - Always show tab icon  ----------------------------- I'VE CHANGED -*/
+.tab-icon-image:not([src], [busy], [progress]) {
+  display: -moz-inline-box !important;
+}
+.tabbrowser-tab[label="Nieuw tabblad"] .tab-icon-image,
+.tabbrowser-tab[label="Privénavigatie"] .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
+  content: url("./../../images/new-tab.svg") !important;
+}
+.tab-icon-image:not([src]),
+.tab-icon-image:-moz-broken {
+  content: url("./../../images/document.svg") !important;
+}
+.tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("./../../images/settings.svg") !important; 
+}
+.tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
+  content: url("./../../images/extension.svg") !important;
+}
+.tab-icon-image[src="chrome://global/skin/icons/info.svg"] {
+  content: url("./../../images/info.svg") !important;
+}
+.tabbrowser-tab[label$=".pdf"] .tab-icon-image:not([src]) {
+  list-style-image: url("./../../images/pdf.svg") !important;
+}
+.tabbrowser-tab[label="Geavanceerde voorkeuren"] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("./../../images/ion.svg") !important;
+}
+.tabbrowser-tab[label="Downloads"] .tab-icon-image {
+  content: url("./../../images/downloads.svg") !important;
+}
+.bookmark-item {
+  list-style-image: url("./../../images/document.svg") !important;
+}
+treechildren::-moz-tree-image(title) {
+  list-style-image: url("./../../images/document.svg") !important;
+}
+/* All Tabs Icons */
+.all-tabs-button {
+  list-style-image: url("./../../images/document.svg") !important;
+}
+.all-tabs-button[label="Nieuw tabblad"] {
+  list-style-image: url("./../../images/new-tab.svg") !important;
+}

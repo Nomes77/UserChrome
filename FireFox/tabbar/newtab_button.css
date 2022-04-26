@@ -1,0 +1,16 @@
+/*= New tab button =================================================== I'VE CHANGED =*/
+#tabs-newtab-button > .toolbarbutton-icon {
+  margin-left: 1px;
+  border-radius: 2px;
+}
+:root:not([uidensity="touch"]) #tabs-newtab-button > .toolbarbutton-icon {
+  --toolbarbutton-inner-padding: calc((var(--tab-min-height) - 16px) / 2 - 2px);
+}
+:root[uidensity="touch"] #tabs-newtab-button > .toolbarbutton-icon {
+  --toolbarbutton-inner-padding: 9px; /* Photon: 9px */
+}
+/* Icon */
+#tabs-newtab-button,
+#TabsToolbar #new-tab-button {
+  list-style-image: url("./../images/add.svg") !important;
+}
