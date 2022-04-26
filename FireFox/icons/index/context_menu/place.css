@@ -1,0 +1,72 @@
+/*= placeContext ====================================================================*/
+#placesContext_open {
+  /* --menuitem-image: url("./../images/link-square.svg"); */
+}
+#placesContext_openBookmarkContainer\:tabs,
+#placesContext_openBookmarkLinks\:tabs {
+  --menuitem-image: url("./../images/window-new.svg");
+}
+#placesContext_open\:newtab,
+#placesContext_openContainer\:tabs,
+#placesContext_openLinks\:tabs {
+  --menuitem-image: url("./../images/new-tab.svg");
+}
+#placesContext_open\:newwindow {
+  --menuitem-image: url("./../images/window.svg");
+}
+#placesContext_open\:newprivatewindow {
+  --menuitem-image: url("./../images/privateBrowsing.svg");
+}
+#placesContext_show_bookmark\:info,
+#placesContext_show\:info {
+  --menuitem-image: url("./../images/edit.svg");
+}
+#placesContext_show_folder\:info {
+  --menuitem-image: url("./../images/rename.svg"); /* Has to be "Change Name" */
+}
+#placesContext_deleteBookmark,
+#placesContext_deleteFolder,
+#placesContext_delete,
+#placesContext_delete_history {
+  --menuitem-image: url("./../images/delete.svg");
+}
+#placesContext_deleteHost {
+  --menuitem-image: url("./../images/eye-hide.svg");
+}
+#placesContext_sortBy\:name {
+  --menuitem-image: url("./../images/arrow-sort.svg");
+}
+#placesContext_cut {
+  --menuitem-image: url("./../images/edit-cut.svg");
+}
+#placesContext_copy {
+  --menuitem-image: url("./../images/edit-copy.svg");
+}
+#placesContext_paste_group {
+  --menuitem-image: url("./../images/edit-paste.svg");
+}
+#placesContext_new\:bookmark {
+  --menuitem-image: url("./../images/star-add.svg");
+}
+#placesContext_new\:folder {
+  --menuitem-image: url("./../images/folder-add.svg");
+}
+#placesContext_new\:separator {
+  --menuitem-image: url("./../images/vertical-line.svg");
+}
+#placesContext_paste {
+  --menuitem-image: url("./../images/edit-paste.svg");
+}
+#placesContext_createBookmark {
+  --menuitem-image: url("./../images/star-add.svg");
+}
+#show-other-bookmarks_PersonalToolbar {
+  /* checkbox */
+  /* --menuitem-image: url("./../images/star-line-horizontal.svg"); */
+}
+#placesContext_showAllBookmarks {
+  --menuitem-image: url("./../images/star-line-horizontal.svg"); /* chrome://browser/skin/bookmark-star-on-tray.svg */
+}
+.openintabs-menuitem {
+  --menuitem-image: url("./../images/window-new.svg");
+}
