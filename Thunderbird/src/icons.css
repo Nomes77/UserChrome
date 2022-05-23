@@ -468,6 +468,18 @@
   #InsertTableItem {
     -moz-image-region: rect(0px 288px 16px 272px) !important;
   }
+  /* Dark Mode */
+  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+    #FormatToolbar > toolbarbutton:is(#DecreaseFontSizeButton, #IncreaseFontSizeButton, #boldButton, #italicButton, #underlineButton, #ulButton, 
+       #olButton, #outdentButton, #indentButton, #AlignPopupButton):not(:hover:not([disabled="true"]:hover), [open="true"]) .toolbarbutton-icon,
+    #AbsoluteFontSizeButton:not([disabled="true"]):is(:hover, [open="true"]) > .toolbarbutton-icon,
+    #removeStylingButton:not([disabled="true"]):hover > .toolbarbutton-icon,
+    .formatting-button:not(:hover:not([disabled="true"]:hover), [open="true"]) > .toolbarbutton-menu-dropmarker,
+    #AlignPopupButton menuitem:not([disabled="true"], :hover, :active) .menu-iconic-icon,
+    #InsertPopup > menuitem:not([disabled="true"],:hover, :active):is(#InsertHRuleItem, #InsertTableItem) .menu-iconic-icon {
+      filter: invert(1);
+    }
+  }
 /** ADDRESSBOOK *******************************************************************/
   /* ::::: primary toolbar buttons ::::: */
   #button-newcard {

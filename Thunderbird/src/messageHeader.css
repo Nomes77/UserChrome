@@ -19,7 +19,8 @@
     #expandedHeadersTopBox th,
     #expandedHeadersBottomBox th {
       text-align: start !important;
-      min-width: 80px !important;
+      min-width: 85px !important;
+      max-height: 85px !important;
     }
     /* #expandedHeadersTopBox label.headerName,
     #expandedHeadersBottomBox label.headerName {

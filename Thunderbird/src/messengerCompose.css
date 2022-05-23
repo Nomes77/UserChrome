@@ -46,5 +46,11 @@
     .address-pill:not([selected], :hover, :focus, .editing, .invalid-address) {
       background-color: transparent !important;
     }
+    #addressingWidgetSwappableLabels label:is(:hover, :active),
+    #extraRecipientsLabel:is(:hover, :active),
+    #extraRecipientsPanel label:is(:hover, :active),
+    #FormatToolbox menulist:not([disabled="true"]):is(:hover, :active, [open="true"]) {
+      color: var(--win-black-color) !important;
+    }
   }
 }
