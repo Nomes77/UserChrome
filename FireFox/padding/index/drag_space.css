@@ -3,11 +3,18 @@
   :root {
     --space-above-tabbar: 8px; /* If you want drag space, set to 8px */
   }
-  :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"] {
-    height: calc(var(--tab-min-height) + var(--space-above-tabbar));
+  @media (-moz-os-version: windows-win10), (-moz-platform: windows-win10) {
+    :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"] {
+      height: calc(var(--tab-min-height) + var(--space-above-tabbar) - var(--tabs-navbar-shadow-size));
+    }
   }
-  :root[sizemode="normal"][chromehidden~="menubar"] #TabsToolbar > .toolbar-items,
-  :root[sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar > .toolbar-items {
-    padding-top: var(--space-above-tabbar) !important;
+  @media (-moz-os-version: windows-win8), (-moz-platform: windows-win8),
+    (-moz-os-version: windows-win10), (-moz-platform: windows-win10),
+    (-moz-gtk-csd-available) {
+    /* Add extra space to titlebar for dragging */
+    :root[sizemode="normal"][chromehidden~="menubar"] #TabsToolbar > .toolbar-items,
+    :root[sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar > .toolbar-items {
+      padding-top: var(--space-above-tabbar) !important;
+    }
   }
 }

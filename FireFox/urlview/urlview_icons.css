@@ -13,9 +13,6 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-#urlbar.searchButton > #urlbar-input-container > #urlbar-search-button {
-  background-image: url("./../images/search-glass.svg") !important;
-}
 #identity-icon {
   list-style-image: url("./../images/info.svg") !important;
 }
@@ -82,8 +79,15 @@
 #identity-popup[connection=extension] .identity-popup-security-connection {
   background-image: url("./../images/extension.svg") !important;
 }
+/* URLbar-Searchbar */
+#urlbar.searchButton > #urlbar-input-container > #urlbar-search-button {
+  background-image: url("./../images/search-glass.svg") !important;
+}
 #urlbar-go-button {
   visibility: collapse !important;
+}
+#urlbar-search-mode-indicator-close {
+  background-image: url("./../images/dismiss.svg") !important;
 }
 #pageAction-panel-bookmark,
 #star-button {
@@ -98,4 +102,11 @@
 .search-go-button {
   width: 22px !important; /* Changed because of --urlbar-min-height set to 32px instead of 26 px */
   height: 22px !important;
+}
+#urlbar-go-button,
+.search-go-button {
+  list-style-image: url("./../images/arrow-right.svg") !important;
+}
+.searchbar-search-icon {
+  list-style-image: url("./../images/search-glass.svg") !important;
 }

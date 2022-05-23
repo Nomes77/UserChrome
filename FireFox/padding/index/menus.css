@@ -8,6 +8,14 @@
 :root[uidensity="touch"] {
   --menu-padding: 0.5em;
 }
+@supports -moz-bool-pref("userChrome+Content.padding.menu_compact") {
+  :root {
+    --menu-padding: 2px;
+  }
+  :root[uidensity="compact"] {
+    --menu-padding: 0px;
+  }
+}
 menupopup:not(.in-menulist) > menuitem,
 menupopup > menu {
   /* Original: 0.5em */
@@ -28,11 +36,25 @@ menupopup > menu {
 :root[uidensity="compact"] {
   --bookmark-menu-padding: 1.5px;
 }
-:root:not([uidensity="touch"]) #BMB_bookmarksPopup .subviewbutton,
+@supports -moz-bool-pref("userChrome+Content.padding.menu_compact") {
+  :root {
+    --bookmark-menu-padding: 2px;
+  }
+  :root[uidensity="compact"] {
+    --bookmark-menu-padding: 0px;
+  }
+}
 :root:not([uidensity="touch"]) #BMB_bookmarksPopup .subviewbutton,
 :root:not([uidensity="touch"]) #PlacesToolbar menupopup[placespopup] .bookmark-item,
 :root:not([uidensity="touch"]) #PlacesToolbar menupopup[placespopup] .openintabs-menuitem {
   padding-block: var(--bookmark-menu-padding) !important;
+}
+@supports -moz-bool-pref("userChrome+Content.padding.menu_compact") or -moz-bool-pref("userChrome+Content.padding.bookmark_menu.compact") {
+  :root:not([uidensity="touch"]) #BMB_bookmarksPopup .bookmark-item,
+  :root:not([uidensity="touch"]) #PlacesToolbar menupopup[placespopup] .bookmark-item {
+    min-height: unset !important;
+    /* Original: 24px */
+  }
 }
 /*= Global Menu - Set Padding =======================================================*/
 /* Menubar item padding */

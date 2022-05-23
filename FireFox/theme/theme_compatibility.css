@@ -32,21 +32,27 @@ menu[disabled="true"] {
   background-color: transparent !important;
 }
 /*= Remove Tab Border ==================================================*/
-/* Light Theme */
+#TabsToolbar[brighttext]
+  #tabbrowser-tabs:not([noshadowfortests])
+  .tabbrowser-tab:is([visuallyselected="true"], [multiselected])
+  > .tab-stack
+  > .tab-background:-moz-lwtheme,
 #TabsToolbar:not([brighttext])
   #tabbrowser-tabs:not([noshadowfortests])
   .tabbrowser-tab:is([visuallyselected="true"], [multiselected])
   > .tab-stack
   > .tab-background {
-  border: unset !important; /* Nigtly 96:  1px solid var(--tab-line-color, rgba(128,128,142,0.9)); */
+  /* Nigtly 96:  1px solid var(--tab-line-color, rgba(128,128,142,0.9)); */
+  border: unset !important;
 }
-/* Dark Theme */
-#TabsToolbar[brighttext]
-  #tabbrowser-tabs:not([noshadowfortests])
-  .tabbrowser-tab:is([visuallyselected="true"], [multiselected])
-  > .tab-stack
-  > .tab-background:-moz-lwtheme {
-  border: unset !important; /* Nigtly 96: 1px solid var(--tab-line-color, rgba(128,128,142,0.9)) */
+#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon:-moz-lwtheme,
+.tab-background[selected]:-moz-lwtheme {
+  // Nightly 102: outline: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor));
+  outline-color: transparent !important;
+}
+.keyboard-focused-tab > .tab-stack > .tab-background,
+.tabbrowser-tab:focus:not([aria-activedescendant]) > .tab-stack > .tab-background {
+  outline: var(--focus-outline) !important;
 }
 /*= Light Weight Theme =================================================*/
 /* Header Image */

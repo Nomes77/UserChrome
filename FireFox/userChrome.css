@@ -46,17 +46,19 @@
 @import "./icons/layout_menu.css";
 /*= Bookmark Menu - Layout =============================================*/
 @import "./icons/layout_bookmark_menu.css";
+/** Toolbarbutton - Icons Layout *************************************** I'VE ADDED **/
+@import "./icons/layout_toolbarbuttons.css";
 /** Icons ************************************************************ I'VE CHANGED **/
 @import "./icons/index.css";
 /** Libray Menu ****************************************************** I'VE CHANGED **/
 @import "./icons/library.css";
+/** Toolbarbutton Icons ************************************************ I'VE ADDED **/
+@import "./icons/toolbarbuttons.css";
 
 /* MY ADDITIONS based on: ************************************************************************/
 /* Github: https://raw.githubusercontent.com/sapierens/firefox-edge/master/FirefoxEdgeLight.css **/
 /* TITLE BAR *************************************************************************************/
 @import "./additions/titlebar.css";
-/* NAVIGATION BAR ********************************************************************************/
-@import "./additions/navigation_bar.css";
 /* TABBROWSER-TAB ********************************************************************************/
 @import "./additions/tabbrowser_tab.css";
 /* EXTENSION POPUP *******************************************************************************/
