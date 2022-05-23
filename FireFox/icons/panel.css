@@ -100,7 +100,7 @@ panelMenuBookmarkThisPage[starred] {
   list-style-image: url("./../images/restore-session.svg");
 }
 #appMenuClearRecentHistory {
-  list-style-image: url("./../images/history.svg");
+  list-style-image: url("./../images/delete.svg");
 }
 #PanelUI-historyMore {
   list-style-image: url("./../images/history.svg");

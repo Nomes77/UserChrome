@@ -1,18 +1,24 @@
 /* EXTENSION POPUP *******************************************************************/
 popupset#mainPopupSet > panel.browser-extension-panel,
-popupset > panel#widget-overflow:not([mainviewshowing="true"]),
-toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-panel[viewId^="PanelUI-webext-"][viewId$="browser-action-view"] {
+popupset > panel#widget-overflow:not([mainviewshowing="true"]) {
   transform: scale(80%) !important;
   transform-origin: top right !important;
-}
-panel#widget-overflow vbox.panel-arrowcontainer > box.panel-arrowbox {
-  max-width: max-content !important;
-}
-panelmultiview[mainViewId="widget-overflow-mainView"] panelview.PanelUI-subView {
-  min-width: 550px !important;
 }
 panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarseparator,
 panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarbutton#overflowMenu-customize-button {
   display: none !important;
   visibility: collapse !important;
+}
+
+panel#widget-overflow vbox.panel-arrowcontainer > box.panel-arrowbox {
+  max-width: max-content !important;
+}
+toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-panel[viewId^="PanelUI-webext-"][viewId$="browser-action-view"] {
+  transform: scale(80%) !important;
+  transform-origin: top right !important;
+}
+
+/* Audio Equalizer */
+panelmultiview[mainViewId="widget-overflow-mainView"] panelview.PanelUI-subView#PanelUI-webext-_7d5fcf8f-6eff-4d32-b958-a76d3fe933fb_-browser-action-view {
+  min-width: 550px !important;
 }

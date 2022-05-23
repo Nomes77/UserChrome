@@ -2,25 +2,70 @@
   @-moz-document url-prefix("about:addons"),
                  url-prefix(chrome://mozapps/content/extensions/aboutaddons.html),
                  url-prefix(chrome://mozapps/content/extensions/aboutaddons.xhtml) {
-    addon-page-header[type="extension"],
+    /* addon-page-header[type="extension"],
     addon-list[type="extension"],
-    #categories > [viewid="addons://list/extension"] {
+    #categories > [viewid="addons://list/extension"] { */
+    addon-list [addon-id="{b86e4813-687a-43e6-ab65-0bde4ab75758}"],
+    addon-list [addon-id="@testpilot-containers-wildcard"],
+    addon-list [addon-id="redirector@einaregilsson.com"],
+    addon-list [addon-id="{036a55b4-5e72-4d05-a06c-cba2dfcc134a}"],
+    addon-list [addon-id="@windscribeff"],
+    addon-list [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"],
+    addon-list [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"],
+    addon-list [addon-id="private-relay@firefox.com"],
+    addon-list [addon-id="{0fb9fbf9-ede1-415b-ace5-25b216f3c087}"],
+    [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-author,
+    [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-homepage,
+    [addon-id="@uMatrix"] .addon-detail-row-author,
+    [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-author,
+    [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-homepage,
+    [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"] .addon-detail-row-author {
       display: none !important;
       visibility: hidden !important;
     }
   }
-  @-moz-document url("about:logins") {
-    body {
+  @-moz-document url("about:logins"),
+                 url-prefix("about:logins") {
+    body,
+    .login-list-section,
+    login-item .container,
+    login-item .header,
+    login-item .detail-grid,
+    login-item .detail-cell,
+    login-item .meta-info {
       display: none !important;
       visibility: hidden !important;
+      color: transparent !important;
     }
   }
   @-moz-document url("about:preferences"),
-                 url-prefix("about:preferences"),
-                 url("chrome://mozapps/content/extensions/panel-item.css"),
-                 url("chrome://browser/skin/preferences/preferences.css") {
-    #addonsButton.sidebar-footer-link,
-    [data-category="paneGeneral"] > #browserContainersExtensionContent.extension-controlled {
+                 url-prefix("about:preferences") {
+    /* #addonsButton.sidebar-footer-link, */
+    [data-category="paneGeneral"] #browserContainersExtensionContent.extension-controlled.info-box-container,
+    #showPasswords,
+    #masterPasswordRow {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url("about:about"),
+                 url-prefix("about:about") {
+    a[href="about:logins"],
+    ul#abouts > li:nth-of-type(15) {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url("about:performance"),
+                 url-prefix("about:performance") {
+    [data-l10n-id="show-addon"] {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url("about:processes"),
+                 url-prefix("about:processes") {
+    .process [data-l10n-id="about-processes-extension-process"] {
       display: none !important;
       visibility: hidden !important;
     }
@@ -32,7 +77,13 @@
     .body > div[class="a b c d"],
     div#lists > .groupEntry[data-groupkey="user"],
     div#lists > .groupEntry[data-groupkey="regions"] .listEntry[data-listkey="NLD-0"] a:is(.content, .support),
-    div#lists > .groupEntry[data-groupkey="custom"] > .listEntries > .listEntry[data-listkey^="https://raw.githubusercontent.com/BPower0036/"] {
+    div#lists > .groupEntry[data-groupkey="custom"] > .listEntries > .listEntry[data-listkey^="https://raw.githubusercontent.com/"] {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url-prefix("moz-extension://6d14b313-061d-4257-b98a-962e19b2ec9c") {
+    div#dashboard-nav #about {
       display: none !important;
       visibility: hidden !important;
     }

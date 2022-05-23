@@ -72,11 +72,11 @@ vbox:hover,
   transition: background-color 1.25s var(--animation-easing-function) !important;
 }
 /*- Border - Other Fields ----------------------------------------------*/
-#search-box:hover,
-xul|search-textbox.tabsFilter:hover,
-#editBMPanel_namePicker:hover,
-#editBMPanel_tagsField:hover,
-.findbar-container .findbar-textbox:hover {
+#search-box,
+xul|search-textbox.tabsFilter,
+#editBMPanel_namePicker,
+#editBMPanel_tagsField,
+.findbar-container .findbar-textbox {
   transition: border-color 1s var(--animation-easing-function) !important;
 }
 #search-box:hover,
@@ -114,11 +114,13 @@ xul|search-textbox.tabsFilter:hover,
   animation-name: fullscreen;
   animation-timing-function: ease;
   /* Full screen navbar not hover */
-  transition: margin-top 0.3s var(--animation-easing-function) 50ms;
+  // transition: margin-top 0.3s var(--animation-easing-function) 50ms;
+  transition: margin-top 1.3s var(--animation-easing-function) 50ms;
 }
 #navigator-toolbox[inFullscreen="true"]:hover {
-  transition-duration: 1.5s;
-  transition-delay: 0.1s;
+  // transition-duration: 1.5s; // Not works, because !important
+  // transition-delay: 0.5s;
+  margin-top: 0 !important;
 }
 @keyframes fullscreen {
   from {

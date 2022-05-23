@@ -1,7 +1,7 @@
 /* MENU-LEFT *************************************************************************/
 menuitem.share-tab-url-item,
 menupopup#placesContext > menuitem#placesContext_open[command="placesCmd_open"][data-l10n-id="places-open"][label="Openen"],
-menu[id^="_testpilot-containers-menuitem"][label="Firefox Multi-Account Containers"],
+menu[id^="_testpilot-containers"],
 toolbaritem#panelMenu_bookmarksMenu[tooltip="bhTooltip"][role="group"][aria-labelledby="panelMenu_recentBookmarks"][context="placesContext"],
 #panelMenu_recentBookmarks.subview-subheader[data-l10n-id="bookmarks-recent-bookmarks-panel-subheader"] {
   visibility: collapse !important;

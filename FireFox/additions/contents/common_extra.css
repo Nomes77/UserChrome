@@ -41,6 +41,9 @@
   .addons-icon {
     list-style-image: url("./../../images/extension.svg") !important;
   }
+  .extensions {
+    background-image: url("./../../images/extension.svg") !important;
+  }
   /* Back button */
   .back-button {
     background-image: url("./../../images/arrow-left.svg") !important;

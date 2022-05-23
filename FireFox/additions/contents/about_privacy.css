@@ -1,8 +1,6 @@
 /* Privacy *******************************************************************/
 @-moz-document url("about:preferences"),
-               url-prefix("about:preferences"),
-               url("chrome://mozapps/content/extensions/panel-item.css"),
-               url("chrome://browser/skin/preferences/preferences.css") {
+               url-prefix("about:preferences") {
   .message-bar-icon {
     list-style-image: url("./../../images/permissions/info.svg") !important;
   /* Permissions */
