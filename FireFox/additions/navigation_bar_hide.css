@@ -1,5 +1,0 @@
-/* NAVIGATION BAR HIDE ***************************************************************/
-#pageAction-urlbar-_testpilot-containers.urlbar-addon-page-action[actionid="_testpilot-containers"][aria-label$="Container"] {
-  visibility: collapse;
-  display: none;
-}
