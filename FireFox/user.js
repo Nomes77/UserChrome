@@ -18,7 +18,7 @@ user_pref("layout.css.backdrop-filter.enabled", true);
 user_pref("browser.compactmode.show", true);
 
 // ** Theme Custom Options ************************************************************
-user_pref("userChrome+Content.additions.enable_selection", false);
+user_pref("userChrome+Content.additions.enable_selection", true);          // enable selection and copying on every website
 user_pref("userChrome+Content.additions.private_mode", true);
 user_pref("userChrome+Content.additions.uBlock_Origin.hide_default_unused", true);
 user_pref("userChrome+Content.additions.uBlock_Origin.show_shortcuts", false);
@@ -37,7 +37,6 @@ user_pref("userChrome+Content.tab.show_(un)muted_icon_pinned", false);
 user_pref("userChrome+Content.tab.show_sound_label", false);
 user_pref("userChrome+Content.urlview.permissions.hide_granded-icon", false);
 user_pref("userChrome+Content.zavety", false);
-
 
 // ** Useful Options ******************************************************************
 // Integrated calculator at urlbar
