@@ -24,7 +24,8 @@
   #customization-panelWrapper {
     --panel-arrow-offset: 0px !important;
   }
-  toolbarbutton#bookmarks-menu-button {
+  toolbarbutton#bookmarks-menu-button,
+  toolbarbutton.webextension-browser-action:last-of-type {
     transform: none !important;
   }
   @-moz-document url("chrome://global/content/commonDialog.xhtml") {

@@ -13,13 +13,20 @@
     addon-list [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"],
     addon-list [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"],
     addon-list [addon-id="private-relay@firefox.com"],
-    addon-list [addon-id="{0fb9fbf9-ede1-415b-ace5-25b216f3c087}"],
     [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-author,
     [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-homepage,
     [addon-id="@uMatrix"] .addon-detail-row-author,
+    [addon-id="@uMatrix"] .addon-detail-row-homepage,
     [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-author,
     [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-homepage,
-    [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"] .addon-detail-row-author {
+    [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"] .addon-detail-row-author,
+    addon-shortcuts .shortcut[addon-id="{b86e4813-687a-43e6-ab65-0bde4ab75758}"],
+    addon-shortcuts .shortcut[addon-id="@testpilot-containers-wildcard"],
+    addon-shortcuts .shortcut[addon-id="@uMatrix"].
+    addon-shortcuts .shortcut[addon-id="{036a55b4-5e72-4d05-a06c-cba2dfcc134a}"],
+    addon-shortcuts .shortcuts-no-commands-list > [addon-id="redirector@einaregilsson.com"],
+    addon-shortcuts .shortcuts-no-commands-list > [addon-id="@windscribeff"],
+    addon-shortcuts .shortcuts-no-commands-list > [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] {
       display: none !important;
       visibility: hidden !important;
     }
@@ -83,7 +90,8 @@
     }
   }
   @-moz-document url-prefix("moz-extension://6d14b313-061d-4257-b98a-962e19b2ec9c") {
-    div#dashboard-nav #about {
+    div#dashboard-nav #about,
+    div#dashboard-nav #other-options {
       display: none !important;
       visibility: hidden !important;
     }
