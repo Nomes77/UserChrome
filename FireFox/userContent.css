@@ -25,6 +25,7 @@
 @import "./additions/contents/message_bar.css";
 @import "./additions/contents/pdf_viewer.css";
 @import "./additions/contents/uBlock_Origin.css";
+@import "./additions/contents/enable_selection.css";
 
 @import "./additions/zavety_Content.css";
 
