@@ -1,13 +1,63 @@
-/*= Proton color ============================================== I'VE CHANGED =*/
+/*= Proton color ===================================================== I'VE CHANGED =*/
 @-moz-document url-prefix("about:"),
+               url-prefix("chrome://browser/content/places/places.xhtml"),
                url-prefix("view-source"),
                regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
   @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent") {
     :host,
     :root {
-      --in-content-primary-button-background: -moz-accent-color !important;
-      --in-content-primary-button-background-hover: color-mix(in srgb, black 10%, -moz-accent-color) !important;
-      --in-content-primary-button-background-active: color-mix(in srgb, black 20%, -moz-accent-color) !important;
+      --in-content-primary-button-text-color: AccentColorText !important;
+      --in-content-primary-button-background: AccentColor !important; /* Highlight */
+      --in-content-primary-button-background-hover: color-mix(in srgb, black 10%, AccentColor) !important; /* Highlight */
+      --in-content-primary-button-background-active: color-mix(in srgb, black 20%, AccentColor) !important; /* Highlight */
+    }
+    @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme1") or
+              -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme2+5") or
+              -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme3") or
+              -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme4") or
+              -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme6+7") {
+      :host,
+      :root {
+        --in-content-primary-button-text-color: var(--system-accent-text-color) !important;
+        --in-content-primary-button-background:  var(--system-accent-color) !important;
+        --in-content-primary-button-background-hover: color-mix(in srgb, black 10%, var(--system-accent-color)) !important;
+        --in-content-primary-button-background-active: color-mix(in srgb, black 20%, var(--system-accent-color)) !important;
+      }
+    }
+    @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme1") {
+      :host,
+      :root {
+        --system-accent-text-color: rgb(0, 0, 0);
+        --system-accent-color: rgb(0, 177, 175);
+      }
+    }
+    @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme2+5") {
+      :host,
+      :root {
+        --system-accent-text-color: rgb(255, 255, 255);
+        --system-accent-color: rgb(0, 153, 188);
+      }
+    }
+    @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme3") {
+      :host,
+      :root {
+        --system-accent-text-color: rgb(255, 255, 255);
+        --system-accent-color: rgb(118, 118, 118);
+      }
+    }
+    @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme4") {
+      :host,
+      :root {
+        --system-accent-text-color: rgb(0, 0, 0);
+        --system-accent-color: rgb(0, 183, 195);
+      }
+    }
+    @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent.theme6+7") {
+      :host,
+      :root {
+        --system-accent-text-color: rgb(255, 255, 255, 255);
+        --system-accent-color: rgb(104, 118, 138);
+      }
     }
   }
 }

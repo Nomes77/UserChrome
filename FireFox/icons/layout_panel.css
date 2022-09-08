@@ -4,6 +4,16 @@
   --arrowpanel-menublank-padding: calc(var(--arrowpanel-menuicon-padding) * 2 + var(var(--arrowpanel-menuitem-padding-inline))) !important;
   --arrowpanel-menuimageblank-padding: calc(var(--arrowpanel-menuitem-padding-inline) - 2px) !important;
   --arrowpanel-menuimageblank-padding-block: calc(var(--arrowpanel-menuitem-padding-block) - 2px) !important;
+  /* Global */
+  --arrowpanel-menuicon-paddingx2: calc(var(--arrowpanel-menuicon-padding) * 2);
+  /* General Panel */
+  --arrowpanel-menublank-padding: calc(var(--arrowpanel-menuicon-paddingx2) + 8px) !important;
+  --arrowpanel-menuimageblank-padding: calc(var(--arrowpanel-menuitem-padding-inline) - 2px) !important;
+  /* Blank Menu Left Padding */
+  --arrowpanel-menuimageblank-padding-horizontal: calc(
+    var(--arrowpanel-menuicon-paddingx2) + var(--arrowpanel-menuitem-padding-inline)
+  );
+  --arrowpanel-menuitemblank-padding: calc(var(--arrowpanel-menuitem-padding-block) + 1px);
 }
 .subviewbutton > .toolbarbutton-icon {
   width: 16px;
@@ -36,12 +46,14 @@
   margin-inline-start: var(--arrowpanel-menuitem-padding-inline) !important;
 }
 #appMenu-fxa-status2,
-#appMenu-zoom-controls2 {
+#appMenu-zoom-controls2, /* Legacy v104 */
+#appMenu-zoom-controls {
   align-items: center;
   padding-top: var(--arrowpanel-menuimageblank-padding-block) !important;
   padding-bottom: var(--arrowpanel-menuimageblank-padding-block) !important;
 }
-#appMenu-zoom-controls2::before {
+#appMenu-zoom-controls2::before, /* Legacy v104 */
+#appMenu-zoom-controls::before {
   margin-inline-end: 0 !important;
 }
 #appMenu-zoomReduce-button2,

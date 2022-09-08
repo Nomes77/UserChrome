@@ -11,6 +11,9 @@
 #placesContext_openLinks\:tabs {
   --menuitem-image: url("./../images/new-tab.svg");
 }
+#placesContext_open\:newcontainertab {
+  --menuitem-image: url("./../images/container-openin-16.svg");
+}
 #placesContext_open\:newwindow {
   --menuitem-image: url("./../images/window.svg");
 }
@@ -47,6 +50,9 @@
 }
 #placesContext_new\:bookmark {
   --menuitem-image: url("./../images/star-add.svg");
+}
+#placesContext_showInFolder {
+  --menuitem-image: url("./../images/folder.svg");
 }
 #placesContext_new\:folder {
   --menuitem-image: url("./../images/folder-add.svg");

@@ -3,8 +3,7 @@
   :root {
     --tab-border-radius: 0 !important;
     --toolbarbutton-border-radius: 0 !important;
-    --panel-border-radius 0 !important;
-    /* Original: 4px */
+    --panel-border-radius: 0 !important;
     --arrowpanel-border-radius: 0 !important;
     --arrowpanel-menuitem-border-radius: 0 !important;
     --subviewbutton-border-radius: 0 !important;
@@ -12,20 +11,18 @@
   button {
     border-radius: 0 !important;
   }
-  #tabbrowser-tabs {
-    --tab-corner-rounding: 0px !important;
-  }
   /* Fix Tab bar button radius */
-  #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button) > .toolbarbutton-icon,
-  #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button) > .toolbarbutton-text,
-  #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button) > .toolbarbutton-badge-stack,
+  #TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon,
+  #TabsToolbar .toolbarbutton-1 > .toolbarbutton-text,
+  #TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,
   .tab-close-button {
     --tab-border-radius: var(--toolbarbutton-border-radius) !important;
   }
-  #tabs-newtab-button > .toolbarbutton-icon {
-    border-radius: 0 !important;
+  #tabbrowser-tabs {
+    --tab-corner-rounding: 0px !important;
   }
   xul|menupopup {
+    --panel-border-radius: 0px !important;
     border-radius: 0 !important;
   }
   xul|menulist:not([native]),

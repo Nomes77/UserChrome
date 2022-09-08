@@ -1,4 +1,7 @@
 /** Toolbarbutton - Icons Layout *************************************** I'VE ADDED **/
+#nav-bar toolbarbutton { /* #urlbar-container should remain 4px */
+  --toolbarbutton-border-radius: 2px !important;
+}
 #navigator-toolbox {
   border-bottom: 1.5px solid rgb(191, 191, 191) !important;
 }

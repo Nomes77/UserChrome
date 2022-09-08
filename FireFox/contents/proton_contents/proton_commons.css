@@ -111,7 +111,7 @@
   button[autofocus],
   button[type="submit"],
   button.primary {
-    background-color: var(--in-content-primary-button-background) !important;
+    background-color: AccentColor !important;
     color: var(--in-content-primary-button-text-color) !important;
   }
   button[autofocus]:enabled:hover,

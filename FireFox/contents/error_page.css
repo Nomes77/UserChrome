@@ -1,4 +1,4 @@
-/** Error Page - Restore illustrations ****************************************/
+/** Error Page - Restore illustrations ************************************************/
 @-moz-document url-prefix("about:neterror"),
   url("about:restartrequired"), url("chrome://browser/content/aboutRestartRequired.xhtml"),
   url("about:sessionrestore"),  url("chrome://browser/content/aboutSessionRestore.xhtml")

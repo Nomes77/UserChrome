@@ -5,14 +5,7 @@
     /* addon-page-header[type="extension"],
     addon-list[type="extension"],
     #categories > [viewid="addons://list/extension"] { */
-    addon-list [addon-id="{b86e4813-687a-43e6-ab65-0bde4ab75758}"],
-    addon-list [addon-id="@testpilot-containers-wildcard"],
-    addon-list [addon-id="redirector@einaregilsson.com"],
-    addon-list [addon-id="{036a55b4-5e72-4d05-a06c-cba2dfcc134a}"],
-    addon-list [addon-id="@windscribeff"],
-    addon-list [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"],
-    addon-list [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"],
-    addon-list [addon-id="private-relay@firefox.com"],
+    addon-list [addon-id]:not([addon-id="uBlock0@raymondhill.net"], [addon-id="@uMatrix"]),
     [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-author,
     [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-homepage,
     [addon-id="@uMatrix"] .addon-detail-row-author,
@@ -20,13 +13,9 @@
     [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-author,
     [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-homepage,
     [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"] .addon-detail-row-author,
-    addon-shortcuts .shortcut[addon-id="{b86e4813-687a-43e6-ab65-0bde4ab75758}"],
-    addon-shortcuts .shortcut[addon-id="@testpilot-containers-wildcard"],
-    addon-shortcuts .shortcut[addon-id="@uMatrix"].
-    addon-shortcuts .shortcut[addon-id="{036a55b4-5e72-4d05-a06c-cba2dfcc134a}"],
-    addon-shortcuts .shortcuts-no-commands-list > [addon-id="redirector@einaregilsson.com"],
-    addon-shortcuts .shortcuts-no-commands-list > [addon-id="@windscribeff"],
-    addon-shortcuts .shortcuts-no-commands-list > [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] {
+    addon-shortcuts > .shortcut[addon-id]:not([addon-id="uBlock0@raymondhill.net"]),
+    addon-shortcuts > [data-l10n-id="shortcuts-no-commands"],
+    addon-shortcuts > .shortcuts-no-commands-list > [addon-id]:not([addon-id="uBlock0@raymondhill.net"]) {
       display: none !important;
       visibility: hidden !important;
     }

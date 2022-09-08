@@ -24,13 +24,18 @@
   .more-options-button {
     background-image: url("./../../images/more.svg") !important;
   }
+  /* 
   panel-item[action="remove"] {
     --icon: url("./../../images/delete.svg") !important;
   }
   panel-item[action="report"] {
     --icon: url("./../../images/warning-filled.svg") !important;
   }
+  */
   .addon-permissions-list > li.permission-checked {
     background-image: url("./../../images/check.svg") !important;
+  }
+  .shortcut-remove-button {
+    background-image: url("./../../images/delete.svg") !important;,
   }
 }

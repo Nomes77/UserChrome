@@ -200,57 +200,57 @@
   }
   .checkbox-check[checked] {
     border-color: var(--checkbox-checked-border-color, transparent) !important;
-    background-color: var(--checkbox-checked-bgcolor, -moz-accent-color) !important;
+    background-color: var(--checkbox-checked-bgcolor, AccentColor) !important;
     background-image: url("chrome://global/skin/icons/check.svg") !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     -moz-context-properties: fill !important;
     fill: currentColor !important;
-    color: var(--checkbox-checked-color, -moz-accent-color-foreground) !important;
+    color: var(--checkbox-checked-color, AccentColorText) !important;
     /* Style the button also when printing with "Print Backgrounds" unchecked */
     color-adjust: exact !important;
   }
   checkbox:not([disabled="true"]):hover > .checkbox-check {
     background-color: var(
       --checkbox-unchecked-hover-bgcolor,
-      color-mix(in srgb, -moz-accent-color 4%, Field)
+      color-mix(in srgb, AccentColor 4%, Field)
     ) !important;
   }
   checkbox:not([disabled="true"]):hover:active > .checkbox-check {
     background-color: var(
       --checkbox-unchecked-active-bgcolor,
-      color-mix(in srgb, -moz-accent-color 8%, Field)
+      color-mix(in srgb, AccentColor 8%, Field)
     ) !important;
   }
   checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
     background-color: var(
       --checkbox-checked-hover-bgcolor,
-      color-mix(in srgb, currentColor 12.5%, -moz-accent-color)
+      color-mix(in srgb, currentColor 12.5%, AccentColor)
     ) !important;
   }
   checkbox:not([disabled="true"]):hover:active > .checkbox-check[checked] {
     background-color: var(
       --checkbox-checked-active-bgcolor,
-      color-mix(in srgb, currentColor 25%, -moz-accent-color)
+      color-mix(in srgb, currentColor 25%, AccentColor)
     ) !important;
   }
   checkbox:-moz-focusring > .checkbox-check {
-    outline: 2px solid var(--focus-outline-color, -moz-accent-color) !important;
+    outline: 2px solid var(--focus-outline-color, AccentColor) !important;
     outline-offset: var(--focus-outline-offset, 2px) !important;
   }
   @media (prefers-contrast) {
     checkbox:not([disabled="true"]):hover > .checkbox-check {
       /* color will set the border-color on the check due to how HCM works for in-content pages. */
-      color: var(--checkbox-checked-border-color, color-mix(in srgb, -moz-accent-color 4%, Field)) !important;
+      color: var(--checkbox-checked-border-color, color-mix(in srgb, AccentColor 4%, Field)) !important;
     }
     .checkbox-check[checked] {
       color: var(--checkbox-checked-border-color, currentColor) !important;
-      fill: var(--checkbox-checked-color, -moz-accent-color-foreground) !important;
+      fill: var(--checkbox-checked-color, AccentColorText) !important;
     }
     checkbox:not([disabled="true"]):hover:active > .checkbox-check[checked] > .checkbox-check[checked],
     checkbox:not([disabled="true"]):hover > .checkbox-check[checked] > .checkbox-check[checked] {
-      color: var(--checkbox-checked-border-color-hover, -moz-accent-color-foreground) !important;
-      fill: var(--checkbox-checked-border-color-hover, -moz-accent-color-foreground) !important;
+      color: var(--checkbox-checked-border-color-hover, AccentColorText) !important;
+      fill: var(--checkbox-checked-border-color-hover, AccentColorText) !important;
     }
   }
   .checkbox-icon[src] {
@@ -295,7 +295,7 @@
     background-color: var(--button-active-bgcolor, color-mix(in srgb, currentColor 20%, ButtonFace)) !important;
   }
   xul|menulist:-moz-focusring {
-    outline: 2px solid var(--focus-outline-color, -moz-accent-color) !important;
+    outline: 2px solid var(--focus-outline-color, AccentColor) !important;
     outline-offset: var(--focus-outline-offset, 2px) !important;
   }
   #label-box {

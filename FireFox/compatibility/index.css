@@ -1,0 +1,7 @@
+/** Compatibility Fixes **************************************************************/
+/*= Color - Compatibility ==============================================*/
+@import "./accent_color.css";
+/*= OS - Compatibility ================================== I'VE CHANGED =*/
+@import "./os.css"
+/*= Theme - Compatibility ===============================================/
+@import "./theme.css"

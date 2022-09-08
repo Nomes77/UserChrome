@@ -7,7 +7,9 @@
       background-color: black !important;
   }
   :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
-    toolbar#nav-bar.browser-toolbar toolbarbutton:not(:hover, :active, [open="true"]) {
+    toolbar#nav-bar.browser-toolbar toolbarbutton:not(:hover, :active, [open="true"]),
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+    toolbar#nav-bar.browser-toolbar toolbarbutton[disabled="true"]:hover {
       fill: white !important;
   }
   :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)

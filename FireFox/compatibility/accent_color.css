@@ -1,0 +1,3 @@
+/*= Color - Compatibility ===========================================================*/
+@supports -moz-bool-pref("userChrome+Content.compatibility.accent_color") {
+}

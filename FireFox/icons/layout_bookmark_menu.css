@@ -22,6 +22,6 @@ menupopup menupopup[emptyplacesresult] .menu-text,
   #PersonalToolbar menupopup[placespopup="true"] menu:not(.menu-iconic) {
     margin-inline: var(--arrowpanel-menuitem-padding-inline) !important;
     padding-inline-start: calc(var(--arrowpanel-menuicon-padding) + var(--context-menu-text-padding)) !important;
-    background-position: left calc(var(--arrowpanel-menuicon-padding)) center !important;
+    background-position: var(--uc-menu-background-position) calc(var(--arrowpanel-menuicon-padding)) center !important;
   }
 }

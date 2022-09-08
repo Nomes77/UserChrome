@@ -36,10 +36,6 @@ html#main-window menupopup:not(.in-menulist) {
     */
   }
 }
-/* Fallback background */
-menupopup:not(.cui-widget-panel.cui-widget-panelview, [placespopup="true"]) {
-  background-color: var(--lwt-accent-color, var(--in-content-page-background)) !important;
-}
 /* Default theme color preservation */
 :root[lwtheme-mozlightdark] menupopup:not(#BMB_bookmarksPopup, [placespopup="true"]), /* Legacy */
 :root[lwtheme-mozlightdark] menupopup:is(#goPopup, #historyMenuPopup, #bookmarksMenuPopup), /* Legacy */
@@ -95,6 +91,25 @@ menupopup:not(.cui-widget-panel.cui-widget-panelview, [placespopup="true"]) {
     --arrowpanel-dimmed-further,
     hsla(0, 0%, 80%, 0.5)
   ) !important; /* Original: hsla(0,0%,80%,.5), match arrowpanel-dimmed-further */
+}
+/*= Info Bar Color ==================================================================*/
+.container.infobar {
+  background-color: var(--urlbar-box-bgcolor);
+}
+.notification-button {
+  background-color: var(--button-bgcolor);
+}
+.notification-button:hover {
+  background-color: var(--button-hover-bgcolor);
+}
+.notification-button:hover:active {
+  background-color: var(--button-active-bgcolor);
+}
+html|button.ghost-button:not(.semi-transparent):enabled:hover {
+  background-color: var(--button-hover-bgcolor) !important;
+}
+html|button.ghost-button:not(.semi-transparent):enabled:hover:active {
+  background-color: var(--in-content-button-background-active) !important;
 }
 /*= Bookmark Popup Color ============================================================*/
 #editBMPanel_folderTree:-moz-lwtheme,

@@ -8,18 +8,6 @@
     border-radius: 8px !important;
     padding: var(--in-content-button-vertical-padding) var(--in-content-button-horizontal-padding) !important;
     margin: 4px !important;
-  }
-  #viewGroup > radio:hover {
-    background-color: var(--in-content-button-background-hover) !important; /* #E0E8F6; */
-  }
-  #viewGroup > radio[selected="true"] {
-    color: var(--in-content-button-text-color) !important; /* SelectedItemText */
-    background-color: var(--in-content-button-background-active) !important; /* #C1D2EE; */
-  }
-  #viewGroup > radio {
-    color: var(--in-content-deemphasized-text) !important; /* FieldText */
-  }
-  #viewGroup > radio {
     list-style-image: none !important;
     background-image: var(--viewgroup-image) !important;
     background-repeat: no-repeat;
@@ -27,6 +15,15 @@
     background-size: 32px !important;
     -moz-context-properties: fill !important;
     fill: currentColor !important;
+    color: var(--in-content-deemphasized-text) !important;
+    /* FieldText */
+  }
+  #viewGroup > radio:hover {
+    background-color: var(--in-content-button-background-hover) !important; /* #E0E8F6; */
+  }
+  #viewGroup > radio[selected="true"] {
+    color: var(--in-content-button-text-color) !important; /* SelectedItemText */
+    background-color: var(--in-content-button-background-active) !important; /* #C1D2EE; */
   }
   #generalTab {
     --viewgroup-image: url("./../../images/document.svg");

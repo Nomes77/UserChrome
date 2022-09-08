@@ -12,7 +12,11 @@
 @import "./contents/proton_color.css";
 
 /** Fully Proton Mode ****************************************************************/
+@import "./compatibility/accent_color.css";
 @import "./contents/proton_contents.css";
+
+/** Download Panel *******************************************************************/
+@import "./contents/downloads.css";
 
 /* MY ADDITIONS **********************************************************************/
 @import "./additions/contents/about_preferences.css";

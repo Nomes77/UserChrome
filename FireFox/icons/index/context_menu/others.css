@@ -68,9 +68,11 @@
 .downloadShowMenuItem {
   --menuitem-image: url("./../images/folder-open.svg");
 }
+#downloadsContextMenu > menuitem.downloadOpenReferrerMenuItem,
 #downloadsContextMenu > menuitem[command="downloadsCmd_openReferrer"] {
   --menuitem-image: url("./../images/link-square.svg");
 }
+#downloadsContextMenu > menuitem.downloadCopyLocationMenuItem,
 #downloadsContextMenu > menuitem[command="downloadsCmd_copyLocation"] {
   --menuitem-image: url("./../images/link.svg");
 }

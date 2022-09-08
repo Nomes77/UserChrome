@@ -32,12 +32,15 @@
 }
 /** Revert Tab Throbber ***********************************************************************************/
 /* Reddit: https://www.reddit.com/r/FirefoxCSS/comments/igxwgn/replace_hourglass_icon_with_circle/ ********/
-.tab-throbber[busy] {
+.tab-throbber:is([busy], [progress]) {
   background-image: url("chrome://global/skin/icons/loading.png") !important;
   animation: unset !important;
 }
 /* Suppress bouncing dots when ui.prefersReducedMotion = 0 */
-.tab-throbber[busy]::before {
+.tab-throbber:is([busy], [progress])::before {
   background-image: none !important;
   animation: unset !important;
+}
+.tab-icon-stack[indicator-replaces-favicon] > :not(.tab-icon-overlay) {
+  opacity: 1 !important;
 }

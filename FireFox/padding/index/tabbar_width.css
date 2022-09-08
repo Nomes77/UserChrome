@@ -2,11 +2,20 @@
 /* for First Tab Space */
 @import url("./first_tab.css");
 /* Titlebar Space */
+:root {
+  --uc-title-pre-spacer: 30px;
+  --uc-title-post-spacer: 25px;
+  /* Original: 40px */
+}
+:root:-moz-locale-dir(rtl) {
+  --uc-title-pre-spacer: 25px;
+  --uc-title-post-spacer: 30px;
+}
 .titlebar-spacer[type="pre-tabs"] {
-  width: 30px !important; /* Original: 40px */
+  width: var(--uc-title-pre-spacer) !important;
 }
 .titlebar-spacer[type="post-tabs"] {
-  width: 25px !important; /* Original: 40px */
+  width: var(--uc-title-post-spacer) !important;
 }
 /* Tabbar Buttons */
 :root {
@@ -51,11 +60,11 @@
 }
 /* neighbouring tabs should "pinch" together */
 .tabbrowser-tab {
-  padding-inline: 0px !important;
+  padding-inline: 1px !important;
 }
 .tabbrowser-tab[first-visible-tab="true"] {
   padding-inline-start: 1px !important;
 }
 .tabbrowser-tab:not([last-visible-tab]) {
-  margin-inline-end: -.5px !important;
+  margin-inline-end: -1.5px !important;
 }

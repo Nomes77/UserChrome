@@ -1,10 +1,13 @@
 /*= URL View ========================================================================*/
-:root[uidensity=compact] {
-  --urlbar-min-height: 32px !important;
-}
-:root:not([uidensity=touch]) {
-  --urlbar-height: 32.00px !important;
+:root {
   --urlbar-toolbar-height: 40.00px !important;
+}
+:root[uidensity=compact] {
+  --urlbar-min-height: 32.00px !important;
+  /* --urlbar-height: 32.00px !important; */
+}
+:root:not([uidensity]) {
+  --urlbar-min-height: 34.00px !important;
 }
 @supports -moz-bool-pref("userChrome+Content.padding.megabar_style") {
   .urlbarView {
