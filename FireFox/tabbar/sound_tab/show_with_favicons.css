@@ -4,6 +4,15 @@
 #TabsToolbar {
   --user-mute-button-height: 16px;
 }
+/* Margin button */
+.tabbrowser-tab {
+  --user-mute-button-margin-left: calc(var(--user-mute-button-height) + 3px);
+  --user-mute-button-margin-right: 3px;
+}
+.tabbrowser-tab:-moz-locale-dir(rtl) {
+  --user-mute-button-margin-left: 3px;
+  --user-mute-button-margin-right: calc(var(--user-mute-button-height) + 3px);
+}
 /* Makes the favicons always visible (also on hover) */
 .tab-icon-image:not([pinned]) {
   opacity: 1 !important;
@@ -16,8 +25,8 @@
 .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) {
   width: var(--user-mute-button-height) !important;
   height: var(--user-mute-button-height) !important;
-  margin-left: calc(var(--user-mute-button-height) + 3px) !important; /* pushes icon to the right */
-  margin-right: 3px !important; /* space before the text */
+  margin-left: var(--user-mute-button-margin-left) !important; /* pushes icon to the right */
+  margin-right: var(--user-mute-button-margin-right) !important; /* space before the text */
   padding: 0 !important; /* allows icon to expand to full size */
 }
 /* Icons replacements */

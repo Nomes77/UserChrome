@@ -16,7 +16,7 @@
   content: "";
   display: block;
   position: absolute !important;
-  transform: translateY(var(--container-position-y)) !important;
+  transform: translateY(var(--container-position-y));
   /* Shape */
   border-bottom: 2px solid var(--identity-icon-color);
   border-radius: 2px; /* same as close button */

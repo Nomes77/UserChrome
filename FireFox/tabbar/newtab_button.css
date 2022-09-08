@@ -1,7 +1,7 @@
 /*= New tab button =================================================== I'VE CHANGED =*/
 #tabs-newtab-button > .toolbarbutton-icon {
   margin-left: 1px;
-  border-radius: 2px;
+  border-radius: 2px !important;
 }
 :root:not([uidensity="touch"]) #tabs-newtab-button > .toolbarbutton-icon {
   --toolbarbutton-inner-padding: calc((var(--tab-min-height) - 16px) / 2 - 2px);

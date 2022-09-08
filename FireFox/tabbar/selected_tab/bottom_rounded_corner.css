@@ -1,6 +1,7 @@
 /*- Selected Tab - Bottom Rounded Corner ----------------------------- I'VE CHANGED -*/
 #tabbrowser-tabs {
-  --tab-corner-rounding: 3px; /* 10px looks about like chromium - 17px looks close to Australis tabs */
+  --tab-border-radius: 4px !important;
+  --tab-corner-rounding: var(--tab-border-radius); /* 10px looks about like chromium - 17px looks close to Australis tabs */
   --tab-corner-padding: 0px;
   --tab-corner-position: calc(var(--tab-corner-padding) - var(--tab-corner-rounding));
 }
@@ -8,9 +9,9 @@ tab > stack::before, /* :not([customizing="true"]) [visuallyselected] */
 tab > stack::after {
   content: "" !important;
   /* Box */
-  display: block !important;
+  display: block;
+  z-index: 0 !important;
   position: absolute !important;
-  z-index: 1 !important;
   /* Shape */
   width: var(--tab-corner-rounding) !important;
   height: 100% !important;
@@ -31,7 +32,7 @@ tab:not([visuallyselected], [selected=true], [multiselected]):hover > stack::aft
 tab[multiselected]:not([visuallyselected]) > stack::before,
 tab[multiselected]:not([visuallyselected]) > stack::after {
   /* Color - Same as tabcolor multiselected */
-  fill: rgb(198, 215, 215) !important;
+  fill: color-mix(in srgb, var(--toolbar-bgcolor) 65%, transparent) !important; /* rgb(198, 215, 215) */
 }
 :root:is([lwtheme-mozlightdark], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
   #TabsToolbar[brighttext]
