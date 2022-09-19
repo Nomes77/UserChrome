@@ -14,6 +14,9 @@ user_pref("layout.css.color-mix.enabled", true);
 // CSS Blur Filter - 88 Above
 user_pref("layout.css.backdrop-filter.enabled", true);
 
+// To let `page.proton_color.system_accent` work
+user_pref("widget.non-native-theme.use-theme-accent	true", true);
+
 // Restore Compact Mode - 89 Above
 user_pref("browser.compactmode.show", true);
 
@@ -31,11 +34,6 @@ user_pref("userChrome+Content.padding.megabar_style", true);
 user_pref("userChrome+Content.padding.menu_compact", false);
 user_pref("userChrome+Content.page.field_border", false);
 user_pref("userChrome+Content.page.proton_color.system_accent", true);
-user_pref("userChrome+Content.page.proton_color.system_accent.theme1", false);
-user_pref("userChrome+Content.page.proton_color.system_accent.theme2+5", false);
-user_pref("userChrome+Content.page.proton_color.system_accent.theme3", false);
-user_pref("userChrome+Content.page.proton_color.system_accent.theme4", false);
-user_pref("userChrome+Content.page.proton_color.system_accent.theme6+7", true);
 user_pref("userChrome+Content.player", true);
 user_pref("userChrome+Content.rounding.square", false);
 user_pref("userChrome+Content.tab.close_button_at_hover_pinned", true);
