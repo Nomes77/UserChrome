@@ -2,9 +2,6 @@
 // userchrome.css usercontent.css activate
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
-// Proton Tooltip
-user_pref("browser.proton.places-tooltip.enabled", true);
-
 // Fill SVG Color
 user_pref("svg.context-properties.content.enabled", true);
 
