@@ -1,0 +1,30 @@
+/** Fully Proton Mode ************************************************ I'VE CHANGED **/
+/*= Common contents ====================================================*/
+@import "proton_contents/proton_commons.css";
+
+/*= Field Border =======================================================*/
+@import "proton_contents/field_border.css";
+
+/*= Focus Outline ========================================= I'VE ADDED =*/
+@import "proton_contents/focus_outline.css";
+
+/*= View Source ========================================================*/
+@import "proton_contents/view_source.css";
+
+/*= Directory View =====================================================*/
+@import "proton_contents/directory_view.css";
+
+/*= about:plugins ======================================================*/
+/* @import "proton_contents/about_plugins"; */
+
+/*= about:cache ========================================================*/
+/* @import "proton_contents/about_cache"; */
+
+/*= about:checkerboard =================================================*/
+/* @import "proton_contents/about_checkerboard"; */
+
+/*= about:memory =======================================================*/
+/* @import "proton_contents/about_memory"; */
+
+/*= chrome://browser/content/places/places.xhtml =======================*/
+/* @import "../library/contents"; */

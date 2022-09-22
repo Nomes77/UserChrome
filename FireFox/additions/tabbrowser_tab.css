@@ -1,0 +1,46 @@
+/* TABBROWSER-TAB ********************************************************************/
+/*= Delete Gap after last Pinned Tab ===================================*/
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 0px !important;
+}
+/*= Tabbrowser Label ===================================================*/
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
+  margin-bottom: 1px !important;
+}
+/*= Tabs Content Color =================================================*/
+:root[lwt-default-theme-in-dark-mode]
+  .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
+:root[lwt-default-theme-in-dark-mode]
+  .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
+    color: white;
+}
+:root:not(:-moz-lwtheme)
+  .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
+:root:not(:-moz-lwtheme)
+  .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
+    color: black;
+}
+/*= Tabs Icons on Hover (Tooltip) ======================================*/
+@media (-moz-proton-places-tooltip) {
+  #places-tooltip-insecure-icon {
+    list-style-image: url("./../images/warning-filled.svg") !important;
+  }
+}
+/*= All Tabs Icons =====================================================*/
+#allTabsMenu-containerTabsView toolbarbutton.subviewbutton[class*="identity-icon-"][class*="identity-color-"] {
+  color: var(--identity-icon-color) !important;
+}
+/** Revert Tab Throbber ***********************************************************************************/
+/* Reddit: https://www.reddit.com/r/FirefoxCSS/comments/igxwgn/replace_hourglass_icon_with_circle/ ********/
+.tab-throbber:is([busy], [progress]) {
+  background-image: url("chrome://global/skin/icons/loading.png") !important;
+  animation: unset !important;
+}
+/* Suppress bouncing dots when ui.prefersReducedMotion = 0 */
+.tab-throbber:is([busy], [progress])::before {
+  background-image: none !important;
+  animation: unset !important;
+}
+.tab-icon-stack[indicator-replaces-favicon] > :not(.tab-icon-overlay) {
+  opacity: 1 !important;
+}

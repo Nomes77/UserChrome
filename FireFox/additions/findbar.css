@@ -1,0 +1,74 @@
+/* Other Problems ********************************************************************/
+@supports not -moz-bool-pref("userChrome+Content.additions.floating_findbar_on_top") {
+  findbar > .findbar-container > description[class="findbar-label findbar-find-status"] {
+    width: 190px !important;
+    margin-top: -2px !important;
+    margin-bottom: -2px !important;
+  }
+}
+
+@supports -moz-bool-pref("userChrome+Content.additions.floating_findbar_on_top") {
+  findbar {
+    -moz-box-ordinal-group: 0;
+    margin-bottom: -33px;
+    position: relative;
+    border-top: none !important;
+    padding: 0 !important;
+    transition: transform 82ms linear, opacity 82ms linear 32ms !important;
+    background: none !important;
+    pointer-events: none;
+    z-index: 1;
+    transform: translateY(5px) translateX(-25px);
+  }
+  .findbar-container > .findbar-find-fast {
+    padding: var(--toolbarbutton-inner-padding) 1px;
+    margin: 0 !important;
+  }
+  findbar[hidden] {
+    transform: translateY(-30px);
+  }
+  findbar > .findbar-container,
+  findbar > .close-icon,
+  findbar > .close-icon:hover,
+  findbar > .close-icon:hover:active {
+    border: 1px solid currentColor !important;
+    background-color: var(--toolbar-bgcolor) !important;
+    pointer-events: auto;
+  }
+  findbar > .findbar-container {
+    -moz-box-direction: reverse;
+    border-radius: 4px 0 0 4px;;
+    border-width: 1px 0 1px 1px !important;
+  }
+  findbar > .close-icon,
+  findbar > .close-icon:is(:hover, :active) {
+    border-radius: 0 4px 4px 0 !important;
+    border-width: 1px 1px 1px 0px !important;
+  }
+  .findbar-closebutton {
+    margin: 0 !important;
+    padding: 5px !important;
+  }
+  .findbar-closebutton > image {
+    padding: 3px;
+  }
+  .findbar-closebutton:hover > image {
+    background-color: color-mix(in srgb, currentColor 15%, transparent) !important;
+    border-radius: 4px;
+  }
+  .findbar-closebutton:hover:active > image {
+    background-color: color-mix(in srgb, currentColor 25%, transparent) !important;
+  }
+  .find-status-icon[status="wrapped"] + .findbar-find-status {
+    width: 170px !important;
+    margin-inline-start: inherit !important;
+  }
+  findbar > .findbar-container > hbox {
+    margin: 0 -5px 0 5px;
+  }
+  findbar::before {
+    content:"";
+    display: -moz-box;
+    -moz-box-flex: 100;
+  }
+}

@@ -1,0 +1,16 @@
+/* Message_Bar ***************************************************************/
+@-moz-document url-prefix("about:") {
+  :host {
+    --info-icon-url: url("./../../images/info.svg") !important;
+    --warn-icon-url: url("./../../images/warning-filled.svg") !important;
+    --success-icon-url: url("./../../images/check.svg") !important;
+    --error-icon-url: url("./../../images/error-filled.svg") !important;
+    --close-icon-url: url("./../../images/dismiss.svg") !important;
+  }
+  .message-bar-icon {
+    list-style-image: url("./../../images/info.svg") !important;
+  }
+  .message-bar-warning > .message-bar-icon {
+    list-style-image: url("./../../images/warning-filled.svg") !important;
+  }
+}

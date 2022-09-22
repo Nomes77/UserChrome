@@ -1,0 +1,91 @@
+@supports -moz-bool-pref("userChrome+Content.zavety") {
+  @-moz-document url-prefix("about:addons"),
+                 url-prefix(chrome://mozapps/content/extensions/aboutaddons.html),
+                 url-prefix(chrome://mozapps/content/extensions/aboutaddons.xhtml) {
+    /* addon-page-header[type="extension"],
+    addon-list[type="extension"],
+    #categories > [viewid="addons://list/extension"] { */
+    addon-list [addon-id]:not([addon-id="uBlock0@raymondhill.net"], [addon-id="@uMatrix"]),
+    [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-author,
+    [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-homepage,
+    [addon-id="@uMatrix"] .addon-detail-row-author,
+    [addon-id="@uMatrix"] .addon-detail-row-homepage,
+    [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-author,
+    [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-homepage,
+    [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"] .addon-detail-row-author,
+    addon-shortcuts > .shortcut[addon-id]:not([addon-id="uBlock0@raymondhill.net"]),
+    addon-shortcuts > [data-l10n-id="shortcuts-no-commands"],
+    addon-shortcuts > .shortcuts-no-commands-list > [addon-id]:not([addon-id="uBlock0@raymondhill.net"]) {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url("about:logins"),
+                 url-prefix("about:logins") {
+    body,
+    .login-list-section,
+    login-item .container,
+    login-item .header,
+    login-item .detail-grid,
+    login-item .detail-cell,
+    login-item .meta-info {
+      display: none !important;
+      visibility: hidden !important;
+      color: transparent !important;
+    }
+  }
+  @-moz-document url("about:preferences"),
+                 url-prefix("about:preferences") {
+    /* #addonsButton.sidebar-footer-link, */
+    [data-category="paneGeneral"] #browserContainersExtensionContent.extension-controlled.info-box-container,
+    [data-category="panePrivacy"] #showPasswords,
+    [data-category="panePrivacy"] #masterPasswordRow {
+      display: none !important;
+      visibility: hidden !important;
+    }
+    [data-category="paneGeneral"] #browserContainersbox #browserContainersCheckbox {
+      opacity: 1 !important;
+    }
+  }
+  @-moz-document url("about:about"),
+                 url-prefix("about:about") {
+    a[href="about:logins"],
+    ul#abouts > li:nth-of-type(15) {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url("about:performance"),
+                 url-prefix("about:performance") {
+    [data-l10n-id="item"]:has([data-l10n-id="type-addon"]) {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url("about:processes"),
+                 url-prefix("about:processes") {
+    .process:has([data-l10n-id="about-processes-extension-process"]) {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url-prefix("moz-extension://48257024-52cf-4295-81fc-991effeb0c07") {
+    .tabButton[data-pane="1p-filters.html"],
+    .tabButton[data-pane="dyna-rules.html"],
+    .tabButton[data-pane="shortcuts.html"],
+    .body > div[class="a b c d"],
+    div#lists > .groupEntry[data-groupkey="user"],
+    div#lists > .groupEntry[data-groupkey="regions"] .listEntry[data-listkey="NLD-0"] a:is(.content, .support),
+    div#lists > .groupEntry[data-groupkey="custom"] > .listEntries > .listEntry[data-listkey^="https://raw.githubusercontent.com/"] {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  @-moz-document url-prefix("moz-extension://6d14b313-061d-4257-b98a-962e19b2ec9c") {
+    div#dashboard-nav #about,
+    div#dashboard-nav #other-options {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+}

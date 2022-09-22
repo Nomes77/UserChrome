@@ -1,0 +1,89 @@
+/*= Focus Outline ============================================================*/
+@supports -moz-bool-pref("userChrome+Content.page.focus_outline_hidden") {
+  @-moz-document url-prefix("about:"),
+                 url("about:preferences"),
+                 url-prefix("about:preferences"),
+                 regexp("^((file:\/\/\/)|(chrome:\/\/)).*\/$") {
+    button:focus-visible,
+    html|select:focus-visible,
+    html|input:is([type="checkbox"], [type="color"], [type="radio"]):focus-visible,
+    xul|menulist:focus-visible,
+    xul|checkbox:not([native]):focus-visible > .checkbox-check,
+    xul|radio[focused="true"] > .radio-check,
+    xul|tab:focus-visible > .tab-middle > .tab-text,
+    html|input:is([type="email"], [type="tel"], [type="text"], [type="password"], [type="url"], [type="number"]):focus,
+    html|textarea:focus,
+    xul|search-textbox[focused],
+    xul|tree:focus-visible,
+    xul|richlistbox:focus-visible,
+
+    select:focus-visible,
+    input:is([type="checkbox"], [type="color"], [type="radio"]):focus-visible,
+    menulist:focus-visible,
+    checkbox:not([native]):focus-visible > .checkbox-check,
+    radio[focused="true"] > .radio-check,
+    tab:focus-visible > .tab-middle > .tab-text,
+    input:is([type="email"], [type="tel"], [type="text"], [type="password"], [type="url"], [type="number"]):focus,
+    textarea:focus,
+    search-textbox[focused],
+    tree:focus-visible,
+    richlistbox:focus-visible {
+      outline: 0 !important;
+    }
+
+    /* :root {
+      --in-content-focus-outline-width: 0 !important;
+    } */
+  }
+}
+
+button:-moz-focusring,
+html|select:-moz-focusring,
+html|input:is([type="checkbox"], [type="color"], [type="radio"]):-moz-focusring,
+xul|menulist:-moz-focusring,
+xul|checkbox:not([native]):-moz-focusring > .checkbox-check, /* :not([native]) to win specificity over checkbox.css */
+xul|radio[focused="true"] > .radio-check,
+xul|tab:-moz-focusring > .tab-middle > .tab-text {
+  outline: var(--in-content-focus-outline);
+  outline-offset: var(--in-content-focus-outline-offset);
+}
+html|input:is([type="email"], [type="tel"], [type="text"], [type="password"], [type="url"], [type="number"]):focus,
+html|textarea:focus,
+xul|search-textbox[focused],
+xul|tree:focus-visible,
+xul|richlistbox:focus-visible {
+  outline: var(--in-content-focus-outline);
+  outline-offset: -1px; /* Prevents antialising around the corners */
+}
+html|input:is([type="email"], [type="tel"], [type="text"], [type="password"], [type="url"], [type="number"]):-moz-ui-invalid,
+html|textarea:-moz-ui-invalid {
+  outline: 2px solid var(--in-content-border-invalid);
+  outline-offset: -1px; /* Prevents antialising around the corners */
+}
+html|a:-moz-focusring,
+.text-link:-moz-focusring {
+  outline: var(--in-content-focus-outline);
+  outline-offset: 1px;
+}
+#categories {
+  outline: none;
+}
+#categories[keyboard-navigation="true"]:-moz-focusring > .category[current],
+#categories > .category:-moz-focusring {
+  outline: var(--in-content-focus-outline);
+  outline-offset: var(--in-content-focus-outline-inset);
+}
+html|*#categories[last-input-type="mouse"] > html|button.category:-moz-focusring {
+  outline: none;
+}
+xul|richlistbox:not(#categories) > xul|richlistitem[selected] {
+  /* Ensure buttons/menulists inside richlistitems (containers, applications) look OK */
+  --in-content-focus-outline-color: var(--in-content-item-selected-text);
+}
+xul|richlistitem[selected] xul|menulist:focus-visible {
+  outline-offset: var(--in-content-focus-outline-inset);
+}
+.sidebar-footer-link:-moz-focusring {
+  outline: var(--in-content-focus-outline);
+  outline-offset: var(--in-content-focus-outline-inset);
+}

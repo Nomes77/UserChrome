@@ -1,0 +1,43 @@
+/*= Proton color ===================================================== I'VE CHANGED =*/
+@-moz-document url-prefix("about:"),
+               url-prefix("chrome://browser/content/places/places.xhtml"),
+               url-prefix("view-source"),
+               regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
+    @supports -moz-bool-pref("userContent.page.proton_color.dark_blue_accent") {
+      @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+        :host,
+        :root {
+          --blue-20: #b6d6ff;
+          --blue-30: #74c0ff;
+        }
+        :host,
+        :root {
+          --in-content-primary-button-text-color: var(--in-content-page-color) !important;
+          --in-content-primary-button-background: var(--blue-60) !important;
+          --in-content-primary-button-background-hover: var(--blue-50) !important;
+          --in-content-primary-button-background-active: var(--blue-40) !important;
+          --in-content-focus-outline-color: var(--blue-40) !important;
+          --in-content-accent-color: var(--blue-40) !important;
+          --in-content-accent-color-active: var(--blue-30) !important;
+          --in-content-table-background: rgb(35, 34, 43) !important;
+          --in-content-table-border-color: rgba(249, 249, 250, 0.2) !important;
+          --in-content-table-header-background: rgb(5, 64, 150) !important;
+          --in-content-table-header-color: var(--in-content-page-color) !important;
+          --in-content-link-color: var(--blue-40) !important;
+          --in-content-link-color-hover: var(--blue-30) !important;
+          --in-content-link-color-active: var(--blue-20) !important;
+          --in-content-link-color-visited: var(--blue-40) !important;
+        }
+      }
+    }
+  }
+  @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent") {
+    :host,
+    :root {
+      --in-content-primary-button-text-color: AccentColorText !important;
+      --in-content-primary-button-background: AccentColor !important;
+      --in-content-primary-button-background-hover: color-mix(in srgb, black 10%, AccentColor) !important;
+      --in-content-primary-button-background-active: color-mix(in srgb, black 20%, AccentColor) !important;
+    }
+  }
+}

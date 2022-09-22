@@ -1,0 +1,23 @@
+/* Menu_Button ***************************************************************/
+@-moz-document url-prefix("about:"),
+               url("about:logins") {
+  .menu-button {
+    background-image: url("./../../images/more.svg") !important;
+  }
+  .menuitem-help {
+    background-image: url("./../../images/help.svg") !important;
+  }
+  .menuitem-import-browser,
+  .menuitem-import-file {
+    background-image: url("./../../images/import.svg") !important;
+  }
+  .menuitem-export {
+    background-image: url("./../../images/save.svg") !important;
+  }
+  .menuitem-remove-all-logins {
+    background-image: url("./../../images/delete.svg") !important;
+  }
+  .menuitem-preferences {
+    background-image: url("./../../images/settings.svg") !important;
+  }
+}

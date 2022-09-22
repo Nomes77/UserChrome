@@ -1,0 +1,55 @@
+/* About_Config **********************************************************************/
+@-moz-document url("about:config") {
+  .title {
+    background-image: url("./../../images/warning-filled.svg") !important;
+  }
+  #about-config-search {
+    background-image: url("./../../images/search-glass.svg") !important;
+  }
+  .button-add {
+    background-image: url("./../../images/add.svg") !important;
+  }
+  .button-save {
+    background-image: url("./../../images/check.svg") !important;
+   }
+  .button-edit {
+    background-image: url("./../../images/edit.svg") !important;
+  }
+  .button-toggle {
+    background-image: url("chrome://global/content/aboutconfig/toggle.svg");
+  }
+  .button-delete {
+    background-image: url("./../../images/delete.svg") !important;
+  }
+  .button-reset {
+     background-image: url("./../../images/undo.svg") !important;
+  }
+
+
+  @supports -moz-bool-pref("userChrome+Content.additions.about_config_compact") {
+    #toolbar {
+      height: 40px;
+    }
+    .button-delete,
+    .button-edit,
+    .button-reset,
+    .button-save,
+    .button-toggle,
+    .button-add {
+      margin-block: 2px !important;
+      padding-block: 11px 0 !important;
+      padding-inline: 0 !important;
+      min-height: 26px !important;
+      width: 26px !important;
+      outline-offset: 0 !important;
+    }
+    .cell-edit {
+      width: 28px !important;
+    }
+    form > input,
+    tr:not(.add) > th,
+    tr:not(.add) > .cell-value {
+      padding-block: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+/*= Menubar =========================================================================*/
+@supports -moz-bool-pref("userChrome+Content.autohide.menubar") {
+  :root[tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
+    #toolbar-menubar[autohide="true"]:not([inactive]) {
+      height: 0px !important;
+      display: flex;
+      position: fixed;
+      z-index: 6;
+    }
+  }
+  :root[tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
+    #toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container {
+      visibility: visible !important;
+  }
+  :root[tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
+    #toolbar-menubar[autohide="true"]:not([inactive]) .titlebar-buttonbox-container {
+      display: none;
+  }
+  :root[tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
+    #toolbar-menubar[autohide="true"]:not([inactive]) #main-menubar > menu {
+      margin-top: -2px;
+  }
+  @supports -moz-bool-pref("userChrome+Content.padding.drag_space") {
+    @media (-moz-os-version: windows-win10), (-moz-platform: windows-win10) {
+      :root[sizemode="normal"][tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
+        #titlebar:has(#toolbar-menubar[autohide="true"]) {
+          height: calc(var(--tab-min-height) + var(--space-above-tabbar)) !important;
+      }
+    }
+  }
+}

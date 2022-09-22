@@ -1,0 +1,7 @@
+/* About_Performance *********************************************************/
+@-moz-document url("about:performance"),
+               url-prefix("about:performance") {
+  [style='background-image: url("chrome://mozapps/skin/extensions/extension.svg");'] {
+    background-image: url("./../../images/extension.svg") !important;
+  }
+}

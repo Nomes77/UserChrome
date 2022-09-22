@@ -1,0 +1,51 @@
+/* Common_Extra **************************************************************/
+@-moz-document url-prefix("about:addons"),
+               url-prefix("about:preferences") {
+  /* Categories */
+  #categories > .category[selected],
+  #categories > .category.selected {
+    background-color: var(--in-content-button-background) !important;
+  }
+  #categories > .category[selected]::before,
+  #categories > .category.selected::before {
+    /* Box Model */
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100px;
+    /* Position */
+    transform: translateX(-7px) translateY(calc((48px - 24px) / -2));
+    /* Bar shape */
+    width: 4px;
+    height: 24px;
+    /* Bar Color */
+    background-color: rgb(0, 114, 201) !important;
+  }
+  #categories > .category[selected][viewid^="addons://"]::before,
+  #categories > .category.selected[viewid^="addons://"]::before {
+     width: 3px;
+     transform: translateX(-30px);
+  }
+  @media (max-width: 830px) {
+    #categories > .category[selected][viewid^="addons://"]::before,
+    #categories > .category.selected[viewid^="addons://"]::before {
+      transform: translateX(-7px);
+    }
+  }
+}
+@-moz-document url-prefix("about:") {
+  /* Icon helper classes */
+  .help-icon {
+    list-style-image: url("./../../images/help.svg") !important;
+  }
+  .addons-icon {
+    list-style-image: url("./../../images/extension.svg") !important;
+  }
+  .extensions {
+    background-image: url("./../../images/extension.svg") !important;
+  }
+  /* Back button */
+  .back-button {
+    background-image: url("./../../images/arrow-left.svg") !important;
+  }
+}
