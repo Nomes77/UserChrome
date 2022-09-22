@@ -1,0 +1,58 @@
+/*= URL View ========================================================================*/
+:root {
+  --urlbar-toolbar-height: 40.00px !important;
+}
+:root[uidensity=compact] {
+  --urlbar-min-height: 32.00px !important;
+  /* --urlbar-height: 32.00px !important; */
+}
+:root:not([uidensity]) {
+  --urlbar-min-height: 34.00px !important;
+}
+@supports -moz-bool-pref("userChrome+Content.padding.megabar_style") {
+  .urlbarView {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    width: 100% !important;
+    border-inline-start: none !important;
+  }
+  :root:not([uidensity=compact]) .urlbarView-row:not([type=tip], [type=dynamic]) {
+    max-height: 35px;
+  }
+  .urlbarView-row[aria-selected="true"] > .urlbarView-row-inner {
+    border-left: 3.5px solid rgb(0, 85, 215) !important;
+    padding-left: 6.1px !important;
+  }
+  .urlbarView-row-inner {
+    height: 25px !important;
+    border-radius: 0px !important;
+    padding-left: 9.5px !important; /* border + padding from line above */
+  }
+  #urlbar > hbox[id] { /* left icons in urlbar */
+    padding-left: 6.1px !important; /* same as padding .urlbarView-row from above */
+  }
+  .urlbarView-row[type="bookmark"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
+    background-image: none !important; /* url("./../images/star-filled.svg") */
+    /* fill: var(--win-urlbar-popup-accent-color) !important; */
+  }
+  .urlbarView-row[selected] > .urlbarView-row-inner > .urlbarView-url {
+     color: var(--win-urlbar-popup-accent-color) !important;
+  }
+  .urlbarView-row:is([type=switchtab], [type=remotetab]) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action {
+    background-color: var(--win-disabled-bgcolor) !important; /* --urlbar-box-focus-bgcolor */
+    border: 1px solid var(--win-focus-outline-color); /* 131 ipv 133 */
+  }
+  .urlbarView-row:is([type=switchtab], [type=remotetab]):is([selected]) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action:hover {
+    background-color: var(--win-toolbarbutton-hover-background) !important; /* 220 ipv 218 */
+    border-color: var(--win-checkbox-checked-bgcolor) !important; /* 118 ipv 120 */
+  }
+  .urlbarView-row:is([type=switchtab], [type=remotetab]):is(:hover) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action:hover {
+    background-color: var(--toolbarbutton-active-background) !important; /* 207 */
+    border-color: var(--win-checkbox-checked-bgcolor) !important; /* 118 ipv 120 */
+  }
+}
+#urlbar-label-box > .urlbar-label#urlbar-label-switchtab {
+  visibility: hidden !important;
+  width: 0px !important;
+  margin-inline: -12px !important;
+}

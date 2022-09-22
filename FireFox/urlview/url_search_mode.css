@@ -1,0 +1,42 @@
+/*= Url Search Mode =================================================================*/
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #urlbar[searchmode] > #urlbar-input-container #identity-icon,
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #urlbar[searchmode] > #urlbar-input-container > #urlbar-search-mode-indicator {
+    color: rgb(0,90,215) !important; /* var(--urlbar-box-text-color) */
+}
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #urlbar[searchmode] > #urlbar-input-container > #urlbar-search-mode-indicator::after {
+    /* Box Model */
+    content: "";
+    display: contents;
+    position: static;
+    /* Position */
+    transform: translateX(6.5px);
+    /* Bar shape */
+    width: 1.75px;
+    height: 18px;
+    /* Bar Color */
+    opacity: var(--tab-separator-opacity);
+    background-color: rgb(150, 150, 150) !important;
+}
+
+
+/* Notes */
+/*
+   --urlbar-box-focus-bgcolor: var(--button-bgcolor);  -->  --button-bgcolor: var(--win-hover-bgcolor)  -->  --win-hover-bgcolor: rgb(238, 238, 238);
+   :root:-moz-lwtheme-brighttext:not([lwt-default-theme-in-dark-mode]) {
+     --urlbar-box-focus-bgcolor: color-mix(in srgb, currentColor 16%, transparent);
+   }
+   @media (prefers-color-scheme: dark) {
+     :root:not(:-moz-lwtheme) {
+       --urlbar-box-focus-bgcolor: color-mix(in srgb, currentColor 16%, transparent);
+     }
+   }
+   #urlbar[focused="true"] #urlbar-search-mode-indicator {			--> doesn't have background-color in Edge, text rgb(0,90,215), has seperator
+     background-color: var(--urlbar-box-focus-bgcolor);
+   }
+   #urlbar[focused="true"] #urlbar-zoom-button:not(:hover) {			--> doesn't have background-color in Edge
+     background-color: var(--urlbar-box-focus-bgcolor);
+   }
+*/

@@ -1,0 +1,27 @@
+/** Reduce Padding *******************************************************************/
+/*= Tab Bar - Distribution padding, radius =============================*/
+@import url("./index/tab_padding.css");
+/*= Tab Bar - Reduce Width, Show more tabs ============== I'VE CHANGED =*/
+@import url("./index/tabbar_width.css");
+/*= Tab Bar - Reduce Height, Show more contents ========= I'VE CHANGED =*/
+@import url("./index/tabbar_height.css");
+/*= Tool Bar - Button Padding ==========================================*/
+@import url("./index/toolbar_button.css");
+/*= Nav Bar - Reduce Width =============================================*/
+@import url("./index/navbar.css");
+/*= URL Bar - Reduce Padding ===========================================*/
+@import url("./index/urlbar.css");
+/*= URL Bar - MegaBar Style =============================== I'VE ADDED =*/
+@import url("./index/megabar_style.css");
+/*= BookMark Bar - Reduce Height =======================================*/
+@import url("./index/bookmarkbar.css");
+/*= Info Bar - Reduce Padding ==========================================*/
+@import url("./index/infobar.css");
+/*= Menu - Reduce Padding ==============================================*/
+/*= Bookmark Menu - Reduce Padding =====================================*/
+/*= Global Menu - Set Padding ==========================================*/
+@import url("./index/menus.css");
+/*= Panel - Reduce Padding =============================================*/
+@import url("./index/panel.css");
+/*= Popup Panel - Reduce padding =======================================*/
+@import url("./index/popup_panel.css");

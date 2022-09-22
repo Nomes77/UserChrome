@@ -1,0 +1,14 @@
+/* for First Tab Space */
+@supports -moz-bool-pref("userChrome+Content.padding.first_tab") {
+  :root {
+    --space-left-tabbar: 7px; /* If you want drag space, set to 8px */
+  }
+  /* :root:not([tabsintitlebar]) #tabbrowser-tabs:not([positionpinnedtabs]),
+  :root:is([sizemode="maximized"], [sizemode="fullscreen"]) #tabbrowser-tabs:not([positionpinnedtabs]) {
+    padding-inline-start: var(--space-left-tabbar) !important;
+  } */
+  :root:is([sizemode="maximized"], [sizemode="fullscreen"], [sizemode="normal"]) .titlebar-spacer[type="pre-tabs"] {
+    display: -moz-box !important;
+    width: var(--space-left-tabbar) !important;
+  }
+}
