@@ -54,6 +54,8 @@
 @import "./icons/library.css";
 /** Toolbarbutton Icons ************************************************ I'VE ADDED **/
 @import "./icons/toolbarbuttons.css";
+/** Others UI ************************************************************************/
+@import "./counter/index.css";
 /** Auto Hide ************************************************************************/
 @import "./autohide/index.css";
 
@@ -69,48 +71,10 @@
 @import "./additions/menu_left.css";
 /* PRIVATE MODE **********************************************************************************/
 @import "./additions/private_mode.css";
-/* Other Problems ********************************************************************************/
-@import "./additions/others.css";
+/* Findbar ***************************************************************************************/
+@import "./additions/findbar.css";
 
 @import "./additions/zavety_Chrome.css";
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 @namespace html "http://www.w3.org/1999/xhtml";
-
-
-
-
-
-:root:not([uidensity]) :is(#titlebar, #toolbar-menubar[autohide="true"])  {
-  --tab-min-height: 32px;
-}
-:root[uidensity="compact"] :is(#titlebar, #toolbar-menubar[autohide="true"]) {
-  --tab-min-height: 32px;
-}
-:root[uidensity="touch"] :is(#titlebar, #toolbar-menubar[autohide="true"]) {
-  --tab-min-height: 41px;
-}
-:root[tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
-  #titlebar {
-    height: var(--tab-min-height);
-}
-:root[tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
-  #toolbar-menubar[autohide="true"] {
-    height: calc(var(--tab-min-height) - var(--tabs-navbar-shadow-size));
-}
-@supports -moz-bool-pref("userChrome+Content.padding.drag_space") {
-  @media (-moz-os-version: windows-win10), (-moz-platform: windows-win10) {
-    :root[sizemode="normal"][tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
-      #titlebar {
-        height: calc(var(--tab-min-height) + var(--space-above-tabbar)) !important;
-    }
-    :root[sizemode="normal"][tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
-      #toolbar-menubar[autohide="true"] {
-        height: calc(var(--tab-min-height) + var(--space-above-tabbar) - var(--tabs-navbar-shadow-size)) !important;
-    }
-    :root[sizemode="normal"][tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
-      #toolbar-menubar[autohide="true"][inactive="true"] {
-        height: 0 !important;
-    }
-  }
-}
