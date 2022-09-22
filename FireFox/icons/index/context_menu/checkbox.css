@@ -1,4 +1,0 @@
-/*= ContextMenu Checkbox ============================================================*/
-menuitem[checked="true"] > .menu-iconic-left {
-  list-style-image: url("./../../../images/check.svg") !important;
-}
