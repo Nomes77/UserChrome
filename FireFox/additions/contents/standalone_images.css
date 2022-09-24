@@ -4,11 +4,13 @@
 @supports -moz-bool-pref("userChrome+Content.additions.standalone_image_page_mods") {
   @-moz-document regexp("(.*\.(apng|png|jpg|jpeg|gif|webp|avif|ico|bmp|APNG|PNG|JPG|JPEG|GIF|WEBP|AVIF|ICO|BMP)([\?#].*)*$)|(^data:image/.*)") {
     @media not print {
-      :root {
-        /* remove default background */
-        background-image: none !important;
-        /* set solid color background */
+      /* set solid color background */
+      html {
         background-color: #232325 !important;
+      }
+      /* remove default background */
+      body {
+        background-image: none !important;
       }
       /* Position of the image, auto = default */
       img:only-child {
