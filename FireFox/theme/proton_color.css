@@ -4,7 +4,7 @@
 :root {
   --in-content-page-color: rgb(0, 0, 0) !important; /* rgb(21, 20, 26) */
   --in-content-page-background: rgb(247, 247, 247) !important; /* #fff */
-  --in-content-text-color: rgb(0, 0, 0) !important;
+  --in-content-text-color: var(--in-content-page-color);
   --in-content-deemphasized-text: rgb(113, 113, 113) !important; /* rgb(91, 91, 102) */
   --in-content-box-background: #fff;
   --in-content-box-background-odd: rgba(12, 12, 13, 0.05); /* grey 90 a05 */

@@ -5,3 +5,5 @@
 @import "./proton_chrome/cert.css";
 /*= Page Info ==========================================================*/
 @import "./proton_chrome/page_info.css";
+/*= Proton Tree =========================================== I'VE ADDED =*/
+@import "./proton_chrome/proton_tree.css";
