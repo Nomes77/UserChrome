@@ -14,22 +14,17 @@
     }
   }
 }
-@-moz-document url("chrome://browser/content/places/bookmarksSidebar.xhtml"),
+@-moz-document url("chrome://browser/content/places/places.xhtml"),
+               url("chrome://browser/content/places/bookmarksSidebar.xhtml"),
                url("chrome://browser/content/places/historySidebar.xhtml") {
   :root {
+    --default-focusring-width: 1px !important;
     --tree-color: var(--in-content-text-color);
     --tree-hover-background: rgb(236, 236, 236);
     --tree-hover-color: var(--tree-color);
     --tree-selected-background: SelectedItem;
     --tree-selected-color: SelectedItemText;
     --tree-outline-color: var(tree-color);
-  }
-}
-@-moz-document url("chrome://browser/content/places/places.xhtml"),
-               url("chrome://browser/content/places/bookmarksSidebar.xhtml"),
-               url("chrome://browser/content/places/historySidebar.xhtml") {
-  :root {
-    --default-focusring-width: 1px !important;
   }
   /*- Tree -----------------------------------------------------------------*/
   treechildren::-moz-tree-row(hover) {
