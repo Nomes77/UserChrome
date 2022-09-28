@@ -18,12 +18,20 @@ user_pref("widget.non-native-theme.use-theme-accent	true", true);
 user_pref("browser.compactmode.show", true);
 
 // ** Theme Custom Options ************************************************************
+user_pref("userChrome+Content.additions.about_addons_show_management_buttons", false);
+user_pref("userChrome+Content.additions.about_config_compact", true);
 user_pref("userChrome+Content.additions.enable_selection", false);          // enable selection and copying on every website
+user_pref("userChrome+Content.additions.floating_findbar_on_top", true);
 user_pref("userChrome+Content.additions.private_mode", true);
+user_pref("userChrome+Content.additions.standalone_image_page_mods", true);
 user_pref("userChrome+Content.additions.uBlock_Origin.hide_default_unused", true);
 user_pref("userChrome+Content.additions.uBlock_Origin.show_shortcuts", false);
 user_pref("userChrome+Content.autohide.forward_button", false);
+user_pref("userChrome+Content.autohide.menubar", true);
 user_pref("userChrome+Content.compatibility.accent_color", true);
+user_pref("userChrome+Content.counter.bookmark_menu", false);
+user_pref("userChrome+Content.counter.tab", false);
+user_pref("userChrome+Content.newTab.image", true);
 user_pref("userChrome+Content.padding.bookmark_menu.compact", false);
 user_pref("userChrome+Content.padding.drag_space", true);
 user_pref("userChrome+Content.padding.first_tab", true);
