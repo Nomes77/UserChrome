@@ -11,8 +11,7 @@
     --win-field-bgcolor: rgb(255, 255, 255);
     --win-component-bgcolor: rgb(247, 247, 247);
     --win-border-color: rgb(190, 190, 190); /* #8a8a8a; =rgb(138, 138, 138)*/
-    --win-tab-seperator-color: linear-gradient(to right, color-mix(in srgb, var(--toolbar-bgcolor), currentColor 25%), currentColor);
-      /* linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%)); */
+    --win-tab-seperator-color: linear-gradient(to right, currentColor 50%, color-mix(in srgb, currentColor, transparent 25%));
     --win-sidebar-bgcolor: var(--win-field-bgcolor);
     --win-sidebar-hover-bgcolor: rgb(242, 242, 242);
     --win-sidebar-button-hover-bgcolor: var(--win-hover-bgcolor); /* #b8b8b8; =rgb(184, 184, 184)*/
@@ -49,7 +48,7 @@
       --win-bgcolor: #2b2b2b;
       --win-disabled-color: #747474; /* also button-active-color */
       --win-disabled-bgcolor: transparent;
-      --win-hover-bgcolor: #2e2e2e;
+      --win-hover-bgcolor: rgb(97, 97, 97); /* #2e2e2e */
       --win-hover-active-bgcolor: rgb(69, 69, 69); /* #454545; also button-bgcolor */
       --win-field-bgcolor: rgb(43, 43, 43);
       --win-component-bgcolor: rgb(59, 59, 59); /* #171717*/
@@ -69,6 +68,8 @@
       --win-accent-content-color: rgb(117, 182, 220);
       --win-accent-hover-color: rgb(0, 120, 212);
       --win-accent-active-color: rgb(0, 92, 163);
+      --win-toolbarbutton-hover-background: rgb(74, 74, 74);
+      --win-toolbarbutton-active-background: rgb(85, 85, 85);
       --win-checkbox-border-color: rgb(133, 133, 133);
       --win-checkbox-unchecked-hover-bgcolor: var(--win-field-bgcolor); /* rgb(172, 172, 172) */
       --win-checkbox-unchecked-active-bgcolor: rgb(110, 110, 110);
@@ -122,7 +123,7 @@
     /* Urlbar */
     --urlbar-popup-action-color: var(--win-text-color) !important;
     --urlbar-popup-url-color: var(--win-accent-content-color) !important;
-    --urlbar-box-bgcolor: transparent !important; /* --win-hover-active-bgcolor */
+    --urlbar-box-bgcolor: transparent !important;
     --urlbar-box-hover-bgcolor: var(--win-urlbar-box-hover-bgcolor) !important;
     --urlbar-box-active-bgcolor: var(--win-hover-active-bgcolor) !important;
     --urlbar-box-focus-bgcolor: transparent !important;
@@ -204,6 +205,13 @@
     --button-active-bgcolor: var(--win-sidebar-button-hover-active-bgcolor);
     --toolbarbutton-hover-background: var(--win-sidebar-button-hover-bgcolor);
     --toolbarbutton-active-background: var(--win-sidebar-button-hover-active-bgcolor);
+  }
+  /*- Address bar --------------------------------------------------------*/
+  @media not (prefers-contrast) {
+    :root:not(:-moz-lwtheme) #urlbar,
+    :root[lwt-default-theme-in-dark-mode] #urlbar {
+      --urlbar-box-bgcolor: var(--toolbar-field-focus-background-color) !important;
+    }
   }
   /*- Sidebar ------------------------------------------------------------*/
   #sidebar-box:not([lwt-sidebar]) {

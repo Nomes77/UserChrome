@@ -24,7 +24,7 @@
     @media (-moz-os-version: windows-win10), (-moz-platform: windows-win10) {
       :root[sizemode="normal"][tabsintitlebar="true"]:not([chromehidden~="menubar"], [inFullscreen]) 
         #titlebar:has(#toolbar-menubar[autohide="true"]) {
-          height: calc(var(--tab-min-height) + var(--space-above-tabbar)) !important;
+          height: calc(var(--tab-min-height) + var(--uc-space-above-tabbar)) !important;
       }
     }
   }

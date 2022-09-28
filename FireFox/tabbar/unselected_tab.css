@@ -34,7 +34,7 @@
 }
 .tabbrowser-tab:not([visuallyselected], [multiselected], :hover, :first-child) .tab-background::before,
 #tabs-newtab-button:not([open])::before { /* newtab-button seperator should be visible when hovered */
-  opacity: var(--tab-separator-opacity);
+  opacity: var(--tab-separator-opacity, 0.7);
 }
 #navigator-toolbox
   .tabbrowser-tab:is([visuallyselected], [multiselected], :hover)

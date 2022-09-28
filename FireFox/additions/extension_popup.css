@@ -17,8 +17,3 @@ toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-
   transform: scale(80%) !important;
   transform-origin: top right !important;
 }
-
-/* Audio Equalizer */
-panelmultiview[mainViewId="widget-overflow-mainView"] panelview.PanelUI-subView#PanelUI-webext-_7d5fcf8f-6eff-4d32-b958-a76d3fe933fb_-browser-action-view {
-  min-width: 550px !important;
-}

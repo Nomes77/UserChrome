@@ -1,4 +1,4 @@
-/*= Menu Color ======================================================================*/
+/*= Menu Color ======================================================= I'VE CHANGED =*/
 html#main-window menupopup:not(.in-menulist) {
   /* is same as toolbar color https://github.com/mozilla/gecko-dev/blob/master/toolkit/themes/windows/global/global.css#L17-L67 */
   --menu-color: var(--arrowpanel-color, var(--in-content-page-color)) !important;
@@ -28,14 +28,18 @@ html#main-window menupopup:not(.in-menulist) {
   html#main-window menupopup:not(.in-menulist) menuseparator {
     border-top: 1px solid var(--menu-border-color);
   }
-  html#main-window menupopup menu[disabled="true"],
-  html#main-window menupopup menu[_moz-menuactive="true"][disabled="true"],
-  html#main-window menupopup menuitem[disabled="true"],
-  html#main-window menupopup menuitem[_moz-menuactive="true"][disabled="true"] {
+  html#main-window menupopup:not(.in-menulist) menu[disabled="true"],
+  html#main-window menupopup:not(.in-menulist) menu[_moz-menuactive="true"][disabled="true"],
+  html#main-window menupopup:not(.in-menulist) menuitem[disabled="true"],
+  html#main-window menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"][disabled="true"] {
     color: var(--menu-disabled-color) !important;
   }
-  html#main-window menupopup menu[_moz-menuactive="true"]:not([disabled="true"]),
-  html#main-window menupopup menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
+  html#main-window menupopup:not(.in-menulist) menu[_moz-menuactive="true"][disabled="true"],
+  html#main-window menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"][disabled="true"] {
+    background-color: transparent !important;
+  }
+  html#main-window menupopup:not(.in-menulist) menu[_moz-menuactive="true"]:not([disabled="true"]),
+  html#main-window menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
     background-color: var(--menuitem-hover-background-color) !important;
     color: var(--menu-color) !important;
   }
@@ -78,12 +82,18 @@ html#main-window menupopup:not(.in-menulist) {
     var(--in-content-button-background)
   ) !important; /* --menu-background-color */
 }
+@media (-moz-windows-non-native-menus) and (-moz-toolbar-prefers-color-scheme: light),
+       (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
+  :root[style*="background-noodles-right"] menupopup {
+    --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
+  }
+}
 @media not all and (-moz-gtk-csd-available) {
   window:is(#bookmarksPanel, #history-panel)[style*="--newtab-background-color: rgba(249, 249, 251, 1);"] menupopup, /* Default Light Mode */
   window:is(#bookmarksPanel, #history-panel)[style*="--newtab-background-color: rgba(43, 42, 51, 1);"]    menupopup {
     /* Default Dark Mode */
     --panel-color: var(--menu-color) !important;
-    --panel-background: var(--menu-background-color) !important;
+    --panel-background: var(--menu-background-color, -moz-menuhover) !important;
   }
 }
 /*= PopupAutoComplete ===============================================================*/

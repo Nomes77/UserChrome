@@ -14,14 +14,14 @@
 */
 /*= Default Colors - Hard Coded ========================= I'VE CHANGED =*/
 @import "./theme/proton_color.css";
-/*= Menu Color =========================================================*/
+/*= Menu Color ========================================== I'VE CHANGED =*/
 /*= PopupAutoComplete ==================================================*/
 /*= Bookmark Popup Color ===============================================*/
 /*= Sidebar - Field Color ==============================================*/
 @import "./theme/fully_color.css";
 /** Fully Dark Mode ******************************************************************/
 @import "./theme/fully_dark.css";
-/** Proton Theme Mode ****************************************************************/
+/** Proton Theme Mode ************************************************ I'VE CHANGED **/
 @import "./theme/proton_chrome.css";
 /** Decoration ***********************************************************************/
 @import "./decoration/index.css";

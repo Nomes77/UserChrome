@@ -32,7 +32,7 @@
   findbar > .close-icon:hover,
   findbar > .close-icon:hover:active {
     border: 1px solid currentColor !important;
-    background-color: var(--toolbar-bgcolor) !important;
+    background-color: var(--arrowpanel-background) !important;
     pointer-events: auto;
   }
   findbar > .findbar-container {
@@ -41,7 +41,8 @@
     border-width: 1px 0 1px 1px !important;
   }
   findbar > .close-icon,
-  findbar > .close-icon:is(:hover, :active) {
+  findbar > .close-icon:hover,
+  findbar > .close-icon:hover:active {
     border-radius: 0 4px 4px 0 !important;
     border-width: 1px 1px 1px 0px !important;
   }
