@@ -1,5 +1,36 @@
 /** Activity Stream ************************************************** I'VE CHANGED **/
 @-moz-document url("about:home"), url("about:newtab"), url("about:privatebrowsing") {
+  html {
+    --searchbar-bgcolor: rgb(255, 255, 255);
+    --searchbar-bgcolor-hover: rgb(221, 221, 221);
+  }
+  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+    html {
+      --searchbar-bgcolor: rgb(43, 43, 43);
+      --searchbar-bgcolor-hover: rgb(61, 61, 61);
+    }
+  }
+  html.private {
+    --searchbar-bgcolor: rgb(43, 43, 43);
+    --searchbar-bgcolor-hover: rgb(61, 61, 61);
+  }
+  /*= Background - Private Mode ============================= I'VE ADDED =*/
+  @supports -moz-bool-pref("userChrome+Content.newTab.image") {
+    html.private {
+      --searchbar-bgcolor: color-mix(in srgb, rgb(43, 43, 43), transparent 60%) !important;
+      --searchbar-bgcolor-hover: color-mix(in srgb, rgb(61, 61, 61), transparent 60%) !important;
+    }
+    html.private body {
+      background-image: url("./../images/newtab/1.jpg") !important;
+      background-color: lightgreen !important;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    html.private .info {
+      display: none !important;
+    }
+  }
   /*= Activity Stream - Private Mode ======================== I'VE ADDED =*/
   @media not (prefers-contrast) {
     html.private {
@@ -46,11 +77,11 @@
   html.private .search-handoff-button {
     border: none !important;
     border-radius: 4px !important;
-    background-color: rgb(43, 43, 43) !important;
+    background-color: var(--searchbar-bgcolor) !important;
     box-shadow: none !important;
   }
   html.private .search-handoff-button:hover {
-    background-color: rgb(61, 61, 61) !important;
+    background-color: var(--searchbar-bgcolor-hover) !important;
   }
   html.private .fake-textbox {
     color: rgb(141, 141, 141) !important;
@@ -62,7 +93,7 @@
   /*= Activity Stream - Home Search Bar looks like proton ================*/
   /* Dropdown Colors */
   #root {
-    --newtab-search-background-color: rgba(255, 255, 255, 1); /* Same as light theme's --panel-background */
+    --newtab-search-background-color: rgb(255, 255, 255); /* Same as light theme's --panel-background */
     /* Set search dropdown background */
     --newtab-search-dropdown-header-color: var(--newtab-search-background-color) !important;
     --newtab-search-dropdown-color: var(--newtab-search-background-color) !important;
@@ -78,10 +109,14 @@
     /* Light weight theme */
     --newtab-search-background-color: var(--lwt-sidebar-background-color);
   }
+  .search-wrapper .search-handoff-button,
+  .search-wrapper input {
+    background-color: var(--searchbar-bgcolor) !important;
+  }
   .search-wrapper .search-handoff-button:hover,
   .search-wrapper input:hover {
     box-shadow: 0 10px 14px rgba(0, 0, 0, 0.25) !important;
-    background-color: rgb(221, 221, 221) !important;
+    background-color: var(--searchbar-bgcolor-hover) !important;
   }
   /* Padding */
   #searchSuggestionTable {
