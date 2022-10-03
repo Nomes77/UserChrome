@@ -8,17 +8,15 @@
   margin-bottom: 1px !important;
 }
 /*= Tabs Content Color =================================================*/
+:root:not(:-moz-lwtheme)
+  .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
+:root:not(:-moz-lwtheme)
+  .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]),
 :root[lwt-default-theme-in-dark-mode]
   .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
 :root[lwt-default-theme-in-dark-mode]
   .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
-    color: white;
-}
-:root:not(:-moz-lwtheme)
-  .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
-:root:not(:-moz-lwtheme)
-  .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
-    color: black;
+    color: var(--win-text-color) !important;
 }
 /*= Tabs Icons on Hover (Tooltip) ======================================*/
 @media (-moz-proton-places-tooltip) {

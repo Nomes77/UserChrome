@@ -1,10 +1,10 @@
-/*= Proton color ===================================================== I'VE CHANGED =*/
+/*= Proton color ====================================================================*/
 @-moz-document url-prefix("about:"),
                url-prefix("chrome://browser/content/places/places.xhtml"),
                url-prefix("view-source"),
                regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
     @supports -moz-bool-pref("userContent.page.proton_color.dark_blue_accent") {
-      @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: dark) {
         :host,
         :root {
           --blue-20: #b6d6ff;

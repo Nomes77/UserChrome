@@ -124,8 +124,7 @@ vbox[part="drop-indicator-bar"] > image[part="drop-indicator"] {
   }
   /* Override the menu color variables for dark browser themes. */
 }
-@media (-moz-windows-non-native-menus) and (-moz-toolbar-prefers-color-scheme: dark),
-       (-moz-windows-non-native-menus) and (prefers-color-scheme: dark) {
+@media (-moz-windows-non-native-menus) and (prefers-color-scheme: dark) {
   :root {
     --menuitem-hover-background-color: var(--dark-menuitem-hover-background-color);
     --menu-background-color: var(--dark-menu-background-color);

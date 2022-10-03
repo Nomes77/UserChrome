@@ -1,10 +1,10 @@
-/*= Proton color ===================================================== I'VE CHANGED =*/
+/*= Proton color ====================================================================*/
 /* Imported from "theme/proton_color", so it should be exactly the same file *?
 @-moz-document url-prefix("about:"),
                url-prefix("chrome://browser/content/places/places.xhtml"),
                url-prefix("view-source"),
                regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
-  /*= Default Colors - Hard Coded ====================================== I'VE CHANGED =*/
+  /*= Default Colors - Hard Coded =====================================================*/
   /* Based on chrome://global/skin/in-content/common-shared.css */
   :host,
   :root {
@@ -105,7 +105,7 @@
     --card-outline-color: var(--grey-30);
     --card-shadow-hover: var(--card-shadow), 0 0 0 5px var(--card-outline-color);
   }
-  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     :host,
     :root {
       /* Keep these in sync with layout/base/PresShell.cpp, and plaintext.css */

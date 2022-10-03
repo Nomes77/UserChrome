@@ -1,10 +1,10 @@
-/** Activity Stream ************************************************** I'VE CHANGED **/
+/** Activity Stream ******************************************************************/
 @-moz-document url("about:home"), url("about:newtab"), url("about:privatebrowsing") {
   html {
     --searchbar-bgcolor: rgb(255, 255, 255);
     --searchbar-bgcolor-hover: rgb(221, 221, 221);
   }
-  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     html {
       --searchbar-bgcolor: rgb(43, 43, 43);
       --searchbar-bgcolor-hover: rgb(61, 61, 61);
@@ -15,7 +15,8 @@
     --searchbar-bgcolor-hover: rgb(61, 61, 61);
   }
   /*= Background - Private Mode ============================= I'VE ADDED =*/
-  @supports -moz-bool-pref("userChrome+Content.newTab.image") {
+  @supports -moz-bool-pref("userChrome+Content.newTab.image"),
+            not -moz-bool-pref("userChrome+Content.zavety") {
     html.private {
       --searchbar-bgcolor: color-mix(in srgb, rgb(43, 43, 43), transparent 60%) !important;
       --searchbar-bgcolor-hover: color-mix(in srgb, rgb(61, 61, 61), transparent 60%) !important;
@@ -31,7 +32,7 @@
       display: none !important;
     }
   }
-  /*= Activity Stream - Private Mode ======================== I'VE ADDED =*/
+  /*= Activity Stream - Private Mode =====================================*/
   @media not (prefers-contrast) {
     html.private {
       --in-content-page-color: white;
@@ -99,7 +100,7 @@
     --newtab-search-dropdown-color: var(--newtab-search-background-color) !important;
     --newtab-element-hover-color: color-mix(in srgb, currentColor 9%, transparent) !important;
   }
-  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     #root {
       /* Default Dark Mode */
       --newtab-search-background-color: rgba(66, 65, 77, 1); /* Same as dark theme's --panel-background */

@@ -1,11 +1,11 @@
-/** Fully Proton Mode ************************************************ I'VE CHANGED **/
+/** Fully Proton Mode ****************************************************************/
 /*= Common contents ====================================================*/
 @import "proton_contents/proton_commons.css";
 
 /*= Field Border =======================================================*/
 @import "proton_contents/field_border.css";
 
-/*= Focus Outline ========================================= I'VE ADDED =*/
+/*= Focus Outline ======================================================*/
 @import "proton_contents/focus_outline.css";
 
 /*= View Source ========================================================*/
