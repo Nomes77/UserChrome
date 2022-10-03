@@ -22,7 +22,6 @@ user_pref("userChrome+Content.additions.about_addons_show_management_buttons", f
 user_pref("userChrome+Content.additions.about_config_compact", true);
 user_pref("userChrome+Content.additions.enable_selection", false);          // enable selection and copying on every website
 user_pref("userChrome+Content.additions.floating_findbar_on_top", true);
-user_pref("userChrome+Content.additions.private_mode", true);
 user_pref("userChrome+Content.additions.standalone_image_page_mods", true);
 user_pref("userChrome+Content.additions.uBlock_Origin.hide_default_unused", true);
 user_pref("userChrome+Content.additions.uBlock_Origin.show_shortcuts", false);
@@ -46,6 +45,8 @@ user_pref("userChrome+Content.tab.close_button_at_hover_pinned.always", true);
 user_pref("userChrome+Content.tab.show_(un)muted_icon_pinned", false);
 user_pref("userChrome+Content.tab.show_sound_label", false);
 user_pref("userChrome+Content.tab.vertical_tab", false);
+user_pref("userChrome+Content.theme.cool_breeze", false);
+user_pref("userChrome+Content.theme.private_mode", true);
 user_pref("userChrome+Content.urlview.permissions.hide_granded-icon", false);
 user_pref("userChrome+Content.zavety", false);
 
