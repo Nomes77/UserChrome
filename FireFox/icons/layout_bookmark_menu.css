@@ -1,7 +1,4 @@
 /*= Bookmark Menu - Layout ==========================================================*/
-/* #goPopup(Legacy of historyMenuPopup), #historyMenuPopup, #bookmarksMenuPopup: looks like global menu
- * #BMB_bookmarksPopup: looks like arrow panel
- */
 /* Empty Menu */
 menupopup menupopup[emptyplacesresult] .menu-text,
 #PersonalToolbar menupopup[emptyplacesresult] .menu-text {
@@ -13,15 +10,13 @@ menupopup menupopup[emptyplacesresult] .menu-text,
   --context-menu-background-padding: var(--arrowpanel-menuitem-padding-inline);
 }
 /* Windows */
-@media (-moz-os-version: windows-win10), /* Legacy - v99 */
-       (-moz-platform: windows-win10) {
+@media (-moz-platform: windows-win10) {
   /* Bookmark Popup - None icon menu */
   menupopup:is(#BMB_bookmarksPopup)  menuitem:not(.menuitem-iconic, [disabled="true"]),
   menupopup:is(#BMB_bookmarksPopup)  menu:not(.menu-iconic),
   #PersonalToolbar menupopup[placespopup="true"] menuitem:not(.menuitem-iconic, [disabled="true"]),
   #PersonalToolbar menupopup[placespopup="true"] menu:not(.menu-iconic) {
-    margin-inline: var(--arrowpanel-menuitem-padding-inline) !important;
-    padding-inline-start: calc(var(--arrowpanel-menuicon-padding) + var(--context-menu-text-padding)) !important;
-    background-position: var(--uc-menu-background-position) calc(var(--arrowpanel-menuicon-padding)) center !important;
+    padding-inline-start: calc(var(--arrowpanel-menuitem-padding-inline) + var(--context-menu-text-padding)) !important;
+    background-position: var(--uc-menu-background-position) calc(var(--arrowpanel-menuitem-padding-inline)) center !important;
   }
 }

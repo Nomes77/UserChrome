@@ -1,4 +1,4 @@
-/** Rounding ********************************************************** I'VE CHANGED */
+/** Rounding ************************************************************************/
 @supports -moz-bool-pref("userChrome+Content.rounding.square") {
   :root {
     --tab-border-radius: 0 !important;

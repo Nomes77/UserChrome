@@ -16,3 +16,8 @@
   > .tab-loading-burst:not([bursting]) {
   opacity: 0.15;
 }
+
+
+.tab-background[multiselected="true"] {
+  outline: 0 !important;
+}

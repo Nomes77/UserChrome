@@ -1,4 +1,4 @@
-/*= SearchButton ======================================================= I'VE ADDED =*/
+/*= SearchButton ====================================================================*/
 :host(:not([searchbutton])) > .textbox-search-sign,
 :host([searchbutton]) .textbox-search-icon {
   list-style-image: url("./../../images/search-glass.svg") !important;

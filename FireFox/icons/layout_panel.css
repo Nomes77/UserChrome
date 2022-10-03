@@ -1,18 +1,15 @@
 /*= Padding =========================================================================*/
 :root {
-  --arrowpanel-menuicon-padding: 8px;
-  --arrowpanel-menublank-padding: calc(var(--arrowpanel-menuicon-padding) * 2 + var(var(--arrowpanel-menuitem-padding-inline))) !important;
+  --arrowpanel-menuicon-width: 16px;
+  --arrowpanel-menutext-padding: 8px;
+  --arrowpanel-menublank-padding: calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menuitem-padding-inline)) !important;
   --arrowpanel-menuimageblank-padding: calc(var(--arrowpanel-menuitem-padding-inline) - 2px) !important;
   --arrowpanel-menuimageblank-padding-block: calc(var(--arrowpanel-menuitem-padding-block) - 2px) !important;
-  /* Global */
-  --arrowpanel-menuicon-paddingx2: calc(var(--arrowpanel-menuicon-padding) * 2);
   /* General Panel */
-  --arrowpanel-menublank-padding: calc(var(--arrowpanel-menuicon-paddingx2) + 8px) !important;
+  --arrowpanel-menublank-padding: calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menutext-padding)) !important;
   --arrowpanel-menuimageblank-padding: calc(var(--arrowpanel-menuitem-padding-inline) - 2px) !important;
   /* Blank Menu Left Padding */
-  --arrowpanel-menuimageblank-padding-horizontal: calc(
-    var(--arrowpanel-menuicon-paddingx2) + var(--arrowpanel-menuitem-padding-inline)
-  );
+  --arrowpanel-menuimageblank-padding-horizontal: calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menuitem-padding-inline));
   --arrowpanel-menuitemblank-padding: calc(var(--arrowpanel-menuitem-padding-block) + 1px);
 }
 .subviewbutton > .toolbarbutton-icon {
@@ -20,7 +17,7 @@
 }
 #downloadsHistory .button-text,
 .subviewbutton > .toolbarbutton-text {
-  padding-inline-start: var(--arrowpanel-menuicon-padding) !important;
+  padding-inline-start: var(--arrowpanel-menutext-padding) !important;
 }
 .toolbaritem-combined-buttons > .subviewbutton:not(.subviewbutton-iconic) > .toolbarbutton-text {
   padding-inline-start: 0 !important;
@@ -31,11 +28,12 @@
 }
 #appMenu-proton-update-banner .toolbarbutton-text {
   margin-inline-start: 0 !important;
+  padding-inline-start: 0 !important; /* FF v107 */
 }
 #appMenu-multiView .subviewbutton::before,
 #appMenu-proton-update-banner::before {
   display: -moz-inline-box;
-  margin-inline-end: var(--arrowpanel-menuicon-padding);
+  margin-inline-end: var(--arrowpanel-menutext-padding);
   width: 16px;
   height: 16px;
 }
@@ -43,7 +41,7 @@
   margin-bottom: 2px !important;
 }
 #appMenu-proton-update-banner::before {
-  margin-inline-start: var(--arrowpanel-menuitem-padding-inline) !important;
+  padding-inline-start: var(--arrowpanel-menuitem-padding-inline) !important;
 }
 #appMenu-fxa-status2,
 #appMenu-zoom-controls2, /* Legacy v104 */
@@ -69,7 +67,7 @@
 #appMenu-multiView .subviewbutton::before,
 #appMenu-proton-update-banner::before,
 #downloadsHistory .button-icon,
-.subviewbutton > image {
+.subviewbutton:not(#appMenu-proton-update-banner) > image {
   fill: currentColor !important;
   fill-opacity: var(--toolbarbutton-icon-fill-opacity) !important;
   -moz-context-properties: fill !important;

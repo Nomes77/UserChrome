@@ -1,4 +1,4 @@
-/*- Clipped tabs - Show close button at hover pinned ----------------- I'VE CHANGED -*/
+/*- Clipped tabs - Show close button at hover pinned --------------------------------*/
 @supports -moz-bool-pref("userChrome+Content.tab.close_button_at_hover_pinned") {
   #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned] {
     --pinned-hover-delay: 2s;

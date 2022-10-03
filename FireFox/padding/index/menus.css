@@ -18,8 +18,8 @@
 }
 menupopup:not(.in-menulist) > menuitem,
 menupopup > menu {
-  /* Original: 0.5em */
-  padding-block: var(--menu-padding) !important;
+  padding-block: var(--menu-padding) !important; /* Original: 0.5em */
+  padding-inline-start: var(--arrowpanel-menuitem-padding-inline) !important;
 }
 #ContentSelectDropdown > menupopup > menucaption,
 #ContentSelectDropdown > menupopup > menuitem {
@@ -28,6 +28,35 @@ menupopup > menu {
 /* Arrow Icon Align to Right */
 .bookmark-item.subviewbutton > .menu-right {
   margin-inline-end: 0 !important;
+}
+.menu-right,
+.menu-accel,
+.menu-iconic-accel {
+  margin-inline-end: 0 !important;
+}
+/*= Menus - Set Margin ==============================================================*/
+menupopup > menuitem,
+menupopup > menu,
+.openintabs-menuitem,
+#blockedPopupDontShowMessage,
+#BMB_viewBookmarksToolbar,
+#clearDownloadsButton /* Library */ {
+  margin: var(--arrowpanel-menuitem-margin) !important;
+}
+/*= Sub Menu - Nested Margin ========================================================*/
+@media (-moz-windows-non-native-menus) {
+  menupopup {
+    --nested-margin-side: 2.25em !important; /* 27px = padding-text + icon + padding-inline-start */
+  }
+}
+@media not (-moz-windows-non-native-menus) {
+  menupopup {
+    --nested-margin-side: -0.3em !important;
+  }
+}
+menupopup > menu > menupopup {
+  /* align submenus */
+  margin-inline-start: var(--nested-margin-side) !important;
 }
 /*= Bookmark Menu - Reduce Padding ==================================================*/
 :root {
@@ -52,8 +81,7 @@ menupopup > menu {
 @supports -moz-bool-pref("userChrome+Content.padding.menu_compact") or -moz-bool-pref("userChrome+Content.padding.bookmark_menu.compact") {
   :root:not([uidensity="touch"]) #BMB_bookmarksPopup .bookmark-item,
   :root:not([uidensity="touch"]) #PlacesToolbar menupopup[placespopup] .bookmark-item {
-    min-height: unset !important;
-    /* Original: 24px */
+    min-height: unset !important; /* Original: 24px */
   }
 }
 /*= Global Menu - Set Padding =======================================================*/

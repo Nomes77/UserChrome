@@ -1,5 +1,5 @@
 /*= Proton Tree =====================================================================*/
-@-moz-document url("chrome://browser/content/places/places.xhtml") {
+/* @-moz-document url("chrome://browser/content/places/places.xhtml") {
   @media not (prefers-contrast) {
     :root {
       --organizer-color: var(--in-content-text-color) !important;
@@ -13,7 +13,7 @@
       --organizer-outline-color: var(--organizer-color) !important;
     }
   }
-}
+} */
 @-moz-document url("chrome://browser/content/places/places.xhtml"),
                url("chrome://browser/content/places/bookmarksSidebar.xhtml"),
                url("chrome://browser/content/places/historySidebar.xhtml") {

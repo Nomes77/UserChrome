@@ -1,4 +1,4 @@
-/*- Clipped tabs - Always show tab icon  ----------------------------- I'VE CHANGED -*/
+/*- Clipped tabs - Always show tab icon  --------------------------------------------*/
 .tab-icon-image:not([src], [busy], [progress]) {
   display: -moz-inline-box !important;
 }

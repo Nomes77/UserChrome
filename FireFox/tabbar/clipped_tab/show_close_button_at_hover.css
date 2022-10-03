@@ -1,4 +1,4 @@
-/*- Clipped tabs - Show close button at hover ------------------------ I'VE CHANGED -*/
+/*- Clipped tabs - Show close button at hover ---------------------------------------*/
 #tabbrowser-tabs[closebuttons="activetab"]
   > #tabbrowser-arrowscrollbox
   > .tabbrowser-tab:not([pinned])

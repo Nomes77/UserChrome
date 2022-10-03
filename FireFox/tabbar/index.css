@@ -3,19 +3,19 @@
 @import "./connect_to_window.css";
 /*= Selected Tab =======================================================*/
 @import "./selected_tab.css";
-/*= Unselected Tab - Divide line ======================== I'VE CHANGED =*/
+/*= Unselected Tab - Divide line =======================================*/
 @import "./unselected_tab.css";
-/*= New tab button ====================================== I'VE CHANGED =*/
+/*= New tab button =====================================================*/
 @import "./newtab_button.css";
 /*= Unloaded Tab - Contents Opacity ====================================*/
 @import "./unload_tab.css";
-/*= Clipped tabs ======================================== I'VE CHANGED =*/
+/*= Clipped tabs =======================================================*/
 @import "./clipped_tab.css";
-/*= Sound Tab =========================================== I'VE CHANGED =*/
+/*= Sound Tab ==========================================================*/
 @import "./sound_tab.css";
-/*= PictureInPicture Tab - Show PIP Icon ================ I'VE CHANGED =*/
+/*= PictureInPicture Tab - Show PIP Icon ===============================*/
 @import "./picture_in_picture_tab.css";
-/*= Container Tab - Color line at icon's bottom ========= I'VE CHANGED =*/
+/*= Container Tab - Color line at icon's bottom ========================*/
 @import "./container_tab.css";
-/*= Vertical Tab ======================================== I'VE CHANGED =*/
+/*= Vertical Tab =======================================================*/
 @import "./vertical_tab.css";

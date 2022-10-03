@@ -1,4 +1,4 @@
-/** Toolbarbutton - Icons Layout *************************************** I'VE ADDED **/
+/** Toolbarbutton - Icons Layout *****************************************************/
 #nav-bar toolbarbutton { /* #urlbar-container should remain 4px */
   --toolbarbutton-border-radius: 2px !important;
 }
@@ -32,6 +32,9 @@ html[id="main-window"]:not([customizing="true"]) toolbar #bookmarks-menu-button:
 }
 html[id="main-window"]:not([customizing="true"]) toolbar toolbarbutton.webextension-browser-action:last-of-type {
   transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2 * var(--toolbarbutton-outer-padding) - 16px));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar:not([nonemptyoverflow="true"]) #bookmarks-menu-button {
+  transform: none !important;
 }
 /* Line between bookmark and overflow button */
 html[id="main-window"][chromehidden=""] #PanelUI-button::before {

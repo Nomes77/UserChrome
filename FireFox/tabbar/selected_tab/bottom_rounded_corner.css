@@ -1,4 +1,4 @@
-/*- Selected Tab - Bottom Rounded Corner ----------------------------- I'VE CHANGED -*/
+/*- Selected Tab - Bottom Rounded Corner --------------------------------------------*/
 #tabbrowser-tabs {
   --tab-border-radius: 4px !important;
   --tab-corner-rounding: var(--tab-border-radius); /* 10px looks about like chromium - 17px looks close to Australis tabs */
@@ -10,7 +10,7 @@ tab > stack::after {
   content: "" !important;
   /* Box */
   display: block;
-  z-index: 0 !important;
+  z-index: 1 !important;
   position: absolute !important;
   /* Shape */
   width: var(--tab-corner-rounding) !important;

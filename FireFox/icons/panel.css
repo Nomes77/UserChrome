@@ -245,14 +245,6 @@ panelMenuBookmarkThisPage[starred] {
 #BMB_bookmarksPopup > .bookmark-item menupopup > menuitem.openintabs-menuitem {
   --menuitem-image: url("./../images/window-new.svg");
 }
-@media (-moz-windows-non-native-menus) {
-  #main-menubar menu.bookmark-item menupopup {
-    --nested-margin: -6px !important;
-  }
-  menu.bookmark-item menupopup {
-    --nested-margin: 6px !important;
-  }
-}
 /* BMB_bookmarksToolbarPopup */
 #BMB_viewBookmarksToolbar[data-l10n-args='{"isVisible":true}'] {
   --menuitem-image: url("./../images/eye-hide.svg");

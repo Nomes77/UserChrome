@@ -26,7 +26,7 @@ vbox:hover,
 .subviewbutton:hover {
   transition: background-color 0.1s var(--animation-easing-function) !important;
 }
-/*- Pinned Tab ------------------------------------------ I'VE CHANGED -*/
+/*- Pinned Tab ---------------------------------------------------------*/
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:not([collapsed]) {
   /* -moz-box-flex may be caused #tabbrowser-tabs[closebuttons] */
   transition: -moz-box-flex 0.2s var(--animation-easing-function),

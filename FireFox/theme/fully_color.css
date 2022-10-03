@@ -1,4 +1,4 @@
-/*= Menu Color ======================================================= I'VE CHANGED =*/
+/*= Menu Color ======================================================================*/
 html#main-window menupopup:not(.in-menulist) {
   /* is same as toolbar color https://github.com/mozilla/gecko-dev/blob/master/toolkit/themes/windows/global/global.css#L17-L67 */
   --menu-color: var(--arrowpanel-color, var(--in-content-page-color)) !important;
@@ -82,8 +82,7 @@ html#main-window menupopup:not(.in-menulist) {
     var(--in-content-button-background)
   ) !important; /* --menu-background-color */
 }
-@media (-moz-windows-non-native-menus) and (-moz-toolbar-prefers-color-scheme: light),
-       (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
+@media (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
   :root[style*="background-noodles-right"] menupopup {
     --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
   }

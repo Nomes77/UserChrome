@@ -2,58 +2,55 @@
 /* Github: https://github.com/black7375/Firefox-UI-Fix/blob/master/userChrome.css ****/
 /** Default Theme - Contrast *********************************************************/
 @import "./theme/built_in.css";
-/** Compatibility Fixes ********************************************** I'VE CHANGED **/
+/** Compatibility Fixes **************************************************************/
 @import "./compatibility/index.css";
 /** System Default Theme *************************************************************/
 @import "./theme/system_default_theme.css";
 /** Fully Theme Mode *****************************************************************/
-/* Default Themes
-   https://github.com/mozilla/gecko-dev/blob/master/toolkit/mozapps/extensions/default-theme/manifest.json
-   https://github.com/mozilla/gecko-dev/blob/master/browser/themes/addons/light/manifest.json
-   https://github.com/mozilla/gecko-dev/blob/master/browser/themes/addons/dark/manifest.json
-*/
-/*= Default Colors - Hard Coded ========================= I'VE CHANGED =*/
+/*= Default Colors - Hard Coded ========================================*/
 @import "./theme/proton_color.css";
-/*= Menu Color ========================================== I'VE CHANGED =*/
+/*= Menu Color =========================================================*/
 /*= PopupAutoComplete ==================================================*/
 /*= Bookmark Popup Color ===============================================*/
 /*= Sidebar - Field Color ==============================================*/
 @import "./theme/fully_color.css";
 /** Fully Dark Mode ******************************************************************/
 @import "./theme/fully_dark.css";
-/** Proton Theme Mode ************************************************ I'VE CHANGED **/
+/** Proton Theme Mode ****************************************************************/
 @import "./theme/proton_chrome.css";
 /** Decoration ***********************************************************************/
 @import "./decoration/index.css";
-/** Rounding ********************************************************* I'VE CHANGED **/
+/** Rounding *************************************************************************/
 @import "./rounding/index.css";
-/** Reduce Padding *************************************************** I'VE CHANGED **/
+/** Reduce Padding *******************************************************************/
 @import "./padding/index.css";
-/** Tab Bar UI ******************************************************* I'VE CHANGED **/
+/** Tab Bar UI ***********************************************************************/
 @import "./tabbar/index.css";
-/** URL View UI ******************************************************** I'VE ADDED **/
+/** URL View UI **********************************************************************/
 @import "./urlview/index.css";
 /** Fullscreen - Overlap toolbar *****************************************************/
 @import "./tabbar/fullscreen.css";
-/** Library - Icons Replace ****************************************** I'VE CHANGED **/
+/** Library - Icons Replace **********************************************************/
 @import "./library/chrome.css";
 /** Panel - Icons ********************************************************************/
 /*= Padding ============================================================*/
 @import "./icons/layout_panel.css";
-/*= Panel =============================================== I'VE CHANGED =*/
+/*= Panel ==============================================================*/
 @import "./icons/panel.css";
-/** Menu - Icons Layout ********************************************** I'VE CHANGED **/
+/** Menu - Icons Layout **************************************************************/
 @import "./icons/layout_menu.css";
 /*= Bookmark Menu - Layout =============================================*/
 @import "./icons/layout_bookmark_menu.css";
-/** Toolbarbutton - Icons Layout *************************************** I'VE ADDED **/
+/** Toolbarbutton - Icons Layout *****************************************************/
 @import "./icons/layout_toolbarbuttons.css";
-/** Icons ************************************************************ I'VE CHANGED **/
+/** Icons ****************************************************************************/
 @import "./icons/index.css";
-/** Libray Menu ****************************************************** I'VE CHANGED **/
-@import "./icons/library.css";
-/** Toolbarbutton Icons ************************************************ I'VE ADDED **/
+/** TitleBar *************************************************************************/
+@import "./icons/titlebar.css";
+/** Toolbarbutton Icons **************************************************************/
 @import "./icons/toolbarbuttons.css";
+/** Libray Menu **********************************************************************/
+@import "./icons/library.css";
 /** Others UI ************************************************************************/
 @import "./counter/index.css";
 /** Auto Hide ************************************************************************/
@@ -61,16 +58,12 @@
 
 /* MY ADDITIONS based on: ************************************************************************/
 /* Github: https://raw.githubusercontent.com/sapierens/firefox-edge/master/FirefoxEdgeLight.css **/
-/* TITLE BAR *************************************************************************************/
-@import "./additions/titlebar.css";
 /* TABBROWSER-TAB ********************************************************************************/
 @import "./additions/tabbrowser_tab.css";
 /* EXTENSION POPUP *******************************************************************************/
 @import "./additions/extension_popup.css";
 /* MENU-LEFT *************************************************************************************/
 @import "./additions/menu_left.css";
-/* PRIVATE MODE **********************************************************************************/
-@import "./additions/private_mode.css";
 /* Findbar ***************************************************************************************/
 @import "./additions/findbar.css";
 

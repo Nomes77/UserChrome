@@ -1,4 +1,4 @@
-/*= SideBar ============================================================ I'VE ADDED =*/
+/*= SideBar =========================================================================*/
 #sidebar-box[sidebarcommand="viewBookmarksSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon,
 #sidebarMenu-popup #sidebar-switcher-bookmarks > .toolbarbutton-icon {
   list-style-image: url("./../../images/star-line-horizontal.svg") !important;

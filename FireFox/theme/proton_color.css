@@ -1,4 +1,4 @@
-/*= Default Colors - Hard Coded ====================================== I'VE CHANGED =*/
+/*= Default Colors - Hard Coded =====================================================*/
 /* Based on chrome://global/skin/in-content/common-shared.css */
 :host,
 :root {
@@ -99,7 +99,7 @@
   --card-outline-color: var(--grey-30);
   --card-shadow-hover: var(--card-shadow), 0 0 0 5px var(--card-outline-color);
 }
-@media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :host,
   :root {
     /* Keep these in sync with layout/base/PresShell.cpp, and plaintext.css */

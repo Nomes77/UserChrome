@@ -8,7 +8,7 @@
   url("chrome://browser/content/pageinfo/pageInfo.xhtml")
 {
   /*- Overwrite ----------------------------------------------------------*/
-  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     :root {
       --in-content-page-background: #42414d;
     }
@@ -450,8 +450,7 @@
     color: var(--in-content-text-color) !important;
   }
   /*- Each OS ------------------------------------------------------------*/
-  @media (-moz-os-version: windows-win7), (-moz-os-version: windows-win8), (-moz-os-version: windows-win10), /* Legacy - v99 */
-         (-moz-platform: windows-win7), (-moz-platform: windows-win8), (-moz-platform: windows-win10) {
+  @media (-moz-platform: windows-win7), (-moz-platform: windows-win8), (-moz-platform: windows-win10) {
     xul|checkbox,
     xul|radio {
       padding-inline-start: 0 !important;
