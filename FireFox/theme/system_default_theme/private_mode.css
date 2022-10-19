@@ -1,5 +1,5 @@
 /*= Private Mode ====================================================================*/
-@supports -moz-bool-pref("userChrome+Content.additions.private_mode") {
+@supports -moz-bool-pref("userChrome+Content.theme.private_mode") {
   :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme) {
     --win-text-color: rgb(255, 255, 255);
     --win-bgcolor: #2b2b2b;
