@@ -1,5 +1,5 @@
 /*= Private Mode ====================================================================*/
-@supports -moz-bool-pref("userChrome+Content.theme.private_mode") {
+@supports -moz-bool-pref("userChrome+Content.additions.private_mode") {
   :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme) {
     --win-text-color: rgb(255, 255, 255);
     --win-bgcolor: #2b2b2b;
@@ -10,7 +10,7 @@
     --win-field-bgcolor: rgb(43, 43, 43);
     --win-component-bgcolor: rgb(59, 59, 59); /* #171717*/
     --win-border-color: #5b5b5b;
-    --win-tab-seperator-color: linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%));
+    --win-tab-separator-color: linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%));
     --win-sidebar-bgcolor: var(--win-field-bgcolor);
     --win-sidebar-hover-bgcolor: #353535;
     --win-sidebar-button-hover-bgcolor: var(--win-hover-bgcolor);
@@ -18,7 +18,7 @@
     --win-button-border: rgb(110, 110, 110); /* #8f8f8f */
     --win-button-hover-bgcolor: rgb(84, 84, 84); /* rgba(116, 116, 116, 0.66); */
     --win-button-active-bgcolor: rgb(72, 72, 72);
-    --win-shorcut-text-color: #adadad;
+    --win-shortcut-text-color: #adadad;
     --win-error-color: #ffb900;
     --win-red-border-color: #ff4343;
     --win-accent-color: rgb(0, 108, 190);

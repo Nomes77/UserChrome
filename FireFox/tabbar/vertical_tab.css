@@ -141,14 +141,16 @@
     color: var(--sidebar-text-color) !important;
     overflow: hidden;
   }
+  #sidebar-header,
   #sidebar-box,
   #sidebar-box > #sidebar {
     min-width: var(--uc-sidebar-width) !important;
     max-width: var(--uc-sidebar-width) !important;
     will-change: min-width, max-width;
   }
-  #sidebar-box:hover,
-  #sidebar-box:hover > #sidebar {
+  #sidebar-box:is(:hover, :focus-within) > #sidebar-header,
+  #sidebar-box:is(:hover, :focus-within),
+  #sidebar-box:is(:hover, :focus-within) > #sidebar {
     min-width: var(--uc-sidebar-activate-width) !important;
     max-width: var(--uc-sidebar-activate-width) !important;
   }

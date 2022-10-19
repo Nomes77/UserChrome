@@ -10,7 +10,7 @@
     --win-field-bgcolor: rgb(255, 255, 255);
     --win-component-bgcolor: rgb(247, 247, 247);
     --win-border-color: rgb(190, 190, 190); /* #8a8a8a; =rgb(138, 138, 138)*/
-    --win-tab-seperator-color: linear-gradient(to right, currentColor 50%, color-mix(in srgb, currentColor, transparent 25%));
+    --win-tab-separator-color: linear-gradient(to right, currentColor 50%, color-mix(in srgb, currentColor, transparent 25%));
     --win-sidebar-bgcolor: var(--win-field-bgcolor);
     --win-sidebar-hover-bgcolor: rgb(242, 242, 242);
     --win-sidebar-button-hover-bgcolor: var(--win-hover-bgcolor); /* #b8b8b8; =rgb(184, 184, 184)*/
@@ -18,11 +18,11 @@
     --win-button-border: rgb(107, 107, 107); /* rgb(116, 116, 116) */
     --win-button-hover-bgcolor: rgb(230, 230, 230); /* rgba(145, 145, 145, 0.66); */
     --win-button-active-bgcolor: rgb(242, 242, 242);
-    --win-shorcut-text-color: #757575;
+    --win-shortcut-text-color: #757575;
     --win-error-color: #b31616; /* =rgb(179, 22, 22) */
     --win-red-border-color: #ff4343;
     --win-accent-color: rgb(0, 120, 212);
-    --win-accent-forground-color: AccentColorText;
+    --win-accent-foreground-color: AccentColorText;
     --win-accent-content-color: rgb(0, 96, 169);
     --win-accent-hover-color: rgb(0, 108, 190);
     --win-accent-active-color: rgb(22, 131, 216);
@@ -52,7 +52,7 @@
       --win-field-bgcolor: rgb(43, 43, 43);
       --win-component-bgcolor: rgb(59, 59, 59); /* #171717*/
       --win-border-color: #5b5b5b;
-      --win-tab-seperator-color: linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%));
+      --win-tab-separator-color: linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%));
       --win-sidebar-bgcolor: var(--win-field-bgcolor);
       --win-sidebar-hover-bgcolor: #353535;
       --win-sidebar-button-hover-bgcolor: var(--win-hover-bgcolor);
@@ -60,7 +60,7 @@
       --win-button-border: rgb(110, 110, 110); /* #8f8f8f */
       --win-button-hover-bgcolor: rgb(84, 84, 84); /* rgba(116, 116, 116, 0.66); */
       --win-button-active-bgcolor: rgb(72, 72, 72);
-      --win-shorcut-text-color: #adadad;
+      --win-shortcut-text-color: #adadad;
       --win-error-color: #ffb900;
       --win-red-border-color: #ff4343;
       --win-accent-color: rgb(0, 108, 190);
@@ -85,7 +85,7 @@
     --button-bgcolor: var(--win-hover-bgcolor); !important; /* var(--win-hover-active-bgcolor) */
     --button-hover-bgcolor: var(--win-button-hover-bgcolor) !important;
     --button-active-bgcolor: var(--win-button-active-bgcolor) !important; /* --win-disabled-bgcolor */
-    --button-primary-color: var(--win-accent-forground-color) !important; /* was --win-field-bgcolor (https://github.com/black7375/Firefox-UI-Fix/commit/c5347004393a3d9efe4b51c5eb0d95d8782d162b) */
+    --button-primary-color: var(--win-accent-foreground-color) !important; /* was --win-field-bgcolor (https://github.com/black7375/Firefox-UI-Fix/commit/c5347004393a3d9efe4b51c5eb0d95d8782d162b) */
     --button-primary-bgcolor: var(--win-accent-color) !important;
     --button-primary-hover-bgcolor: var(--win-accent-hover-color) !important;
     --button-primary-active-bgcolor: var(--win-accent-active-color) !important;
@@ -113,7 +113,7 @@
     --toolbar-field-focus-color: var(--win-text-color) !important;
     --toolbar-field-focus-background-color: var(--win-field-bgcolor) !important; /* --win-component-bgcolor */
     --toolbar-field-focus-border-color: var(--win-toolbar-field-focus-border-color) !important; /* --win-accent-color */
-    --toolbarseparator-color: var(--win-tab-seperator-color) !important;
+    --toolbarseparator-color: var(--win-tab-separator-color) !important;
     /* Toolbarbutton */
     --toolbarbutton-hover-background: var(--win-toolbarbutton-hover-background) !important; /* var(--win-hover-bgcolor) */
     --toolbarbutton-active-background: var(--win-toolbarbutton-active-background) !important; /* --win-hover-active-bgcolor */
@@ -128,7 +128,7 @@
     --urlbar-box-focus-bgcolor: transparent !important;
       /* --urlbar-icon-fill-opacity: 1 !important; */
     /* Checkbox */
-    --checkbox-checked-color: var(--win-accent-forground-color) !important; /* was --win-field-bgcolor (https://github.com/black7375/Firefox-UI-Fix/commit/c5347004393a3d9efe4b51c5eb0d95d8782d162b) */
+    --checkbox-checked-color: var(--win-accent-foreground-color) !important; /* was --win-field-bgcolor (https://github.com/black7375/Firefox-UI-Fix/commit/c5347004393a3d9efe4b51c5eb0d95d8782d162b) */
     --checkbox-checked-bgcolor: var(--win-checkbox-checked-bgcolor) !important; /* --win-accent-color */
     --checkbox-unchecked-bgcolor: var(--win-field-bgcolor) !important; /* --win-hover-active-bgcolor */
     --checkbox-unchecked-hover-bgcolor: var(--win-checkbox-unchecked-hover-bgcolor) !important; /* --win-field-bgcolor */
@@ -149,8 +149,8 @@
     --panel-banner-item-hover-bgcolor: var(--win-hover-bgcolor) !important;
     --panel-banner-item-active-bgcolor: var(--win-hover-active-bgcolor) !important;
     --panel-disabled-color: var(--win-disabled-color) !important;
-    --panel-shortcut-color: var(--win-shorcut-text-color) !important;
-    --panel-description-color: var(--win-shorcut-text-color) !important;
+    --panel-shortcut-color: var(--win-shortcut-text-color) !important;
+    --panel-description-color: var(--win-shortcut-text-color) !important;
     --panelview-toolbarbutton-focus-box-shadow: inset 0 0 0 2px var(--focus-outline-color) !important;
     /* AutoComplete Popup */
     --autocomplete-popup-color: var(--win-accent-content-color) !important; /* --win-text-color */

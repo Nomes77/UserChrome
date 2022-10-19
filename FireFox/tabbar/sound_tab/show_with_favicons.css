@@ -53,6 +53,13 @@
 .tab-icon-overlay[activemedia-blocked]:not([crashed], [pinned]) {
   border-radius: 2px !important; /* same as close button */
 }
+/* Hide muted icon when not soundplaying */
+@supports -moz-bool-pref("userChrome+Content.tab.show_muted_icon_when_soundplaying.only") {
+  .tab-icon-overlay[muted]:not([soundplaying]),
+  .all-tabs-secondary-button[muted]:not([soundplaying]) {
+    display: none !important;
+  }
+}
 @supports -moz-bool-pref("userChrome+Content.tab.show_(un)muted_icon_pinned") {
   .tab-icon-stack[pinned]:is([sharing], [soundplaying], [muted]) > .tab-icon-image {
     display: none !important;

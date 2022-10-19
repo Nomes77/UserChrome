@@ -7,9 +7,12 @@
 #tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) {
   --end-tab-separator-position-x: 4px;
 }
-#tabbrowser-arrowscrollbox {
-  position: absolute;
+#tabbrowser-arrowscrollbox-periphery {
+  position: relative;
 }
+/* #tabbrowser-arrowscrollbox {
+  position: absolute;
+} */
 .tab-background::before,
 #tabs-newtab-button::before {
   /* Box Model */
