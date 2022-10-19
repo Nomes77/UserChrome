@@ -5,7 +5,7 @@
     /* addon-page-header[type="extension"],
     addon-list[type="extension"],
     #categories > [viewid="addons://list/extension"] { */
-    addon-list [addon-id]:not([addon-id="uBlock0@raymondhill.net"], [addon-id="@uMatrix"]),
+    addon-list[type="extension"] [addon-id]:not([addon-id="uBlock0@raymondhill.net"]),
     [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-author,
     [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-homepage,
     [addon-id="@uExtra"] .addon-detail-row-author,

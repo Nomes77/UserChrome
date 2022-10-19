@@ -5,15 +5,14 @@ menupopup menu:not([type="checkbox"][checked="true"], [type="radio"]),
   -moz-appearance: none !important; /* Linux: menulist */
 }
 /* Rounding */
-menupopup > menuitem,
-menupopup > menu,
+:not(#ContentSelectDropdown) menupopup:not(.in-menulist) > menuitem,
+:not(#ContentSelectDropdown) menupopup > menu,
 #context-navigation > menuitem[_moz-menuactive] .menu-iconic-icon {
   border-radius: var(--arrowpanel-menuitem-border-radius, var(--panel-border-radius)) !important;
 }
 /* Width */
-menupopup > menu,
-menupopup > menuitem,
-menupopup > menucaption {
+:not(#ContentSelectDropdown) menupopup:not(.in-menulist) > menuitem,
+:not(#ContentSelectDropdown) menupopup > menu {
   max-width: 25em !important;
 }
 /* Icon */
@@ -40,15 +39,6 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
   background-size: 16px !important;
   background-repeat: no-repeat !important;
   background-image: var(--menuitem-image) !important;
-}
-/* For native context menus */
-@supports -moz-bool-pref("widget.macos.native-context-menus") or -moz-bool-pref("widget.gtk.native-context-menus") {
-  :not(menu, #ContentSelectDropdown)
-    > menupopup
-    > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
-  :not(menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, .in-menulist, [checked="true"]) {
-    list-style-image: var(--menuitem-image, url("../icons/blank.svg")) !important;
-  }
 }
 /* Padding */
 :root {

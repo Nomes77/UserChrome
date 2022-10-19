@@ -6,8 +6,8 @@
 .tabbrowser-tab[label="Nieuw privétabblad"] .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
   content: url("./../../images/new-tab.svg") !important;
 }
-.tab-icon-image:not([src]),
-.tab-icon-image:-moz-broken {
+.tab-icon-image:not([src]) /*,
+.tab-icon-image:-moz-broken */ {
   content: url("./../../images/document.svg") !important;
 }
 .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {

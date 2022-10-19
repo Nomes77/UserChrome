@@ -8,7 +8,8 @@
     --arrowpanel-menuitem-border-radius: 0 !important;
     --subviewbutton-border-radius: 0 !important;
   }
-  button {
+  button,
+  .tab-icon-overlay {
     border-radius: 0 !important;
   }
   /* Fix Tab bar button radius */
@@ -17,6 +18,7 @@
   #TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,
   .tab-close-button {
     --tab-border-radius: var(--toolbarbutton-border-radius) !important;
+    border-radius: 0 !important;
   }
   #tabbrowser-tabs {
     --tab-corner-rounding: 0px !important;

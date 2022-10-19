@@ -31,7 +31,7 @@
   list-style-image: url("./../../images/dismiss-filled.svg") !important;
 }
 /* Closed Button's background smaller */
-.tab-close-button {
+#tabbrowser-tabs .tab-close-button {
   height: 17px !important;
   width: 17px !important;
   margin-inline-end: calc((var(--inline-tab-padding) / -2) + 2px) !important;
@@ -40,10 +40,10 @@
 }
 /* Closed Button's background darker on hover */
 @media not (prefers-contrast) {
-  .close-icon:hover {
+  #tabbrowser-tabs .close-icon:hover {
     background-color: color-mix(in srgb, currentColor 15%, transparent) !important; /* Original 10% */
   }
 }
-.close-icon:hover:active {
+#tabbrowser-tabs .close-icon:hover:active {
   background-color: color-mix(in srgb, currentColor 25%, transparent) !important; /* Original 20% */
 }

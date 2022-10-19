@@ -5,49 +5,65 @@
   --tab-corner-padding: 0px;
   --tab-corner-position: calc(var(--tab-corner-padding) - var(--tab-corner-rounding));
 }
-tab > stack::before, /* :not([customizing="true"]) [visuallyselected] */
-tab > stack::after {
+.tabbrowser-tab > stack::before,
+.tabbrowser-tab > stack::after {
   content: "" !important;
   /* Box */
   display: block;
-  z-index: 1 !important;
-  position: absolute !important;
+  z-index: 1;
+  position: absolute;
   /* Shape */
-  width: var(--tab-corner-rounding) !important;
-  height: 100% !important;
+  width: var(--tab-corner-rounding);
+  height: 100%;
   /* Color */
-  fill: var(--toolbar-bgcolor) !important;
-  stroke: var(--tab-line-color, var(--lwt-tab-line-color, var(--tabs-border-color, rgba(128, 128, 142, 0.9)))) !important;
-  -moz-context-properties: fill, stroke !important;
+  fill: transparent;
+  stroke: transparent;
+  -moz-context-properties: fill, stroke;
   /* Image */
   background-size: var(--tab-corner-rounding);
   background-repeat: no-repeat;
   background-position-y: bottom;
 }
-tab:not([visuallyselected], [selected=true], [multiselected]):hover > stack::before,
-tab:not([visuallyselected], [selected=true], [multiselected]):hover > stack::after {
-  /* Color - Same as tabcolor on hover */
-  fill: color-mix(in srgb, currentColor 11%, transparent) !important;
-}
-tab[multiselected]:not([visuallyselected]) > stack::before,
-tab[multiselected]:not([visuallyselected]) > stack::after {
-  /* Color - Same as tabcolor multiselected */
-  fill: color-mix(in srgb, var(--toolbar-bgcolor) 65%, transparent) !important; /* rgb(198, 215, 215) */
-}
-:root:is([lwtheme-mozlightdark], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
-  #TabsToolbar[brighttext]
-  #tabbrowser-tabs:not([noshadowfortests])
-  tab[visuallyselected]
-  > stack:-moz-lwtheme::after {
-  /* As Selected Tab - Box Shadow */
-  stroke: var(--toolbar-color) !important;
-}
-tab:is([visuallyselected], [multiselected], :hover) > stack::before {
+.tabbrowser-tab > stack::before {
   left: var(--tab-corner-position) !important;
   background-image: url("./../../images/tab-bottom-corner-left.svg");
 }
-tab:is([visuallyselected], [multiselected], :hover) > stack::after {
+.tabbrowser-tab > stack::after {
   left: auto;
   right: var(--tab-corner-position);
   background-image: url("./../../images/tab-bottom-corner-right.svg");
+}
+/* Selected Fill */
+.tabbrowser-tab[selected] > stack::before,
+.tabbrowser-tab[selected] > stack::after {
+  fill: var(--tab-selected-bgcolor, var(--toolbar-bgcolor));
+  stroke: var(--tab-line-color, var(--tabs-border-color, rgba(128, 128, 142, 0.9)));
+}
+/* Multi-Selected Fill */
+.tabbrowser-tab[multiselected]:not([visuallyselected]) > stack::before,
+.tabbrowser-tab[multiselected]:not([visuallyselected]) > stack::after {
+  fill: color-mix(in srgb, currentColor 65%, transparent) !important;
+  opacity: 0.3;
+}
+#TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([visuallyselected]) > stack::before,
+#TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([visuallyselected]) > stack::after {
+  opacity: 0.15;
+}
+/* Hover Fill */
+.tabbrowser-tab:hover:not([selected], [multiselected]) > stack::before,
+.tabbrowser-tab:hover:not([selected], [multiselected]) > stack::after {
+  fill: color-mix(in srgb, currentColor 11%, transparent) !important;
+}
+/* As Selected Tab - Box Shadow */
+:root:not([customizing="true"])::is([lwtheme-mozlightdark], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
+  #TabsToolbar[brighttext]
+  #tabbrowser-tabs:not([noshadowfortests])
+  .tabbrowser-tab[selected]
+  > stack:-moz-lwtheme::before,
+:root:not([customizing="true"])::is([lwtheme-mozlightdark], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
+  #TabsToolbar[brighttext]
+  #tabbrowser-tabs:not([noshadowfortests])
+  .tabbrowser-tab[selected]
+  > stack:-moz-lwtheme::after {
+  stroke: var(--toolbar-color);
 }

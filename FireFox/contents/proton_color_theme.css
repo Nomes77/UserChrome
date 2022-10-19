@@ -32,7 +32,7 @@
     --in-content-link-color-hover: rgb(0, 102, 180) !important; /* var(--blue-70) */
     --in-content-link-color-active: rgb(17, 129, 215) !important; /* var(--blue-80) */
     --in-content-link-color-visited: var(--in-content-link-color) !important; /* var(--blue-60) */
-    /* button background states are also used for checkboxes and radiobuttons */
+    /* button background states are also used for checkboxes and radio buttons */
     --in-content-button-text-color: var(--in-content-text-color);
     --in-content-button-text-color-hover: var(--in-content-text-color);
     --in-content-button-background: rgb(229, 229, 229) !important; /* rgba(207, 207, 216, 0.33) */

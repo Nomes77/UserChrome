@@ -11,6 +11,6 @@
 .titlebar-buttonbox-container .titlebar-close {
   list-style-image: url("./../images/dismiss.svg") !important;
 } */
-.private-browsing-indicator {
-  background-image: url("./../images/inprivate.svg") !important;
+.private-browsing-indicator-icon {
+  list-style-image: url("./../images/inprivate.svg") !important;
 }

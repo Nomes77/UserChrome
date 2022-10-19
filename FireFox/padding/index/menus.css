@@ -26,17 +26,18 @@ menupopup > menu {
   padding-block: 0 !important;
 }
 /* Arrow Icon Align to Right */
-.bookmark-item.subviewbutton > .menu-right {
-  margin-inline-end: 0 !important;
+.menu-right {
+  margin-inline-end: -2px !important;
 }
-.menu-right,
 .menu-accel,
-.menu-iconic-accel {
-  margin-inline-end: 0 !important;
+.menu-iconic-accel,
+.subviewbutton > .menu-accel-container > .menu-iconic-accel,
+.subviewbutton > .menu-accel-container > .menu-accel {
+  margin-inline-end: 3px !important;
 }
 /*= Menus - Set Margin ==============================================================*/
-menupopup > menuitem,
-menupopup > menu,
+:not(#ContentSelectDropdown) menupopup:not(.in-menulist) > menuitem,
+:not(#ContentSelectDropdown) menupopup > menu,
 .openintabs-menuitem,
 #blockedPopupDontShowMessage,
 #BMB_viewBookmarksToolbar,
@@ -44,14 +45,12 @@ menupopup > menu,
   margin: var(--arrowpanel-menuitem-margin) !important;
 }
 /*= Sub Menu - Nested Margin ========================================================*/
-@media (-moz-windows-non-native-menus) {
-  menupopup {
-    --nested-margin-side: 2.25em !important; /* 27px = padding-text + icon + padding-inline-start */
-  }
+menupopup {
+  --nested-margin-side: -0.3em !important;
 }
-@media not (-moz-windows-non-native-menus) {
-  menupopup {
-    --nested-margin-side: -0.3em !important;
+@supports not -moz-bool-pref("userChrome+Content.zavety") {
+  #BMB_bookmarksPopup menupopup {
+    --nested-margin-side: 2.25em !important; / 27px = padding-text + icon + padding-inline-start /
   }
 }
 menupopup > menu > menupopup {

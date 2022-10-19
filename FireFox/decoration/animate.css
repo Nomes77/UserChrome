@@ -126,7 +126,7 @@ xul|search-textbox.tabsFilter:hover,
   from {
     margin-top: 0;
   }
-  /* Dont' use `to`: Depending on density */
+  /* Don't use `to`: Depending on density */
 }
 /*- Arrow - Edit Bookmark Popup ----------------------------------------*/
 #editBookmarkPanelRows .expander-up .button-icon,
