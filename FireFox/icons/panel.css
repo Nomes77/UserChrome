@@ -280,3 +280,27 @@ panelMenuBookmarkThisPage[starred] {
 #identity-popup-more-info {
   list-style-image: url("./../images/info.svg");
 }
+/*= sidebarMenu-popup ========================================================*/
+#sidebar-box[sidebarcommand="viewBookmarksSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon,
+#sidebar-switcher-bookmarks {
+  list-style-image: url("./../images/star-line-horizontal.svg") !important;
+}
+#sidebar-box[sidebarcommand="viewHistorySidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon,
+#sidebar-switcher-history {
+  list-style-image: url("./../images/history.svg") !important;
+}
+#sidebar-box[sidebarcommand="viewTabsSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon,
+#sidebar-switcher-tabs {
+  list-style-image: url("./../images/phone-tablet.svg") !important;
+}
+/* #sidebar-reverse-position {
+  list-style-image: url("./../images/sidebar.svg") !important;
+  transform: rotateY(180deg) !important;
+}
+#sidebar-box[positionend="true"] #sidebar-reverse-position {
+  Can't apply this. shadow dom
+  list-style-image: url("./../images/sidebar.svg") !important;
+} */
+#sidebarMenu-popup > .subviewbutton[data-l10n-id="sidebar-menu-close"] {
+  list-style-image: url("./../images/dismiss.svg") !important;
+}

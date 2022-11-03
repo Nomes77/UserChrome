@@ -21,7 +21,8 @@
 #bookmarks-menu-button {
   list-style-image: url("./../images/star-line-horizontal.svg") !important;
 }
-#nav-bar-overflow-button {
+#nav-bar-overflow-button,
+#unified-extensions-button {
   list-style-image: url("./../images/extension.svg") !important;
 }
 #PanelUI-menu-button,

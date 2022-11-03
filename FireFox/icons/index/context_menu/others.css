@@ -141,3 +141,13 @@ menuitem.searchbar-paste-and-search {
 menuitem.searchbar-clear-history {
   --menuitem-image: url("./../images/history.svg");
 }
+/*= unified-extensions-context-menu =================================================*/
+.unified-extensions-context-menu-manage-extension {
+  --menuitem-image: url("./../images/settings.svg");
+}
+.unified-extensions-context-menu-remove-extension {
+  --menuitem-image: url("./../images/delete.svg");
+}
+.unified-extensions-context-menu-report-extension {
+  --menuitem-image: url("./../images/share.svg");
+}
