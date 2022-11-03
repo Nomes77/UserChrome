@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" style="fill: context-fill; fill-opacity: context-fill-opacity;" preserveAspectRatio="xMidYMid meet" viewBox="0 0 18 18">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" preserveAspectRatio="xMidYMid meet" viewBox="0 0 13 13">
   <g>
-    <path d="m0,3.25a3.25,3.25 0 0 1 3.25,-3.25l11.5,0a3.25,3.25 0 0 1 3.25,3.25l0,11.5a3.25,3.25 0 0 1 -3.25,3.25l-11.5,0a3.25,3.25 0 0 1 -3.25,-3.25l0,-11.5zm3.25,-1.75a1.75,1.75 0 0 0 -1.75,1.75l0,11.5c0,0.966 0.784,1.75 1.75,1.75l11.5,0a1.75,1.75 0 0 0 1.75,-1.75l0,-11.5a1.75,1.75 0 0 0 -1.75,-1.75l-11.5,0z"/>
+    <path stroke="context-stroke" stroke-width="1" fill="none" d="m0.45,2.95a2.5,2.5 0 0 1 2.5,-2.5l7,0a2.5,2.5 0 0 1 2.5,2.5l0,7a2.5,2.5 0 0 1 -2.5,2.5l-7,0a2.5,2.5 0 0 1 -2.5,-2.5l0,-7zm2.5,-1.5a1.5,1.5 0 0 0 -1.5,1.5l0,7a1.5,1.5 0 0 0 1.5,1.5l7,0a1.5,1.5 0 0 0 1.5,-1.5l0,-7a1.5,1.5 0 0 0 -1.5,-1.5l-7,0z"/>
   </g>
 </svg>
