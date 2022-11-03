@@ -8,6 +8,7 @@
   }
   .toolbarbutton-1,
   .toolbarbutton-menubutton-button {
+    min-height: 20px !important;
     margin: 0px 0px !important;
     padding-left: 2px !important;
     padding-right: 2px !important;
@@ -26,8 +27,8 @@
   toolbarbutton > .toolbarbutton-menubutton-dropmarker {
     transition: none !important;
   }
-  .toolbarbutton-1:not([disabled="true"]):is(:hover,[open="true"]) >
-  .toolbarbutton-menubutton-button,
+  .toolbarbutton-1:not([disabled="true"]):hover >
+  .toolbarbutton-menubutton-button,         /* :is(:hover,[open="true"]) */
   .toolbarbutton-1:not([disabled="true"]):hover >
   .toolbarbutton-menubutton-dropmarker,
   .toolbarbutton-1:not([type="menu-button"],[disabled="true"],[checked="true"],[open="true"],:active):hover {
@@ -40,6 +41,7 @@
     background-image: var(--win-toolbarbutton-active-background) !important;
   }
   .toolbarbutton-1:not([type="menu-button"],[disabled="true"])[open="true"],
+  .toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-button:not([disabled="true"]),
   .toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]) {
     background-image: var(--win-button-active-background-open) !important;
   }
@@ -53,10 +55,20 @@
     padding-right: 2px !important; /* Doesn't help, but it should */
   }
   .toolbarbutton-menu-dropmarker,
-  .toolbarbutton-menubutton-dropmarker {
+  .toolbarbutton-menubutton-dropmarker,
+  .toolbarbutton-combined-buttons-dropmarker {
     -moz-box-align: center;
-    list-style-image: url("./../images/arrow-dn.gif") !important;
-    padding: 1px 2px !important;
+    padding: 1px 1px !important;
+  }
+  .toolbarbutton-1:is([open="true"], :active) > .toolbarbutton-menu-dropmarker,
+  .toolbarbutton-1:is([open="true"], :active) > .toolbarbutton-menubutton-dropmarker,
+  .toolbarbutton-1:is([open="true"], :active) > .toolbarbutton-combined-buttons-dropmarker {
+    border-left: 1px solid transparent !important;
+  }
+  .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,
+  .toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]),
+  .toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is([open="true"], [checked="true"], :hover:active) {
+    box-shadow: none !important;
   }
   .toolbarbutton-1:not(:hover, :active, [open], [checked]) > 
   .toolbarbutton-menubutton-dropmarker::before, 

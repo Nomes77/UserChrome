@@ -27,5 +27,12 @@
   .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]),[overflowedItem=true]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
     opacity: var(--win-disabled-icon-opacity) !important;
   }
+  .subviewbutton[disabled="true"],
+  .subviewbutton[disabled="true"]:hover,
+  .subviewbutton[checked="true"][disabled="true"],
+  .subviewbutton[checked="true"][disabled="true"]:hover {
+    color: var(--lwt-text-color) !important;
+    opacity: var(--win-disabled-icon-opacity) !important;
+  }
   }
 }

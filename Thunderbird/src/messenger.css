@@ -2,25 +2,6 @@
 @supports -moz-bool-pref("outlook2003.theme") {
   @media (-moz-windows-default-theme) {
   /* MESSENGER */
-  :root {
-    --button-color: var(--lwt-text-color) !important;
-    --button-bgcolor: var(--win-theme-color) !important;
-    --button-hover-bgcolor: rgb(229, 241, 251) !important; /* var(--win-menuitem-hover-background-color) */
-    --button-active-bgcolor: rgb(204, 228, 247) !important; /* var(--win-menuitem-active-background-color) */
-    --button-border-color: rgb(0, 120, 215) !important;
-    --button-primary-bgcolor: rgb(0, 97, 224) !important;
-    --button-primary-hover-bgcolor: rgb(2, 80, 187) !important;
-    --button-primary-active-bgcolor: rgb(5, 62, 148) !important;
-    --button-primary-color: rgb(251, 251, 254) !important;
-    /* Note: Setting this to 0 (without px) breaks CSS calculations for OSX. */
-    --toolbarbutton-border-radius: 0px !important;
-    --toolbarbutton-hover-background: var(--win-toolbarbutton-hover-background) !important;
-    --toolbarbutton-hover-bordercolor: var(--win-border-color) !important;
-    --toolbarbutton-header-bordercolor: var(--win-border-color) !important;
-    --toolbarbutton-active-background: var(--win-toolbarbutton-active-background) !important;
-    --toolbarbutton-active-bordercolor: var(--win-border-color) !important;
-    --toolbarbutton-checked-background: var(--win-toolbarbutton-checked-background) !important;
-  }
   @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
     :root {
       --button-hover-bgcolor: rgb(86, 64, 54) !important; 
@@ -30,50 +11,19 @@
   }
   @media not (prefers-contrast) {
     :root:not(:-moz-lwtheme) {
-      --button-bgcolor: rgb(225, 225, 225) !important;
-      --button-hover-bgcolor: rgb(229, 241, 251) !important; /* var(--win-menuitem-hover-background-color) */
-      --button-active-bgcolor: rgb(204, 228, 247) !important; /* var(--win-menuitem-active-background-color) */
-      --button-primary-bgcolor: rgb(0, 97, 224);
-      --button-primary-hover-bgcolor: rgb(2, 80, 187);
-      --button-primary-active-bgcolor: rgb(5, 62, 148);
-      --button-primary-color: rgb(251, 251, 254);
       --buttons-secondary-bgcolor: rgb(240, 240, 244);
       --buttons-secondary-hover-bgcolor: rgb(224, 224, 230);
       --buttons-secondary-active-bgcolor: rgb(207, 207, 216);
       --buttons-secondary-color: rgb(21, 20, 26);
-      --arrowpanel-dimmed: var(--win-menuitem-hover-background-color) !important;
-      --arrowpanel-dimmed-further: var(--win-menuitem-active-background-color) !important;
-      --arrowpanel-dimmed-even-further: var(--win-menuitem-active-background-color) !important;
     }
-  }
-  /* UI Density customization */
-  :root[uidensity="compact"] {
-    --tab-min-height: 20px !important;
-  }
-  .themeable-full[brighttext],
-  :root:-moz-lwtheme-brighttext .themeable-full,
-  :root[lwt-tree-brighttext] .themeable-brighttext {
-    --toolbarbutton-hover-background: var(--win-toolbarbutton-hover-background) !important;
-    --toolbarbutton-hover-bordercolor: var(--win-menubar-border-color) !important;
-    --toolbarbutton-header-bordercolor: var(--win-menubar-border-color) !important;
-    --toolbarbutton-active-background: var(--win-toolbarbutton-active-background) !important;
-    --toolbarbutton-active-bordercolor: var(--win-menubar-border-color) !important;
   }
   /* OTHER MESSENGER(79) */
   :root {
-    --toolbar-non-lwt-bgcolor: var(--win-toolbar-background-color) !important; /* rgb(214, 231, 253) */
-    --toolbar-non-lwt-bgimage: var(--win-toolbar-background-image) !important;
     /* Dark mode */
     --toolbar-bgcolor: var(--toolbar-non-lwt-bgcolor) !important; /* rgba(43, 42, 51, 1) */
     --toolbar-bgimage: var(--toolbar-non-lwt-bgimage) !important;
   }
-  @media (-moz-windows-default-theme) {
-    :root {
-      /* --splitter-color: linear-gradient(to right, black, white) !important; */
-      --select-focus-text-color: var(--win-white-color) !important;
-    }
-  }
-  @media (-moz-windows-default-theme) {
+  /* @media (-moz-windows-default-theme) {
     treechildren {
       --treechildren-focusColor: transparent !important;
       --treechildren-selectedFocusColor: rgb(0, 120, 215) !important;
@@ -93,7 +43,7 @@
       --treechildren-hoverSelectedBorder: transparent !important;
       --treechildren-hoverSelectedBackground: var(--treechildren-selectedFocusColor) !important;
     }
-  }
+  } */
   /* ::::: primary toolbar buttons ::::: */
   .toolbarbutton-1[disabled=true] .toolbarbutton-icon,
   .toolbarbutton-1[disabled=true] .toolbarbutton-text,

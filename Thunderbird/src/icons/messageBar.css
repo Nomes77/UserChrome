@@ -1,0 +1,10 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+@media (-moz-windows-default-theme) {
+/** MESSAGEBAR ********************************************************************/
+  :host {
+    --draft-icon-url: var(--outl-icon-new-mail) !important;
+    --junk-icon-url: var(--outl-icon-junk) !important;
+    --attachment-icon-url: var(--outl-icon-attachment) !important;
+  }
+}
+}
