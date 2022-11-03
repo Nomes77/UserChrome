@@ -14,8 +14,9 @@
 #tabbrowser-tabs {
   z-index: 1 !important;
 }
+/* Prevent toolbar area over */
 #TabsToolbar {
-  overflow: hidden;   /* Prevent toolbar area over */
+  overflow: clip;
 }
 /* Pinned Tab - tabbrowser-arrowscrollbox overflowing */
 #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {

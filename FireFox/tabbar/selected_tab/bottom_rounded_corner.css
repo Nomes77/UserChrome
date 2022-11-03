@@ -1,6 +1,6 @@
 /*- Selected Tab - Bottom Rounded Corner --------------------------------------------*/
 #tabbrowser-tabs {
-  --tab-border-radius: 4px !important;
+  --tab-border-radius: 3px !important;
   --tab-corner-rounding: var(--tab-border-radius); /* 10px looks about like chromium - 17px looks close to Australis tabs */
   --tab-corner-padding: 0px;
   --tab-corner-position: calc(var(--tab-corner-padding) - var(--tab-corner-rounding));
@@ -40,14 +40,9 @@
   stroke: var(--tab-line-color, var(--tabs-border-color, rgba(128, 128, 142, 0.9)));
 }
 /* Multi-Selected Fill */
-.tabbrowser-tab[multiselected]:not([visuallyselected]) > stack::before,
-.tabbrowser-tab[multiselected]:not([visuallyselected]) > stack::after {
-  fill: color-mix(in srgb, currentColor 65%, transparent) !important;
-  opacity: 0.3;
-}
-#TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([visuallyselected]) > stack::before,
-#TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([visuallyselected]) > stack::after {
-  opacity: 0.15;
+.tabbrowser-tab[multiselected]:not([selected]) > stack::before,
+.tabbrowser-tab[multiselected]:not([selected]) > stack::after {
+  fill: var(--uc-multiselected-tab-bgcolor);
 }
 /* Hover Fill */
 .tabbrowser-tab:hover:not([selected], [multiselected]) > stack::before,
