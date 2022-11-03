@@ -9,7 +9,8 @@
     --subviewbutton-border-radius: 0 !important;
   }
   button,
-  .tab-icon-overlay {
+  .tab-icon-overlay,
+  findbar toolbarbutton {
     border-radius: 0 !important;
   }
   /* Fix Tab bar button radius */
@@ -37,6 +38,10 @@
   xul|richlistbox,
   html|input {
     border-radius: 0 !important;
+  }
+  #urlbar-background,
+  #searchbar {
+    --toolbarbutton-border-radius: 0 !important;
   }
   .checkbox-check,
   xul|*.radio-check {
