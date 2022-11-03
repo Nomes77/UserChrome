@@ -83,8 +83,9 @@ menu[disabled="true"] {
 }
 /* Navbar Border */
 #navigator-toolbox:-moz-lwtheme {
-  --tabs-border-color: rgba(0, 0, 0, 0.3); /* Legacy: v96 */
-  --lwt-tabs-border-color: rgba(0, 0, 0, 0.3);
+  --tabs-border-color: rgba(0, 0, 0, 0.4);
+  /* Legacy: v96, (0, 0, 0, 0.3) -> (0, 0, 0, 0.4) */
+  --lwt-tabs-border-color: rgba(0, 0, 0, 0.4);
 }
 /*- Findbar Border Color -----------------------------------------------*/
 html|input.findbar-textbox {
