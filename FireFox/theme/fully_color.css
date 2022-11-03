@@ -1,56 +1,60 @@
 /*= Menu Color ======================================================================*/
-html#main-window menupopup:not(.in-menulist) {
-  /* is same as toolbar color https://github.com/mozilla/gecko-dev/blob/master/toolkit/themes/windows/global/global.css#L17-L67 */
-  --menu-color: var(--arrowpanel-color, var(--in-content-page-color)) !important;
-  --menu-background-color: var(--arrowpanel-background, var(--in-content-button-background)) !important;
-  --menu-border-color: var(
-    --toolbarbutton-active-background,
-    var(--button-active-bgcolor, var(--card-outline-color))
-  ) !important;
-  --menuitem-hover-background-color: var(
-    --toolbarbutton-hover-background,
-    var(--button-hover-bgcolor, var(--in-content-button-background-hover))
-  ) !important;
-  --menu-disabled-color: color-mix(in srgb, var(--menu-color) 40%, transparent) !important;
-  --menuitem-disabled-hover-background-color: color-mix(
-    in srgb,
-    var(--menuitem-hover-background-color) 40%,
-    transparent
-  ) !important;
+:root:-moz-lwtheme:not([lwt-default-theme-in-dark-mode])
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel)) menupopup:not(.in-menulist) {
+    /* is same as toolbar color https://github.com/mozilla/gecko-dev/blob/master/toolkit/themes/windows/global/global.css#L17-L67 */
+    --menu-color: var(--arrowpanel-color, var(--in-content-page-color));
+    --menu-background-color: var(--arrowpanel-background, var(--in-content-button-background));
+    --menu-border-color: var(--toolbarbutton-active-background, var(--button-active-bgcolor, var(--card-outline-color)));
+    --menuitem-hover-background-color: var(--toolbarbutton-hover-background, var(--button-hover-bgcolor, var(--in-content-button-background-hover)));
+    --menu-disabled-color: color-mix(in srgb, var(--menu-color) 40%, transparent) !important;
+    --menuitem-disabled-hover-background-color: color-mix(in srgb, var(--menuitem-hover-background-color) 40%, transparent);
 }
 @media (-moz-windows-non-native-menus) {
-  html#main-window menupopup:not(.in-menulist) {
-    /* Above FF v105 #466 */
-    --panel-color: var(--menu-color) !important;
-    --panel-background: var(--menu-background-color) !important;
-    --panel-border-color: var(--menu-border-color) !important;
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) {
+      /* Above FF v105 #466 */
+      --panel-color: var(--menu-color) !important;
+      --panel-background: var(--menu-background-color) !important;
+      --panel-border-color: var(--menu-border-color) !important;
   }
-  html#main-window menupopup:not(.in-menulist) menuseparator {
-    border-top: 1px solid var(--menu-border-color);
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menuseparator {
+      border-top: 1px solid var(--menu-border-color);
   }
-  html#main-window menupopup:not(.in-menulist) menu[disabled="true"],
-  html#main-window menupopup:not(.in-menulist) menu[_moz-menuactive="true"][disabled="true"],
-  html#main-window menupopup:not(.in-menulist) menuitem[disabled="true"],
-  html#main-window menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"][disabled="true"] {
-    color: var(--menu-disabled-color) !important;
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menu[disabled="true"],
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menu[_moz-menuactive="true"][disabled="true"],
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menuitem[disabled="true"],
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"][disabled="true"] {
+      color: var(--menu-disabled-color) !important;
   }
-  html#main-window menupopup:not(.in-menulist) menu[_moz-menuactive="true"][disabled="true"],
-  html#main-window menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"][disabled="true"] {
-    background-color: transparent !important;
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menu[_moz-menuactive="true"][disabled="true"],
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"][disabled="true"] {
+      background-color: transparent !important;
   }
-  html#main-window menupopup:not(.in-menulist) menu[_moz-menuactive="true"]:not([disabled="true"]),
-  html#main-window menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
-    background-color: var(--menuitem-hover-background-color) !important;
-    color: var(--menu-color) !important;
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menu[_moz-menuactive="true"]:not([disabled="true"]),
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
+      background-color: var(--menuitem-hover-background-color) !important;
+      color: var(--menu-color) !important;
   }
-  html#main-window menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"]
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"]
     > .menu-iconic-left > .menu-iconic-icon {
-    background-color: var(--menuitem-hover-background-color) !important;
+      background-color: var(--menuitem-hover-background-color) !important;
   }
-  html#main-window menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"],
-  html#main-window menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"][disabled="true"]
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"],
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"][disabled="true"]
     > .menu-iconic-left > .menu-iconic-icon {
-    background-color: transparent !important;
+      background-color: transparent !important;
   }
 }
 @media not all and (-moz-gtk-csd-available) {
@@ -59,28 +63,16 @@ html#main-window menupopup:not(.in-menulist) {
     --panel-background: var(--lwt-sidebar-background-color, var(--menu-background-color)) !important;
   }
   window:is(#bookmarksPanel, #history-panel)[lwt-sidebar="true"] menu[_moz-menuactive="true"]:not([disabled="true"]),
-  window:is(#bookmarksPanel, #history-panel)[lwt-sidebar="true"]
-    menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
-    --menuitem-hover-background-color: color-mix(
-      in srgb,
-      currentColor 17%,
-      transparent
-    ); /* Looks like toolbar button */
-    /* or var(--lwt-sidebar-highlight-background-color)
-       If this value is used, unset is required in the default theme.
-    */
+  window:is(#bookmarksPanel, #history-panel)[lwt-sidebar="true"] menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
+    --menuitem-hover-background-color: color-mix(in srgb, currentColor 17%, transparent);
+   background-color: var(--menuitem-hover-background-color) !important;
   }
 }
 /* Default theme color preservation */
-:root[lwtheme-mozlightdark] menupopup:not(#BMB_bookmarksPopup, [placespopup="true"]), /* Legacy */
-:root[lwtheme-mozlightdark] menupopup:is(#goPopup, #historyMenuPopup, #bookmarksMenuPopup), /* Legacy */
 :root:is([style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"]) menupopup:not(#BMB_bookmarksPopup, [placespopup="true"]),
 :root:is([style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"]) menupopup:is(#goPopup, #historyMenuPopup, #bookmarksMenuPopup) {
   --menu-color: var(--toolbar-color, var(--in-content-page-color)) !important;
-  --arrowpanel-background: var(
-    --toolbar-bgcolor,
-    var(--in-content-button-background)
-  ) !important; /* --menu-background-color */
+  --arrowpanel-background: var(--toolbar-bgcolor, var(--in-content-button-background)) !important; /* --menu-background-color */
 }
 @media (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
   :root[style*="background-noodles-right"] menupopup {
@@ -217,7 +209,7 @@ body[lwt-sidebar] xul|search-textbox.tabsFilter {
   border-radius: 4px;
   background-color: var(--lwt-sidebar-background-color, Field) !important;
   color: var(--lwt-sidebar-text-color, FieldText) !important;
-  }
+}
 .sidebar-panel[lwt-sidebar] #search-box[focused="true"],
 body[lwt-sidebar] xul|search-textbox.tabsFilter[focused="true"] {
   border-color: var(--lwt-sidebar-highlight-background-color) !important;

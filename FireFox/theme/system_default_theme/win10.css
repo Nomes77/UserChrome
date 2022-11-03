@@ -145,7 +145,7 @@
     --arrowpanel-dimmed-even-further: color-mix(in srgb, currentColor 27%, transparent) !important;
     /* Panel */
     --panel-banner-item-color: var(--win-text-color) !important;
-    --panel-banner-item-background-color: var(--win-hover-active-bgcolor) !important;
+    --panel-banner-item-background-color: var(--win-bgcolor) !important;
     --panel-banner-item-hover-bgcolor: var(--win-hover-bgcolor) !important;
     --panel-banner-item-active-bgcolor: var(--win-hover-active-bgcolor) !important;
     --panel-disabled-color: var(--win-disabled-color) !important;
@@ -189,9 +189,10 @@
     --panel-separator-color: var(--win-border-color) !important;
   }
   /*- Menu ---------------------------------------------------------------*/
-  html#main-window menupopup:not(:-moz-lwtheme) {
+  html#main-window menupopup:not(:-moz-lwtheme),
+  :root[lwt-default-theme-in-dark-mode] html#main-window menupopup {
     --menu-color: var(--win-text-color) !important;
-    --menu-background-color: var(--win-field-bgcolor) !important; /* --win-component-bgcolor */
+    --menu-background-color: var(--win-field-bgcolor) !important;
     --menu-border-color: var(--win-bgcolor) !important;
     --menuitem-hover-background-color: var(--win-hover-bgcolor) !important;
     --menu-disabled-color: var(--win-disabled-color) !important;

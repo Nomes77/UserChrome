@@ -2,16 +2,27 @@
 @-moz-document url("chrome://browser/content/places/places.xhtml"),
                url("chrome://browser/content/places/bookmarksSidebar.xhtml"),
                url("chrome://browser/content/places/historySidebar.xhtml") {
-  :root {
+  :root:not(:-moz-lwtheme),
+  :root[lwt-default-theme-in-dark-mode] {
     --default-focusring-width: 1px !important;
     --tree-color: var(--in-content-text-color);
     --tree-hover-background: rgb(236, 236, 236);
     --tree-hover-color: var(--tree-color);
     --tree-selected-background: SelectedItem;
     --tree-selected-color: SelectedItemText;
-    --tree-outline-color: var(tree-color);
+    --tree-outline-color: var(--tree-color);
+    --organizer-pane-background: var(--toolbar-bgcolor) !important;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not(:-moz-lwtheme),
+    :root[lwt-default-theme-in-dark-mode] {
+      --tree-hover-background: rgb(97, 97, 97);
+    }
   }
   /*- Tree -----------------------------------------------------------------*/
+  tree {
+    color: var(--tree-color) !important;
+  }
   treechildren::-moz-tree-row(hover) {
     background-color: var(--tree-hover-background) !important;
   }
