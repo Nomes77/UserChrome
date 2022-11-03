@@ -6,4 +6,6 @@
 @import "./src/preferences.css";
 
 /** ICONS ****************************/
+@import "./src/icons-variables.css";
 @import "./src/icons.css";
+@import "./src/icons-layout.css";
