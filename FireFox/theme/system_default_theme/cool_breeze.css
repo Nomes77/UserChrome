@@ -29,4 +29,31 @@
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --toolbar-field-background-color: rgb(202, 222, 234) !important;
   }
+  /* Menubar Color */
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #main-menubar > menu,
+  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
+    #main-menubar > menu,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #main-menubar > menu[_moz-menuactive="true"],
+  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
+    #main-menubar > menu[_moz-menuactive="true"],
+  /* Tabs Content Color */
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    .tabbrowser-tab:not([selected="true"]),
+  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
+    .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
+  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
+    .tabbrowser-tab:not([selected="true"]) {
+      color: black !important;
+  }
+  /* Titlebar Button Color */
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    .titlebar-button,
+  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
+    .titlebar-button {
+      stroke: black !important;
+  }
 }
