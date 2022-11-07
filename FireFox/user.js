@@ -12,7 +12,7 @@ user_pref("layout.css.color-mix.enabled", true);
 user_pref("layout.css.backdrop-filter.enabled", true);
 
 // To let `page.proton_color.system_accent` work
-user_pref("widget.non-native-theme.use-theme-accent	true", true);
+user_pref("widget.non-native-theme.use-theme-accent", true);
 
 // Restore Compact Mode - 89 Above
 user_pref("browser.compactmode.show", true);
