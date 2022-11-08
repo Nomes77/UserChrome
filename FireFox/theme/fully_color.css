@@ -111,6 +111,12 @@
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
   fill: GrayText !important;
 }
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-title {
+  color: var(--arrowpanel-color, var(--in-content-page-color)) !important;
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-site-icon {
+  fill: var(--arrowpanel-color, var(--in-content-page-color)) !important;
+}
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
   --panel-border-color: var(--panel-bgcolor);
   color: var(--arrowpanel-color, var(--in-content-page-color)) !important; /* Original: FieldText */
@@ -148,16 +154,16 @@
 }
 /*= Info Bar Color ==================================================================*/
 .container.infobar {
-  background-color: var(--urlbar-box-bgcolor);
+  background-color: var(--urlbar-box-bgcolor) !important;
 }
 .notification-button {
-  background-color: var(--button-bgcolor);
+  background-color: var(--button-bgcolor) !important;
 }
 .notification-button:hover {
-  background-color: var(--button-hover-bgcolor);
+  background-color: var(--button-hover-bgcolor) !important;
 }
 .notification-button:hover:active {
-  background-color: var(--button-active-bgcolor);
+  background-color: var(--button-active-bgcolor) !important;
 }
 html|button.ghost-button:not(.semi-transparent):enabled:hover {
   background-color: var(--button-hover-bgcolor) !important;
