@@ -161,7 +161,6 @@ richlistitem[originaltype="loginWithOrigin"] .ac-site-icon {
 }
 richlistitem[originaltype="insecureWarning"] > .ac-site-icon {
   list-style-image: url("./../../../images/warning-filled.svg") !important;
-  fill: var(--arrowpanel-color, var(--in-content-page-color)) !important;
 }
 richlistitem[originaltype="loginsFooter"] .ac-site-icon {
   list-style-image: url("./../../../images/key-multiple.svg") !important;
