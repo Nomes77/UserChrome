@@ -33,7 +33,7 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
 #BMB_viewBookmarksToolbar,
 #clearDownloadsButton /* Library */ {
   /* Color */
-  -moz-context-properties: fill, fill-opacity !important;
+  -moz-context-properties: fill, fill-opacity, stroke !important;
   fill: currentColor !important;
   /* Layout */
   background-size: 16px !important;
