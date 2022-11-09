@@ -28,6 +28,11 @@
   opacity: 0;
   background-image: var(--toolbarseparator-color);
 }
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #tabs-newtab-button::before {
+    top: unset !important;
+  }
+}
 .tab-background::before {
   transform: translateX(var(--tab-separator-position-x)) translateY(var(--tab-separator-position-y));
 }
@@ -58,6 +63,12 @@
   tab.tabbrowser-tab[first-visible-unpinned-tab]
   .tab-background::before {
   opacity: 0 !important;
+}
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #navigator-toolbox:not([movingtab])
+    .tabbrowser-tab[last-visible-tab]:is([visuallyselected], [multiselected], :hover)
+    ~ #tabs-newtab-button::before {
+    opacity: 0 !important;  /* Legacy - v103 */
 }
 /* Animate */
 @media (prefers-reduced-motion: no-preference) {

@@ -9,7 +9,9 @@ panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarbutton#
   display: none !important;
   visibility: collapse !important;
 }
-
+panelmultiview[mainViewId="widget-overflow-mainView"] panelview .toolbarbutton-1.webextension-browser-action:last-of-type {
+  margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
+}
 panel#widget-overflow vbox.panel-arrowcontainer > box.panel-arrowbox {
   max-width: max-content !important;
 }

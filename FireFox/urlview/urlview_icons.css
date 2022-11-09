@@ -7,6 +7,7 @@
 }
 :root:is([style="--lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"])
   .urlbarView-favicon[src="page-icon:chrome://global/"],
+:root:is([style="--lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"])
   .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
     fill: transparent !important;
     background-image: url("./../images/globe-light.svg") !important;
@@ -78,6 +79,22 @@
 }
 #identity-popup[connection=extension] .identity-popup-security-connection {
   background-image: url("./../images/extension.svg") !important;
+}
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #identity-box[pageproxystate="valid"].onionUnknownIdentity #identity-icon,
+  #identity-box[pageproxystate="valid"].onionVerifiedDomain #identity-icon,
+  #identity-box[pageproxystate="valid"].onionMixedActiveBlocked #identity-icon {
+    list-style-image: url(chrome://browser/skin/onion.svg);
+  }
+  #identity-box[pageproxystate="valid"].onionMixedDisplayContent #identity-icon,
+  #identity-box[pageproxystate="valid"].onionMixedDisplayContentLoadedActiveBlocked #identity-icon,
+  #identity-box[pageproxystate="valid"].onionCertUserOverridden #identity-icon {
+    list-style-image: url(chrome://browser/skin/onion-warning.svg);
+    fill: #b31616 !important; /* or var(--red-70) */
+  }
+  #identity-box[pageproxystate="valid"].onionMixedActiveContent #identity-icon {
+    list-style-image: url(chrome://browser/skin/onion-slash.svg);
+  }
 }
 /* URLbar-Searchbar */
 #urlbar.searchButton > #urlbar-input-container > #urlbar-search-button {

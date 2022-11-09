@@ -11,6 +11,14 @@
 #menu_newPrivateWindow {
   --menuitem-image: url("./../images/privateBrowsing.svg");
 }
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #menu_newIdentity {
+    --menuitem-image: url("chrome://browser/skin/new_identity.svg");
+  }
+  #menu_newCircuit {
+    --menuitem-image: url("chrome://browser/skin/new_circuit.svg");
+  }
+}
 #menu_newFissionWindow {
 }
 #menu_newNonFissionWindow {
@@ -236,6 +244,11 @@
   --menuitem-image: url("./../images/extension-filled.svg");
 }
 /*- menu_HelpPopup -----------------------------------------------------*/
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #torBrowserUserManual {
+    --menuitem-image: url("chrome://browser/skin/onion.svg");
+  }
+}
 #menu_openHelp {
   --menuitem-image: url("./../images/help.svg");
 }

@@ -108,15 +108,14 @@
     }
   }
   @supports -moz-bool-pref("userChrome+Content.additions.about_addons_show_version_number") {
-    div:not([current-view="updates"]) .addon-name-link[title]:not([data-l10n-args])::after,
-    div:not([current-view="updates"]) .addon-name[title]:not([data-l10n-args])::after {
+    addon-list[type="extension"] .addon-name-link[title]:not([data-l10n-args])::after {
       content: attr(title) !important;
       display: block !important;
       margin-top: -22px !important;
       color: var(--in-content-text-color);
     }
-    .addon-name-link:not([data-l10n-args]),
-    .addon-name-link:not([data-l10n-args]):hover {
+    addon-list[type="extension"] .addon-name-link:not([data-l10n-args]),
+    addon-list[type="extension"] .addon-name-link:not([data-l10n-args]):hover {
       color: transparent !important;
     }
   }

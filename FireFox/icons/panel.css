@@ -31,6 +31,18 @@
 #appMenu-new-private-window-button2 {
   list-style-image: url("./../images/privateBrowsing.svg");
 }
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #appMenuNewIdentity, /* Legacy */
+  #appMenu-new-identity {
+    list-style-image: url("chrome://browser/skin/new_identity.svg");
+  }
+  #appMenuNewCircuit {
+    list-style-image: url("chrome://browser/skin/new_circuit.svg");
+  }
+  #appMenu_torBrowserUserManual {
+    list-style-image: url("chrome://browser/skin/onion.svg");
+  }
+}
 #appMenu-bookmarks-button {
   list-style-image: url("./../images/star-line-horizontal.svg");
 }
