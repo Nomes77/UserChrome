@@ -5,14 +5,32 @@
 .search-setting-button > .button-box > .button-icon {
   list-style-image: url("./../images/settings.svg") !important;
 }
-:root:is([style="--lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"])
+.urlbarView-favicon[src="page-icon:chrome://global/"],
+.urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+  fill: transparent !important;
+  background-image: url("./../images/globe-dark.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@supports -moz-bool-pref("userChrome+Content.theme.private_mode") {
+  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme) {
+    .urlbarView-favicon[src="page-icon:chrome://global/"],
+    .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+      fill: transparent !important;
+      background-image: url("./../images/globe-light.svg") !important;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
   .urlbarView-favicon[src="page-icon:chrome://global/"],
-:root:is([style="--lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"])
   .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
     fill: transparent !important;
     background-image: url("./../images/globe-light.svg") !important;
     background-position: center;
     background-repeat: no-repeat;
+ }
 }
 #identity-icon {
   list-style-image: url("./../images/info.svg") !important;
