@@ -3,13 +3,13 @@
   display: none;
 }
 .tabbrowser-tab {
-  --container-position-y: 10px;
+  --uc-container-position-y: 10px;
 }
 :root[uidensity="compact"] .tabbrowser-tab {
-  --container-position-y: 10px;
+  --uc-container-position-y: 10px;
 }
 :root[uidensity="touch"] .tabbrowser-tab {
-  --container-position-y: 12px;
+  --uc-container-position-y: 12px;
 }
 .tab-content::before {
   /* Box Model */
@@ -17,7 +17,7 @@
   display: block;
   position: absolute;
   top: 50%;
-  transform: translateY(var(--container-position-y));
+  transform: translateY(var(--uc-container-position-y));
   /* Shape */
   border-bottom: 2px solid var(--identity-icon-color);
   border-radius: 2px; /* same as close button */
@@ -70,5 +70,5 @@
 .tabbrowser-tab:is([image], [pinned]) > .tab-stack > .tab-content[attention]:not([selected="true"]),
 .tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
   /* Original: center bottom calc(6.5px + var(--tabs-navbar-shadow-size)); */
-  background-position-y: top calc(0.5px + 50% + var(--container-position-y));
+  background-position-y: top calc(0.5px + 50% + var(--uc-container-position-y));
 }
