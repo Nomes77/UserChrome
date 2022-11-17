@@ -13,12 +13,12 @@
     margin-bottom: -33px;
     position: relative;
     border-top: none !important;
-    padding: 0 !important;
+    padding: 2.5px !important;
     transition: transform 82ms linear, opacity 82ms linear 32ms !important;
     background: none !important;
     pointer-events: none;
     z-index: 1;
-    transform: translateY(5px) translateX(-25px);
+    transform: translateY(0px) translateX(-25px);
   }
   .findbar-container > .findbar-find-fast {
     padding: var(--toolbarbutton-inner-padding) 1px;
