@@ -1,13 +1,13 @@
 /*= Permissions =====================================================================*/
-@support -moz-bool-pref("userChrome+Content.urlview.permissions.hide_granded-icon") {
-  #permissions-granted-icon {
+@supports -moz-bool-pref("userChrome+Content.urlview.permissions.hide_granded-icon") {
+  /* #blocked-permissions-container > .blocked-permission-icon[showing] {
+    display: none;
+  } */
+  #identity-permission-box:has(#blocked-permissions-container > .blocked-permission-icon[showing="true"]) #permissions-granted-icon {
     display: none !important;
   }
-  #identity-permission-box[hasPermissions] {
-    width: 22px !important;
-  }
   #blocked-permissions-container > .blocked-permission-icon {
-    margin-inline-start: 3px !important;
+    margin-inline-start: 0px !important;
   }
 }
 #permissions-granted-icon {
