@@ -53,7 +53,7 @@ user_pref("userChrome+Content.tab.vertical_tab", false);
 user_pref("userChrome+Content.theme.coole_breeze", false);
 user_pref("userChrome+Content.theme.private_mode", true);
 user_pref("userChrome+Content.tor.compatibility", false);
-user_pref("userChrome+Content.urlview.permissions.hide_granded-icon", false);
+user_pref("userChrome+Content.urlview.permissions.hide_granded-icon", true);
 user_pref("userChrome+Content.zavety", false);
 
 // ** Useful Options ******************************************************************
