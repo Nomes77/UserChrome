@@ -14,7 +14,7 @@
     position: absolute;
     border-radius: 100px;
     /* Position */
-    transform: translateX(-7px) translateY(calc((48px - 24px) / -2));
+    transform: translateX(-7px) translateY(calc((48px - 24px) / 2));
     /* Bar shape */
     width: 4px;
     height: 24px;

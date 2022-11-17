@@ -7,6 +7,8 @@
   toolbarbutton#_uextra-browser-action,
   toolbarbutton#nav-bar-overflow-button,
   .urlbar-addon-page-action[actionid="_316cb7eb-36d4-4cc7-a77c-61b6998e7505_"],
+  #urlbar #identity-box > #notification-popup-box > #password-notification-icon,
+  panel#password-notification:has(#password-notification),
   notification-message[value="master-password-login-required"],
   notification-message[value="primary-password-login-required"],
   panel#PopupAutoComplete[is="autocomplete-richlistbox-popup"],

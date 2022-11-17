@@ -13,12 +13,12 @@
   .login-list-section > .login-list-item .username {
     display: none !important;
   }
-  /* .detail-grid:not(:hover), */
   input[type="password"]:read-only:not(:hover),
   input[type="text"]:read-only:not(:hover) {
     visibility: hidden !important;
   }
-  input.password-display {
+  input.password-display
+  input[name="password"][readonly] {
     width: 250px !important;
   }
   .delete-button {
