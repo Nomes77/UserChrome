@@ -4,6 +4,7 @@
   }
   :root[tabsintitlebar]:not(:-moz-window-inactive, :-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-color,
   :root[tabsintitlebar][lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive, [privatebrowsingmode=temporary]) .titlebar-color {
+    color: AccentColorText;
     background-color: rgb(96, 157, 191) !important;
   }
   :root[tabsintitlebar]:-moz-window-inactive:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-color,
@@ -13,9 +14,21 @@
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --urlbar-box-hover-bgcolor: rgb(182, 200, 211) !important;
     --urlbar-box-active-bgcolor: rgb(153, 168, 177) !important;
-    --win-toolbarbutton-hover-background: rgb(150, 182, 201) !important; 
+    --win-toolbarbutton-hover-background: rgb(150, 182, 201) !important;
     --win-toolbarbutton-active-background: rgb(141, 172, 189) !important;
   } 
+
+  /* Color of right mouse and other popup menu's  (counter toolbarbutton color) --> needed to change fully_color.css */
+  /* :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    html#main-window menupopup:not(.in-menulist) {
+      --menuitem-hover-background-color: rgb(230, 230, 230) !important;
+  } */ 
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    html#main-window menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"]:not([disabled="true"]) { 
+      background-color: rgb(230, 230, 230) !important;
+  }
+
+  /* Boxes in url-bar */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
     #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button, 
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
@@ -23,37 +36,63 @@
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button, 
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
-    #urlbar-label-box {
+    #urlbar-label-box,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #urlbar-zoom-button {
       background-color: transparent !important;
   }
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover, 
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover, 
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #urlbar-label-box:hover,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #urlbar-zoom-button:hover {
+      background-color: var(--urlbar-box-hover-bgcolor) !important;
+  }
+
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --toolbar-field-background-color: rgb(202, 222, 234) !important;
   }
-  /* Menubar Color */
+
+  /* Tab Color when Multiselected */
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    .tab-background[multiselected="true"]:not([selected="true"]) > .tab-loading-burst:not([bursting]) {
+      background-color: rgb(146, 187, 211) !important;
+  }
+  /* Menubar Text Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #main-menubar > menu,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
-    #main-menubar > menu,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
-    #main-menubar > menu[_moz-menuactive="true"],
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
     #main-menubar > menu[_moz-menuactive="true"],
   /* Tabs Content Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
-    .tabbrowser-tab:not([selected="true"]),
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
-    .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
     .tabbrowser-tab:not([selected="true"]) {
       color: black !important;
   }
   /* Titlebar Button Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
-    .titlebar-button,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
+    .toolbarbutton-animatable-box, .toolbarbutton-1 {
+      color: black !important;
+  }
+  /* :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
+      background-color: rgb(81,132,161) !important;
+  } */
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     .titlebar-button {
       stroke: black !important;
   }
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #main-menubar > menu[_moz-menuactive="true"], .titlebar-button:hover { 
+      background-color: rgb(86,141,172) !important;
+  }
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    .titlebar-close:hover { 
+      background-color: hsl(355,86%,49%) !important;
 }
