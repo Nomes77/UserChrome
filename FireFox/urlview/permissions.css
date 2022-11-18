@@ -1,14 +1,14 @@
 /*= Permissions =====================================================================*/
-@supports -moz-bool-pref("userChrome+Content.urlview.permissions.hide_granded-icon") {
-  /* #blocked-permissions-container > .blocked-permission-icon[showing] {
+@supports -moz-bool-pref("userChrome+Content.urlview.permissions.hide_granted-icon") {
+  #blocked-permissions-container > .blocked-permission-icon[showing] {
     display: none;
-  } */
-  #identity-permission-box:has(#blocked-permissions-container > .blocked-permission-icon[showing="true"]) #permissions-granted-icon {
+  }
+  /* #identity-permission-box:has(#blocked-permissions-container > .blocked-permission-icon[showing="true"]) #permissions-granted-icon {
     display: none !important;
   }
   #blocked-permissions-container > .blocked-permission-icon {
     margin-inline-start: 0px !important;
-  }
+  } */
 }
 #permissions-granted-icon {
   list-style-image: url("./../images/permissions.svg") !important;
