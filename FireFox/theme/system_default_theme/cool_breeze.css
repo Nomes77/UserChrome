@@ -87,14 +87,14 @@
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]),
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]) {
-      color: black !important;
+    color: black !important;
   }
   /* Titlebar Button Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .toolbarbutton-animatable-box,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .toolbarbutton-1,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .toolbarbutton-animatable-box,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .toolbarbutton-1 {
-      color: black !important;
+    color: black !important;
   }
   /* :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
@@ -102,13 +102,13 @@
   } */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-button {
-      stroke: black !important;
+    stroke: black !important;
   }
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button:hover,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-button:hover,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"],
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"] { 
-      background-color: rgb(86,141,172) !important;
+    background-color: rgb(86,141,172) !important;
   }
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-close:hover,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-close:hover { 
@@ -135,7 +135,7 @@
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
     #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-     background-color: white;
+      background-color: white;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .urlbarView-row:not([type="tip"], 
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) [type="dynamic"])[selected] > .urlbarView-row-inner, 
