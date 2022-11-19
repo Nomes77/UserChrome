@@ -98,7 +98,7 @@
   }
   /* :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
-      background-color: rgb(81,132,161) !important;
+      background-color: rgb(81, 132, 161) !important;
   } */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-button {
@@ -108,11 +108,11 @@
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-button:hover,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"],
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"] { 
-    background-color: rgb(86,141,172) !important;
+    background-color: rgb(86, 141, 172) !important;
   }
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-close:hover,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-close:hover { 
-    background-color: hsl(355,86%,49%) !important;
+    background-color: hsl(355, 86%, 49%) !important;
   }
 
   /* Fixes for system dark theme */
