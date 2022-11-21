@@ -114,7 +114,6 @@
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-close:hover { 
     background-color: hsl(355, 86%, 49%) !important;
   }
-
   /* Fixes for system dark theme */
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) {
     --toolbarbutton-icon-fill: black !important;
