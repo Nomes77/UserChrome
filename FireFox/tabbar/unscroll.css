@@ -1,0 +1,49 @@
+/*= Unscroll Tabbar =================================================================*/
+@supports -moz-bool-pref("userChrome+Content.tab.unscroll") {
+  /* Disable scrollbox */
+  spacer[part="overflow-start-indicator"] + .scrollbox-clip > scrollbox {
+    overflow: -moz-hidden-unscrollable !important;
+  }
+  #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned]):not([visuallyselected]) {
+    /* Set minimum width below which tabs will not shrink */
+    --tab-min-width: 16px !important;
+    container-type: inline-size;
+    container-name: backgroundTab;
+  }
+  @container backgroundTab (max-width: 46px) {
+    #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned]):not([visuallyselected]) .tab-content {
+      --inline-tab-padding: 0px;
+      justify-self: center;
+    }
+    #tabbrowser-tabs[closebuttons="activetab"]
+      .tabbrowser-tab:not([pinned]):not([visuallyselected])
+      .tab-icon-stack
+      > * {
+      margin-inline-end: 0 !important;
+    }
+    #tabbrowser-tabs[closebuttons="activetab"]
+      .tabbrowser-tab:not([pinned]):not([visuallyselected])
+      .tab-label-container,
+    #tabbrowser-tabs[closebuttons="activetab"]
+      .tabbrowser-tab:not([pinned]):not([visuallyselected]):hover
+      .tab-close-button {
+      visibility: collapse !important;
+    }
+  }
+  #tabbrowser-tabs[closebuttons="activetab"][hasadjacentnewtabbutton="true"] #tabbrowser-arrowscrollbox-periphery {
+    position: absolute !important;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #tabbrowser-tabs[closebuttons="activetab"][hasadjacentnewtabbutton="true"]
+    #tabbrowser-arrowscrollbox-periphery
+    > #tabs-newtab-button {
+    z-index: 2 !important;
+  }
+  #tabbrowser-tabs[closebuttons="activetab"][hasadjacentnewtabbutton="true"] #tabbrowser-arrowscrollbox {
+    padding-inline-end: calc(
+      16px + (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) * 2
+    ) !important;
+  }
+}

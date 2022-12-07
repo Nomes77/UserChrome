@@ -5,6 +5,11 @@
 #TabsToolbar[brighttext] {
   --uc-multiselected-tab-bgcolor: color-mix(in srgb, var(--toolbar-bgcolor) 67%, transparent);
 }
+/* #tabbrowser-tabs:not([movingtab])
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[multiselected]:not([selected]), */
 #tabbrowser-tabs:not([movingtab])
   > #tabbrowser-arrowscrollbox
   > .tabbrowser-tab
