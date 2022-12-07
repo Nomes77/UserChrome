@@ -49,6 +49,7 @@ user_pref("userChrome+Content.tab.close_button_at_hover_pinned", true);
 user_pref("userChrome+Content.tab.close_button_at_hover_pinned.always", true);
 user_pref("userChrome+Content.tab.show_(un)muted_icon_pinned", false);
 user_pref("userChrome+Content.tab.show_sound_label", false);
+user_pref("userChrome+Content.tab.unscroll", false);
 user_pref("userChrome+Content.tab.vertical_tab", false);
 user_pref("userChrome+Content.theme.coole_breeze", false);
 user_pref("userChrome+Content.theme.private_mode", true);
