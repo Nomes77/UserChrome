@@ -17,12 +17,50 @@
     addon-shortcuts > [data-l10n-id="shortcuts-no-commands"],
     addon-shortcuts > .shortcuts-no-commands-list > [addon-id]:not([addon-id="uBlock0@raymondhill.net"]) {
       display: none !important;
-      visibility: hidden !important;
     }
   }
   @-moz-document url("about:logins"),
                  url-prefix("about:logins") {
-    body,
+    .count[data-l10n-id="login-list-count"] {
+      display: none !important;
+    }
+    login-list:not(:hover) {
+      width: auto !important;
+    }
+    [role="listbox"][data-l10n-id="login-list"] {
+      scrollbar-width: thin !important;
+    }
+    input[type="password"]:read-only:not(:hover),
+    input[type="text"]:read-only:not(:hover) {
+      visibility: visible !important;
+    }
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://account.y8.com"]),
+    .container > .column:has(h2 > span.login-item-title[title="account.y8.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://accounts.firefox.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://accounts.google.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://app.anonaddy.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://app.simplelogin.io"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://archive.org"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://forum.eset.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://freebitco.in"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://gab.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://github.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://gitlab.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.goplay.be"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.grammarly.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://home.noties.nl"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.instagram.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.ipsosisay.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://login.live.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://matrix.anontier.nl"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.paypal.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.reddit.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://sharesome.com"]),
+    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://windscribe.com"]) {
+      display: none !important;
+    }
+    /* body,
     .login-list-section,
     login-item .container,
     login-item .header,
@@ -30,9 +68,7 @@
     login-item .detail-cell,
     login-item .meta-info {
       display: none !important;
-      visibility: hidden !important;
-      color: transparent !important;
-    }
+    } */
   }
   @-moz-document url("about:preferences"),
                  url-prefix("about:preferences") {
@@ -41,7 +77,6 @@
     [data-category="panePrivacy"] #showPasswords,
     [data-category="panePrivacy"] #masterPasswordRow {
       display: none !important;
-      visibility: hidden !important;
     }
     [data-category="paneGeneral"] #browserContainersbox #browserContainersCheckbox {
       opacity: 1 !important;
@@ -52,21 +87,18 @@
     a[href="about:logins"],
     ul#abouts > li:nth-of-type(15) {
       display: none !important;
-      visibility: hidden !important;
     }
   }
   @-moz-document url("about:performance"),
                  url-prefix("about:performance") {
     [data-l10n-id="item"]:has([data-l10n-id="type-addon"]) {
       display: none !important;
-      visibility: hidden !important;
     }
   }
   @-moz-document url("about:processes"),
                  url-prefix("about:processes") {
     .process:has([data-l10n-id="about-processes-extension-process"]) {
       display: none !important;
-      visibility: hidden !important;
     }
   }
   @-moz-document url-prefix("moz-extension://48257024-52cf-4295-81fc-991effeb0c07") {
@@ -78,7 +110,6 @@
     div#lists > .groupEntry[data-groupkey="regions"] .listEntry[data-listkey="NLD-0"] a:is(.content, .support),
     div#lists > .groupEntry[data-groupkey="custom"] > .listEntries > .listEntry[data-listkey^="https://raw.githubusercontent.com/"] {
       display: none !important;
-      visibility: hidden !important;
     }
   }
 }
