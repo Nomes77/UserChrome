@@ -1,7 +1,10 @@
 /*= Forward button ==================================================================*/
 @supports -moz-bool-pref("userChrome+Content.autohide.forward_button") {
+  :root {
+    --uc-toolbarbutton-hide-size: calc(-1 * (16px + (2 * var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding))));
+  }
   #forward-button[disabled="true"] {
-    margin-left: -36px !important;
+    margin-left: var(--uc-toolbarbutton-hide-size) !important;
     opacity: 0 !important;
     pointer-events: none;
   }
