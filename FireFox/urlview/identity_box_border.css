@@ -1,5 +1,11 @@
 /*= Identity Box Border =============================================================*/
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button::after,
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button::after {
+    opacity: 0;
+}
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, :active, [open=true])::after,
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not(:hover, :active, [open=true])::after {
@@ -16,4 +22,12 @@
     /* Bar Color */
     opacity: var(--tab-separator-opacity);
     background-color: rgb(150, 150, 150) !important;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+    #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button::after,
+  :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+    #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button::after {
+      transition: opacity 0.2s var(--animation-easing-function);
+  }
 }
