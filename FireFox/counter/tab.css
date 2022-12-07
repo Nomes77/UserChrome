@@ -42,4 +42,24 @@
   .tab-secondary-label {
     overflow: hidden;
   }
+
+  .tabbrowser-tab:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked])[pinned]
+    .tab-label-container[labeldirection="ltr"],
+  .tabbrowser-tab:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked])[pinned]
+    .tab-label-container:not([labeldirection]):-moz-locale-dir(ltr) {
+      --uc-sound-tab-label-position-x: 2px;
+  }
+  .tabbrowser-tab:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked])[pinned]
+    .tab-label-container[labeldirection="rtl"],
+  .tabbrowser-tab:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked])[pinned]
+    .tab-label-container:not([labeldirection]):-moz-locale-dir(rtl) {
+      --uc-sound-tab-label-position-x: -2px;
+  }
+  .tabbrowser-tab:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked])
+    .tab-label-container::before {
+      transform: translateX(var(--uc-sound-tab-label-position-x, 0px));
+  }
+  .tab-label-container::before {
+    transition: transform 0.25s var(--animation-easing-function);
+  }
 }
