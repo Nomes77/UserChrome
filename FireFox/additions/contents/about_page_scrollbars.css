@@ -1,0 +1,13 @@
+/* About_Page_Scrollbars *****************************************************/
+@-moz-document url-prefix("about:") {
+  @supports -moz-bool-pref("userChrome+Content.additions.about_page_scrollbars") {
+    window,
+    page,
+    html,
+    .main-content,
+    scrollbar {
+      scrollbar-color: rgb(141,141,141) transparent;
+      scrollbar-width: thin;
+    }
+  }
+}

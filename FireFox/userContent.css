@@ -25,6 +25,7 @@
 @import "./additions/contents/about_logins.css";
 @import "./additions/contents/about_config.css";
 @import "./additions/contents/about_performance.css";
+@import "./additions/contents/about_page_scrollbars.css";
 @import "./additions/contents/common_extra.css";
 @import "./additions/contents/menu_button.css";
 @import "./additions/contents/message_bar.css";
