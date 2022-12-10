@@ -21,6 +21,7 @@ user_pref("browser.compactmode.show", true);
 user_pref("userChrome+Content.additions.about_addons_show_management_buttons", false);
 user_pref("userChrome+Content.additions.about_addons_show_version_number", true);
 user_pref("userChrome+Content.additions.about_config_compact", true);
+user_pref("userChrome+Content.additions.about_page_scrollbars", true);
 user_pref("userChrome+Content.additions.enable_selection", false);          // enable selection and copying on every website
 user_pref("userChrome+Content.additions.floating_findbar_on_top", true);
 user_pref("userChrome+Content.additions.standalone_image_page_mods", true);
