@@ -21,46 +21,7 @@
   }
   @-moz-document url("about:logins"),
                  url-prefix("about:logins") {
-    .count[data-l10n-id="login-list-count"] {
-      display: none !important;
-    }
-    login-list:not(:hover) {
-      width: auto !important;
-    }
-    [role="listbox"][data-l10n-id="login-list"] {
-      scrollbar-width: thin !important;
-    }
-    input[type="password"]:read-only:not(:hover),
-    input[type="text"]:read-only:not(:hover) {
-      visibility: visible !important;
-    }
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://account.y8.com"]),
-    .container > .column:has(h2 > span.login-item-title[title="account.y8.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://accounts.firefox.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://accounts.google.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://app.anonaddy.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://app.simplelogin.io"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://archive.org"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://forum.eset.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://freebitco.in"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://gab.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://github.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://gitlab.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.goplay.be"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.grammarly.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://home.noties.nl"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.instagram.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.ipsosisay.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://login.live.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://matrix.anontier.nl"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.paypal.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://www.reddit.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://sharesome.com"]),
-    .container > [role="listbox"] > .login-list-section > .login-list-item:has(img[src$="https://windscribe.com"]) {
-      display: none !important;
-    }
-    /* body,
+    body,
     .login-list-section,
     login-item .container,
     login-item .header,
@@ -68,7 +29,7 @@
     login-item .detail-cell,
     login-item .meta-info {
       display: none !important;
-    } */
+    }
   }
   @-moz-document url("about:preferences"),
                  url-prefix("about:preferences") {
