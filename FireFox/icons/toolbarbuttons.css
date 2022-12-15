@@ -25,6 +25,9 @@
 #unified-extensions-button {
   list-style-image: url("./../images/extension.svg") !important;
 }
+.unified-extensions-item-open-menu.subviewbutton {
+  list-style-image: url("./../images/settings.svg") !important;
+}
 #PanelUI-menu-button,
 #PanelUI-menu-button[badge-status="update-available"],
 #PanelUI-menu-button[badge-status="update-downloading"],
