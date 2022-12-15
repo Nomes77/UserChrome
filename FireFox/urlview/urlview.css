@@ -56,3 +56,10 @@
   width: 0px !important;
   margin-inline: -12px !important;
 }
+/*- URL View -----------------------------------------------------------*/
+@supports -moz-bool-pref("userChrome+Content.urlview.always_show_page_actions") {
+  #urlbar:not([breakout-extend="true"]) #pageActionButton {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
