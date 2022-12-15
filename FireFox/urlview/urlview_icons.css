@@ -72,32 +72,32 @@
   list-style-image: url("./../images/warning-filled.svg") !important;
 }
 .identity-popup-security-connection {
-  background-image: url("./../images/warning-filled.svg") !important;
+  list-style-image: url("./../images/warning-filled.svg") !important;
 }
 #identity-popup[connection=chrome] .identity-popup-security-connection {
-  background-image: url("chrome://branding/content/icon48.png") !important;
+  list-style-image: url("chrome://branding/content/icon48.png") !important;
 }
 #identity-popup[connection=file] .identity-popup-security-connection {
-  background-image: url("./../images/document.svg") !important;
+  list-style-image: url("./../images/document.svg") !important;
 }
 #identity-popup[connection^=secure] .identity-popup-security-connection {
-  background-image: url("./../images/lock.svg") !important;
+  list-style-image: url("./../images/lock.svg") !important;
 }
 #identity-popup[ciphers=weak] .identity-popup-security-connection,
 #identity-popup[mixedcontent~=passive-loaded][isbroken] .identity-popup-security-connection,
 #identity-popup[connection=secure-cert-user-overridden] .identity-popup-security-connection,
 #identity-popup[connection=cert-error-page] .identity-popup-security-connection {
-  background-image: url("./../images/warning-filled.svg") !important;
+  list-style-image: url("./../images/warning-filled.svg") !important;
   fill: #b31616 !important; /* or var(--red-70) */
 }
 #identity-popup[connection=net-error-page] .identity-popup-security-connection {
-  background-image: url("./../images/info.svg") !important;
+  list-style-image: url("./../images/info.svg") !important;
 }
 #identity-popup[mixedcontent~=active-loaded][isbroken] .identity-popup-security-connection {
-  background-image: url("chrome://browser/skin/controlcenter/mcb-disabled.svg") !important;
+  list-style-image: url("chrome://browser/skin/controlcenter/mcb-disabled.svg") !important;
 }
 #identity-popup[connection=extension] .identity-popup-security-connection {
-  background-image: url("./../images/extension.svg") !important;
+  list-style-image: url("./../images/extension.svg") !important;
 }
 @supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
   #identity-box[pageproxystate="valid"].onionUnknownIdentity #identity-icon,
@@ -137,7 +137,8 @@
 #urlbar-go-button,
 .search-go-button {
   width: 22px !important; /* Changed because of --urlbar-min-height set to 32px instead of 26 px */
-  height: 22px !important;
+  height: calc(var(--urlbar-min-height) - 2px - 2 * var(--urlbar-container-padding));
+  padding-top: 6px !important; /* Changed because of --urlbar-min-height set to 32px instead of 26 px */
 }
 #urlbar-go-button,
 .search-go-button {
