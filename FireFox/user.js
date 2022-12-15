@@ -11,6 +11,9 @@ user_pref("layout.css.color-mix.enabled", true);
 // CSS Blur Filter - 88 Above
 user_pref("layout.css.backdrop-filter.enabled", true);
 
+// CSS CSS Container Queries - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries
+user_pref("layout.css.container-queries.enabled", true);
+
 // To let `page.proton_color.system_accent` work
 user_pref("widget.non-native-theme.use-theme-accent", true);
 
