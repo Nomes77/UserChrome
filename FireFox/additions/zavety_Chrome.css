@@ -28,7 +28,7 @@
     --panel-arrow-offset: 0px !important;
   }
   toolbarbutton#bookmarks-menu-button,
-  toolbarbutton.webextension-browser-action:last-of-type {
+  toolbaritem[id$="browser-action"].unified-extensions-item:last-child {
     transform: none !important;
   }
   @-moz-document url("chrome://global/content/commonDialog.xhtml") {
