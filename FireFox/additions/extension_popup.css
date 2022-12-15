@@ -13,7 +13,7 @@ panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarbutton#
   display: none !important;
   visibility: collapse !important;
 }
-panelmultiview[mainViewId="widget-overflow-mainView"] panelview .toolbarbutton-1.webextension-browser-action:last-of-type {
+panelmultiview[mainViewId="widget-overflow-mainView"] panelview #widget-overflow-fixed-list > toolbaritem.unified-extensions-item:last-of-type {
   margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
 }
 .widget-overflow-list toolbaritem.unified-extensions-item[unified-extensions="false"] .unified-extensions-item-action .toolbarbutton-text {
