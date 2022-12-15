@@ -30,10 +30,10 @@ html[id="main-window"]:not([customizing="true"]) toolbar #bookmarks-menu-button 
 html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-overflow-button {
   transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2 * var(--toolbarbutton-outer-padding) - 16px)); /* compact -32px */
 }
-html[id="main-window"]:not([customizing="true"]) toolbar #bookmarks-menu-button:not(:last-of-type) {
+html[id="main-window"]:not([customizing="true"]) toolbar #bookmarks-menu-button:not(:last-child) {
   transform: translateX(calc(4 * var(--toolbarbutton-inner-padding) + 4 * var(--toolbarbutton-outer-padding) + 32px));
 }
-html[id="main-window"]:not([customizing="true"]) toolbar toolbarbutton.webextension-browser-action:last-of-type {
+html[id="main-window"]:not([customizing="true"]) toolbar toolbaritem[id$="browser-action"].unified-extensions-item:last-child {
   transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2 * var(--toolbarbutton-outer-padding) - 16px));
 }
 html[id="main-window"]:not([customizing="true"]) toolbar:not([nonemptyoverflow="true"]) #bookmarks-menu-button {
@@ -61,7 +61,8 @@ html[id="main-window"][chromehidden=""] #PanelUI-button::before {
   }
 }
 @media (max-width: 650px) {
-  html[id="main-window"]:not([customizing="true"]) toolbar toolbarbutton {
+  html[id="main-window"]:not([customizing="true"]) toolbar toolbarbutton,
+  html[id="main-window"]:not([customizing="true"]) toolbar toolbaritem {
     transform: translateX(0px) !important;
   }
   html[id="main-window"][chromehidden=""] #PanelUI-button::before {
