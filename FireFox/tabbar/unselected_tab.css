@@ -1,45 +1,45 @@
 /*= Unselected Tab - Dynamic Separator ==============================================*/
 #tabbrowser-arrowscrollbox {
-  --end-tab-separator-position-x: -0.5px;
+  --end-tab-separator-position-x: -4.5px;
   --tab-separator-position-x: -0.5px;
   --tab-separator-position-y: calc(-50% + 1px);
 }
 #tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) {
-  --end-tab-separator-position-x: 0.5px;
+  --end-tab-separator-position-x: 4.5px;
   --tab-separator-position-x: 0.5px;
 }
 #tabbrowser-arrowscrollbox-periphery {
   position: relative;
 }
 .tab-background::before,
-#tabbrowser-arrowscrollbox:not([overflowing])
-  .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
-  .tab-background::after {
-    /* Box Model */
-    content: "";
-    display: block;
-    position: absolute;
-    /* Position */
-    top: 50%;
-    /* Bar shape */
-    width: 1px;
-    height: calc(var(--tab-min-height) * 0.64); /* normal/compact = 20px */
-    /* Bar Color */
-    opacity: 0;
-    background-image: var(--toolbarseparator-color);
+#tabs-newtab-button::before {
+  /* Box Model */
+  content: "";
+  display: block;
+  position: absolute;
+  /* Position */
+  top: 50%;
+  /* Bar shape */
+  width: 1px;
+  height: calc(var(--tab-min-height) * 0.64); /* normal/compact = 20px */
+  /* Bar Color */
+  opacity: 0;
+  background-image: var(--toolbarseparator-color);
+}
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #tabs-newtab-button::before {
+    top: unset !important;
+  }
 }
 .tab-background::before {
   transform: translateX(var(--tab-separator-position-x)) translateY(var(--tab-separator-position-y)) !important;
 }
-.tabbrowser-tab[last-visible-tab] .tab-background::after {
-  right: 0;
+#tabs-newtab-button::before {
   transform: translateX(var(--end-tab-separator-position-x)) translateY(var(--tab-separator-position-y)) !important;
 }
 .tabbrowser-tab:not([visuallyselected], [multiselected], :hover, :first-child) .tab-background::before,
-#tabbrowser-arrowscrollbox:not([overflowing])
-  .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
-  .tab-background::after {
-    opacity: var(--tab-separator-opacity, 0.7);
+#tabs-newtab-button::before { /* newtab-button seperator should be visible when hovered */
+  opacity: var(--tab-separator-opacity, 0.7);
 }
 #navigator-toolbox
   .tabbrowser-tab:is([visuallyselected], [multiselected], :hover)
@@ -51,8 +51,18 @@
 #navigator-toolbox
   #tabbrowser-arrowscrollbox[overflowing]
   tab.tabbrowser-tab[first-visible-unpinned-tab]
-  .tab-background::before {
+  .tab-background::before,
+#navigator-toolbox
+  .tabbrowser-tab[last-visible-tab]:is([visuallyselected], [multiselected], :hover)
+  ~ #tabbrowser-arrowscrollbox-periphery #tabs-newtab-button::before {
     opacity: 0 !important;
+}
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #navigator-toolbox
+    .tabbrowser-tab[last-visible-tab]:is([visuallyselected], [multiselected], :hover)
+    ~ #tabs-newtab-button::before {
+      opacity: 0 !important;  /* Legacy - v103 */
+  }
 }
 :root:not([uidensity="compact"]) #tabs-newtab-button > .toolbarbutton-icon {
   margin-left: 2px;
@@ -63,10 +73,8 @@
 /* Animate */
 @media (prefers-reduced-motion: no-preference) {
   .tab-background::before,
-  #tabbrowser-arrowscrollbox:not([overflowing])
-    .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
-    .tab-background::after {
-      transition: opacity 0.2s var(--animation-easing-function); /* cubic-bezier(.07, .95, 0, 1) */
+  #tabs-newtab-button::before {
+    transition: opacity 0.2s var(--animation-easing-function); /* cubic-bezier(.07, .95, 0, 1) */
   }
 }
 /* Latest Tab & New tab margin */

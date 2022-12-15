@@ -4,9 +4,13 @@
 }
 .tabbrowser-tab {
   --uc-container-position-y: 10px;
+  --uc-attention-container-position-x: 16px, 12.5%, 20%, 30%, 40%, 50%, 60%, 70%;
+  --uc-pinned-attention-container-position-x: 32%, 50%, 70%;
 }
 :root[uidensity="compact"] .tabbrowser-tab {
   --uc-container-position-y: 10px;
+  --uc-attention-container-position-x: 12px, 12.5%, 20%, 30%, 40%, 50%, 60%, 70%;
+  --uc-pinned-attention-container-position-x: 30%, 50%, 70%;
 }
 :root[uidensity="touch"] .tabbrowser-tab {
   --uc-container-position-y: 12px;
@@ -29,23 +33,26 @@
 .tabbrowser-tab[visuallyselected]:not([pinned]) .tab-content::before {
   width: calc(16px + 30%);
 }
+.tabbrowser-tab:not([visuallyselected]) .tab-content[attention]::before {
+ opacity: 0; 
+}
 /* Animate */
 @media (prefers-reduced-motion: no-preference) {
-  .tab-content:not([titlechanged])::before {
+  .tab-content::before {
     transition: 0.15s var(--animation-easing-function);
     transition-property: width, opacity;
   }
 }
 /* Pinned Tab */
-.tabbrowser-tab[pinned] .tab-content::before {
+.tabbrowser-tab[pinned] .tab-content:not([attention])::before {
   width: 16px;
 }
-/* Pinned Tab - Hide Titlechanged Indicator */
-.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
+/* Tab - Hide Titlechanged Indicator */
+.tabbrowser-tab > .tab-stack > .tab-content[titlechanged]:not([selected="true"]) {
   background-image: none !important;
 }
-/* Pinned Tab - Titlechanged Indicator override */
-.tabbrowser-tab:is([image], [pinned])[usercontextid] > .tab-stack > .tab-content[attention]:not([selected="true"]) {
+/* Tab - Attention Indicator override */
+.tabbrowser-tab:not([pinned])[usercontextid] > .tab-stack > .tab-content[attention]:not([selected="true"]) {
   /* Original: radial-gradient(circle, var(--attention-icon-color), var(--attention-icon-color) 2px, transparent 2px); */
   --dotted-identity-image: radial-gradient(
     circle,
@@ -53,22 +60,14 @@
     var(--identity-icon-color) 2px,
     transparent 2px
   );
-  background-image: var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image);
-  background-position-x: 32%, 50%, 70%;
+  background-image: var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image),
+                    var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image),
+                    var(--dotted-identity-image), var(--dotted-identity-image) !important;
+  background-position-x: var(--uc-pinned-attention-container-position-x) !important;
+  background-position-y: bottom calc(var(--uc-container-position-y) / 2 - 1.5px) !important;
 }
-:root[uidensity="compact"]
-  .tabbrowser-tab:is([image], [pinned])[usercontextid]
-  > .tab-stack
-  > .tab-content[attention]:not([selected="true"]),
-:root[uidensity="compact"]
-  .tabbrowser-tab[usercontextid]
-  > .tab-stack
-  > .tab-content[pinned][titlechanged]:not([selected="true"]) {
-  /* Original: radial-gradient(circle, var(--attention-icon-color), var(--attention-icon-color) 2px, transparent 2px); */
-  background-position-x: 30%, 50%, 70%;
-}
-.tabbrowser-tab:is([image], [pinned]) > .tab-stack > .tab-content[attention]:not([selected="true"]),
-.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
-  /* Original: center bottom calc(6.5px + var(--tabs-navbar-shadow-size)); */
-  background-position-y: top calc(0.5px + 50% + var(--uc-container-position-y));
+/* Pinned Tab - Attention Indicator override */
+.tabbrowser-tab[pinned][usercontextid] > .tab-stack > .tab-content[attention]:not([selected="true"]) {
+  background-image: var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image) !important;
+  background-position-x: var(--uc-pinned-attention-container-position-x) !important;
 }
