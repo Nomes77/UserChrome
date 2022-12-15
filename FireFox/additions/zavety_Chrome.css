@@ -3,8 +3,8 @@
   /* #appMenu-extensions-themes-button, */
   #main-menubar menuitem#menu_importFromAnotherBrowser,
   #main-menubar menuitem#menu_importFromAnotherBrowser + menuseparator,
-  toolbarbutton#_windscribeff-browser-action,
-  toolbarbutton#_uextra-browser-action,
+  toolbaritem#_windscribeff-browser-action,
+  toolbaritem#_uextra-browser-action,
   toolbarbutton#nav-bar-overflow-button,
   .urlbar-addon-page-action[actionid="_316cb7eb-36d4-4cc7-a77c-61b6998e7505_"],
   #urlbar #identity-box > #notification-popup-box > #password-notification-icon,

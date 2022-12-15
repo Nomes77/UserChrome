@@ -4,6 +4,10 @@ popupset > panel#widget-overflow:not([mainviewshowing="true"]) {
   transform: scale(80%) !important;
   transform-origin: top right !important;
 }
+toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-panel[viewId^="PanelUI-webext-"][viewId$="BAV"] {
+  transform: scale(80%) !important;
+  transform-origin: top right !important;
+}
 panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarseparator,
 panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarbutton#overflowMenu-customize-button {
   display: none !important;
@@ -12,10 +16,9 @@ panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarbutton#
 panelmultiview[mainViewId="widget-overflow-mainView"] panelview .toolbarbutton-1.webextension-browser-action:last-of-type {
   margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
 }
+.widget-overflow-list toolbaritem.unified-extensions-item[unified-extensions="false"] .unified-extensions-item-action .toolbarbutton-text {
+  margin-inline-start: 8px !important; /* var(--arrowpanel-menutext-padding) */
+}
 panel#widget-overflow vbox.panel-arrowcontainer > box.panel-arrowbox {
   max-width: max-content !important;
-}
-toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-panel[viewId^="PanelUI-webext-"][viewId$="browser-action-view"] {
-  transform: scale(80%) !important;
-  transform-origin: top right !important;
 }
