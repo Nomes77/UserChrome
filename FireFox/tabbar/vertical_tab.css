@@ -156,24 +156,49 @@
     max-width: var(--uc-sidebar-width) !important;
     will-change: min-width, max-width;
   }
-  #sidebar-box:is(:hover, :focus-within) {
-    --uc-sidebar-shadow-width: calc(var(--uc-sidebar-activate-width) - var(--uc-sidebar-width));
-  }
+    /*
+    #sidebar-box:is(:hover, :focus-within) {
+      --uc-sidebar-shadow-width: calc(var(--uc-sidebar-activate-width) - var(--uc-sidebar-width));
+    }
+    */
   #sidebar-box:is(:hover, :focus-within),
   #sidebar-box:is(:hover, :focus-within) > #sidebar,
   #sidebar-box:is(:hover, :focus-within) > #sidebar-header {
     min-width: var(--uc-sidebar-activate-width) !important;
     max-width: var(--uc-sidebar-activate-width) !important;
   }
+    /*
+    :root[inFullscreen="true"] #sidebar-box {
+      --uc-sidebar-shadow-width: var(--uc-sidebar-fullscreen-width);
+      margin-inline-start: var(--uc-sidebar-activate-width-reverse) !important;
+      padding-inline-start: var(--uc-sidebar-fullscreen-width);
+      will-change: padding-inline-start, opacity, box-shadow, visibility;
+    }
+    :root[inFullscreen="true"] #sidebar-box:is(:hover, :focus-within) {
+      --uc-sidebar-shadow-width: var(--uc-sidebar-activate-width);
+      padding-inline-start: var(--uc-sidebar-activate-width);
+    }
+    */
   :root[inFullscreen="true"] #sidebar-box {
-    --uc-sidebar-shadow-width: var(--uc-sidebar-fullscreen-width);
-    margin-inline-start: var(--uc-sidebar-activate-width-reverse) !important;
-    padding-inline-start: var(--uc-sidebar-fullscreen-width);
-    will-change: padding-inline-start, opacity, box-shadow, visibility;
+    min-width: var(--uc-sidebar-activate-width) !important;
+    max-width: var(--uc-sidebar-activate-width) !important;
+    will-change: transform;
   }
-  :root[inFullscreen="true"] #sidebar-box:is(:hover, :focus-within) {
-    --uc-sidebar-shadow-width: var(--uc-sidebar-activate-width);
-    padding-inline-start: var(--uc-sidebar-activate-width);
+  :root[inFullscreen="true"] #sidebar-box:not([positionend="true"]) {
+    margin-inline-start: var(--uc-sidebar-activate-width-reverse) !important;
+    transform: translateX(var(--uc-sidebar-fullscreen-width)) !important;
+  }
+  :root[inFullscreen="true"] #sidebar-box:not([positionend="true"]):hover {
+    transform: translateX(var(--uc-sidebar-activate-width)) !important;
+  }
+  :root[inFullscreen="true"] #sidebar-box[positionend="true"] {
+    margin-inline-end: var(--uc-sidebar-activate-width-reverse) !important;
+    transform: translateX(
+      calc(var(--uc-sidebar-activate-width) + -1 * var(--uc-sidebar-fullscreen-width))
+    ) !important;
+  }
+  :root[inFullscreen="true"] #sidebar-box[positionend="true"]:hover {
+    transform: translateX(0) !important;
   }
   :root[inFullscreen="true"] #sidebar-box #sidebar-header,
   :root[inFullscreen="true"] #sidebar-box #sidebar {
@@ -187,22 +212,33 @@
       transition: min-width var(--uc-autohide-sidebar-speed) var(--animation-easing-function)
                   var(--uc-autohide-sidebar-delay) !important;
     }
-    #sidebar-box:is(:hover, :focus-within) {
-      transition: margin-inline-start var(--uc-autohide-sidebar-speed) var(--animation-easing-function),
-                  opacity var(--uc-autohide-sidebar-speed) ease-in-out,
-                  box-shadow var(--uc-autohide-sidebar-speed) var(--animation-easing-function) var(--uc-autohide-sidebar-speed),
-                  visibility 0s linear !important;
-    }
+      /*
+      #sidebar-box:is(:hover, :focus-within) {
+        transition: margin-inline-start var(--uc-autohide-sidebar-speed) var(--animation-easing-function),
+                    opacity var(--uc-autohide-sidebar-speed) ease-in-out,
+                    box-shadow var(--uc-autohide-sidebar-speed) var(--animation-easing-function) var(--uc-autohide-sidebar-speed),
+                    visibility 0s linear !important;
+      }
+      */
     #sidebar-box:is(:hover, :focus-within),
     #sidebar-box:is(:hover, :focus-within) > #sidebar {
       transition-delay: 0ms !important;
     }
+      */
+      :root[inFullscreen="true"] #sidebar-box {
+        transition: transform var(--uc-autohide-fullscreen-sidebar-speed) var(--animation-easing-function)
+                    var(--uc-autohide-sidebar-delay),
+                    opacity var(--uc-autohide-fullscreen-sidebar-speed) ease-in-out,
+                    box-shadow calc(var(--uc-autohide-fullscreen-sidebar-speed) + 0.05s) var(--animation-easing-function),
+                    visibility 0s linear !important;
+      }
+      */
     :root[inFullscreen="true"] #sidebar-box {
       transition: transform var(--uc-autohide-fullscreen-sidebar-speed) var(--animation-easing-function)
-                  var(--uc-autohide-sidebar-delay),
-                  opacity var(--uc-autohide-fullscreen-sidebar-speed) ease-in-out,
-                  box-shadow calc(var(--uc-autohide-fullscreen-sidebar-speed) + 0.05s) var(--animation-easing-function),
-                  visibility 0s linear !important;
+                  var(--uc-autohide-sidebar-delay) !important;
+    }
+    :root[inFullscreen="true"] #sidebar-box[positionend="true"] {
+      transition-property: margin-inline-end !important;
     }
     :root[inFullscreen="true"] #sidebar-box:is(:hover, :focus-within) {
       transition-delay: 0ms !important;

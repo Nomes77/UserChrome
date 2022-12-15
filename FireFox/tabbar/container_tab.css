@@ -20,7 +20,7 @@
   transform: translateY(var(--uc-container-position-y));
   /* Shape */
   border-bottom: 2px solid var(--identity-icon-color);
-  border-radius: 2px; /* same as close button */
+  border-radius: 8px;
   width: calc(16px + 10%);
 }
 .tabbrowser-tab:hover:not([pinned], [visuallyselected]) .tab-content::before {
