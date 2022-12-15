@@ -21,20 +21,7 @@
   }
   @-moz-document url("about:logins"),
                  url-prefix("about:logins") {
-    .count[data-l10n-id="login-list-count"] {
-      display: none !important;
-    }
-    login-list:not(:hover) {
-      width: auto !important;
-    }
-    [role="listbox"][data-l10n-id="login-list"] {
-      scrollbar-width: thin !important;
-    }
-    input[type="password"]:read-only:not(:hover),
-    input[type="text"]:read-only:not(:hover) {
-      visibility: visible !important;
-    }
-    /* body,
+    body,
     .login-list-section,
     login-item .container,
     login-item .header,
@@ -42,7 +29,7 @@
     login-item .detail-cell,
     login-item .meta-info {
       display: none !important;
-    } */
+    }
   }
   @-moz-document url("about:preferences"),
                  url-prefix("about:preferences") {
