@@ -21,9 +21,8 @@
   }
   @-moz-document url("about:logins"),
                  url-prefix("about:logins") {
-    body,
     .login-list-section,
-    login-item .container,
+    .container:has(.column),
     login-item .header,
     login-item .detail-grid,
     login-item .detail-cell,
