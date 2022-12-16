@@ -11,9 +11,6 @@ user_pref("layout.css.color-mix.enabled", true);
 // CSS Blur Filter - 88 Above
 user_pref("layout.css.backdrop-filter.enabled", true);
 
-// CSS CSS Container Queries - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries
-user_pref("layout.css.container-queries.enabled", true);
-
 // To let `page.proton_color.system_accent` work
 user_pref("widget.non-native-theme.use-theme-accent", true);
 
@@ -53,7 +50,6 @@ user_pref("userChrome+Content.tab.close_button_at_hover_pinned", true);
 user_pref("userChrome+Content.tab.close_button_at_hover_pinned.always", true);
 user_pref("userChrome+Content.tab.show_(un)muted_icon_pinned", false);
 user_pref("userChrome+Content.tab.show_sound_label", false);
-user_pref("userChrome+Content.tab.unscroll", false);
 user_pref("userChrome+Content.tab.vertical_tab", false);
 user_pref("userChrome+Content.theme.coole_breeze", false);
 user_pref("userChrome+Content.theme.private_mode", true);
