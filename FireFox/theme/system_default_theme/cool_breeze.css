@@ -17,6 +17,10 @@
   :root[tabsintitlebar][lwt-default-theme-in-dark-mode]:-moz-window-inactive:not([privatebrowsingmode=temporary]) .titlebar-color {
     background-color: rgb(96, 157, 191) !important; 
   }
+  /* Hover background for extensions */
+  #nav-bar-customization-target .toolbaritem-combined-buttons.unified-extensions-item > toolbarbutton:hover {
+    background-color: rgb(150, 182, 201) !important; /* var(--panel-item-hover-bgcolor) */
+  }
   /* Color of right mouse and other popup menu's  (counter toolbarbutton color) --> needed to change fully_color.css */
   /* :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) html#main-window menupopup:not(.in-menulist) {
       --menuitem-hover-background-color: rgb(230, 230, 230) !important;
