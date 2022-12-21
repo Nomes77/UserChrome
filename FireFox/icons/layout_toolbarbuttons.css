@@ -23,21 +23,135 @@
 #reload-button[displaystop] + #stop-button {
   visibility: visible !important;
 }
-/* Change position of bookmark and overflow button */
-html[id="main-window"]:not([customizing="true"]) toolbar #bookmarks-menu-button {
-  transform: translateX(calc(2 * var(--toolbarbutton-inner-padding) + 2 * var(--toolbarbutton-outer-padding) + 16px)); /* compact 32px */
+/*- Change Position of ToolbarButtons and OverflowButton ---------------*/
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"][hidden="true"],
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"][hidden="true"] + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"][hidden="true"] + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"][hidden="true"] + toolbaritem + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"][hidden="true"] + toolbaritem + toolbaritem + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar:not([nonemptyoverflow="true"]) 
+  #nav-bar-customization-target > toolbarbutton[cui-areatype="toolbar"] {
+    transform: none !important;
 }
-html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-overflow-button {
-  transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2 * var(--toolbarbutton-outer-padding) - 16px)); /* compact -32px */
-}
-html[id="main-window"]:not([customizing="true"]) toolbar #bookmarks-menu-button:not(:last-child) {
-  transform: translateX(calc(4 * var(--toolbarbutton-inner-padding) + 4 * var(--toolbarbutton-outer-padding) + 32px));
-}
-html[id="main-window"]:not([customizing="true"]) toolbar toolbaritem[id$="browser-action"].unified-extensions-item:last-child {
+/* When there is one toolbarbutton visible */
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:nth-last-child(1)) + #nav-bar-overflow-button,
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:nth-last-child(2)) + #nav-bar-overflow-button,
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3)) + #nav-bar-overflow-button,
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4)) + #nav-bar-overflow-button,
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5)) + #nav-bar-overflow-button {
   transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2 * var(--toolbarbutton-outer-padding) - 16px));
 }
-html[id="main-window"]:not([customizing="true"]) toolbar:not([nonemptyoverflow="true"]) #bookmarks-menu-button {
-  transform: none !important;
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(1) {
+    transform: translateX(calc(2 * var(--toolbarbutton-inner-padding) + 2 * var(--toolbarbutton-outer-padding) + 16px));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(2) {
+    transform: translateX(calc(4 * var(--toolbarbutton-inner-padding) + 4 * var(--toolbarbutton-outer-padding) + (2 * 16px)));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3) {
+    transform: translateX(calc(6 * var(--toolbarbutton-inner-padding) + 6 * var(--toolbarbutton-outer-padding) + (3 * 16px)));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4) {
+    transform: translateX(calc(8 * var(--toolbarbutton-inner-padding) + 8 * var(--toolbarbutton-outer-padding) + (4 * 16px)));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) {
+    transform: translateX(calc(10 * var(--toolbarbutton-inner-padding) + 10 * var(--toolbarbutton-outer-padding) + (5 * 16px)));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(2) + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3) + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3) + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4) + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4) + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4) + toolbaritem + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem ,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
+  > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem + toolbaritem + toolbaritem {
+    transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2 * var(--toolbarbutton-outer-padding) - 16px));
+}
+/* When there are two toolbarbuttons visible */
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(1)) + #nav-bar-overflow-button,
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(2)) + #nav-bar-overflow-button,
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3)) + #nav-bar-overflow-button,
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4)) + #nav-bar-overflow-button,
+html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5)) + #nav-bar-overflow-button {
+    transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -4 * var(--toolbarbutton-outer-padding) - 32px));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(1),
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(2) {
+    transform: translateX(calc(2 * var(--toolbarbutton-inner-padding) + 2 * var(--toolbarbutton-outer-padding) + 16px));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(2),
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3) {
+    transform: translateX(calc(4 * var(--toolbarbutton-inner-padding) + 4 * var(--toolbarbutton-outer-padding) + (2 * 16px)));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3),
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4) {
+    transform: translateX(calc(6 * var(--toolbarbutton-inner-padding) + 6 * var(--toolbarbutton-outer-padding) + (3 * 16px)));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4),
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton:[cui-areatype="toolbar"]nth-last-child(5) {
+    transform: translateX(calc(8 * var(--toolbarbutton-inner-padding) + 8 * var(--toolbarbutton-outer-padding) + (4 * 16px)));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5),
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(6) {
+    transform: translateX(calc(10 * var(--toolbarbutton-inner-padding) + 10 * var(--toolbarbutton-outer-padding) + (5 * 16px)));
+}
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(2) + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3) + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(3) + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4) + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4) + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(4) + toolbaritem + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem ,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem + toolbaritem,
+html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+  + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem + toolbaritem + toolbaritem {
+    transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -4 * var(--toolbarbutton-outer-padding) - (2 * 16px)));
 }
 /* Line between bookmark and overflow button */
 html[id="main-window"][chromehidden=""] #PanelUI-button::before {
@@ -47,12 +161,16 @@ html[id="main-window"][chromehidden=""] #PanelUI-button::before {
   position: absolute;
   /* Position */
   top: calc(var(--urlbar-toolbar-height) / 4);
-  transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2.5 * var(--toolbarbutton-outer-padding) - 16px)); /* compact -33px */
+  transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2.5 * var(--toolbarbutton-outer-padding) - 16px));
   /* Bar shape */
   width: 1.75px;
   height: calc(var(--urlbar-toolbar-height) / 2);
   /* Bar Color */
   background-color: rgb(218, 218, 218);
+}
+html[id="main-window"][chromehidden=""] toolbar:has(#nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"])) #PanelUI-button::before {
+    transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -4.5 * var(--toolbarbutton-outer-padding) - 32px));
 }
 @media (prefers-color-scheme: dark) {
   html[id="main-window"][chromehidden=""] #PanelUI-button::before {
