@@ -178,7 +178,7 @@ html[id="main-window"][chromehidden=""] toolbar:has(#nav-bar-customization-targe
     background-color: rgb(99, 99, 99) !important;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 615px) {
   html[id="main-window"]:not([customizing="true"]) toolbar toolbarbutton,
   html[id="main-window"]:not([customizing="true"]) toolbar toolbaritem {
     transform: translateX(0px) !important;
