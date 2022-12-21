@@ -81,6 +81,12 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
     --context-menu-text-padding: calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menutext-padding)); /* 16px + 8px */
     --menu-background-padding-default: calc(var(--context-menu-background-padding) + var(--context-menu-text-padding));
   }
+  @media not (-moz-windows-non-native-menus) {
+    :root {
+      --context-menu-background-padding: var(--arrowpanel-menuitem-padding-inline) !important;
+      --menu-background-padding-default: 0px;
+    }
+  }
   :not(menu, #ContentSelectDropdown, #context-navigation)
     > menupopup
     > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
