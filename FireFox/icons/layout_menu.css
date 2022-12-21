@@ -83,7 +83,7 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
   }
   @media not (-moz-windows-non-native-menus) {
     :root {
-      --context-menu-background-padding: var(--arrowpanel-menuitem-padding-inline) !important;
+      --context-menu-background-padding: var(--arrowpanel-menuitem-padding-inline);
       --menu-background-padding-default: 0px;
     }
   }
