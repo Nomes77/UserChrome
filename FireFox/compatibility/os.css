@@ -1,16 +1,4 @@
 /*= OS - Compatibility ==============================================================*/
-/*= Titlebar Container Size at photon-style compact maximized #384 =====*/
-/*
-@media (-moz-os-version: windows-win7), (-moz-platform: windows-win7),
-       (-moz-os-version: windows-win8), (-moz-platform: windows-win8),
-       (-moz-os-version: windows-win10),(-moz-platform: windows-win10) {
-  :root[tabsintitlebar][sizemode="maximized"] #titlebar {
-      -moz-default-appearance: -moz-window-titlebar
-    appearance: none !important;
-      padding-top: 8px;
-  }
-}
-*/
 /*= Windows 10 - Native Menu Active Color ==============================*/
 @media (-moz-os-version: windows-win10), (-moz-platform: windows-win10) {
   @media not (-moz-windows-non-native-menus) {
