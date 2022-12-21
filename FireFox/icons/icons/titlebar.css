@@ -1,0 +1,16 @@
+/* TITLE BAR *************************************************************************/
+/* .titlebar-buttonbox-container .titlebar-min {
+  list-style-image: url("./../images/subtract.svg") !important;
+}
+.titlebar-buttonbox-container .titlebar-max {
+  list-style-image: url("./../images/square.svg") !important;
+}
+.titlebar-buttonbox-container .titlebar-restore {
+  list-style-image: url("./../images/square-multiple.svg") !important;
+}
+.titlebar-buttonbox-container .titlebar-close {
+  list-style-image: url("./../images/dismiss.svg") !important;
+} */
+.private-browsing-indicator-icon {
+  list-style-image: url("./../images/inprivate.svg") !important;
+}

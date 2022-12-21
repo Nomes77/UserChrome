@@ -1,0 +1,276 @@
+/*= Global Menu =====================================================================*/
+/*- menu_FilePopup -----------------------------------------------------*/
+#menu_newNavigatorTab {
+  --menuitem-image: url("./../images/new-tab.svg");
+}
+#menu_newUserContext {
+}
+#menu_newNavigator {
+  --menuitem-image: url("./../images/window.svg");
+}
+#menu_newPrivateWindow {
+  --menuitem-image: url("./../images/privateBrowsing.svg");
+}
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #menu_newIdentity {
+    --menuitem-image: url("chrome://browser/skin/new_identity.svg");
+  }
+  #menu_newCircuit {
+    --menuitem-image: url("chrome://browser/skin/new_circuit.svg");
+  }
+}
+#menu_newFissionWindow {
+}
+#menu_newNonFissionWindow {
+}
+#menu_openLocation {
+}
+#menu_openFile {
+  --menuitem-image: url("./../images/folder.svg");
+}
+#menu_close {
+}
+#menu_closeWindow {
+}
+#menu_savePage {
+  --menuitem-image: url("./../images/save.svg");
+}
+#menu_sendLink {
+  --menuitem-image: url("./../images/mail.svg");
+}
+#menu_printPreview {
+}
+#menu_print {
+  --menuitem-image: url("./../images/print.svg");
+}
+#menu_importFromAnotherBrowser {
+  --menuitem-image: url("./../images/folder-swap.svg");
+}
+#goOfflineMenuitem {
+}
+#menu_FileQuitItem {
+  --menuitem-image: url("./../images/quit.svg");
+}
+/* Mange Containers */
+#menu_newUserContext menupopup menuitem:last-child {
+  --menuitem-image: url("./../images/settings.svg");
+}
+/*- menu_EditPopup -----------------------------------------------------*/
+#menu_undo {
+  --menuitem-image: url("./../images/undo.svg");
+}
+#menu_redo {
+  --menuitem-image: url("./../images/redo.svg");
+}
+#menu_cut {
+  --menuitem-image: url("./../images/edit-cut.svg");
+}
+#menu_copy {
+  --menuitem-image: url("./../images/edit-copy.svg");
+}
+#menu_paste {
+  --menuitem-image: url("./../images/edit-paste.svg");
+}
+#menu_delete {
+  --menuitem-image: url("./../images/delete.svg");
+}
+#menu_selectAll {
+  --menuitem-image: url("./../images/select-all-on.svg");
+}
+#menu_find {
+  --menuitem-image: url("./../images/search-glass.svg");
+}
+#menu_findAgain {
+}
+#textfieldDirection-swap {
+}
+#menu_preferences{
+  --menuitem-image: url("./../images/settings.svg");
+}
+/*- menu_viewPopup -----------------------------------------------------*/
+#viewToolbarsMenu {
+  --menuitem-image: url("./../images/toolbar.svg");
+}
+#viewSidebarMenuMenu {
+  --menuitem-image: url("./../images/sidebar.svg");
+}
+#viewFullZoomMenu {
+  --menuitem-image: url("./../images/screenshot.svg");
+}
+#pageStyleMenu {
+  --menuitem-image: url("./../images/document-css.svg");
+}
+#repair-text-encoding {
+  --menuitem-image: url("chrome://browser/skin/characterEncoding.svg");
+}
+#fullScreenItem {
+  --menuitem-image: url("./../images/fullscreenEnterButton.svg");
+}
+#menu_readerModeItem {
+  --menuitem-image: url("./../images/readerMode.svg");
+}
+#menu_showAllTabs {
+}
+#documentDirection-swap {
+  --menuitem-image: url("./../images/text-direction-horizontal-ltr.svg");
+}
+/* view-menu-popup sub menu */
+#menu_customizeToolbars {
+  --menuitem-image: url("./../images/paint-brush.svg");
+}
+/* viewSidebarMenu sub menu */
+#menu_bookmarksSidebar {
+  --menuitem-image: url("./../images/star-line-horizontal.svg");
+}
+#menu_historySidebar {
+  --menuitem-image: url("./../images/history.svg");
+}
+#menu_tabsSidebar {
+  --menuitem-image: url("./../images/phone-tablet.svg");
+}
+/* viewFullZoomMenu sub menu */
+#menu_zoomEnlarge {
+  --menuitem-image: url("./../images/zoom-in.svg"); /* none */
+}
+#menu_zoomReduce {
+  --menuitem-image: url("./../images/zoom-out.svg"); /* none */
+}
+#menu_zoomReset {
+  --menuitem-image: none; /* url(./../images/resize.svg); */
+}
+/*- goPopup ------------------------------------------------------------*/
+#menu_showAllHistory {
+  --menuitem-image: url("./../images/history.svg");
+}
+#sanitizeItem {
+  --menuitem-image: url("./../images/delete.svg");
+}
+#sync-tabs-menuitem {
+  --menuitem-image: url("./../images/sync.svg");
+}
+#historyRestoreLastSession {
+  --menuitem-image: url("./../images/restore-session.svg");
+}
+#hiddenTabsMenu {
+}
+#historyUndoMenu{
+  --menuitem-image: url("./../images/tab.svg");
+}
+#historyUndoWindowMenu {
+  --menuitem-image: url("./../images/window.svg");
+}
+/* sub menu */
+#historyUndoPopup .restoreallitem {
+  --menuitem-image: url("./../images/window-new.svg");
+}
+#historyUndoWindowPopup .restoreallitem {
+  --menuitem-image: url("./../images/restore-session.svg");
+}
+/*- bookmarksMenuPopup -------------------------------------------------*/
+#bookmarksShowAll {
+  --menuitem-image: url("./../images/star-line-horizontal.svg");
+}
+#menu_bookmarkThisPage,
+#menu_bookmarkAllTabs {
+  --menuitem-image: url("./../images/star-add.svg");
+}
+#menu_bookmarkThisPage[data-l10n-id="menu-bookmark-edit"] {
+  --menuitem-image: url("./../images/star-filled.svg");
+}
+#bookmarksToolbarFolderMenu {
+}
+#menu_unsortedBookmarks {
+}
+#menu_mobileBookmarks {
+}
+/*- menu_ToolsPopup ----------------------------------------------------*/
+#menu_openDownloads {
+  --menuitem-image: url("./../images/downloads.svg");
+}
+#menu_openAddons {
+  --menuitem-image: url("./../images/extension.svg");
+}
+#sync-setup {
+  --menuitem-image: url("./../images/avatar-empty.svg");
+}
+#sync-enable {
+}
+#sync-unverifieditem {
+}
+#sync-syncnowitem {
+  --menuitem-image: url("./../images/sync.svg");
+}
+#sync-reauthitem {
+}
+#webDeveloperMenu, /* Legacy */
+#browserToolsMenu {
+  --menuitem-image: url("./../images/wrench.svg");
+}
+#menu_pageInfo {
+  --menuitem-image: url("./../images/document-endnote.svg");
+}
+/* menuWebDeveloperPopup sub menu */
+#enableDeveloperTools {
+  --menuitem-image: url("./../images/wrench.svg");
+}
+#menu_devToolbox {
+  --menuitem-image: url("./../images/window-dev-tools.svg");
+}
+#menu_taskManager {
+  --menuitem-image: url("./../images/top-speed.svg");
+}
+#menu_devtools_remotedebugging {
+  --menuitem-image: url("./../images/bug.svg");
+}
+#menu_browserToolbox {
+  --menuitem-image: url("./../images/window-dev-tools.svg");
+}
+#menu_browserContentToolbox {
+  --menuitem-image: url("./../images/command-frames.svg");
+}
+#menu_browserConsole {
+  --menuitem-image: url("./../images/command-console.svg");
+}
+#menu_responsiveUI {
+  --menuitem-image: url("./../images/command-responsivemode.svg");
+}
+#menu_eyedropper {
+  --menuitem-image: url("./../images/eyedropper.svg");
+}
+#menu_pageSource {
+  --menuitem-image: url("./../images/document-search.svg");
+}
+#extensionsForDevelopers {
+  --menuitem-image: url("./../images/extension-filled.svg");
+}
+/*- menu_HelpPopup -----------------------------------------------------*/
+@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
+  #torBrowserUserManual {
+    --menuitem-image: url("chrome://browser/skin/onion.svg");
+  }
+}
+#menu_openHelp {
+  --menuitem-image: url("./../images/help.svg");
+}
+#feedbackPage {
+  --menuitem-image: url("./../images/feedback.svg");
+}
+#helpSafeMode {
+  --menuitem-image: url("chrome://devtools/skin/images/debugging-workers.svg");
+}
+#troubleShooting {
+  --menuitem-image: url("./../images/more.svg");
+}
+#help_reportSiteIssue {
+  --menuitem-image: url("./../images/lightbulb.svg");
+}
+#menu_HelpPopup_reportPhishingtoolmenu {
+  --menuitem-image: url("./../images/warning.svg");
+}
+#menu_HelpPopup_reportPhishingErrortoolmenu {
+}
+#aboutName {
+  --menuitem-image: url("chrome://branding/content/icon16.png");
+}
+#helpPolicySupport {
+}
