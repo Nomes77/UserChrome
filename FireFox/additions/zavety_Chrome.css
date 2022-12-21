@@ -27,7 +27,7 @@
   #customization-panelWrapper {
     --panel-arrow-offset: 0px !important;
   }
-  html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]) + #nav-bar-overflow-button,
+  html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"] + #nav-bar-overflow-button,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"],
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
@@ -37,11 +37,12 @@
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem + toolbaritem,
+    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem + toolbaritem ,
   html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
-    + toolbarbutton[cui-areatype="toolbar"]) + #nav-bar-overflow-button,
-  html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) + toolbarbutton[cui-areatype="toolbar"],
+    + toolbarbutton[cui-areatype="toolbar"] + #nav-bar-overflow-button,
+  html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
+    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+    + toolbarbutton[cui-areatype="toolbar"],
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
     + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"],
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
