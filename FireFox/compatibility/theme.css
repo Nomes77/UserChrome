@@ -59,7 +59,8 @@ menu[disabled="true"] {
   outline: var(--focus-outline) !important;
 }
 /*- Tab Separator Color ------------------------------------------------*/
-#TabsToolbar {
+#TabsToolbar,
+#nav-bar {
   --toolbarseparator-color: linear-gradient(to right, currentColor 50%, color-mix(in srgb, currentColor, transparent 25%));
   /* 60% at v105 */
 }
