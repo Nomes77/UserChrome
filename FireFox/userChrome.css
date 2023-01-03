@@ -52,6 +52,7 @@
 /** Libray Menu **********************************************************************/
 @import "./icons/library.css";
 /** Others UI ************************************************************************/
+@import "./bookmarkbar/multi_row.css";
 @import "./counter/index.css";
 /** Auto Hide ************************************************************************/
 @import "./autohide/index.css";
@@ -69,5 +70,6 @@
 
 @import "./additions/zavety_Chrome.css";
 
+@charset "UTF-8";
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 @namespace html "http://www.w3.org/1999/xhtml";
