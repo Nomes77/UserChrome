@@ -8,17 +8,27 @@
     --arrowpanel-menuitem-border-radius: 0 !important;
     --subviewbutton-border-radius: 0 !important;
   }
+  .toolbarbutton-1,
+  .toolbarbutton-icon,
+  .panel-info-button,
+  .searchbar-engine-one-off-item,
+  .urlbarView-button,
+  .urlbarView-tip-button,
+  .urlbarView-action,
+  toolbarbutton.bookmark-item:not(.subviewbutton),
+  #sidebar-switcher-target {
+    --toolbarbutton-border-radius: 0;
+  }
   button,
   .tab-icon-overlay,
-  findbar toolbarbutton {
+  findbar toolbarbutton,
+  .notification-button {
     border-radius: 0 !important;
   }
   /* Fix Tab bar button radius */
-  #TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon,
-  #TabsToolbar .toolbarbutton-1 > .toolbarbutton-text,
-  #TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,
+  #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button),
   .tab-close-button {
-    --tab-border-radius: var(--toolbarbutton-border-radius) !important;
+    --tab-border-radius: var(--toolbarbutton-border-radius);
     border-radius: 0 !important;
   }
   #tabbrowser-tabs {
@@ -39,8 +49,10 @@
   html|input {
     border-radius: 0 !important;
   }
+  #urlbar-input-container,
   #urlbar-background,
-  #searchbar {
+  #searchbar,
+  .urlbarView-row-inner {
     --toolbarbutton-border-radius: 0 !important;
   }
   .checkbox-check,
