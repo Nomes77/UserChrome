@@ -50,7 +50,7 @@ menupopup {
 }
 @supports not -moz-bool-pref("userChrome+Content.zavety") {
   #BMB_bookmarksPopup menupopup {
-    --nested-margin-side: 2.25em !important; / 27px = padding-text + icon + padding-inline-start /
+    --nested-margin-side: 2.25em !important; /* 27px = padding-text + icon + padding-inline-start */
   }
 }
 menupopup > menu > menupopup {
