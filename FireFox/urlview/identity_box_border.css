@@ -1,5 +1,16 @@
 /*= Identity Box Border =============================================================*/
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not(:hover, [open]),
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, [open]),
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not(:hover, [open]) {
+    /* remove background from urlbar box */
+    background-color: transparent !important;
+}
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button::after,
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button::after,
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button::after {
@@ -18,12 +29,16 @@
     background-color: rgb(150, 150, 150) !important;
 }
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not(:hover, :active, [open=true])::after,
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, :active, [open=true])::after,
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not(:hover, :active, [open=true])::after {
     opacity: 1;
 }
 @media (prefers-reduced-motion: no-preference) {
+  :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+    #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button::after,
   :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
     #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button::after,
   :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
