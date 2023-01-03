@@ -1,6 +1,6 @@
 /*= Private Mode ====================================================================*/
 @supports -moz-bool-pref("userChrome+Content.theme.private_mode") {
-  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme) {
+  :root:is([privatebrowsingmode=temporary][lwt-default-theme-in-dark-mode="true"]) {
     --win-text-color: rgb(255, 255, 255);
     --win-bgcolor: #2b2b2b;
     --win-disabled-color: #747474; /* also button-active-color */
@@ -69,15 +69,15 @@
     --card-outline-color: var(--grey-60);
     --dialog-warning-text-color: var(--red-40);
   }
-  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+  :root:is([privatebrowsingmode=temporary][lwt-default-theme-in-dark-mode="true"])
     .tabbrowser-tab .tab-icon-image,
-  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+  :root:is([privatebrowsingmode=temporary][lwt-default-theme-in-dark-mode="true"])
     .tabbrowser-tab > .tab-stack > .tab-content:not([pinned]),
-  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+  :root:is([privatebrowsingmode=temporary][lwt-default-theme-in-dark-mode="true"])
     .tabbrowser-tab[pinned][visuallyselected]:hover .close-icon {
       color: var(--win-text-color) !important;
   }
-  :root:is([privatebrowsingmode=temporary]):not(:-moz-lwtheme)
+  :root:is([privatebrowsingmode=temporary][lwt-default-theme-in-dark-mode="true"])
     .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
       color: black !important;
   }

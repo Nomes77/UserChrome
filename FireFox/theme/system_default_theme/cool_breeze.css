@@ -131,7 +131,7 @@
       color: black !important;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .browser-toolbar:not(.titlebar-color) {
-      color: black !important;
+    color: black !important;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #urlbar { 
     color: black !important;
