@@ -158,38 +158,3 @@ html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-
   + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem + toolbaritem + toolbaritem {
     transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -4 * var(--toolbarbutton-outer-padding) - (2 * 16px)));
 }
-/* Line between bookmark and overflow button */
-html[id="main-window"][chromehidden=""] toolbar:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button))
-  #PanelUI-button::before {
-    /* Box Model */
-    content: "";
-    display: block;
-    position: absolute;
-    /* Position */
-    top: calc(var(--urlbar-toolbar-height) / 4);
-    transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2.5 * var(--toolbarbutton-outer-padding) - 16px));
-    /* Bar shape */
-    width: 1.75px;
-    height: calc(var(--urlbar-toolbar-height) / 2);
-    /* Bar Color */
-    background-color: rgb(218, 218, 218);
-}
-html[id="main-window"][chromehidden=""] toolbar:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-  + toolbarbutton[cui-areatype="toolbar"]) #PanelUI-button::before {
-    transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -4.5 * var(--toolbarbutton-outer-padding) - 32px));
-}
-@media (prefers-color-scheme: dark) {
-  html[id="main-window"][chromehidden=""] #PanelUI-button::before {
-    /* Bar Color Dark Mode */
-    background-color: rgb(99, 99, 99) !important;
-  }
-}
-@media (max-width: 615px) {
-  html[id="main-window"]:not([customizing="true"]) toolbar toolbarbutton,
-  html[id="main-window"]:not([customizing="true"]) toolbar toolbaritem {
-    transform: translateX(0px) !important;
-  }
-  html[id="main-window"][chromehidden=""] #PanelUI-button::before {
-    transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2.5 * var(--toolbarbutton-outer-padding) + 16px)) !important;
-  }
-}
