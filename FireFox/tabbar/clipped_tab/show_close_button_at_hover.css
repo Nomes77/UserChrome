@@ -30,12 +30,12 @@
 .tabbrowser-tab .tab-content > .close-icon {
   list-style-image: url("./../../images/dismiss-filled.svg") !important;
 }
-/* Closed Button's background smaller */
+/* Closed Button's padding reduce */
 #tabbrowser-tabs .tab-close-button {
-  height: 17px !important;
-  width: 17px !important;
   margin-inline-end: calc((var(--inline-tab-padding) / -2) + 2px) !important;
   padding: 2.5px !important;
+  height: 17px !important;
+  width: 17px !important;
   border-radius: 2px !important;
 }
 /* Closed Button's background darker on hover */

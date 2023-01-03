@@ -34,7 +34,7 @@
   width: calc(16px + 30%);
 }
 .tabbrowser-tab:not([visuallyselected]) .tab-content[attention]::before {
- opacity: 0; 
+  opacity: 0; 
 }
 /* Animate */
 @media (prefers-reduced-motion: no-preference) {

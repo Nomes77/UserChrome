@@ -12,7 +12,6 @@
 :root[uidensity="compact"] .tab-content[pinned] {
   --inline-tab-padding: 8px;
 } */
-// mask-image: linear-gradient(to left, transparent, black var(--tab-label-mask-size));
 .tabbrowser-tab .tab-label-container {
   --tab-label-mask-size: 1.8em; /* Original: 2em */
 }
