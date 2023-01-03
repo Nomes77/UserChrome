@@ -22,12 +22,12 @@
   }
   /* Prevent shift of URL bar contents */
   #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    height: calc(var(--urlbar-toolbar-height) - var(--mbarstyler-popout-top-pixels)) !important;
-    margin-bottom: calc(-3px + -1px + var(--mbarstyler-popout-pixels)) !important;
+    height: calc(var(--urlbar-toolbar-height) - ((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) + var(--mbarstyler-popout-top-pixels)) !important;
+    margin-bottom: calc( 0px - ((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2)) !important;
   }
-  /* Remove shadows */
+  /* Shadows */
   #urlbar[breakout][breakout-extend] > #urlbar-background {
-    box-shadow: none !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
   }
   /*- Prevent top border line --------------------------------------------*/
   #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
