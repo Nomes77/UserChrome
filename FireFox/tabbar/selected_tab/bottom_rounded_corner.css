@@ -1,58 +1,61 @@
 /*- Selected Tab - Bottom Rounded Corner --------------------------------------------*/
 @supports not -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.chrome") {
   @supports not -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.edge") {
-    #tabbrowser-tabs {
-      --tab-border-radius: 3px !important;
-      --uc-tab-corner-rounding: var(--tab-border-radius); /* 10px looks about like chromium - 17px looks close to Australis tabs */
-      --uc-tab-corner-padding: 0px;
-      --uc-tab-corner-position: calc(var(--uc-tab-corner-padding) - var(--uc-tab-corner-rounding));
-    }
-    .tabbrowser-tab .tab-background::before,
-    .tabbrowser-tab .tab-background::after {
-      content: "" !important;
-      /* Box */
-      display: block;
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-      /* Shape */
-      width: var(--uc-tab-corner-rounding);
-      height: 100%;
-      /* Color */
-      fill: transparent;
-      stroke: transparent;
-      -moz-context-properties: fill, stroke;
-      /* Image */
-      background-size: var(--uc-tab-corner-rounding);
-      background-repeat: no-repeat;
-      background-position-y: bottom;
-    }
-    .tabbrowser-tab .tab-background::before {
-      left: var(--uc-tab-corner-position);
-      background-image: url("./../../images/tab/tab-bottom-corner-left.svg");
-    }
-    .tabbrowser-tab .tab-background::after {
-      right: var(--uc-tab-corner-position);
-      background-image: url("./../../images/tab/tab-bottom-corner-right.svg");
-    }
-    /* As Selected Tab - Box Shadow */
-    :root:not([customizing="true"])::is([lwtheme-mozlightdark], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
-      #TabsToolbar[brighttext]
-      #tabbrowser-tabs:not([noshadowfortests])
-      .tabbrowser-tab[visuallyselected]
-      .tab-background:-moz-lwtheme::before,
-    :root:not([customizing="true"])::is([lwtheme-mozlightdark], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
-      #TabsToolbar[brighttext]
-      #tabbrowser-tabs:not([noshadowfortests])
-      .tabbrowser-tab[visuallyselected]
-      .tab-background:-moz-lwtheme::after {
-      stroke: var(--toolbar-color);
+    @supports not -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.wave") {
+      #TabsToolbar {
+        --tab-border-radius: 3px !important;
+        --uc-tab-corner-rounding: var(--tab-border-radius); /* 10px looks about like chromium - 17px looks close to Australis tabs */
+        --uc-tab-corner-padding: 0px;
+        --uc-tab-corner-position: calc(var(--uc-tab-corner-padding) - var(--uc-tab-corner-rounding));
+      }
+      .tabbrowser-tab .tab-background::before,
+      .tabbrowser-tab .tab-background::after {
+        content: "" !important;
+        /* Box */
+        display: block;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        /* Shape */
+        width: var(--uc-tab-corner-rounding);
+        height: 100%;
+        /* Color */
+        fill: transparent;
+        stroke: transparent;
+        -moz-context-properties: fill, stroke;
+        /* Image */
+        background-size: var(--uc-tab-corner-rounding);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+      }
+      .tabbrowser-tab .tab-background::before {
+        left: var(--uc-tab-corner-position);
+        background-image: url("./../../images/tab/tab-bottom-corner-left.svg");
+      }
+      .tabbrowser-tab .tab-background::after {
+        right: var(--uc-tab-corner-position);
+        background-image: url("./../../images/tab/tab-bottom-corner-right.svg");
+      }
+      /* As Selected Tab - Box Shadow */
+      :root:not([customizing="true"])::is([lwtheme-mozlightdark], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
+        #TabsToolbar[brighttext]
+        #tabbrowser-tabs:not([noshadowfortests])
+        .tabbrowser-tab[visuallyselected]
+        .tab-background:-moz-lwtheme::before,
+      :root:not([customizing="true"])::is([lwtheme-mozlightdark], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"])
+        #TabsToolbar[brighttext]
+        #tabbrowser-tabs:not([noshadowfortests])
+        .tabbrowser-tab[visuallyselected]
+        .tab-background:-moz-lwtheme::after {
+        stroke: var(--toolbar-color);
+      }
     }
   }
 }
 @supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.chrome") or 
-          -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.edge") {
-  #tabbrowser-tabs {
+          -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.edge") or 
+          -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.wave") {
+  #TabsToolbar {
     --uc-tab-corner-height: calc(var(--tab-min-height) + 1px);
     --uc-tab-corner-size: var(--uc-tab-corner-height);
     --uc-tab-corner-half-size: calc(var(--uc-tab-corner-size) / 2);
@@ -60,7 +63,7 @@
     --uc-tab-corner-bgimage: none;
   }
   @supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.chrome") {
-    #tabbrowser-tabs {
+    #TabsToolbar {
       --uc-tab-corner-left-side-svg: url("./../../images/tab/tab-bottom-corner-left-chrome.svg");
       --uc-tab-corner-left-side-clipPath: url("./../../images/tab/tab-bottom-corner-left-chrome.svg#svgClipPath");
       --uc-tab-corner-right-side-svg: url("./../../images/tab/tab-bottom-corner-right-chrome.svg");
@@ -71,7 +74,7 @@
     }
   }
   @supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.edge") {
-    #tabbrowser-tabs {
+    #TabsToolbar {
       --uc-tab-corner-left-side-svg: url("./../../images/tab/tab-bottom-corner-left-edge.svg");
       --uc-tab-corner-left-side-clipPath: url("./../../images/tab/tab-bottom-corner-left-edge.svg#svgClipPath");
       --uc-tab-corner-right-side-svg: url("./../../images/tab/tab-bottom-corner-right-edge.svg");
@@ -79,6 +82,16 @@
       --uc-tab-corner-left-side-svg-clipped: url("./../../images/tab/tab-bottom-corner-left-edge-clipped.svg");
       --uc-tab-corner-right-side-svg-clipped: url("./../../images/tab/tab-bottom-corner-right-edge-clipped.svg");
       --uc-tab-corner-size: 14px;
+    }
+  }
+  @supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.wave") {
+    #TabsToolbar {
+      --uc-tab-corner-left-side-svg: url("./../../images/tab/tab-bottom-corner-left-wave.svg");
+      --uc-tab-corner-left-side-clipPath: url("../../../images/tab/tab-bottom-corner-left-wave.svg#svgClipPath");
+      --uc-tab-corner-right-side-svg: url("./../../images/tab/tab-bottom-corner-right-wave.svg");
+      --uc-tab-corner-right-side-clipPath: url("./../../images/tab/tab-bottom-corner-right-wave.svg#svgClipPath");
+      --uc-tab-corner-left-side-svg-clipped: url("./../../images/tab/tab-bottom-corner-left-wave-clipped.svg");
+      --uc-tab-corner-right-side-svg-clipped: url("./../../images/tab/tab-bottom-corner-right-wave-clipped.svg");
     }
   }
   .tabbrowser-tab {
@@ -132,10 +145,12 @@
   #tabbrowser-tabs[movingtab] .tabbrowser-tab:is([visuallyselected], [multiselected]) .tab-background:-moz-lwtheme {
     --uc-tab-corner-bgimage: none;
   }
-  #tabbrowser-tabs[positionpinnedtabs],
-  #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab],
-  #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-unpinned-tab] {
-    margin-left: var(--uc-tab-corner-half-size) !important;
+  @supports not -moz-bool-pref("userChrome+Content.padding.first_tab") {
+    #tabbrowser-tabs[positionpinnedtabs],
+    #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab],
+    #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-unpinned-tab] {
+      margin-left: var(--uc-tab-corner-half-size) !important;
+    }
   }
   .tabbrowser-tab[last-visible-tab] {
     margin-right: var(--uc-tab-corner-half-size) !important;
