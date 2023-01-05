@@ -45,7 +45,7 @@ user_pref("userChrome+Content.padding.drag_space", true);
 user_pref("userChrome+Content.padding.first_tab", true);
 user_pref("userChrome+Content.padding.megabar_style", true);
 user_pref("userChrome+Content.padding.menu_compact", false);
-user_pref("userChrome+Content.page.field_border", true);
+user_pref("userChrome+Content.page.field_border", false);
 user_pref("userChrome+Content.page.focus_outline_hidden", true);
 user_pref("userChrome+Content.page.proton_color.dark_blue_accent", false);
 user_pref("userChrome+Content.page.proton_color.system_accent", true);
