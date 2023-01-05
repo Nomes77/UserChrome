@@ -1,5 +1,7 @@
 /* Firefox Proton userChrome.css tweaks **********************************************/
 /* Github: https://github.com/black7375/Firefox-UI-Fix/blob/master/userChrome.css ****/
+/** Default Theme - Built In Color ***************************************************/
+@import "./theme/built_in_color.css";
 /** Default Theme - Contrast *********************************************************/
 @import "./theme/built_in.css";
 /** Compatibility Fixes **************************************************************/
@@ -28,6 +30,8 @@
 @import "./tabbar/index.css";
 /** URL View UI **********************************************************************/
 @import "./urlview/index.css";
+/** Bookmark UI **********************************************************************/
+@import "./bookmarkbar/multi_row.css";
 /** Fullscreen - Overlap toolbar *****************************************************/
 @import "./tabbar/fullscreen.css";
 /** Library - Icons Replace **********************************************************/
@@ -52,7 +56,6 @@
 /** Libray Menu **********************************************************************/
 @import "./icons/library.css";
 /** Others UI ************************************************************************/
-@import "./bookmarkbar/multi_row.css";
 @import "./counter/index.css";
 /** Auto Hide ************************************************************************/
 @import "./autohide/index.css";
