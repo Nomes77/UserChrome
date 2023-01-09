@@ -42,3 +42,10 @@
 .tab-icon-stack[indicator-replaces-favicon] > :not(.tab-icon-overlay) {
   opacity: 1 !important;
 }
+
+
+
+/*= Remove 'Open all bookmarks' =======================================*/
+menuitem.openintabs-menuitem { 
+  display: none !important;
+}

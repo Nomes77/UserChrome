@@ -1,10 +1,10 @@
-/*= Proton color ====================================================================*/
+/*= Proton color ===================================================== I'VE CHANGED =*/
 /* Imported from "theme/proton_color", so it should be exactly the same file *?
 @-moz-document url-prefix("about:"),
                url-prefix("chrome://browser/content/places/places.xhtml"),
                url-prefix("view-source"),
                regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
-  /*= Default Colors - Hard Coded =====================================================*/
+  /*= Default Colors - Hard Coded ====================================== I'VE CHANGED =*/
   /* Based on chrome://global/skin/in-content/common-shared.css */
   :host,
   :root {

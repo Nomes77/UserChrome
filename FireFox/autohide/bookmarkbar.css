@@ -1,0 +1,89 @@
+/*= Bookmarkbar =====================================================================*/
+:root {
+  --uc-autohide-toolbar-speed: 0.25s;
+  --uc-autohide-toolbar-delay: 600ms;
+}
+@supports -moz-bool-pref("userChrome+Content.autohide.bookmarkbar") {
+  :root {
+    --uc-bm-height: var(--uc-bm-height-default);
+    --uc-bm-height-default: calc(20px + 2 * var(--bookmark-block-padding, 4px));
+    --uc-bm-hide-height: calc(-1 * var(--uc-bm-height));
+  }
+  #navigator-toolbox:has(#PersonalToolbar[collapsed="true"]) {
+    --uc-bm-height: 0px;
+  }
+  #navigator-toolbox {
+    position: relative;
+  }
+  #navigator-toolbox:is(:hover, :focus-within) {
+    z-index: 2;
+  }
+  #navigator-toolbox:is(:hover, :focus-within) #PersonalToolbar {
+    z-index: -1;
+  }
+  #navigator-toolbox:not(:hover):not(:focus-within) {
+    animation: 1s keepfront;
+  }
+  @keyframes keepfront {
+    from {
+      z-index: 3;
+    }
+    to {
+      z-index: 3;
+    }
+  }
+  #navigator-toolbox:is(:hover, :focus-within) {
+    --uc-toolbar-height: var(--uc-bm-height);
+  }
+  #navigator-toolbox {
+    --uc-toolbar-hide-height: calc(-1 * var(--uc-toolbar-height, 0));
+    margin-bottom: var(--uc-toolbar-hide-height) !important;
+    visibility: collapse;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    @supports -moz-bool-pref("userChrome+Content.decoration.animate") {
+      #navigator-toolbox {
+        transition: margin-top 1s ease,
+          margin-bottom var(--uc-autohide-toolbar-speed) var(--animation-easing-function)
+            var(--uc-autohide-toolbar-delay);
+      }
+      #navigator-toolbox:is(:hover, :focus-within) {
+        transition-delay: 0s !important;
+      }
+      #navigator-toolbox[inFullscreen="true"] {
+        transition: margin-top 1.3s var(--animation-easing-function) 50ms,
+          margin-bottom var(--uc-autohide-toolbar-speed) var(--animation-easing-function)
+            var(--uc-autohide-toolbar-delay);
+      }
+    }
+    @supports not -moz-bool-pref("userChrome+Content.decoration.animate") {
+      #navigator-toolbox {
+        transition: margin-bottom var(--uc-autohide-toolbar-speed) var(--animation-easing-function)
+          var(--uc-autohide-toolbar-delay);
+      }
+      #navigator-toolbox:is(:hover, :focus-within) {
+        transition-delay: 0s !important;
+      }
+    }
+  }
+  #PersonalToolbar:not([customizing]) {
+    margin-bottom: var(--uc-bm-hide-height);
+    opacity: 0;
+    will-change: margin-bottom, opacity;
+  }
+  #navigator-toolbox:is(:hover, :focus-within) #PersonalToolbar:not([customizing]) {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    #PersonalToolbar:not([customizing]) {
+      transition: margin-bottom var(--uc-autohide-toolbar-speed) var(--animation-easing-function)
+          var(--uc-autohide-toolbar-delay),
+        opacity var(--uc-autohide-toolbar-speed) var(--animation-easing-function) var(--uc-autohide-toolbar-delay),
+        min-height 170ms ease-out, max-height 170ms ease-out, var(--ext-theme-background-transition) !important;
+    }
+    #navigator-toolbox:is(:hover, :focus-within) #PersonalToolbar:not([customizing]) {
+      transition-delay: 0s !important;
+    }
+  }
+}

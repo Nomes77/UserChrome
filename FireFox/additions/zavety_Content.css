@@ -17,10 +17,14 @@
     addon-shortcuts > [data-l10n-id="shortcuts-no-commands"],
     addon-shortcuts > .shortcuts-no-commands-list > [addon-id]:not([addon-id="uBlock0@raymondhill.net"]) {
       display: none !important;
+      visibility: hidden !important;
     }
   }
   @-moz-document url("about:logins"),
                  url-prefix("about:logins") {
+    .count[data-l10n-id="login-list-count"] {
+      display: none !important;
+    }
     .login-list-section,
     .container:has(.column),
     login-item .header,
@@ -37,6 +41,7 @@
     [data-category="panePrivacy"] #showPasswords,
     [data-category="panePrivacy"] #masterPasswordRow {
       display: none !important;
+      visibility: hidden !important;
     }
     [data-category="paneGeneral"] #browserContainersbox #browserContainersCheckbox {
       opacity: 1 !important;
@@ -47,18 +52,21 @@
     a[href="about:logins"],
     ul#abouts > li:nth-of-type(15) {
       display: none !important;
+      visibility: hidden !important;
     }
   }
   @-moz-document url("about:performance"),
                  url-prefix("about:performance") {
     [data-l10n-id="item"]:has([data-l10n-id="type-addon"]) {
       display: none !important;
+      visibility: hidden !important;
     }
   }
   @-moz-document url("about:processes"),
                  url-prefix("about:processes") {
     .process:has([data-l10n-id="about-processes-extension-process"]) {
       display: none !important;
+      visibility: hidden !important;
     }
   }
   @-moz-document url-prefix("moz-extension://48257024-52cf-4295-81fc-991effeb0c07") {
@@ -70,6 +78,7 @@
     div#lists > .groupEntry[data-groupkey="regions"] .listEntry[data-listkey="NLD-0"] a:is(.content, .support),
     div#lists > .groupEntry[data-groupkey="custom"] > .listEntries > .listEntry[data-listkey^="https://raw.githubusercontent.com/"] {
       display: none !important;
+      visibility: hidden !important;
     }
   }
 }

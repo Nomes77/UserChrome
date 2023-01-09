@@ -1,21 +1,21 @@
 /* About_Logins **************************************************************/
 @-moz-document url("about:logins") {
-  login-list:not(:hover) {
+/*  login-list:not(:hover) {
     width: 40%;
     scrollbar-width: none;
   }
   [role="listbox"][data-l10n-id="login-list"] {
     scrollbar-width: none;
-  }
+  } */
   .login-list-item {
     padding-block: 0px !important;
   }
-  .login-list-section > .login-list-item .username {
-    display: none !important;
+  .username {
+    display: none !important; 
   }
-  input[type="password"]:read-only:not(:hover),
+  /* input[type="password"]:read-only:not(:hover),
   input[type="text"]:read-only:not(:hover) {
-    visibility: hidden !important;
+    visibility: hidden !important; */
   }
   input.password-display
   input[name="password"][readonly] {

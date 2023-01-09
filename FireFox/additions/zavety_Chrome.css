@@ -12,7 +12,7 @@
   notification-message[value="master-password-login-required"],
   notification-message[value="primary-password-login-required"],
   panel#PopupAutoComplete[is="autocomplete-richlistbox-popup"],
-
+ 
   .panel-subview-body > #appmenu-moreTools-button,
   .panel-subview-body > #appmenu-moreTools-button + toolbarseparator,
   #toolbar-context-menu #viewToolbarsMenuSeparator,
@@ -20,7 +20,7 @@
   #toolbar-context-menu .customize-context-moveToPanel,
   #menu_viewPopup #view-menu-popup > menuseparator,
   #menu_viewPopup #view-menu-popup > #menu_customizeToolbars,
-
+ 
   #customization-panelHolder > #widget-overflow-fixed-list > toolbarpaletteitem[id$="-browser-action"] {
     display: none !important;
   }
@@ -33,13 +33,13 @@
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"] + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem,
+    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem ,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar :has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
-    + toolbarbutton[cui-areatype="toolbar"] + #nav-bar-overflow-button,
+    + toolbarbutton[cui-areatype="toolbar"]) + #nav-bar-overflow-button,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"] 
     + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
     + toolbarbutton[cui-areatype="toolbar"],

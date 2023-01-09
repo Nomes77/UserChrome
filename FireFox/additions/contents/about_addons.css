@@ -107,16 +107,4 @@
       padding-inline-end: 4px !important;
     }
   }
-  @supports -moz-bool-pref("userChrome+Content.additions.about_addons_show_version_number") {
-    addon-list[type="extension"] .addon-name-link[title]:not([data-l10n-args])::after {
-      content: attr(title) !important;
-      display: block !important;
-      margin-top: -22px !important;
-      color: var(--in-content-text-color);
-    }
-    addon-list[type="extension"] .addon-name-link:not([data-l10n-args]),
-    addon-list[type="extension"] .addon-name-link:not([data-l10n-args]):hover {
-      color: transparent !important;
-    }
-  }
 }
