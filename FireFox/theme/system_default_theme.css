@@ -1,8 +1,9 @@
 /** System Default Theme *************************************************************/
-/*= Windows10 - UWP like color =========================================*/
-/*= Windows10 - Titlebar accent color ==================================*/
+/*= Windows10 - UWP like color ========================== I'VE CHANGED =*/
+/*= Windows10 - Titlebar accent color =================== I'VE CHANGED =*/
 @import "./system_default_theme/win10.css";
+
 /*= Extra Themes =======================================================*/
-@import "./system_default_theme/cool_breeze.css";
+@import "./system_default_theme/theme_cool_breeze.css";
 /*= Private Mode =======================================================*/
 @import "./system_default_theme/private_mode.css";

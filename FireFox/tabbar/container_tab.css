@@ -24,7 +24,7 @@
   transform: translateY(var(--uc-container-position-y));
   /* Shape */
   border-bottom: 2px solid var(--identity-icon-color);
-  border-radius: 8px;
+  border-radius: 8px; /* 2px; same as close button */
   width: calc(16px + 10%);
 }
 .tabbrowser-tab:hover:not([pinned], [visuallyselected]) .tab-content::before {
@@ -34,7 +34,7 @@
   width: calc(16px + 30%);
 }
 .tabbrowser-tab:not([visuallyselected]) .tab-content[attention]::before {
- opacity: 0; 
+  opacity: 0; 
 }
 /* Animate */
 @media (prefers-reduced-motion: no-preference) {
@@ -47,8 +47,8 @@
 .tabbrowser-tab[pinned] .tab-content:not([attention])::before {
   width: 16px;
 }
-/* Tab - Hide Titlechanged Indicator */
-.tabbrowser-tab > .tab-stack > .tab-content[titlechanged]:not([selected="true"]) {
+/* Pinned Tab - Hide Titlechanged Indicator */
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
   background-image: none !important;
 }
 /* Tab - Attention Indicator override */

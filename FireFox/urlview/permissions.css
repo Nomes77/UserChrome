@@ -2,7 +2,7 @@
 @supports -moz-bool-pref("userChrome+Content.urlview.permissions.hide_granted-icon") {
   #blocked-permissions-container > .blocked-permission-icon[showing] {
     display: none;
-  }
+  } 
   /* #identity-permission-box:has(#blocked-permissions-container > .blocked-permission-icon[showing="true"]) #permissions-granted-icon {
     display: none !important;
   }

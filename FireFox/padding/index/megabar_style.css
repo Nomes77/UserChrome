@@ -1,27 +1,33 @@
-/*= URL Bar - MegaBar Style =========================================================*/
+/*= URL Bar - MegaBar Style ============================================ I'VE ADDED =*/
 /* https://www.userchrome.org/megabar-styling-firefox-address-bar.html */
 @supports -moz-bool-pref("userChrome+Content.padding.megabar_style") {
   /*- General Preferences ------------------------------------------------*/
   :root {
     /* Number of pixels of enlargement when URL bar is focused */
     --mbarstyler-popout-pixels: 0px; /* [0px - 7px] */
+    --mbarstyler-popout-top-pixels: 1px; /* 3px - 0px */
     /* Font sizes (default: 13.8px for title, 10.2px for URL) */
     --mbarstyler-title-font-size: 13.8px; /* [13px - 18px] */
     --mbarstyler-url-font-size: 12.5px; /* [12px - 16px] */
   }
   /*- URL bar enlargement or lack thereof --------------------------------*/
+  #urlbar[breakout] {
+    top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2);
+  }
   /* Compute new position, width, and padding */
   #urlbar[breakout][breakout-extend] {
+    top: var(--mbarstyler-popout-top-pixels) !important;
     left: calc(0px - var(--mbarstyler-popout-pixels)) !important;
     width: calc(100% + (2 * var(--mbarstyler-popout-pixels))) !important;
   }
   /* Prevent shift of URL bar contents */
   #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    margin-bottom: calc(-3px + -1px + var(--mbarstyler-popout-pixels)) !important;
+    height: calc(var(--urlbar-toolbar-height) - ((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) + var(--mbarstyler-popout-top-pixels)) !important;
+    margin-bottom: calc( 0px - ((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2)) !important;
   }
-  /* Remove shadows */
+  /* Shadows */
   #urlbar[breakout][breakout-extend] > #urlbar-background {
-    box-shadow: none !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
   }
   /*- Prevent top border line --------------------------------------------*/
   #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {

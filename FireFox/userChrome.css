@@ -1,55 +1,59 @@
 /* Firefox Proton userChrome.css tweaks **********************************************/
 /* Github: https://github.com/black7375/Firefox-UI-Fix/blob/master/userChrome.css ****/
+/** Default Theme - Built In Color ***************************************************/
+@import "./theme/built_in_color.css";
 /** Default Theme - Contrast *********************************************************/
 @import "./theme/built_in.css";
-/** Compatibility Fixes **************************************************************/
+/** Compatibility Fixes ********************************************** I'VE CHANGED **/
 @import "./compatibility/index.css";
 /** System Default Theme *************************************************************/
 @import "./theme/system_default_theme.css";
 /** Fully Theme Mode *****************************************************************/
-/*= Default Colors - Hard Coded ========================================*/
+/*= Default Colors - Hard Coded ========================= I'VE CHANGED =*/
 @import "./theme/proton_color.css";
-/*= Menu Color =========================================================*/
+/*= Menu Color ========================================== I'VE CHANGED =*/
 /*= PopupAutoComplete ==================================================*/
 /*= Bookmark Popup Color ===============================================*/
 /*= Sidebar - Field Color ==============================================*/
 @import "./theme/fully_color.css";
 /** Fully Dark Mode ******************************************************************/
 @import "./theme/fully_dark.css";
-/** Proton Theme Mode ****************************************************************/
+/** Proton Theme Mode ************************************************ I'VE CHANGED **/
 @import "./theme/proton_chrome.css";
 /** Decoration ***********************************************************************/
 @import "./decoration/index.css";
-/** Rounding *************************************************************************/
+/** Rounding ********************************************************* I'VE CHANGED **/
 @import "./rounding/index.css";
-/** Reduce Padding *******************************************************************/
+/** Reduce Padding *************************************************** I'VE CHANGED **/
 @import "./padding/index.css";
-/** Tab Bar UI ***********************************************************************/
+/** Tab Bar UI ******************************************************* I'VE CHANGED **/
 @import "./tabbar/index.css";
-/** URL View UI **********************************************************************/
+/** URL View UI ******************************************************** I'VE ADDED **/
 @import "./urlview/index.css";
+/** Bookmark UI **********************************************************************/
+@import "./bookmarkbar/multi_row.css";
 /** Fullscreen - Overlap toolbar *****************************************************/
 @import "./tabbar/fullscreen.css";
-/** Library - Icons Replace **********************************************************/
+/** Library - Icons Replace ****************************************** I'VE CHANGED **/
 @import "./library/chrome.css";
 /** Panel - Icons ********************************************************************/
 /*= Padding ============================================================*/
 @import "./icons/layout_panel.css";
-/*= Panel ==============================================================*/
+/*= Panel =============================================== I'VE CHANGED =*/
 @import "./icons/panel.css";
-/** Menu - Icons Layout **************************************************************/
+/** Menu - Icons Layout ********************************************** I'VE CHANGED **/
 @import "./icons/layout_menu.css";
 /*= Bookmark Menu - Layout =============================================*/
 @import "./icons/layout_bookmark_menu.css";
-/** Toolbarbutton - Icons Layout *****************************************************/
+/** Toolbarbutton - Icons Layout *************************************** I'VE ADDED **/
 @import "./icons/layout_toolbarbuttons.css";
-/** Icons ****************************************************************************/
+/** Icons ************************************************************ I'VE CHANGED **/
 @import "./icons/index.css";
-/** TitleBar *************************************************************************/
+/** TitleBar ********************************************************* I'VE CHANGED **/
 @import "./icons/titlebar.css";
-/** Toolbarbutton Icons **************************************************************/
+/** Toolbarbutton Icons ************************************************ I'VE ADDED **/
 @import "./icons/toolbarbuttons.css";
-/** Libray Menu **********************************************************************/
+/** Libray Menu *******************************************************I'VE CHANGED **/
 @import "./icons/library.css";
 /** Others UI ************************************************************************/
 @import "./counter/index.css";
@@ -69,5 +73,6 @@
 
 @import "./additions/zavety_Chrome.css";
 
+@charset "UTF-8";
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 @namespace html "http://www.w3.org/1999/xhtml";

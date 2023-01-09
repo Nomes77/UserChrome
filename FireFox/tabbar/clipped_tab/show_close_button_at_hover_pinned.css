@@ -1,4 +1,4 @@
-/*- Clipped tabs - Show close button at hover pinned --------------------------------*/
+/*- Clipped tabs - Show close button at hover pinned ----------------- I'VE CHANGED -*/
 @supports -moz-bool-pref("userChrome+Content.tab.close_button_at_hover_pinned") {
   #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned] .tab-close-button {
     --uc-close-button-size: 17px;
@@ -66,11 +66,11 @@
       transition-delay: 3s !important; */
     }
     /* Animate */
-    #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned][visuallyselected]:not([busy]) .tab-close-button {
+    #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned]:not([busy]) .tab-close-button {
       opacity: 0 !important;
       pointer-events: none !important;
     }
-    #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned][visuallyselected]:hover:not([busy]) .tab-close-button {
+    #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned]:hover:not([busy]) .tab-close-button {
       opacity: 1 !important;
       pointer-events: auto !important;
       transition: opacity  0.25s var(--animation-easing-function) var(--pinned-hover-delay), pointer-events 0.25s var(--animation-easing-function) var(--pinned-hover-delay) !important;

@@ -1,9 +1,9 @@
 /*= Clipped tabs ====================================================================*/
 /*- Clipped tabs - Letters cleary --------------------------------------*/
 @import "./clipped_tab/letters_cleary.css";
-/*- Clipped tabs - Show close button at hover --------------------------*/
+/*- Clipped tabs - Show close button at hover ----------- I'VE CHANGED -*/
 @import "./clipped_tab/show_close_button_at_hover.css";
-/*- Clipped tabs - Show close button at hover pinned -------------------*/
+/*- Clipped tabs - Show close button at hover pinned ---- I'VE CHANGED -*/
 @import "./clipped_tab/show_close_button_at_hover_pinned.css";
-/*- Clipped tabs - Always show tab icon  -------------------------------*/
+/*- Clipped tabs - Always show tab icon  ---------------- I'VE CHANGED -*/
 @import "./clipped_tab/always_show_tab_icon.css";

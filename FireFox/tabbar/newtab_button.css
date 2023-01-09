@@ -1,4 +1,4 @@
-/*= New tab button ==================================================================*/
+/*= New tab button =================================================== I'VE CHANGED =*/
 #tabs-newtab-button > .toolbarbutton-icon {
   margin-left: 1px;
   border-radius: 2px !important;
@@ -14,6 +14,7 @@
 #TabsToolbar #new-tab-button {
   list-style-image: url("./../images/add.svg") !important;
 }
+
 @supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
   #tabs-newtab-button:not(:active):hover > image,
   #TabsToolbar #new-tab-button:not(:active):hover > image,

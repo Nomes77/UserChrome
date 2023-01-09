@@ -3,5 +3,7 @@
 @import "./field_border.css";
 /*= Downloads Panel ====================================================*/
 @import "./download_panel.css";
+/*= Panel UI Button Seperator ==========================================*/
+@import "./panel_button_seperator.css";
 /*= Animate ============================================================*/
 @import "./animate.css";

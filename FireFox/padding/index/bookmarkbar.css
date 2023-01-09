@@ -1,4 +1,9 @@
 /*= BookMark Bar - Reduce Height ====================================================*/
 :root[uidensity="compact"] #PersonalToolbar toolbarbutton {
   margin-top: 0px; /* Original: 2px */
+  margin-bottom: 1px !important;
+}
+#nav-bar-customization-target > #personal-bookmarks, toolbar:not(#TabsToolbar) > #wrapper-personal-bookmarks, toolbar:not(#TabsToolbar) > #personal-bookmarks {
+  -moz-box-flex: 1;
+  min-height: 30px;
 }

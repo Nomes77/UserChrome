@@ -1,4 +1,4 @@
-/*= Unselected Tab - Dynamic Separator ==============================================*/
+/*= Unselected Tab - Dynamic Separator =============================== I'VE CHANGED =*/
 #tabbrowser-arrowscrollbox {
   --end-tab-separator-position-x: -0.5px;
   --tab-separator-position-x: -0.5px;
@@ -11,10 +11,10 @@
 #tabbrowser-arrowscrollbox-periphery {
   position: relative;
 }
-.tab-background::before,
+.tab-stack::before,
 #tabbrowser-arrowscrollbox:not([overflowing])
   .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
-  .tab-background::after {
+  .tab-stack::after {
     /* Box Model */
     content: "";
     display: block;
@@ -28,30 +28,30 @@
     opacity: 0;
     background-image: var(--toolbarseparator-color);
 }
-.tab-background::before {
+.tab-stack::before {
   transform: translateX(var(--tab-separator-position-x)) translateY(var(--tab-separator-position-y)) !important;
 }
-.tabbrowser-tab[last-visible-tab] .tab-background::after {
+.tabbrowser-tab[last-visible-tab] .tab-stack::after {
   right: 0;
   transform: translateX(var(--end-tab-separator-position-x)) translateY(var(--tab-separator-position-y)) !important;
 }
-.tabbrowser-tab:not([visuallyselected], [multiselected], :hover, :first-child) .tab-background::before,
+.tabbrowser-tab:not([visuallyselected], [multiselected], :hover, :first-child) .tab-stack::before,
 #tabbrowser-arrowscrollbox:not([overflowing])
   .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
-  .tab-background::after {
+  .tab-stack::after {
     opacity: var(--tab-separator-opacity, 0.7);
 }
 #navigator-toolbox
   .tabbrowser-tab:is([visuallyselected], [multiselected], :hover)
   + .tabbrowser-tab:not([visuallyselected])
-  .tab-background::before,
+  .tab-stack::before,
 #navigator-toolbox
   .tabbrowser-tab[first-visible-unpinned-tab]:is([visuallyselected], [multiselected], :hover)
-  .tab-background::before,
+  .tab-stack::before,
 #navigator-toolbox
   #tabbrowser-arrowscrollbox[overflowing]
   tab.tabbrowser-tab[first-visible-unpinned-tab]
-  .tab-background::before {
+  .tab-stack::before {
     opacity: 0 !important;
 }
 :root:not([uidensity="compact"]) #tabs-newtab-button > .toolbarbutton-icon {
@@ -62,10 +62,10 @@
 }
 /* Animate */
 @media (prefers-reduced-motion: no-preference) {
-  .tab-background::before,
+  .tab-stack::before,
   #tabbrowser-arrowscrollbox:not([overflowing])
     .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
-    .tab-background::after {
+    .tab-stack::after {
       transition: opacity 0.2s var(--animation-easing-function); /* cubic-bezier(.07, .95, 0, 1) */
   }
 }

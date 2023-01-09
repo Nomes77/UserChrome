@@ -1,4 +1,4 @@
-/*= Menu Color ======================================================================*/
+/*= Menu Color ======================================================= I'VE CHANGED =*/
 :root:-moz-lwtheme:not([lwt-default-theme-in-dark-mode])
   :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel)) menupopup:not(.in-menulist) {
     /* is same as toolbar color https://github.com/mozilla/gecko-dev/blob/master/toolkit/themes/windows/global/global.css#L17-L67 */

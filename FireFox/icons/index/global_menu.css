@@ -1,4 +1,4 @@
-/*= Global Menu =====================================================================*/
+/*= Global Menu ====================================================== I'VE CHANGED =*/
 /*- menu_FilePopup -----------------------------------------------------*/
 #menu_newNavigatorTab {
   --menuitem-image: url("./../images/new-tab.svg");
@@ -244,11 +244,6 @@
   --menuitem-image: url("./../images/extension-filled.svg");
 }
 /*- menu_HelpPopup -----------------------------------------------------*/
-@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
-  #torBrowserUserManual {
-    --menuitem-image: url("chrome://browser/skin/onion.svg");
-  }
-}
 #menu_openHelp {
   --menuitem-image: url("./../images/help.svg");
 }

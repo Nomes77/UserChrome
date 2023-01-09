@@ -1,5 +1,5 @@
 @media (prefers-reduced-motion: no-preference) {
-  /*= URL, Search Bar =================================================================*/
+  /*= URL, Search Bar ================================================== I'VE CHANGED =*/
   #urlbar:hover:not([focused="true"]) > #urlbar-background,
   #searchbar:hover:not(:focus-within) {
     border: 1.5px solid var(--win-toolbar-field-hover-border-color) !important;

@@ -1,4 +1,4 @@
-/*- Sound Tab - Show with Favicons --------------------------------------------------*/
+/*- Sound Tab - Show with Favicons ----------------------------------- I'VE CHANGED -*/
 /*** https://www.userchrome.org/firefox-89-styling-proton-ui.html ***/
 /* Mute button width and height */
 #TabsToolbar {
@@ -52,6 +52,12 @@
 .tab-icon-overlay[muted]:not([crashed], [pinned]),
 .tab-icon-overlay[activemedia-blocked]:not([crashed], [pinned]) {
   border-radius: 2px !important; /* same as close button */
+}
+/* Hide muted icon when not soundplaying */
+@supports -moz-bool-pref("userChrome+Content.tab.show_muted_icon_when_soundplaying.only") {
+  tab:not([style^="--soundplaying-removal-delay"]) .tab-icon-overlay[muted] {
+    display: none !important;
+  }
 }
 @supports -moz-bool-pref("userChrome+Content.tab.show_(un)muted_icon_pinned") {
   .tab-icon-stack[pinned]:is([sharing], [soundplaying], [muted]) > .tab-icon-image {

@@ -1,4 +1,7 @@
 /*= Bookmark Menu - Layout ==========================================================*/
+/* #goPopup(Legacy of historyMenuPopup), #historyMenuPopup, #bookmarksMenuPopup: looks like global menu
+ * #BMB_bookmarksPopup: looks like arrow panel
+ */
 /* Empty Menu */
 menupopup menupopup[emptyplacesresult] .menu-text,
 #PersonalToolbar menupopup[emptyplacesresult] .menu-text {
