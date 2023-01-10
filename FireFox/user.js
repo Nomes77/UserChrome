@@ -11,6 +11,9 @@ user_pref("layout.css.color-mix.enabled", true);
 // CSS Blur Filter - 88 Above
 user_pref("layout.css.backdrop-filter.enabled", true);
 
+// :has() - https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+user_pref("layout.css.has-selector.enabled", true);
+
 // CSS Container Queries - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries
 user_pref("layout.css.container-queries.enabled", true);
 
@@ -37,6 +40,9 @@ user_pref("userChrome+Content.bookmarkbar.multi_row", false);
 user_pref("userChrome+Content.counter.bookmark_menu", false);
 user_pref("userChrome+Content.counter.tab", false);
 user_pref("userChrome+Content.decoration.animate", true);
+user_pref("userChrome+Content.fullscreen.overlap", true);
+user_pref("userChrome+Content.fullscreen.show_bookmarkbar", true);
+user_pref("userChrome+Content.icons.change_toolbarbuttons_and_overflowbutton_position", true);
 user_pref("userChrome+Content.newTab.image", false);
 user_pref("userChrome+Content.newTab.image.Augustinus_kerk", true);
 user_pref("userChrome+Content.newTab.image.Augustinus_wijsheid", false);
@@ -55,7 +61,7 @@ user_pref("userChrome+Content.tab.bottom_rounded_corner.chrome", false);
 user_pref("userChrome+Content.tab.bottom_rounded_corner.edge", true);
 user_pref("userChrome+Content.tab.bottom_rounded_corner.wave", false);
 user_pref("userChrome+Content.tab.close_button_at_hover_pinned", true);
-user_pref("userChrome+Content.tab.close_button_at_hover_pinned.always", true);
+user_pref("userChrome+Content.tab.close_button_at_hover_pinned.background", true);
 user_pref("userChrome+Content.tab.show_(un)muted_icon_pinned", false);
 user_pref("userChrome+Content.tab.show_sound_label", false);
 user_pref("userChrome+Content.tab.unscroll", false);
