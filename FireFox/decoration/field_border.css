@@ -2,8 +2,13 @@
   /*= URL, Search Bar =================================================================*/
   #urlbar:hover:not([focused="true"]) > #urlbar-background,
   #searchbar:hover:not(:focus-within) {
-    border: 1.5px solid var(--win-toolbar-field-hover-border-color) !important;
-    box-shadow: 0px 0px 3px var(--win-toolbar-field-hover-border-color) !important;
+    --toolbar-field-border-color: var(--win-toolbar-field-hover-border-color, --toolbar-field-focus-border-color);
+    border-width: 1.5px !important;
+    box-shadow: 0px 0px 3px var(--toolbar-field-border-color) !important;
+  }
+  #urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
+  #searchbar:focus-within {
+    outline-offset: -0.5px !important;
   }
   /*= Other Fields ====================================================================*/
   /* Sidebar */
