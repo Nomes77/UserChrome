@@ -82,7 +82,7 @@
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem ,
+    > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
@@ -152,7 +152,7 @@
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
     + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem ,
+    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
     + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
