@@ -7,3 +7,10 @@ toolbaritem#panelMenu_bookmarksMenu[tooltip="bhTooltip"][role="group"][aria-labe
   visibility: collapse !important;
   display: none !important;
 }
+menupopup#contentAreaContextMenu:has( > #context-media-eme-separator + #context-media-eme-learnmore + menuseperator + menu[id^="_testpilot-containers"]) > 
+  #context-media-eme-separator {
+    visibility: collapse !important;
+    display: none !important;
+}
+
+
