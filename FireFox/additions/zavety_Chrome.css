@@ -33,7 +33,7 @@
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"] + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem ,
+    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
     > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem,
   html[id="main-window"]:not([customizing="true"]) toolbar #nav-bar-customization-target 
