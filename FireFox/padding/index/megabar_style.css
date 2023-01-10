@@ -2,7 +2,8 @@
 /* https://www.userchrome.org/megabar-styling-firefox-address-bar.html */
 @supports -moz-bool-pref("userChrome+Content.padding.megabar_style") {
   /*- General Preferences ------------------------------------------------*/
-  :root {
+  #urlbar[breakout] {
+    --mbarstyler-top-pixels: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2);
     /* Number of pixels of enlargement when URL bar is focused */
     --mbarstyler-popout-pixels: 0px; /* [0px - 7px] */
     --mbarstyler-popout-top-pixels: 1px; /* 3px - 0px */
@@ -12,7 +13,7 @@
   }
   /*- URL bar enlargement or lack thereof --------------------------------*/
   #urlbar[breakout] {
-    top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2);
+    top: var(--mbarstyler-top-pixels) !important;
   }
   /* Compute new position, width, and padding */
   #urlbar[breakout][breakout-extend] {
@@ -22,12 +23,12 @@
   }
   /* Prevent shift of URL bar contents */
   #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    height: calc(var(--urlbar-toolbar-height) - ((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) + var(--mbarstyler-popout-top-pixels)) !important;
-    margin-bottom: calc( 0px - ((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2)) !important;
+    height: calc(var(--urlbar-height) + (var(--mbarstyler-top-pixels) * 2) - (var(--mbarstyler-popout-top-pixels) * 2)) !important;
+    margin-bottom: calc(0px - var(--mbarstyler-top-pixels) + var(--mbarstyler-popout-top-pixels)) !important;
   }
   /* Shadows */
   #urlbar[breakout][breakout-extend] > #urlbar-background {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25) !important;
   }
   /*- Prevent top border line --------------------------------------------*/
   #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
