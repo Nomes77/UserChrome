@@ -69,6 +69,10 @@
       --win-accent-active-color: rgb(0, 92, 163);
       --win-toolbarbutton-hover-background: rgb(74, 74, 74);
       --win-toolbarbutton-active-background: rgb(85, 85, 85);
+      --win-toolbar-field-focus-border-color: rgb(99, 173, 229);
+      --win-toolbar-field-hover-border-color: rgb(101, 101, 101);
+    --win-urlbar-popup-accent-color: rgb(0, 85, 215);
+    --win-focus-outline-color: rgb(131, 131, 131);
       --win-checkbox-border-color: rgb(133, 133, 133);
       --win-checkbox-unchecked-hover-bgcolor: var(--win-field-bgcolor); /* rgb(172, 172, 172) */
       --win-checkbox-unchecked-active-bgcolor: rgb(110, 110, 110);
