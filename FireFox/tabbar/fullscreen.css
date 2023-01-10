@@ -1,13 +1,38 @@
 /** Fullscreen - Overlap toolbar ***************************************************************/
-@supports -moz-bool-pref("browser.fullscreen.autohide") {
+@supports -moz-bool-pref("userChrome+Content.fullscreen.overlap") {
+  /* Don't use display: flex at not fullscreen!! side effect #372 */
   :root[sizemode="fullscreen"] #navigator-toolbox {
-    position: fixed !important; /* Needed for content to take up entire height */
-    display: block !important; /* Needed for content to take up entire height */
-    z-index: 1000 !important; /* Puts the UI above the content */
+    display: flex !important; /* Needed for content to take up entire height, compatibility with tabs on bottom */
+    flex-wrap: wrap;
   }
-  :root[sizemode="fullscreen"] :-moz-any(#navigator-toolbox, #titlebar, #nav-bar, #PersonalToolbar) {
-    width: 100%; /* Makes the UI take up the entire width */
+  :root[sizemode="fullscreen"] #titlebar,
+  :root[sizemode="fullscreen"] #nav-bar,
+  :root[sizemode="fullscreen"] #PersonalToolbar,
+  :root[sizemode="fullscreen"] #tab-notification-deck,
+  :root[sizemode="fullscreen"] #tab-notification-deck-template {
+    flex-basis: 100%;
   }
+  /* -moz-default-appearance: -moz-window-titlebar */
+  :root[sizemode="fullscreen"] #titlebar {
+    -moz-appearance: none !important;
+  }
+  @supports -moz-bool-pref("browser.fullscreen.autohide") {
+    :root[sizemode="fullscreen"] #navigator-toolbox {
+      position: fixed !important; /* Needed for content to take up entire height */
+      z-index: 1000 !important; /* Puts the UI above the content */
+    }
+    :root[sizemode="fullscreen"] :-moz-any(#navigator-toolbox, #titlebar, #nav-bar, #PersonalToolbar) {
+      width: 100%; /* Makes the UI take up the entire width */
+    }
+    @media (-moz-gtk-csd-available) {
+      /* Fix transparent background */
+      :root[tabsintitlebar][sizemode="fullscreen"] #TabsToolbar:not(:-moz-lwtheme) {
+        appearance: auto !important;
+      }
+    }
+  }
+}
+@supports -moz-bool-pref("userChrome+Content.fullscreen.show_bookmarkbar") {
   :root:not([sizemode="fullscreen"]) #PersonalToolbar[initialized="true"]:not([collapsed="true"]),
   :root[sizemode="fullscreen"] #PersonalToolbar[initialized="true"] {
     visibility: unset !important; /* Makes the bookmarks toolbar visible if enabled */

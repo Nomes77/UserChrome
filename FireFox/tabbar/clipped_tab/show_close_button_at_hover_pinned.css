@@ -22,23 +22,7 @@
   #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned][visuallyselected]:hover .tab-icon-image {
     display: none !important;
   }
-  #tabbrowser-tabs[closebuttons="activetab"]:not([movingtab]) .tabbrowser-tab[pinned]:hover:not([busy]) .tab-close-button {
-    margin-inline-end: var(--uc-close-button-margin) !important;
-  }
-  /* Animate */
-  #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned] {
-    --pinned-hover-delay: 3s;
-  }
-  #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned][visuallyselected]:not([busy]) .tab-close-button {
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-  #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned][visuallyselected]:hover:not([busy]) .tab-close-button {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transition: opacity  0.25s var(--animation-easing-function) var(--pinned-hover-delay), pointer-events 0.25s var(--animation-easing-function) var(--pinned-hover-delay) !important;
-  }
-  @supports -moz-bool-pref("userChrome+Content.tab.close_button_at_hover_pinned.always") {
+  @supports -moz-bool-pref("userChrome+Content.tab.close_button_at_hover_pinned.background") {
     #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned]:hover:not([busy]) .tab-close-button {
       display: -moz-box !important;
       -moz-box-ordinal-group: 0 !important;
@@ -47,33 +31,17 @@
       height: var(--uc-close-button-size) !important;
       padding: var(--uc-close-button-padding) !important;
       margin-inline: var(--uc-close-button-margin) !important;
-      /* visibility: visible !important;
-      transition-proporty: visibility !important;
-      transition-delay: 3s !important; */
     }
     #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned]:hover:not([busy]) .tab-icon-stack {
       width: 0 !important;
       position: absolute;
       bottom: 8px;
     }
-    /* #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned] .tab-icon-image {
-      visibility: visible !important;
-    } */
     #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned]:hover .tab-icon-image {
       display: none !important;
-      /* visibility: collapse !important;
-      transition-proporty: visibility !important;
-      transition-delay: 3s !important; */
     }
-    /* Animate */
-    #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned]:not([busy]) .tab-close-button {
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-    #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned]:hover:not([busy]) .tab-close-button {
-      opacity: 1 !important;
-      pointer-events: auto !important;
-      transition: opacity  0.25s var(--animation-easing-function) var(--pinned-hover-delay), pointer-events 0.25s var(--animation-easing-function) var(--pinned-hover-delay) !important;
-    }
+  }
+  #tabbrowser-tabs[closebuttons="activetab"]:not([movingtab]) .tabbrowser-tab[pinned]:hover:not([busy]) .tab-close-button {
+    margin-inline-end: var(--uc-close-button-margin) !important;
   }
 }
