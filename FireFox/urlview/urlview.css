@@ -1,14 +1,21 @@
 /*= URL View ========================================================================*/
-:root {
-  --urlbar-toolbar-height: 40.00px !important;
+/* Set height */
+:root:not([uidensity="touch"]) #nav-bar,
+:root:not([uidensity="touch"]) #urlbar {
+  --urlbar-toolbar-height: 38.00px !important;
+  --urlbar-min-height: 30.00px !important;
+  --urlbar-height: 30.00px !important;
 }
-:root[uidensity=compact] {
-  --urlbar-min-height: 32.00px !important;
-  /* --urlbar-height: 32.00px !important; */
-}
-:root:not([uidensity]) {
+:root[uidensity="touch"] #nav-bar,
+:root[uidensity="touch"] #urlbar {
+  --urlbar-toolbar-height: 42.00px !important;
   --urlbar-min-height: 34.00px !important;
+  --urlbar-height: 34.00px !important;
 }
+#nav-bar {
+  min-height: var(--urlbar-toolbar-height) !important;
+}
+/* MegaBar Style */
 @supports -moz-bool-pref("userChrome+Content.padding.megabar_style") {
   .urlbarView {
     --uc-urlView-padding: calc(5px + var(--urlbar-container-padding));
