@@ -1,4 +1,4 @@
-/*= Bookmarkbar =====================================================================*/
+/*= Bookmark Bar ====================================================================*/
 :root {
   --uc-autohide-toolbar-speed: 0.25s;
   --uc-autohide-toolbar-delay: 600ms;
@@ -6,8 +6,11 @@
 @supports -moz-bool-pref("userChrome+Content.autohide.bookmarkbar") {
   :root {
     --uc-bm-height: var(--uc-bm-height-default);
-    --uc-bm-height-default: calc(20px + 2 * var(--bookmark-block-padding, 4px));
+    --uc-bm-height-default: calc(16px + 2 * var(--bookmark-block-padding, 4px) + 4px);
     --uc-bm-hide-height: calc(-1 * var(--uc-bm-height));
+  }
+  :root[uidensity="compact"] {
+     --uc-bm-height-default: calc(16px + 2 * 4px + 1px);
   }
   #navigator-toolbox:has(#PersonalToolbar[collapsed="true"]) {
     --uc-bm-height: 0px;
@@ -38,7 +41,6 @@
   #navigator-toolbox {
     --uc-toolbar-hide-height: calc(-1 * var(--uc-toolbar-height, 0));
     margin-bottom: var(--uc-toolbar-hide-height) !important;
-    visibility: collapse;
   }
   @media (prefers-reduced-motion: no-preference) {
     @supports -moz-bool-pref("userChrome+Content.decoration.animate") {
@@ -87,3 +89,23 @@
     }
   }
 }
+
+/* Uncomment to enable compatibility for multi-row_bookmarks.css */
+/* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
+/*
+#PersonalToolbar:not([customizing]){
+  min-height: 0 !important;
+  margin-bottom: 0;
+  height: 0;
+  overflow-y: visible !important;
+  z-index: 2;
+  padding-inline: 0 !important;
+}
+#personal-bookmarks{
+  background: inherit;
+  height: min-content;
+}
+#PlacesToolbarDropIndicatorHolder{
+  pointer-events: none !important;
+}
+*/
