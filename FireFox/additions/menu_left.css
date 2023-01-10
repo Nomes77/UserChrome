@@ -12,5 +12,3 @@ menupopup#contentAreaContextMenu:has( > #context-media-eme-separator + #context-
     visibility: collapse !important;
     display: none !important;
 }
-
-
