@@ -36,9 +36,19 @@
     height: 25px !important;
     border-radius: 0px !important;
   }
+  @media (prefers-color-scheme: light) {
+    .urlbarView-row {
+      --uc-urlbarview-selected-border: rgb(0, 85, 215);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .urlbarView-row {
+      --uc-urlbarview-selected-border: rgb(99, 173, 229);
+    }
+  }
   .urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner,
   .urlbarView-row-inner[selected] {
-    box-shadow: 3.5px 0 rgb(0, 85, 215) inset !important;
+    box-shadow: 3.5px 0 var(--uc-urlbarview-selected-border) inset !important;
   }
   :root:not([uidensity=compact]) .urlbarView-row:not([type=tip], [type=dynamic]) {
     max-height: 35px;
