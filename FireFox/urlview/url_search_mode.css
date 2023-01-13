@@ -3,7 +3,11 @@
   #urlbar[searchmode] > #urlbar-input-container #identity-icon,
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #urlbar[searchmode] > #urlbar-input-container > #urlbar-search-mode-indicator {
-    color: rgb(0,90,215) !important; /* var(--urlbar-box-text-color) */
+    color: var(--uc-urlbarview-selected-border) !important;
+}
+:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+  #urlbar[searchmode] > #urlbar-input-container > #urlbar-search-mode-indicator {
+    padding-inline: 0px 6px !important;
 }
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #urlbar[searchmode] > #urlbar-input-container > #urlbar-search-mode-indicator::after {
@@ -17,7 +21,7 @@
     width: 1.75px;
     height: 18px;
     /* Bar Color */
-    opacity: var(--tab-separator-opacity);
+    opacity: var(--tab-separator-opacity, 1);
     background-color: rgb(150, 150, 150) !important;
 }
 
@@ -33,10 +37,10 @@
        --urlbar-box-focus-bgcolor: color-mix(in srgb, currentColor 16%, transparent);
      }
    }
-   #urlbar[focused="true"] #urlbar-search-mode-indicator {			--> doesn't have background-color in Edge, text rgb(0,90,215), has seperator
+   #urlbar[focused="true"] #urlbar-search-mode-indicator {		--> doesn't have background-color in Edge, text rgb(0,90,215), has seperator
      background-color: var(--urlbar-box-focus-bgcolor);
    }
-   #urlbar[focused="true"] #urlbar-zoom-button:not(:hover) {			--> doesn't have background-color in Edge
+   #urlbar[focused="true"] #urlbar-zoom-button:not(:hover) {		--> doesn't have background-color in Edge
      background-color: var(--urlbar-box-focus-bgcolor);
    }
 */
