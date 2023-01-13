@@ -36,15 +36,13 @@
     height: 25px !important;
     border-radius: 0px !important;
   }
-  @media (prefers-color-scheme: light) {
+  :root:not([lwt-toolbar-field-focus-brighttext="true"]) 
     #urlbar-container > #urlbar {
       --uc-urlbarview-selected-border: rgb(0, 85, 215);
-    }
   }
-  @media (prefers-color-scheme: dark) {
+  :root[lwt-toolbar-field-focus-brighttext="true"] 
     #urlbar-container > #urlbar {
       --uc-urlbarview-selected-border: rgb(99, 173, 229);
-    }
   }
   .urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner,
   .urlbarView-row-inner[selected] {
