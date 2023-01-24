@@ -24,7 +24,7 @@ html[id="main-window"][chromehidden=""] toolbar:has(toolbarbutton[cui-areatype="
     background-color: rgb(99, 99, 99) !important;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 575px) {
   html[id="main-window"]:not([customizing="true"]) toolbar toolbarbutton,
   html[id="main-window"]:not([customizing="true"]) toolbar toolbaritem {
     transform: translateX(0px) !important;
