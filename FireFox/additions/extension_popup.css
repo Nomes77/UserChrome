@@ -19,7 +19,7 @@ toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-
 }
 /* Unified Extensions */
 @supports -moz-bool-pref("extensions.unifiedExtensions.enabled") {
-  panelmultiview[mainViewId="unified-extensions-view"] panelview > panel-header,
+  panelmultiview[mainViewId="unified-extensions-view"] panelview > .panel-header,
   panelmultiview[mainViewId="unified-extensions-view"] panelview > toolbarseparator:last-of-type,
   panelmultiview[mainViewId="unified-extensions-view"] panelview > toolbarbutton#unified-extensions-manage-extensions,
   panelmultiview[mainViewId="unified-extensions-view"] .unified-extensions-item[extension-id]:has(.unified-extensions-item-action-button[disabled="true"]),
