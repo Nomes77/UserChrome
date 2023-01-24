@@ -145,10 +145,15 @@
   #tabbrowser-tabs[movingtab] .tabbrowser-tab:is([visuallyselected], [multiselected]) .tab-background:-moz-lwtheme {
     --uc-tab-corner-bgimage: none;
   }
-  @supports not -moz-bool-pref("userChrome+Content.padding.first_tab") {
-    #tabbrowser-tabs[positionpinnedtabs],
-    #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab],
-    #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-unpinned-tab] {
+  #tabbrowser-tabs[positionpinnedtabs],
+  #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab] {
+    margin-left: var(--uc-tab-corner-half-size) !important;
+  }
+  #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-left: calc(var(--uc-tab-corner-half-size) / 2) !important;
+  }
+  @supports -moz-bool-pref("userChrome+Content.padding.first_tab") {
+    #tabbrowser-tabs[overflow]:not([haspinnedtabs]) #tabbrowser-arrowscrollbox {
       margin-left: var(--uc-tab-corner-half-size) !important;
     }
   }
