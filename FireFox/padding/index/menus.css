@@ -48,6 +48,10 @@ menupopup > menu {
 menupopup {
   --nested-margin-side: -0.3em !important;
 }
+menupopup > menu > menupopup {
+  /* align submenus */
+  margin-inline-start: var(--nested-margin-side) !important;
+}
 @supports not -moz-bool-pref("userChrome+Content.zavety") {
   @supports -moz-bool-pref("userChrome+Content.icons.change_toolbarbuttons_and_overflowbutton_position") {
     toolbarbutton#bookmarks-menu-button:nth-last-child(1) > #BMB_bookmarksPopup menupopup {
@@ -66,10 +70,6 @@ menupopup {
       --nested-margin-side: calc(27px + (8 * var(--toolbarbutton-inner-padding) + 8 * var(--toolbarbutton-outer-padding) + (4 * 16px))) !important;
     }
   }
-}
-menupopup > menu > menupopup {
-  /* align submenus */
-  margin-inline-start: var(--nested-margin-side) !important;
 }
 /*= Bookmark Menu - Reduce Padding ==================================================*/
 :root {
