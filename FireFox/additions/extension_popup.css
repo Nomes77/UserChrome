@@ -4,13 +4,42 @@ toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-
   transform: scale(80%) !important;
   transform-origin: top right !important;
 }
-panelmultiview[mainViewId="widget-overflow-mainView"] panelview {
-  --menu-panel-width-wide: 22em !important;
+/* Overflow Menu */
+@supports not -moz-bool-pref("extensions.unifiedExtensions.enabled") {
+  panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarseparator,
+  panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarbutton#overflowMenu-customize-button {
+    display: none !important;
+  }
+  panelmultiview[mainViewId="widget-overflow-mainView"] panelview {
+    --menu-panel-width-wide: 22em !important;
+  }
+  panelmultiview[mainViewId="widget-overflow-mainView"] panelview #widget-overflow-fixed-list > [overflows="true"][cui-areatype="panel"]:last-child {
+    margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
+  }
 }
-panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarseparator,
-panelmultiview[mainViewId="widget-overflow-mainView"] panelview > toolbarbutton#overflowMenu-customize-button {
-  display: none !important;
-}
-panelmultiview[mainViewId="widget-overflow-mainView"] panelview #widget-overflow-fixed-list > [overflows="true"][cui-areatype="panel"]:last-child {
-  margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
+/* Unified Extensions */
+@supports -moz-bool-pref("extensions.unifiedExtensions.enabled") {
+  panelmultiview[mainViewId="unified-extensions-view"] panelview > panel-header,
+  panelmultiview[mainViewId="unified-extensions-view"] panelview > toolbarseparator:last-of-type,
+  panelmultiview[mainViewId="unified-extensions-view"] panelview > toolbarbutton#unified-extensions-manage-extensions,
+  panelmultiview[mainViewId="unified-extensions-view"] .unified-extensions-item[extension-id]:has(.unified-extensions-item-action-button[disabled="true"]),
+  panelmultiview[mainViewId="unified-extensions-view"] .unified-extensions-item .unified-extensions-item-message-deck {
+    display: none !important;
+  }
+  panelmultiview[mainViewId="unified-extensions-view"] {
+    --uei-icon-size: 16px !important
+  }
+  panelmultiview[mainViewId="unified-extensions-view"] toolbarbutton.unified-extensions-item-action-button {
+    min-height: var(--uei-icon-size) !important;
+  }
+  .unified-extensions-item[unified-extensions="true"] .unified-extensions-item-menu-button.subviewbutton,
+  .unified-extensions-item[extension-id] .unified-extensions-item-menu-button.subviewbutton {
+    padding: var(--arrowpanel-menuitem-padding) !important;
+  }
+  panelmultiview[mainViewId="unified-extensions-view"] panelview {
+    max-width: 22em !important;
+  }
+  panelmultiview[mainViewId="unified-extensions-view"] panelview .unified-extensions-item:last-child {
+    margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
+  }
 }
