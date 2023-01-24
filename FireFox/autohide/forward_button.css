@@ -1,20 +1,22 @@
 /*= Forward button ==================================================================*/
-@supports -moz-bool-pref("userChrome+Content.autohide.forward_button") {
-  :root {
-    --uc-toolbarbutton-hide-size: calc(-1 * (16px + (2 * var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding))));
-  }
-  #forward-button[disabled="true"] {
-    margin-left: var(--uc-toolbarbutton-hide-size) !important;
-    opacity: 0 !important;
-    pointer-events: none;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    #forward-button {
-      transition-property: background-color, opacity, margin-left !important;
+@-moz-document url("chrome://browser/content/browser.xhtml") {
+  @supports -moz-bool-pref("userChrome+Content.autohide.forward_button") {
+    :root {
+      --uc-toolbarbutton-hide-size: calc(-1 * (16px + (2 * (var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)))));
     }
-    #forward-button[disabled="true"] {
-      transition: background-color 1s var(--animation-easing-function), opacity 1s var(--animation-easing-function),
-        margin-left 0.5s ease !important;
+    :root:not([customizing="true"]) #forward-button[disabled="true"] {
+      margin-left: var(--uc-toolbarbutton-hide-size) !important;
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      #forward-button {
+        transition-property: background-color, opacity, margin-left !important;
+      }
+      #forward-button[disabled="true"] {
+        transition: background-color 1s var(--animation-easing-function), opacity 1s var(--animation-easing-function),
+          margin-left 0.5s ease !important;
+      }
     }
   }
 }

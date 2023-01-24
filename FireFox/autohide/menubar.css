@@ -28,4 +28,8 @@
       }
     }
   }
+  :root[tabsintitlebar="true"]:-moz-lwtheme:not([lwt-default-theme-in-dark-mode], [chromehidden~="menubar"], [inFullscreen]) 
+    #toolbar-menubar[autohide="true"]:not([inactive]) {
+      background-color: var(--lwt-accent-color);
+  }
 }
