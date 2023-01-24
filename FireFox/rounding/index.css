@@ -22,7 +22,8 @@
   button,
   .tab-icon-overlay,
   findbar toolbarbutton,
-  .notification-button {
+  .notification-button,
+  #main-menubar > menu {
     border-radius: 0 !important;
   }
   /* Fix Tab bar button radius */
@@ -33,6 +34,9 @@
   }
   #tabbrowser-tabs {
     --tab-corner-rounding: 0px !important;
+  }
+  .dialogBox {
+    border-radius: 0 !important;
   }
   xul|menupopup {
     --panel-border-radius: 0px !important;
