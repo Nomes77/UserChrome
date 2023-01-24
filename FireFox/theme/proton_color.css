@@ -1,7 +1,7 @@
 /*= Default Colors - Hard Coded =====================================================*/
 /* Based on chrome://global/skin/in-content/common-shared.css */
 /* Adding `@media not (prefers-color-scheme: dark) {` because I made changes with the original one using `!important`.
-   For the same reason everthing is double. */
+   For the same reason everything is double. */
 @media not (prefers-color-scheme: dark) {
   :host,
   :root {
