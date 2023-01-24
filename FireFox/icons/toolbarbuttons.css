@@ -21,10 +21,15 @@
 #bookmarks-menu-button {
   list-style-image: url("./../images/star-line-horizontal.svg") !important;
 }
-#nav-bar-overflow-button,
+@supports not -moz-bool-pref("extensions.unifiedExtensions.enabled") {
+  #nav-bar-overflow-button {
+    list-style-image: url("./../images/extension.svg") !important;
+  }
+}
 #unified-extensions-button {
   list-style-image: url("./../images/extension.svg") !important;
 }
+.unified-extensions-item-menu-button.subviewbutton,
 .unified-extensions-item-open-menu.subviewbutton {
   list-style-image: url("./../images/settings.svg") !important;
 }
