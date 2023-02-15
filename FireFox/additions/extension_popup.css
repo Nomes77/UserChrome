@@ -13,8 +13,8 @@ toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-
   panelmultiview[mainViewId="widget-overflow-mainView"] panelview {
     --menu-panel-width-wide: 22em !important;
   }
-  panelmultiview[mainViewId="widget-overflow-mainView"] panelview #widget-overflow-fixed-list > [overflows="true"][cui-areatype="panel"]:last-child {
-    margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
+  panelmultiview[mainViewId="widget-overflow-mainView"] panelview > .panel-subview-body:not(:last-child) {
+    padding: var(--panel-subview-body-padding) !important;
   }
 }
 /* Unified Extensions */
@@ -31,10 +31,6 @@ toolbar#nav-bar.browser-toolbar > panel#customizationui-widget-panel.cui-widget-
   }
   panelmultiview[mainViewId="unified-extensions-view"] toolbarbutton.unified-extensions-item-action-button {
     min-height: var(--uei-icon-size) !important;
-  }
-  .unified-extensions-item[unified-extensions="true"] .unified-extensions-item-menu-button.subviewbutton,
-  .unified-extensions-item[extension-id] .unified-extensions-item-menu-button.subviewbutton {
-    padding: var(--arrowpanel-menuitem-padding) !important;
   }
   panelmultiview[mainViewId="unified-extensions-view"] panelview {
     max-width: 22em !important;
