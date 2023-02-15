@@ -49,6 +49,35 @@
         .tab-background:-moz-lwtheme::after {
         stroke: var(--toolbar-color);
       }
+      @media (-moz-gtk-csd-available) {
+        :root:not([customizing="true"]) {
+          /* Fill color for GTK */
+        }
+        :root:not([customizing="true"]):not([lwtheme="true"])
+          .tabbrowser-tab:is([visuallyselected], [multiselected])
+          .tab-background::before,
+        :root:not([customizing="true"]):not([lwtheme="true"])
+          .tabbrowser-tab:is([visuallyselected], [multiselected])
+          .tab-background::after {
+            /* As GTK Toolbar's background-color + background-image
+            * --toolbar-non-lwt-bgcolor: -moz-dialog;
+            * --toolbar-non-lwt-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
+            */
+            fill: color-mix(in srgb, rgb(255, 255, 255) 15%, -moz-dialog);
+            stroke: transparent;
+            opacity: 1;
+        }
+        :root:not([customizing="true"]):not([lwtheme="true"])
+          #TabsToolbar[brighttext]
+          .tabbrowser-tab[visuallyselected]
+          .tab-background::before,
+        :root:not([customizing="true"]):not([lwtheme="true"])
+          #TabsToolbar[brighttext]
+          .tabbrowser-tab[visuallyselected]
+          .tab-background::after {
+            stroke: transparent;
+        }
+      }
     }
   }
 }
@@ -144,6 +173,24 @@
   }
   #tabbrowser-tabs[movingtab] .tabbrowser-tab:is([visuallyselected], [multiselected]) .tab-background:-moz-lwtheme {
     --uc-tab-corner-bgimage: none;
+  }
+  @media (-moz-gtk-csd-available) {
+    /* Fill color for GTK */
+    :root:not([lwtheme="true"]) .tabbrowser-tab {
+      --uc-tab-shadow-color: rgba(0, 0, 0, 0.4);
+    }
+    :root:not([lwtheme="true"]) .tabbrowser-tab[visuallyselected] .tab-background {
+      background-clip: content-box;
+    }
+    :root:not([lwtheme="true"]) .tabbrowser-tab[visuallyselected] .tab-background::before,
+    :root:not([lwtheme="true"]) .tabbrowser-tab[visuallyselected] .tab-background::after {
+      /* As GTK Toolbar's background-color + background-image
+       * --toolbar-non-lwt-bgcolor: -moz-dialog;
+       * --toolbar-non-lwt-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
+       */
+      --uc-tab-corner-bgimage: linear-gradient(var(--toolbar-non-lwt-bgcolor), var(--toolbar-non-lwt-bgcolor));
+      fill: rgba(255, 255, 255, 0.075);
+    }
   }
   #tabbrowser-tabs[positionpinnedtabs],
   #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab] {
