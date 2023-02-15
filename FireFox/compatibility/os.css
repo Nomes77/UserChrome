@@ -2,15 +2,68 @@
 /*= Windows 10 - Native Menu Active Color ==============================*/
 @media (-moz-platform: windows-win10) {
   @media not (-moz-windows-non-native-menus) {
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) menu[_moz-menuactive="true"],
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) menuitem[_moz-menuactive="true"],
     menupopup:not([placespopup="true"]) menu[_moz-menuactive="true"],
     menupopup:not([placespopup="true"]) menuitem[_moz-menuactive="true"] {
       background-color: #91c9f7 !important;
       border-color: transparent !important;
     }
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) menu[_moz-menuactive="true"][disabled="true"],
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) menuitem[_moz-menuactive="true"][disabled="true"],
     menupopup:not([placespopup="true"]) menu[_moz-menuactive="true"][disabled="true"],
     menupopup:not([placespopup="true"]) menuitem[_moz-menuactive="true"][disabled="true"] {
       background-color: color-mix(in srgb, currentColor 9%, transparent) !important;
       border-color: transparent !important;
+    }
+  }
+}
+@media (-moz-gtk-csd-available) {
+  /*= Linux - Global Menubar Active Color ================================*/
+  #main-menubar > menu[open="true"],
+  #main-menubar > menu[_moz-menuactive="true"] {
+    color: inherit !important; /* Original: -moz-menubarhovertext */
+    background-color: color-mix(in srgb, currentColor 20%, transparent) !important; /* Original: -moz-menuhover */
+  }
+  /*= Linux - Titlebar button at lwtheme =================================*/
+  @supports not -moz-bool-pref("userChrome+Content.compatibility.os.linux_non_native_titlebar_button") {
+    .titlebar-button:-moz-lwtheme {
+      appearance: auto !important;
+    }
+    .titlebar-min:-moz-lwtheme,
+    .titlebar-max:-moz-lwtheme,
+    .titlebar-restore:-moz-lwtheme,
+    .titlebar-close:-moz-lwtheme {
+      list-style-image: none !important;
+     }
+    .titlebar-button:-moz-lwtheme:hover,
+    .titlebar-button:-moz-lwtheme:hover:active {
+      background-color: unset !important;
+      color: unset !important;
+    }
+  }
+}
+/*= Linux - Light System Default Theme's Selected Tab ====================*/
+@media (-moz-gtk-csd-available) {
+  @media (prefers-color-scheme: light) {
+    /* Because of
+      #TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected=true], [multiselected]) > .tab-stack > .tab-background {
+        border: 1px solid var(--tab-line-color, rgba(128,128,142,0.9));
+        box-shadow: 0 0 4px rgba(128,128,142,0.5);
+      }
+     */
+    #tabbrowser-tabs:not([noshadowfortests])
+      .tabbrowser-tab:is([visuallyselected="true"], [multiselected])
+      > .tab-stack
+      > .tab-background:not(:-moz-lwtheme) {
+        box-shadow: 0 0 4px rgba(128, 128, 142, 0.5) !important;
+    }
+    #TabsToolbar:not([brighttext])
+      #tabbrowser-tabs:not([noshadowfortests])
+      .tabbrowser-tab:is([visuallyselected="true"], [multiselected])
+      > .tab-stack
+      > .tab-background:not(:-moz-lwtheme) {
+        box-shadow: 0 0 1px var(--tab-line-color, rgba(128, 128, 142, 0.9)), 0 0 4px rgba(128, 128, 142, 0.5) !important;
     }
   }
 }
