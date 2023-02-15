@@ -89,71 +89,6 @@
     --panel-background: var(--menu-background-color, -moz-menuhover) !important;
   }
 }
-/*= PopupAutoComplete ===============================================================*/
-#PopupAutoComplete {
-  --panel-bgcolor: var(--arrowpanel-background, var(--in-content-button-background));
-  /* overwrite */
-  --panel-border-radius: 4px !important; /* Original: 0 */
-  --panel-border-color: var(
-    --arrowpanel-border-color,
-    var(--menu-border-color)
-  ) !important; /* Original: ThreeDShadow */
-  appearance: none !important;
-  background: transparent !important;
-  border: none !important;
-  clip-path: inset(0 round var(--panel-border-radius));
-}
-#PopupAutoComplete > richlistbox {
-  border-radius: var(--panel-border-radius) !important;
-  background-color: var(--panel-bgcolor) !important; /* Original: Field */
-  color: var(--arrowpanel-color, var(--in-content-page-color)) !important; /* Original: FiledText */
-}
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
-  fill: GrayText !important;
-}
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-title {
-  color: var(--arrowpanel-color, var(--in-content-page-color)) !important;
-}
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-site-icon {
-  fill: var(--arrowpanel-color, var(--in-content-page-color)) !important;
-}
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
-  --panel-border-color: var(--panel-bgcolor);
-  color: var(--arrowpanel-color, var(--in-content-page-color)) !important; /* Original: FieldText */
-  background-color: var(--arrowpanel-dimmed, hsla(0, 0%, 80%, 0.35)) !important; /* Original: hsla(0,0%,80%,.35) */
-  border-color: var(--panel-border-color) !important; /* Original: rgba(38,38,38,.15) */
-}
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"]:hover,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"][selected] {
-  background-color: var(
-    --arrowpanel-dimmed-further,
-    hsla(0, 0%, 80%, 0.5)
-  ) !important; /* Original: hsla(0,0%,80%,.5), match arrowpanel-dimmed-further */
-}
-/* New Folder Button */
-#editBMPanel_newFolderButton {
-  appearance: none;
-  border: 0;
-  border-radius: 4px;
-  background-color: var(--button-bgcolor);
-  color: var(--button-color, inherit);
-  font-weight: 600;
-  min-width: 0;
-  padding: 8px 16px;
-  /* This button is deeper in the visual hierarchy than others (notably the
-     buttons at the bottom of the panel), so it should be slightly smaller. */
-  font-size: 90%;
-  /* This button needs to align with the tree above it. */
-  margin-inline-start: 4px;
-}
-#editBMPanel_newFolderButton:hover {
-  background-color: var(--button-hover-bgcolor);
-}
-#editBMPanel_newFolderButton:hover:active {
-  background-color: var(--button-active-bgcolor);
-}
 /*= Info Bar Color ==================================================================*/
 .container.infobar {
   background-color: var(--urlbar-box-bgcolor) !important;
@@ -234,4 +169,69 @@ body[lwt-sidebar] xul|search-textbox.tabsFilter[focused="true"] {
 body:not([lwt-sidebar]) xul|search-textbox.tabsFilter[focused="true"] {
   border-color: AccentColor !important; /* Hard Coded */
   outline-color: AccentColor !important;
+}
+/*= PopupAutoComplete ===============================================================*/
+#PopupAutoComplete {
+  --panel-bgcolor: var(--arrowpanel-background, var(--in-content-button-background));
+  /* overwrite */
+  --panel-border-radius: 4px !important; /* Original: 0 */
+  --panel-border-color: var(
+    --arrowpanel-border-color,
+    var(--menu-border-color)
+  ) !important; /* Original: ThreeDShadow */
+  appearance: none !important;
+  background: transparent !important;
+  border: none !important;
+  clip-path: inset(0 round var(--panel-border-radius));
+}
+#PopupAutoComplete > richlistbox {
+  border-radius: var(--panel-border-radius) !important;
+  background-color: var(--panel-bgcolor) !important; /* Original: Field */
+  color: var(--arrowpanel-color, var(--in-content-page-color)) !important; /* Original: FiledText */
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
+  fill: GrayText !important;
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-title {
+  color: var(--arrowpanel-color, var(--in-content-page-color)) !important;
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-site-icon {
+  fill: var(--arrowpanel-color, var(--in-content-page-color)) !important;
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
+  --panel-border-color: var(--panel-bgcolor);
+  color: var(--arrowpanel-color, var(--in-content-page-color)) !important; /* Original: FieldText */
+  background-color: var(--arrowpanel-dimmed, hsla(0, 0%, 80%, 0.35)) !important; /* Original: hsla(0,0%,80%,.35) */
+  border-color: var(--panel-border-color) !important; /* Original: rgba(38,38,38,.15) */
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"]:hover,
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"][selected] {
+  background-color: var(
+    --arrowpanel-dimmed-further,
+    hsla(0, 0%, 80%, 0.5)
+  ) !important; /* Original: hsla(0,0%,80%,.5), match arrowpanel-dimmed-further */
+}
+/* New Folder Button */
+#editBMPanel_newFolderButton {
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--button-bgcolor);
+  color: var(--button-color, inherit);
+  font-weight: 600;
+  min-width: 0;
+  padding: 8px 16px;
+  /* This button is deeper in the visual hierarchy than others (notably the
+     buttons at the bottom of the panel), so it should be slightly smaller. */
+  font-size: 90%;
+  /* This button needs to align with the tree above it. */
+  margin-inline-start: 4px;
+}
+#editBMPanel_newFolderButton:hover {
+  background-color: var(--button-hover-bgcolor);
+}
+#editBMPanel_newFolderButton:hover:active {
+  background-color: var(--button-active-bgcolor);
 }

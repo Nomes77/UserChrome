@@ -5,7 +5,6 @@
     --in-content-border-color: color-mix(in srgb, currentColor 41%, transparent) !important;
   }
   #viewGroup > radio {
-    border-radius: 8px !important;
     padding: var(--in-content-button-vertical-padding) var(--in-content-button-horizontal-padding) !important;
     margin: 4px !important;
     list-style-image: none !important;
@@ -17,6 +16,11 @@
     fill: currentColor !important;
     color: var(--in-content-deemphasized-text) !important;
     /* FieldText */
+  }
+  @supports not -moz-bool-pref("userChrome+Content.rounding.square_button") {
+    #viewGroup > radio {
+      border-radius: 8px !important;
+    }
   }
   #viewGroup > radio:hover {
     background-color: var(--in-content-button-background-hover) !important; /* #E0E8F6; */

@@ -463,4 +463,26 @@
       outline: none !important;
     }
   }
+  @media (-moz-gtk-csd-available) {
+    /* Overriding appearance also avoids incorrect selection background color with light text. */
+    xul|button > xul|*.button-box,
+    xul|menulist::part(label-box),
+    xul|*.radio-label-box,
+    xul|*.checkbox-label-box {
+      appearance: none !important;
+    }
+    xul|button[type="menu"] > xul|*.button-box > xul|*.button-menu-dropmarker {
+      appearance: none !important;
+    }
+    xul|menulist {
+      font-size: inherit !important;
+    }
+    xul|menulist::part(dropmarker) {
+      display: -moz-box;
+      margin-block: 6px !important;
+    }
+    xul|menulist:-moz-focusring::part(label-box) {
+      outline: none !important;
+    }
+  }
 }
