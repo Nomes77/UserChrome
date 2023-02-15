@@ -1,5 +1,6 @@
 /*= Panel UI Button Seperator =======================================================*/
-html[id="main-window"][chromehidden=""] toolbar:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button))
+html[id="main-window"][chromehidden=""] #nav-bar:has(#nav-bar-customization-target:has(
+  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(1), toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1)))
   #PanelUI-button::before {
     /* Box Model */
     content: "";
@@ -14,7 +15,7 @@ html[id="main-window"][chromehidden=""] toolbar:has(toolbarbutton[cui-areatype="
     /* Bar Color */
     background-color: rgb(218, 218, 218); /* or var(--toolbarseparator-color) */
 }
-html[id="main-window"][chromehidden=""] toolbar:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
+html[id="main-window"][chromehidden=""] #nav-bar:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
   + toolbarbutton[cui-areatype="toolbar"]) #PanelUI-button::before {
     transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -4.5 * var(--toolbarbutton-outer-padding) - 32px));
 }
@@ -24,9 +25,9 @@ html[id="main-window"][chromehidden=""] toolbar:has(toolbarbutton[cui-areatype="
     background-color: rgb(99, 99, 99) !important;
   }
 }
-@media (max-width: 575px) {
-  html[id="main-window"]:not([customizing="true"]) toolbar toolbarbutton,
-  html[id="main-window"]:not([customizing="true"]) toolbar toolbaritem {
+@media (max-width: 600px) {
+  html[id="main-window"]:not([customizing="true"]) #nav-bar toolbarbutton,
+  html[id="main-window"]:not([customizing="true"]) #nav-bar toolbaritem {
     transform: translateX(0px) !important;
   }
   html[id="main-window"][chromehidden=""] #PanelUI-button::before {
