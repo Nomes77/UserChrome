@@ -1,0 +1,45 @@
+@-moz-document url("chrome://browser/content/places/places.xhtml") {
+  @media (-moz-gtk-csd-available) {
+    /*= Menubar - Icons =================================================================*/
+    #organizeButton,
+    #viewMenu,
+    #maintenanceButton,
+    #back-button,
+    #forward-button,
+    #clearDownloadsButton {
+      fill: currentColor !important;
+      -moz-context-properties: fill, fill-opacity, stroke !important;
+    }
+    /* Add */
+    #organizeButton {
+      list-style-image: url("./../images/settings.svg") !important;
+    }
+    #viewMenu {
+      list-style-image: url("chrome://browser/skin/sort.svg");
+    }
+    #maintenanceButton {
+      list-style-image: url("./../images/arrow-sort.svg") !important;
+    }
+    #clearDownloadsButton {
+      list-style-image: url("./../images/delete.svg");
+    }
+    #clearDownloadsButton > .toolbarbutton-icon {
+      display: -moz-inline-box !important;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 2px;
+    }
+    /* Replace */
+    #back-button {
+      list-style-image: url("./../images/arrow-left.svg") !important;
+    }
+    #forward-button {
+      list-style-image: url("./../images/arrow-right.svg") !important;
+    }
+    #back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,
+    #forward-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
+      transform: scaleX(-1) !important;
+    }
+  }
+}

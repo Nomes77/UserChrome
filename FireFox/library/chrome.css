@@ -1,7 +1,7 @@
 /** Library - Icons Replace **********************************************************/
 /*= Standard Folder ====================================================*/
-@import "./standard_folder.css";
 /*= Other Folder =======================================================*/
-@import "./other.css";
 /*= Default Icon - Overide =============================================*/
-@import "./default_override.css";
+@import "./folder_icons.css";
+/*= Menubar - Icons ====================================================*/
+@import "./menubar.css";
