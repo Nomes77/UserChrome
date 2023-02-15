@@ -25,15 +25,14 @@ menupopup > menu {
 #ContentSelectDropdown > menupopup > menuitem {
   padding-block: 0 !important;
 }
-/* Arrow Icon Align to Right */
-.menu-right {
-  margin-inline-end: -2px !important;
-}
-.menu-accel,
-.menu-iconic-accel,
-.subviewbutton > .menu-accel-container > .menu-iconic-accel,
-.subviewbutton > .menu-accel-container > .menu-accel {
-  margin-inline-end: 3px !important;
+@media (-moz-gtk-csd-available) {
+  #ContentSelectDropdown > menupopup > menucaption,
+  #ContentSelectDropdown > menupopup > menuitem {
+    padding-block: var(--menu-padding) !important;
+  }
+  menupopup > menu {
+    padding-inline-start: 0.5em;
+  }
 }
 /*= Menus - Set Margin ==============================================================*/
 :not(#ContentSelectDropdown) menupopup:not(.in-menulist) > menuitem,
@@ -48,7 +47,7 @@ menupopup > menu {
 menupopup {
   --nested-margin-side: -0.3em !important;
 }
-@media (min-width: 575px) {
+@media (min-width: 600px) {
   @supports not -moz-bool-pref("userChrome+Content.zavety") {
     @supports -moz-bool-pref("userChrome+Content.icons.change_toolbarbuttons_and_overflowbutton_position") {
       toolbarbutton#bookmarks-menu-button:nth-last-child(1) > #BMB_bookmarksPopup menupopup {
