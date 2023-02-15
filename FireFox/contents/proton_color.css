@@ -3,7 +3,7 @@
                url-prefix("chrome://browser/content/places/places.xhtml"),
                url-prefix("view-source"),
                regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
-    @supports -moz-bool-pref("userContent.page.proton_color.dark_blue_accent") {
+    @supports -moz-bool-pref("userChrome+Content.page.proton_color.dark_blue_accent") {
       @media (prefers-color-scheme: dark) {
         :host,
         :root {
