@@ -1,3 +1,11 @@
+:root {
+  --uc-sidebar-icon: url("./../images/sidebar.svg");
+  --uc-sidebar-icon-reverse: url("chrome://browser/skin/sidebars-right.svg");
+}
+:root:has(#sidebar-box[positionend="true"]) {
+  --uc-sidebar-icon: url("chrome://browser/skin/sidebars-right.svg");
+  --uc-sidebar-icon-reverse: url("./../images/sidebar.svg");
+}
 /*= Panel - Main ====================================================================*/
 #appMenu-proton-addon-banners > .addon-banner-item > .toolbarbutton-icon {
   display: -moz-inline-box !important;
@@ -245,8 +253,12 @@ panelMenuBookmarkThisPage[starred] {
   list-style-image: url("./../images/settings.svg");
 }
 /*= BMB_bookmarksPopup ==============================================================*/
-#BMB_viewBookmarksSidebar {
+/* #BMB_viewBookmarksSidebar {
+  --menuitem-image: var(--uc-sidebar-icon);
 }
+#BMB_viewBookmarksSidebar[data-l10n-args='{"isVisible":true}'] {
+  --menuitem-image: url("./../images/dismiss.svg");
+} */
 #BMB_bookmarksShowAllTop,
 #BMB_bookmarksShowAll {
   --menuitem-image: url("./../images/star-line-horizontal.svg");
@@ -305,14 +317,9 @@ panelMenuBookmarkThisPage[starred] {
 #sidebar-switcher-tabs {
   list-style-image: url("./../images/phone-tablet.svg") !important;
 }
-/* #sidebar-reverse-position {
-  list-style-image: url("./../images/sidebar.svg") !important;
-  transform: rotateY(180deg) !important;
+#sidebar-reverse-position {
+  list-style-image: var(--uc-sidebar-icon-reverse) !important;
 }
-#sidebar-box[positionend="true"] #sidebar-reverse-position {
-  Can't apply this. shadow dom
-  list-style-image: url("./../images/sidebar.svg") !important;
-} */
 #sidebarMenu-popup > .subviewbutton[data-l10n-id="sidebar-menu-close"] {
   list-style-image: url("./../images/dismiss.svg") !important;
 }

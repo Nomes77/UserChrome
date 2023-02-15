@@ -40,7 +40,18 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
   background-repeat: no-repeat !important;
   background-image: var(--menuitem-image) !important;
 }
+/* For native context menus */
+@supports -moz-bool-pref("widget.macos.native-context-menus") or 
+          -moz-bool-pref("widget.gtk.native-context-menus") {
+  :not(menu, #ContentSelectDropdown)
+    > menupopup
+    > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
+  :not(menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, .in-menulist, [checked="true"]) {
+    list-style-image: var(--menuitem-image, url("../images/blank.svg")) !important;
+  }
+}
 /* Padding */
+/* Padding as Arrow Panel */
 :root {
   --uc-menu-background-position: left;
   --context-menu-background-padding: var(--arrowpanel-menuitem-padding-inline);
@@ -48,12 +59,10 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
 :root:-moz-locale-dir(rtl) {
   --uc-menu-background-position: right;
 }
-:not(menu, #ContentSelectDropdown, #context-navigation) > menupopup > menuitem:not(.menuitem-iconic),
-:not(menu, #ContentSelectDropdown, #context-navigation) > menupopup > menu:not(.menu-iconic),
-:not(menu, #ContentSelectDropdown, #context-navigation)
+:not(menu, #ContentSelectDropdown, #context-navigation, #permission-popup-menulist)
   > menupopup
   > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
-:not(menu, #ContentSelectDropdown, #context-navigation)
+:not(menu, #ContentSelectDropdown, #context-navigation, #permission-popup-menulist)
   > menupopup
   > menu:not(.menu-iconic, .in-menulist, [checked="true"]),
 menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
@@ -64,6 +73,8 @@ menupopup:is(#organizeButtonPopup, #maintenanceButtonPopup)
   > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
 menupopup:is(#viewMenuPopup, #maintenanceButtonPopup) > menu:not(.menu-iconic, .in-menulist, [checked="true"]),
 menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup) > menuitem,
+menupopup[needsgutter] menu:not([icon], .menu-iconic),
+menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic),
 .openintabs-menuitem,
 #blockedPopupDontShowMessage,
 #BMB_viewBookmarksToolbar,
@@ -83,25 +94,49 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
   }
   @media not (-moz-windows-non-native-menus) {
     :root {
+      --context-menu-text-padding: calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menutext-padding) + 1.4px);
       --context-menu-background-padding: var(--arrowpanel-menuitem-padding-inline);
       --menu-background-padding-default: 0px;
     }
-    .menuitem-iconic > .menu-iconic-left {
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic > .menu-iconic-left,
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menuitem-iconic > .menu-iconic-left,
+    menupopup:not([placespopup="true"]) .menu-iconic > .menu-iconic-left,
+    menupopup:not([placespopup="true"]) .menuitem-iconic > .menu-iconic-left {
       appearance: none !important;
       padding-block: 0 !important;
-      padding-inline-start: 5px !important;
-      margin-inline-end: 8px !important;
+      padding-inline-start: 0px;
+      margin-inline-end: 6px !important; /* var(--arrowpanel-menutext-padding) */
     }
-    .menu-accel,
-    .menu-iconic-accel {
+    @supports -moz-bool-pref("userChrome+Content.compatibility.os.win11") {
+      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic > .menu-iconic-left,
+      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menuitem-iconic > .menu-iconic-left,
+      menupopup:not([placespopup="true"]) .menu-iconic > .menu-iconic-left,
+      menupopup:not([placespopup="true"]) .menuitem-iconic > .menu-iconic-left {
+        box-sizing: content-box;
+      }
+    }
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-accel,
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-accel,
+    menupopup:not([placespopup="true"]) .menu-accel,
+    menupopup:not([placespopup="true"]) .menu-iconic-accel {
       box-sizing: content-box;
       min-height: 16px;
     }
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-accel,
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-accel,
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-text,
+    menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-text,
+    menupopup:not([placespopup="true"]) .menu-accel,
+    menupopup:not([placespopup="true"]) .menu-iconic-accel,
+    menupopup:not([placespopup="true"]) .menu-text,
+    menupopup:not([placespopup="true"]) .menu-iconic-text {
+      padding-block: 0 !important;
+    }
   }
-  :not(menu, #ContentSelectDropdown, #context-navigation)
+  :not(menu, #ContentSelectDropdown, #context-navigation, #permission-popup-menulist)
     > menupopup
     > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
-  :not(menu, #ContentSelectDropdown, #context-navigation)
+  :not(menu, #ContentSelectDropdown, #context-navigation, #permission-popup-menulist)
     > menupopup
     > menu:not(.menu-iconic, .in-menulist, [checked="true"]),
   menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
@@ -119,5 +154,14 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
   #BMB_viewBookmarksToolbar,
   #clearDownloadsButton /* Library */ {
     padding-inline-start: var(--menu-background-padding-default) !important;
+  }
+}
+/* Padding - Linux */
+@media (-moz-gtk-csd-available) {
+  :root {
+    --context-menu-background-padding: 6px; /* var(--arrowpanel-menuitem-padding-inline) */
+  }
+  #main-menubar > menu > .menubar-text {
+    padding-inline-start: 3px;
   }
 }
