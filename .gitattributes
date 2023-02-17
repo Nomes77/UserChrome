@@ -1,0 +1,4 @@
+*.css linguist-language=CSS linguist-detectable
+.github/** -linguist-vendored
+.github/** linguist-detectable
+* linguist-detectable
