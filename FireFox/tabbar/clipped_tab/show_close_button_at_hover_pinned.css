@@ -7,6 +7,7 @@
   }
   #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned][visuallyselected]:hover:not([busy]) .tab-close-button {
     display: -moz-box !important;
+    order: 0 !important;
     -moz-box-ordinal-group: 0 !important;
     /* Looks like hover */
     width: var(--uc-close-button-size) !important;
@@ -25,6 +26,7 @@
   @supports -moz-bool-pref("userChrome+Content.tab.close_button_at_hover_pinned.background") {
     #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[pinned]:hover:not([busy]) .tab-close-button {
       display: -moz-box !important;
+      order: 0 !important;
       -moz-box-ordinal-group: 0 !important;
       /* Looks like hover */
       width: var(--uc-close-button-size) !important;

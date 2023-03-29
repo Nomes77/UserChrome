@@ -11,6 +11,7 @@
   width: 14px;
   height: 14px;
   background-size: 14px;
+  order: 1 !important;
   -moz-box-ordinal-group: 1 !important;
   /* Color */
   fill: currentColor;
@@ -24,6 +25,7 @@
 }
 /* Close Button's position */
 .tabbrowser-tab[pictureinpicture]:not([pinned]) .tab-close-button {
+  order: 2 !important;
   -moz-box-ordinal-group: 2 !important;
 }
 #tabbrowser-tabs:not([closebuttons="activetab"]) .tabbrowser-tab[pictureinpicture]:not([pinned]) .tab-close-button {

@@ -162,7 +162,7 @@
     background-image: var(--uc-tab-corner-right-side-svg), var(--uc-tab-corner-bgimage);
     clip-path: var(--uc-tab-corner-right-side-clipPath);
   }
-  .tabbrowser-tab[beforeselected-visible] .tab-background::after {
+  .tabbrowser-tab:has(+ .tabbrowser-tab[visuallyselected]) .tab-background::after {
     --uc-tab-corner-right-side-svg: var(--uc-tab-corner-right-side-svg-clipped);
   }
   .tabbrowser-tab[visuallyselected] + .tabbrowser-tab .tab-background::before {
@@ -193,7 +193,7 @@
     }
   }
   #tabbrowser-tabs[positionpinnedtabs],
-  #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab] {
+  #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:first-of-type {
     margin-left: var(--uc-tab-corner-half-size) !important;
   }
   #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-unpinned-tab] {

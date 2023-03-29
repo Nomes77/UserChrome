@@ -49,6 +49,7 @@
     margin-inline-start: calc(var(--tab-shadow-max-size) * -1) !important;
   }
   .tabbrowser-tab[selected="true"][pinned="true"] {
+    flex: 100;
     -moz-box-flex: 100;
     max-width: var(--tab-max-width) !important;
   }
@@ -113,6 +114,7 @@
     }
   */
   .tab-icon-stack {
+    flex: 1;
     -moz-box-flex: 1;
     justify-content: end;
   }

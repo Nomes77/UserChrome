@@ -13,7 +13,7 @@
 }
 .tab-stack::before,
 #tabbrowser-arrowscrollbox:not([overflowing])
-  .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
+  .tabbrowser-tab:not([visuallyselected], [multiselected], :hover):last-of-type
   .tab-stack::after {
     /* Box Model */
     content: "";
@@ -31,13 +31,13 @@
 .tab-stack::before {
   transform: translateX(var(--tab-separator-position-x)) translateY(var(--tab-separator-position-y)) !important;
 }
-.tabbrowser-tab[last-visible-tab] .tab-stack::after {
+.tabbrowser-tab:last-of-type .tab-stack::after {
   right: 0;
   transform: translateX(var(--end-tab-separator-position-x)) translateY(var(--tab-separator-position-y)) !important;
 }
 .tabbrowser-tab:not([visuallyselected], [multiselected], :hover, :first-child) .tab-stack::before,
 #tabbrowser-arrowscrollbox:not([overflowing])
-  .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
+  .tabbrowser-tab:not([visuallyselected], [multiselected], :hover):last-of-type
   .tab-stack::after {
     opacity: var(--tab-separator-opacity, 0.7);
 }
@@ -64,12 +64,12 @@
 @media (prefers-reduced-motion: no-preference) {
   .tab-stack::before,
   #tabbrowser-arrowscrollbox:not([overflowing])
-    .tabbrowser-tab:not([visuallyselected], [multiselected], :hover)[last-visible-tab]
+    .tabbrowser-tab:not([visuallyselected], [multiselected], :hover):last-of-type
     .tab-stack::after {
       transition: opacity 0.2s var(--animation-easing-function); /* cubic-bezier(.07, .95, 0, 1) */
   }
 }
 /* Latest Tab & New tab margin */
-#tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[last-visible-tab] {
+#tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab:last-of-type {
   margin-inline-end: 1px !important;
 }
