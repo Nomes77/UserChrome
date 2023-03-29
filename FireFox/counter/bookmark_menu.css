@@ -10,6 +10,7 @@
   menupopup[placespopup="true"] > menu.bookmark-item > .menu-iconic-highlightable-text,
   menupopup[placespopup="true"] > menu.bookmark-item > .menu-accel-container,
   menupopup[placespopup="true"] > menu.bookmark-item > .menu-right {
+    order: 2 !important;
     -moz-box-ordinal-group: 2;
   }
   menu.bookmark-item > menupopup[placespopup="true"] > .bookmark-item {
