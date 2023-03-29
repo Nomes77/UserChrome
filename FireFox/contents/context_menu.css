@@ -19,9 +19,10 @@
   }
   /* Icon */
   :not(menu, #ContentSelectDropdown)
-    > menupopup
+    > menupopup:not(.in-menulist)
     > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
-  :not(menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, .in-menulist, [checked="true"]),
+  :not(menu, #ContentSelectDropdown) > menupopup:not(.in-menulist)
+    > menu:not(.menu-iconic, .in-menulist, [checked="true"]),
   menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
     menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
   menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
@@ -37,6 +38,7 @@
     /* Color */
     -moz-context-properties: fill, fill-opacity, stroke !important;
     fill: currentColor !important;
+    stroke: transparent;
     /* Layout */
     background-size: 16px !important;
     background-repeat: no-repeat !important;
@@ -46,10 +48,11 @@
   @supports -moz-bool-pref("widget.macos.native-context-menus") or 
             -moz-bool-pref("widget.gtk.native-context-menus") {
     :not(menu, #ContentSelectDropdown)
-      > menupopup
+      > menupopup:not(.in-menulist)
       > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
-    :not(menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, .in-menulist, [checked="true"]) {
-      list-style-image: var(--menuitem-image, url("../images/blank.svg")) !important;
+    :not(menu, #ContentSelectDropdown) > menupopup:not(.in-menulist)
+      > menu:not(.menu-iconic, .in-menulist, [checked="true"]) {
+        list-style-image: var(--menuitem-image, url("../images/blank.svg")) !important;
     }
   }
   /* Padding */
@@ -62,10 +65,10 @@
     --uc-menu-background-position: right;
   }
   :not(menu, #ContentSelectDropdown, #context-navigation, #permission-popup-menulist)
-    > menupopup
+    > menupopup:not(.in-menulist)
     > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
   :not(menu, #ContentSelectDropdown, #context-navigation, #permission-popup-menulist)
-    > menupopup
+    > menupopup:not(.in-menulist)
     > menu:not(.menu-iconic, .in-menulist, [checked="true"]),
   menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
     menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
@@ -85,57 +88,77 @@
     padding-inline-start: var(--context-menu-background-padding) !important;
   }
   /* Padding - Windows */
-  @media (-moz-platform: windows-win10) {
-    :root {
-      --context-menu-text-padding: calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menutext-padding)); /* 16px + 8px */
-      --menu-background-padding-default: calc(var(--context-menu-background-padding) + var(--context-menu-text-padding));
+  @media (-moz-platform: windows-win7), (-moz-platform: windows-win8), (-moz-platform: windows-win10) {
+    @media (-moz-windows-non-native-menus) {
+      :root {
+        --context-menu-text-padding: calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menutext-padding)); /* 16px + 8px */
+        --menu-background-padding-default: calc(var(--context-menu-background-padding) + var(--context-menu-text-padding));
+      }
     }
     @media not (-moz-windows-non-native-menus) {
       :root {
         --context-menu-text-padding: calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menutext-padding) + 1.4px);
-        --context-menu-background-padding: var(--arrowpanel-menuitem-padding-inline);
         --menu-background-padding-default: 0px;
       }
-      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic > .menu-iconic-left,
-      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menuitem-iconic > .menu-iconic-left,
-      menupopup:not([placespopup="true"]) .menu-iconic > .menu-iconic-left,
-      menupopup:not([placespopup="true"]) .menuitem-iconic > .menu-iconic-left {
-        appearance: none !important;
-        padding-block: 0 !important;
-        padding-inline-start: 0px;
-        margin-inline-end: 6px !important; /* var(--arrowpanel-menutext-padding) */
-      }
-      @supports -moz-bool-pref("userChrome+Content.compatibility.os.win11") {
+      @media (-moz-platform: windows-win10) {
+        @supports -moz-bool-pref("userChrome+Content.compatibility.os.win11") {
+          :root {
+            --context-menu-background-padding: 5px;
+          }
+          #main-menubar {
+            --context-menu-background-padding: calc(5px + ((1.45em - 16px) / 2));
+          }
+          menuitem:is([type="checkbox"], [type="radio"]) {
+            --menu-padding: 0px;
+          }
+          menuitem[checked="true"] {
+            --context-menu-background-padding: 0px;
+          }
+          menuitem[checked="true"] > .menu-iconic-left {
+            transform: translateX(2px);
+          }
+        }
         menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic > .menu-iconic-left,
         menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menuitem-iconic > .menu-iconic-left,
         menupopup:not([placespopup="true"]) .menu-iconic > .menu-iconic-left,
         menupopup:not([placespopup="true"]) .menuitem-iconic > .menu-iconic-left {
-          box-sizing: content-box;
+          appearance: none !important;
+          padding-block: 0 !important;
+          padding-inline-start: 0px;
+          margin-inline-end: 6px !important; /* var(--arrowpanel-menutext-padding) */
         }
-      }
-      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-accel,
-      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-accel,
-      menupopup:not([placespopup="true"]) .menu-accel,
-      menupopup:not([placespopup="true"]) .menu-iconic-accel {
-        box-sizing: content-box;
-        min-height: 16px;
-      }
-      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-accel,
-      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-accel,
-      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-text,
-      menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-text,
-      menupopup:not([placespopup="true"]) .menu-accel,
-      menupopup:not([placespopup="true"]) .menu-iconic-accel,
-      menupopup:not([placespopup="true"]) .menu-text,
-      menupopup:not([placespopup="true"]) .menu-iconic-text {
-        padding-block: 0 !important;
+        @supports -moz-bool-pref("userChrome+Content.compatibility.os.win11") {
+          menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic > .menu-iconic-left,
+          menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menuitem-iconic > .menu-iconic-left,
+          menupopup:not([placespopup="true"]) .menu-iconic > .menu-iconic-left,
+          menupopup:not([placespopup="true"]) .menuitem-iconic > .menu-iconic-left {
+            box-sizing: content-box;
+          }
+        }
+        menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-accel,
+        menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-accel,
+        menupopup:not([placespopup="true"]) .menu-accel,
+        menupopup:not([placespopup="true"]) .menu-iconic-accel {
+          box-sizing: content-box;
+          min-height: 16px;
+        }
+        menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-accel,
+        menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-accel,
+        menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-text,
+        menupopup:is(#historyMenuPopup, #bookmarksMenuPopup) .menu-iconic-text,
+        menupopup:not([placespopup="true"]) .menu-accel,
+        menupopup:not([placespopup="true"]) .menu-iconic-accel,
+        menupopup:not([placespopup="true"]) .menu-text,
+        menupopup:not([placespopup="true"]) .menu-iconic-text {
+          padding-block: 0 !important;
+        }
       }
     }
     :not(menu, #ContentSelectDropdown, #context-navigation, #permission-popup-menulist)
-      > menupopup
+      > menupopup:not(.in-menulist)
       > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
     :not(menu, #ContentSelectDropdown, #context-navigation, #permission-popup-menulist)
-      > menupopup
+      > menupopup:not(.in-menulist)
       > menu:not(.menu-iconic, .in-menulist, [checked="true"]),
     menupopup:is(#menu_FilePopup, #menu_EditPopup, #menu_viewPopup, #historyMenuPopup, #bookmarksMenuPopup, #menu_ToolsPopup, #menu_HelpPopup)
       menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
@@ -145,8 +168,8 @@
       > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
     menupopup:is(#viewMenuPopup, #maintenanceButtonPopup) > menu:not(.menu-iconic, .in-menulist, [checked="true"]),
     menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup) > menuitem,
-    menupopup[needsgutter] menu:not([icon], .menu-iconic),
-    menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic),
+    menupopup#toolbar-context-menu menu:not([icon], .menu-iconic),
+    menupopup#toolbar-context-menu menuitem:not([checked="true"], [icon], .menuitem-iconic),
     .openintabs-menuitem,
     #blockedPopupDontShowMessage,
     #BMB_viewBookmarksToolbar,
@@ -173,7 +196,7 @@
       menuitem[type="checkbox"]:not([checked="true"])
       > .menu-iconic-left
       > .menu-iconic-icon {
-      border: none !important;
+        border: none !important;
         background-color: unset !important;
     }
   }

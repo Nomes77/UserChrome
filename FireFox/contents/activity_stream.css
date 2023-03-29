@@ -17,21 +17,24 @@
   /*= Background ============================================ I'VE ADDED =*/
   @supports -moz-bool-pref("userChrome+Content.newTab.image") {
     @supports not -moz-bool-pref("userChrome+Content.zavety") {
-      html.private {
-        --searchbar-bgcolor: color-mix(in srgb, rgb(43, 43, 43), transparent 60%) !important;
-        --searchbar-bgcolor-hover: color-mix(in srgb, rgb(61, 61, 61), transparent 60%) !important;
-      }
-      html.private body {
-        background-image: url("./../images/newtab/1.jpg") !important;
-        background-color: lightgreen !important;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+      @supports not -moz-bool-pref("userChrome+Content.newTab.image.Edge")
+        html.private {
+          --searchbar-bgcolor: color-mix(in srgb, rgb(43, 43, 43), transparent 60%) !important;
+          --searchbar-bgcolor-hover: color-mix(in srgb, rgb(61, 61, 61), transparent 60%) !important;
+        }
+        html.private body {
+          background-image: url("./../images/newtab/1.jpg") !important;
+          background-color: lightgreen !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
       }
       html.private .info {
         display: none !important;
       }
-      @supports -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_wijsheid") or
+      @supports -moz-bool-pref("userChrome+Content.newTab.image.Edge") or
+                -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_wijsheid") or
                 -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_kerk") {
         html:not(.private) {
           --searchbar-bgcolor: color-mix(in srgb, rgb(255, 255, 255), transparent 60%) !important;
@@ -42,7 +45,16 @@
           display: none !important;
         }
         html:not(.private) .search-inner-wrapper {
-          margin-top: -50px !important;
+          margin-top: -20px !important;
+        }
+      }
+      @supports -moz-bool-pref("userChrome+Content.newTab.image.Edge")
+        html:not(.private) body {
+          background-image: url("./../images/newtab/Edge.jpg");
+          background-size: cover; /* or auto auto */
+          background-repeat: no-repeat;
+          background-position: center;
+          background-attachment: fixed;
         }
       }
       @supports -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_wijsheid") {

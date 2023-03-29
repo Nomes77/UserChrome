@@ -1,8 +1,8 @@
 /*= Proton color ====================================================================*/
 @-moz-document url-prefix("about:"),
-               url-prefix("chrome://browser/content/places/places.xhtml"),
+               url-prefix("chrome://"),
                url-prefix("view-source"),
-               regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
+               regexp("^((jar:)?file:///).*/$") {
     @supports -moz-bool-pref("userChrome+Content.page.proton_color.dark_blue_accent") {
       @media (prefers-color-scheme: dark) {
         :host,
