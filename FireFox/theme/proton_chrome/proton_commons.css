@@ -183,6 +183,7 @@
   /* From checkbox.css */
   checkbox {
     appearance: none !important;
+    align-items: center !important;
     -moz-box-align: center !important;
     margin: 4px 2px !important;
   }
@@ -299,7 +300,9 @@
     outline-offset: var(--focus-outline-offset, 2px) !important;
   }
   #label-box {
+    align-items: center !important;
     -moz-box-align: center !important;
+    justify-content: center !important;
     -moz-box-pack: center !important;
     font-weight: 600 !important;
   }
