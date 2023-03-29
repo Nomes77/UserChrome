@@ -47,11 +47,12 @@ menupopup > menu {
 menupopup {
   --nested-margin-side: -0.3em !important;
 }
+/*
 @media (min-width: 600px) {
   @supports not -moz-bool-pref("userChrome+Content.zavety") {
     @supports -moz-bool-pref("userChrome+Content.icons.change_toolbarbuttons_and_overflowbutton_position") {
       toolbarbutton#bookmarks-menu-button:nth-last-child(1) > #BMB_bookmarksPopup menupopup {
-        --nested-margin-side: 27px !important; /* 27px = padding-text + icon + padding-inline-start */
+        --nested-margin-side: 27px !important; /* 27px = padding-text + icon + padding-inline-start /
       }
       toolbarbutton#bookmarks-menu-button:nth-last-child(2) > #BMB_bookmarksPopup menupopup {
         --nested-margin-side: calc(27px + (2 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + 16px)) !important;
@@ -85,6 +86,7 @@ menupopup {
     }
   }
 }
+*/
 menupopup > menu > menupopup {
   /* align submenus */
   margin-inline-start: var(--nested-margin-side) !important;
@@ -116,6 +118,11 @@ menupopup > menu > menupopup {
   }
 }
 /*= Global Menu - Set Padding =======================================================*/
+/* Vertical Align - Center & Height: 100%  */
+#main-menubar {
+  flex: 1 !important;
+  -moz-box-flex: 1 !important;
+}
 /* Menubar item padding */
 :root {
   --global-menubar-padding: 2px;

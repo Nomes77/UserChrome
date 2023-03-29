@@ -27,8 +27,16 @@
     margin-bottom: calc(0px - var(--mbarstyler-top-pixels) + var(--mbarstyler-popout-top-pixels)) !important;
   }
   /* Shadows */
+  :root:not([lwt-toolbar-field-focus-brighttext="true"]) 
+    #urlbar[breakout][breakout-extend] {
+      --mbarstyler-shadow: rgba(0, 0, 0, 0.25);
+  }
+  :root[lwt-toolbar-field-focus-brighttext="true"] 
+    #urlbar[breakout][breakout-extend] {
+      --mbarstyler-shadow: rgba(255, 255, 255, 0.35);
+  }
   #urlbar[breakout][breakout-extend] > #urlbar-background {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25) !important;
+    box-shadow: 0px 4px 8px var(--mbarstyler-shadow) !important;
   }
   /*- Prevent top border line --------------------------------------------*/
   #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {

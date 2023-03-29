@@ -82,10 +82,10 @@
 .tabbrowser-tab {
   padding-inline: 1px !important;
 }
-.tabbrowser-tab[first-visible-tab="true"] {
+.tabbrowser-tab:first-of-type {
   padding-inline-start: 1px !important;
 }
-.tabbrowser-tab:not([last-visible-tab]) {
+.tabbrowser-tab:not(:last-of-type) {
   margin-inline-end: -1.5px !important;
 }
 #tabbrowser-arrowscrollbox[overflowing="true"] > .tabbrowser-tab[pinned="true"] .tab-stack {
