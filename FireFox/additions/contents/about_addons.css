@@ -24,17 +24,23 @@
   .more-options-button {
     background-image: url("./../../images/more.svg") !important;
   }
-  /*
+  button[role="menuitem"] {
+    background-image: var(--icon, url("./../../images/blank.svg")) !important;
+  }
+  panel-item[checked] { 
+    --icon: url("./../../images/check.svg") !important;
+  }
   panel-item[action="remove"] {
     --icon: url("./../../images/delete.svg") !important;
   }
   panel-item[action="report"] {
     --icon: url("./../../images/warning-filled.svg") !important; 
   }
-  */
-  panel-item[action="preferences"] {
-    --icon: url("chrome://global/skin/icons/settings.svg") !important;
-            /* url("./../../images/settings.svg") */
+  panel-item[action="preferences"],
+  panel-item[action="manage-shortcuts"],
+  panel-item[data-l10n-id="preferences-addon-button"],
+  panel-item[data-l10n-id="manage-addon-button"] {
+    --icon: url("./../../images/settings.svg") !important;
   }
   .addon-permissions-list > li.permission-checked {
     background-image: url("./../../images/check.svg") !important;

@@ -1,13 +1,39 @@
 /* PDF_Viewer ****************************************************************/
-@-moz-document regexp("^((file:\/\/\/)|(chrome:\/\/)).*\/$") {
-  :root {
-    --toolbarButton-menuArrow-icon: url("./../../images/menu.svg") !important;
-    --toolbarButton-zoomOut-icon:url("./../../images/zoom-out.svg") !important;
-    --toolbarButton-zoomIn-icon: url("./../../images/zoom-in.svg") !important;
-    --toolbarButton-print-icon: url("./../../images/print.svg") !important;
-    --toolbarButton-openFile-icon: url("./../../images/folder.svg") !important;
-    --toolbarButton-download-icon: url("./../../images/downloads.svg") !important;
-    --toolbarButton-bookmark-icon: url("./../../images/star-add.svg") !important;
-    --toolbarButton-search-icon: url("./../../images/search-glass.svg") !important;
+@-moz-document unobservable-document() {
+  @-moz-document regexp("^(?!.*\\.pdf\\?n).*") {
+    #sidebarToggle::before {
+      mask-image: url("./../../images/sidebar.svg") !important;
+    }
+    #zoomOut::before {
+      mask-image: url("./../../images/zoom-out.svg") !important;
+    }
+    #zoomIn::before {
+      mask-image: url("./../../images/zoom-in.svg") !important;
+    }
+    #viewFind::before {
+      mask-image: url("./../../images/search-glass.svg") !important;
+    }
+    #print::before, #secondaryPrint::before {
+      mask-image: url("./../../images/print.svg") !important;
+    }
+    #download::before, #secondaryDownload::before {
+      mask-image: url("./../../images/downloads.svg") !important;
+    }
+    #secondaryToolbarToggle::before {
+      mask-image: url("./../../images/menu-button.svg") !important;
+    }
+    #viewBookmark::before {
+      mask-image: url("./../../images/star-add.svg") !important;
+    }
+    #pageRotateCw::before {
+      mask-image: url("./../../images/reload.svg") !important;
+    }
+    #pageRotateCcw::before {
+      mask-image: url("./../../images/reload.svg") !important;
+      transform: rotateY(180deg);
+    }
+    #documentProperties::before {
+      mask-image: url("./../../images/info.svg") !important;
+    }
   }
 }

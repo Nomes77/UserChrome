@@ -13,6 +13,7 @@
     z-index: 1;
   }
   findbar {
+    order: 0 !important;
     -moz-box-ordinal-group: 0;
     margin-bottom: -33px;
     position: relative;
@@ -40,6 +41,7 @@
     pointer-events: auto;
   }
   findbar > .findbar-container {
+    flex-direction: row-reverse;
     -moz-box-direction: reverse;
     border-radius: 4px 0 0 4px;;
     border-width: 1px 0 1px 1px !important;
@@ -73,6 +75,7 @@
   findbar::before {
     content:"";
     display: -moz-box;
+    flex: 100;
     -moz-box-flex: 100;
   }
 }
