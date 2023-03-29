@@ -10,6 +10,7 @@
 #appMenu-proton-addon-banners > .addon-banner-item > .toolbarbutton-icon {
   display: -moz-inline-box !important;
   margin-inline-start: var(--arrowpanel-menuicon-padding);
+  order: 0 !important;
   -moz-box-ordinal-group: 0 !important;
 }
 #appMenu-proton-update-banner::before {
