@@ -23,6 +23,11 @@
     --uc-urlView-full-width-padding: var(--uc-urlView-padding);
     margin-inline: 0 !important; /* Original: calc(5px + var(--urlbar-container-padding)) */
     width: 100% !important;
+    border-inline: none !important;
+  }
+  #urlbar[open] > #urlbar-background {
+    border: none !important;
+    /* border-color: var(--arrowpanel-border-color); */
   }
   #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
     border-color: transparent !important;
@@ -31,9 +36,9 @@
     margin-inline: var(--uc-urlView-full-width-padding) !important;
     width: calc(100% + 2px - var(--uc-urlView-padding-double)) !important;
   }
-  .urlbarView-row-inner {
+  .urlbarView-row {
     padding-inline: calc(var(--uc-urlView-full-width-padding) + var(--urlbarView-item-inline-padding)) !important;
-    height: 25px !important;
+    height: 36px !important;
     border-radius: 0px !important;
   }
   :root:not([lwt-toolbar-field-focus-brighttext="true"]) 
@@ -44,15 +49,15 @@
     #urlbar-container > #urlbar {
       --uc-urlbarview-selected-border: rgb(99, 173, 229);
   }
-  .urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner,
-  .urlbarView-row-inner[selected] {
+  .urlbarView-row:not([type="tip"], [type="dynamic"])[selected],
+  .urlbarView-row[selected] {
     box-shadow: 3.5px 0 var(--uc-urlbarview-selected-border) inset !important;
   }
   :root:not([uidensity=compact]) .urlbarView-row:not([type=tip], [type=dynamic]) {
-    max-height: 35px;
+    max-height: 36px;
   }
   #urlbar > hbox[id] { /* left icons in urlbar */
-    --uc-urlView-padding: calc(5px + var(--urlbar-container-padding));
+    --uc-urlView-padding: calc(8.5px + var(--urlbar-container-padding));
     --uc-urlView-full-width-padding: var(--uc-urlView-padding);
     padding-left: calc(var(--uc-urlView-full-width-padding)) !important; /* same as padding .urlbarView-row from above = 6.1px */
   }
