@@ -48,6 +48,7 @@ user_pref("userChrome+Content.icons.change_toolbarbuttons_and_overflowbutton_pos
 user_pref("userChrome+Content.newTab.image", false);
 user_pref("userChrome+Content.newTab.image.Augustinus_kerk", true);
 user_pref("userChrome+Content.newTab.image.Augustinus_wijsheid", false);
+user_pref("userChrome+Content.newTab.image.Edge", true);
 user_pref("userChrome+Content.padding.bookmark_menu.compact", false);
 user_pref("userChrome+Content.padding.drag_space", true);
 user_pref("userChrome+Content.padding.first_tab", true);
