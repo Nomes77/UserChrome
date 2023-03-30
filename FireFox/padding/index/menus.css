@@ -47,46 +47,6 @@ menupopup > menu {
 menupopup {
   --nested-margin-side: -0.3em !important;
 }
-/*
-@media (min-width: 600px) {
-  @supports not -moz-bool-pref("userChrome+Content.zavety") {
-    @supports -moz-bool-pref("userChrome+Content.icons.change_toolbarbuttons_and_overflowbutton_position") {
-      toolbarbutton#bookmarks-menu-button:nth-last-child(1) > #BMB_bookmarksPopup menupopup {
-        --nested-margin-side: 27px !important; /* 27px = padding-text + icon + padding-inline-start /
-      }
-      toolbarbutton#bookmarks-menu-button:nth-last-child(2) > #BMB_bookmarksPopup menupopup {
-        --nested-margin-side: calc(27px + (2 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + 16px)) !important;
-      }
-      toolbarbutton#bookmarks-menu-button:nth-last-child(3) > #BMB_bookmarksPopup menupopup {
-        --nested-margin-side: calc(27px + (4 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + (2 * 16px))) !important;
-      }
-      toolbarbutton#bookmarks-menu-button:nth-last-child(4) > #BMB_bookmarksPopup menupopup {
-        --nested-margin-side: calc(27px + (6 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + (3 * 16px))) !important;
-      }
-      toolbarbutton#bookmarks-menu-button:nth-last-child(5) > #BMB_bookmarksPopup menupopup {
-        --nested-margin-side: calc(27px + (8 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + (4 * 16px))) !important;
-      }
-      @supports -moz-bool-pref("extensions.unifiedExtensions.enabled") {
-        toolbar[nonemptyoverflow="true"] toolbarbutton#bookmarks-menu-button:nth-last-child(1) > #BMB_bookmarksPopup menupopup {
-          --nested-margin-side: calc(27px + (2 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + 16px)) !important;
-        }
-        toolbar[nonemptyoverflow="true"] toolbarbutton#bookmarks-menu-button:nth-last-child(2) > #BMB_bookmarksPopup menupopup {
-          --nested-margin-side: calc(27px + (4 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + (2 * 16px))) !important;
-        }
-        toolbar[nonemptyoverflow="true"] toolbarbutton#bookmarks-menu-button:nth-last-child(3) > #BMB_bookmarksPopup menupopup {
-          --nested-margin-side: calc(27px + (6 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + (3 * 16px))) !important;
-        }
-        toolbar[nonemptyoverflow="true"] toolbarbutton#bookmarks-menu-button:nth-last-child(4) > #BMB_bookmarksPopup menupopup {
-          --nested-margin-side: calc(27px + (8 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + (4 * 16px))) !important;
-        }
-        toolbar[nonemptyoverflow="true"] toolbarbutton#bookmarks-menu-button:nth-last-child(5) > #BMB_bookmarksPopup menupopup {
-          --nested-margin-side: calc(27px + (10 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + (5 * 16px))) !important;
-        }
-      }
-    }
-  }
-}
-*/
 menupopup > menu > menupopup {
   /* align submenus */
   margin-inline-start: var(--nested-margin-side) !important;

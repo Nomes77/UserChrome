@@ -297,4 +297,11 @@
     + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:nth-last-child(5) + toolbaritem + toolbaritem + toolbaritem + toolbaritem {
     transform: translateX(calc(-4 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) - (2 * 16px)));
   }
+  /*- Change Position of UnifiedExtensionsButton and OverflowButton when overflowing -----------------*/
+  html[id="main-window"]:not([customizing="true"]) #nav-bar[unifiedextensionsbuttonshown="true"][overflowing="true"] #nav-bar-overflow-button {
+    transform: translateX(calc(2 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) + 16px)) !important;
+  }
+  html[id="main-window"]:not([customizing="true"]) #nav-bar[unifiedextensionsbuttonshown="true"][overflowing="true"] #unified-extensions-button {
+    transform: translateX(calc(-2 * (var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) - 16px)) !important;
+  }
 }

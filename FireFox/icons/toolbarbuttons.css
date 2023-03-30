@@ -21,11 +21,9 @@
 #bookmarks-menu-button {
   list-style-image: url("./../images/star-line-horizontal.svg") !important;
 }
-@supports not -moz-bool-pref("extensions.unifiedExtensions.enabled") {
-  #nav-bar-overflow-button {
+/* #nav-bar-overflow-button {
     list-style-image: url("./../images/extension.svg") !important;
-  }
-}
+} */
 #unified-extensions-button {
   list-style-image: url("./../images/extension.svg") !important;
 }
@@ -44,7 +42,7 @@
 #PanelUI-menu-button[badge-status="fxa-needs-authentication"] {
   list-style-image: url("./../images/menu-button.svg") !important;
 }
-/* Extra button that normally are not shown */
+/* Extra buttons that normally are not shown */
 #home-button {
   list-style-image: url("chrome://browser/skin/home.svg");
 }
