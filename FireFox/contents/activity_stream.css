@@ -14,10 +14,10 @@
     --searchbar-bgcolor: rgb(43, 43, 43);
     --searchbar-bgcolor-hover: rgb(61, 61, 61);
   }
-  /*= Background ============================================ I'VE ADDED =*/
+  /*= Background =========================================================*/
   @supports -moz-bool-pref("userChrome+Content.newTab.image") {
-    @supports not -moz-bool-pref("userChrome+Content.zavety") {
-      @supports not -moz-bool-pref("userChrome+Content.newTab.image.Edge")
+    @supports not -moz-bool-pref("userChrome+Content.newTab.image.Edge") {
+      @supports not -moz-bool-pref("userChrome+Content.zavety") {
         html.private {
           --searchbar-bgcolor: color-mix(in srgb, rgb(43, 43, 43), transparent 60%) !important;
           --searchbar-bgcolor-hover: color-mix(in srgb, rgb(61, 61, 61), transparent 60%) !important;
@@ -30,50 +30,53 @@
           background-position: center;
         }
       }
-      html.private .info {
+    }
+    html.private .info {
+      display: none !important;
+    }
+    @supports -moz-bool-pref("userChrome+Content.newTab.image.Edge") or
+              -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_wijsheid") or
+              -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_kerk") {
+      html:not(.private) {
+        --searchbar-bgcolor: color-mix(in srgb, rgb(255, 255, 255), transparent 60%) !important;
+        --searchbar-bgcolor-hover: color-mix(in srgb, rgb(221, 221, 221), transparent 60%) !important;
+      }
+      html:not(.private) #root > div > span,
+      html:not(.private) .logo-and-wordmark {
         display: none !important;
       }
-      @supports -moz-bool-pref("userChrome+Content.newTab.image.Edge") or
-                -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_wijsheid") or
-                -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_kerk") {
-        html:not(.private) {
-          --searchbar-bgcolor: color-mix(in srgb, rgb(255, 255, 255), transparent 60%) !important;
-          --searchbar-bgcolor-hover: color-mix(in srgb, rgb(221, 221, 221), transparent 60%) !important;
-        }
-        html:not(.private) #root > div > span,
-        html:not(.private) .logo-and-wordmark {
-          display: none !important;
-        }
-        html:not(.private) .search-inner-wrapper {
-          margin-top: -20px !important;
-        }
+      html:not(.private) .search-inner-wrapper {
+        margin-top: -20px !important;
       }
-      @supports -moz-bool-pref("userChrome+Content.newTab.image.Edge")
-        html:not(.private) body {
-          background-image: url("./../images/newtab/Edge.jpg");
-          background-size: cover; /* or auto auto */
-          background-repeat: no-repeat;
-          background-position: center;
-          background-attachment: fixed;
-        }
+    }
+    @supports -moz-bool-pref("userChrome+Content.newTab.image.Edge") {
+      html:not(.private) {
+        scrollbar-width: none;
       }
-      @supports -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_wijsheid") {
-        html:not(.private) body {
-          background-image: url("./../images/newtab/Augustinus1.jpg") !important;
-          background-color: lightgreen !important;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
+      html:not(.private) body {
+        background-image: url("./../images/newtab/Edge.jpg");
+        background-size: cover; /* or auto auto */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
       }
-      @supports -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_kerk") {
-        html:not(.private) body {
-          background-image: url("./../images/newtab/Augustinus2.jpg") !important;
-          background-color: black !important;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
+    }
+    @supports -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_wijsheid") {
+      html:not(.private) body {
+        background-image: url("./../images/newtab/Augustinus1.jpg") !important;
+        background-color: lightgreen !important;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+    @supports -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_kerk") {
+      html:not(.private) body {
+        background-image: url("./../images/newtab/Augustinus2.jpg") !important;
+        background-color: black !important;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
   }
