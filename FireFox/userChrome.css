@@ -8,6 +8,8 @@
 @import "./compatibility/index.css";
 /** System Default Theme *************************************************************/
 @import "./theme/system_default_theme.css";
+/** Non Native Menu ******************************************************************/
+@import "./theme/non_native_menu.css";
 /** Fully Theme Mode *****************************************************************/
 /*= Default Colors - Hard Coded ========================================*/
 @import "./theme/proton_color.css";
