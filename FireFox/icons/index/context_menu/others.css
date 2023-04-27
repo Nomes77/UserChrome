@@ -152,6 +152,9 @@ menuitem.searchbar-clear-history {
   --menuitem-image: url("./../images/history.svg");
 }
 /*= unified-extensions-context-menu =================================================*/
+.unified-extensions-context-menu-pin-to-toolbar {
+  --menuitem-image: url("./../images/pin-tab.svg");
+}
 .unified-extensions-context-menu-manage-extension {
   --menuitem-image: url("./../images/settings.svg");
 }

@@ -10,7 +10,7 @@
 #appMenu-proton-addon-banners > .addon-banner-item > .toolbarbutton-icon {
   display: -moz-inline-box !important;
   margin-inline-start: var(--arrowpanel-menuicon-padding);
-  order: 0 !important;
+  order: -1 !important;
   -moz-box-ordinal-group: 0 !important;
 }
 #appMenu-proton-update-banner::before {
@@ -260,6 +260,9 @@ panelMenuBookmarkThisPage[starred] {
 #BMB_viewBookmarksSidebar[data-l10n-args='{"isVisible":true}'] {
   --menuitem-image: url("./../images/dismiss.svg");
 } */
+#BMB_searchBookmarks {
+  --menuitem-image: url("./../images/search-glass.svg");
+}
 #BMB_bookmarksShowAllTop,
 #BMB_bookmarksShowAll {
   --menuitem-image: url("./../images/star-line-horizontal.svg");
