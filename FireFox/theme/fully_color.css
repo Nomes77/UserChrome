@@ -59,6 +59,68 @@
       background-color: transparent !important;
   }
 }
+@media (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
+  :root[style*="background-noodles-right"] menupopup {
+    --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
+  }
+}
+@supports -moz-bool-pref("userChrome+Content.theme.non_native_menu") {
+  @media (-moz-gtk-csd-available) {
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) {
+        /* Above FF v105 #466 */
+        --panel-color: var(--menu-color) !important;
+        --panel-background: var(--menu-background-color) !important;
+        --panel-border-color: var(--menu-border-color) !important;
+    }
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist):not([placespopup]) menuseparator,
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist)[placespopup] menuseparator::before {
+        border-top: 1px solid var(--menu-border-color);
+    }
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) menu[disabled="true"],
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) menu[_moz-menuactive="true"][disabled="true"],
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) menuitem[disabled="true"],
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"][disabled="true"] {
+        color: var(--menu-disabled-color) !important;
+    }
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) menu[_moz-menuactive="true"][disabled="true"],
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"][disabled="true"] {
+        background-color: transparent !important;
+    }
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) menu[_moz-menuactive="true"]:not([disabled="true"]),
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
+        background-color: var(--menuitem-hover-background-color) !important;
+        color: var(--menu-color) !important;
+    }
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"]
+      > .menu-iconic-left > .menu-iconic-icon {
+        background-color: var(--menuitem-hover-background-color) !important;
+    }
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"],
+    :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+      menupopup #context-navigation > .menuitem-iconic[_moz-menuactive="true"][disabled="true"]
+      > .menu-iconic-left > .menu-iconic-icon {
+        background-color: transparent !important;
+    }
+    @media (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
+      :root[style*="background-noodles-right"] menupopup {
+        --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
+      }
+    }
+  }
+}
 @media not all and (-moz-gtk-csd-available) {
   window:is(#bookmarksPanel, #history-panel)[lwt-sidebar="true"] menupopup {
     --panel-color: var(--lwt-sidebar-text-color, var(--menu-color)) !important;
@@ -75,11 +137,6 @@
 :root:is([style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"], [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"]) menupopup:is(#goPopup, #historyMenuPopup, #bookmarksMenuPopup) {
   --menu-color: var(--toolbar-color, var(--in-content-page-color)) !important;
   --arrowpanel-background: var(--toolbar-bgcolor, var(--in-content-button-background)) !important; /* --menu-background-color */
-}
-@media (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
-  :root[style*="background-noodles-right"] menupopup {
-    --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
-  }
 }
 @media not all and (-moz-gtk-csd-available) {
   window:is(#bookmarksPanel, #history-panel)[style*="--newtab-background-color: rgba(249, 249, 251, 1);"] menupopup, /* Default Light Mode */
@@ -190,7 +247,8 @@ body:not([lwt-sidebar]) xul|search-textbox.tabsFilter[focused="true"] {
 }
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon,
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-site-icon {
   fill: GrayText !important;
 }
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-title {
@@ -211,6 +269,15 @@ body:not([lwt-sidebar]) xul|search-textbox.tabsFilter[focused="true"] {
     --arrowpanel-dimmed-further,
     hsla(0, 0%, 80%, 0.5)
   ) !important; /* Original: hsla(0,0%,80%,.5), match arrowpanel-dimmed-further */
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] {
+    background-color: var(--panel-bgcolor) !important; /* Original: var(--arrowpanel-dimmed) */
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"]:hover {
+  background-color: var(--arrowpanel-dimmed, hsla(0deg, 0%, 80%, 0.35)) !important;
+}
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-title {
+  color: var(--arrowpanel-color, var(--in-content-page-color)) !important; /* Original: var(--grey-60) */
 }
 /* New Folder Button */
 #editBMPanel_newFolderButton {
