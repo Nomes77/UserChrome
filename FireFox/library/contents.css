@@ -105,7 +105,7 @@
     list-style-image: url("./../images/delete.svg");
   }
   #clearDownloadsButton > .toolbarbutton-icon {
-    display: -moz-inline-box !important;
+    display: inline-flex !important;
     margin-top: 0;
     margin-bottom: 0;
     margin-inline-start: 0;
