@@ -102,7 +102,7 @@
       transition: margin-inline-start 0.25s var(--animation-easing-function), opacity 0.25s ease-in-out, visibility 0s linear !important;
     }
     #sidebar-box[hidden="true"] {
-      display: -moz-box !important;
+      display: flex !important;
       margin-inline-start: -18em;
       opacity: 0;
       visibility: collapse;

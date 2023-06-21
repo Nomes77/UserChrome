@@ -1,6 +1,7 @@
 /*= Panel UI Button Seperator =======================================================*/
 html[id="main-window"][chromehidden=""] #nav-bar:has(#nav-bar-customization-target:has(
-  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(1), toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1)))
+  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(1),
+  toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1)))
   #PanelUI-button::before {
     /* Box Model */
     content: "";
