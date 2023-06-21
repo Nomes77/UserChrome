@@ -16,14 +16,20 @@
     --menu-padding: 0px;
   }
 }
-menupopup:not(.in-menulist) > menuitem,
+menupopup > menuitem,
 menupopup > menu {
   padding-block: var(--menu-padding) !important; /* Original: 0.5em */
   padding-inline-start: var(--arrowpanel-menuitem-padding-inline) !important;
 }
-#ContentSelectDropdown > menupopup > menucaption,
-#ContentSelectDropdown > menupopup > menuitem {
-  padding-block: 0 !important;
+@media (-moz-platform: windows-win10) {
+  #ContentSelectDropdown > menupopup > menucaption,
+  #ContentSelectDropdown > menupopup > menuitem {
+    padding-block: 0 !important;
+  }
+  #ContentSelectDropdown > menupopup > menucaption > .menu-iconic-text,
+  #ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text {
+    padding-block: var(--menu-padding) !important;
+  }
 }
 @media (-moz-gtk-csd-available) {
   #ContentSelectDropdown > menupopup > menucaption,
@@ -32,6 +38,12 @@ menupopup > menu {
   }
   menupopup > menu {
     padding-inline-start: 0.5em;
+  }
+}
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+  #ContentSelectDropdown > menupopup > menucaption,
+  #ContentSelectDropdown > menupopup > menuitem {
+    padding-block: var(--menu-padding) !important;
   }
 }
 /*= Menus - Set Margin ==============================================================*/

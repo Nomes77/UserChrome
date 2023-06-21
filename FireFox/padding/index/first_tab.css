@@ -11,7 +11,7 @@
     }
   }
   :root:is([sizemode="maximized"], [sizemode="fullscreen"], [sizemode="normal"]) .titlebar-spacer[type="pre-tabs"] {
-    display: -moz-box !important;
+    display: flex !important;
     width: var(--uc-space-left-tabbar) !important;
   }
   /* :root:not([tabsintitlebar]) #tabbrowser-tabs,

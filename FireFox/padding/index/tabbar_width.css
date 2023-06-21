@@ -42,6 +42,10 @@
   --newtab-button-minus-width-padding: 2px;
   --newtab-button-width-padding: calc(var(--toolbarbutton-inner-padding) - var(--newtab-button-minus-width-padding));
 }
+#widget-overflow-mainView #new-tab-button,
+#widget-overflow-mainView #alltabs-button {
+  --newtab-button-width-padding: 0px;
+}
 #new-tab-button > .toolbarbutton-icon,
 #alltabs-button > .toolbarbutton-badge-stack {
   /* Original: calc(2 * var(--toolbarbutton-inner-padding) + 16px) */
@@ -52,7 +56,7 @@
 }
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
   > #tabbrowser-arrowscrollbox
-  > .tabbrowser-tab[first-visible-unpinned-tab] {
+  > .tabbrowser-tab:is([first-visible-unpinned-tab], :nth-child(1 of :not([pinned], [hidden]))) {
   margin-inline-start: 1px !important;
 }
 :root:not([uidensity="touch"]) #tabbrowser-arrowscrollbox {
@@ -79,8 +83,16 @@
   max-width: var(--tab-max-width) !important; /* Original: 225px */
 }
 /* neighbouring tabs should "pinch" together */
-.tabbrowser-tab {
+#tabbrowser-tabs:not([hasadjacentnewtabbutton]):not([overflow="true"])
+  > #tabbrowser-arrowscrollbox
+  > #tabbrowser-arrowscrollbox-periphery {
+    min-width: 3px;
+}
+.tabbrowser-tab[pinned] {
   padding-inline: 1px !important;
+}
+.tabbrowser-tab:not([pinned]) {
+  margin-inline: -1px !important;
 }
 .tabbrowser-tab:first-of-type {
   padding-inline-start: 1px !important;
