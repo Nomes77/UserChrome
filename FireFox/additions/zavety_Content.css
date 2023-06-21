@@ -2,27 +2,21 @@
   @-moz-document url-prefix("about:addons"),
                  url-prefix(chrome://mozapps/content/extensions/aboutaddons.html),
                  url-prefix(chrome://mozapps/content/extensions/aboutaddons.xhtml) {
-    /* addon-page-header[type="extension"],
+    addon-page-header[type="extension"],
     addon-list[type="extension"],
-    #categories > [viewid="addons://list/extension"] { */
-    addon-list[type="extension"] [addon-id]:not([addon-id="uBlock0@raymondhill.net"]),
-    [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-author,
-    [addon-id="@testpilot-containers-wildcard"] .addon-detail-row-homepage,
-    [addon-id="@uExtra"] .addon-detail-row-author,
-    [addon-id="@uExtra"] .addon-detail-row-homepage,
-    [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-author,
-    [addon-id="{316cb7eb-36d4-4cc7-a77c-61b6998e7505}"] .addon-detail-row-homepage,
-    [addon-id="{7d5fcf8f-6eff-4d32-b958-a76d3fe933fb}"] .addon-detail-row-author,
-    addon-shortcuts > .shortcut[addon-id]:not([addon-id="uBlock0@raymondhill.net"]),
-    addon-shortcuts > [data-l10n-id="shortcuts-no-commands"],
-    addon-shortcuts > .shortcuts-no-commands-list > [addon-id]:not([addon-id="uBlock0@raymondhill.net"]) {
+    #categories > [viewid="addons://list/extension"] {
       display: none !important;
     }
   }
   @-moz-document url("about:logins"),
                  url-prefix("about:logins") {
+    menu-button > .menu > .menuitem-remove-all-logins,
+    menu-button > .menu > .menuitem-import-file {
+      display: none !important;
+    }
+    body,
     .login-list-section,
-    .container:has(.column),
+    login-item .container,
     login-item .header,
     login-item .detail-grid,
     login-item .detail-cell,
@@ -61,13 +55,13 @@
       display: none !important;
     }
   }
-  @-moz-document url-prefix("moz-extension://48257024-52cf-4295-81fc-991effeb0c07") {
+  @-moz-document url-prefix("moz-extension://a3405601-61e0-4e55-9f8e-9b37f2b5785a") {
     .tabButton[data-pane="1p-filters.html"],
     .tabButton[data-pane="dyna-rules.html"],
     .tabButton[data-pane="shortcuts.html"],
     .body > div[class="a b c d"],
     div#lists > .groupEntry[data-groupkey="user"],
-    div#lists > .groupEntry[data-groupkey="regions"] .listEntry[data-listkey="NLD-0"] a:is(.content, .support),
+    div#lists > .groupEntry[data-groupkey="regions"] .listEntry[data-listkey="NLD-0"] a.support,
     div#lists > .groupEntry[data-groupkey="custom"] > .listEntries > .listEntry[data-listkey^="https://raw.githubusercontent.com/"] {
       display: none !important;
     }
