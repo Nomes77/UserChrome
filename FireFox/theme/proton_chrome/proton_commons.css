@@ -307,7 +307,7 @@
     font-weight: 600 !important;
   }
   dropmarker {
-    display: -moz-box !important;
+    display: flex !important;
     appearance: none !important;
     width: 12px !important;
     height: 12px !important;
@@ -481,7 +481,7 @@
       font-size: inherit !important;
     }
     xul|menulist::part(dropmarker) {
-      display: -moz-box;
+      display: flex;
       margin-block: 6px !important;
     }
     xul|menulist:-moz-focusring::part(label-box) {
