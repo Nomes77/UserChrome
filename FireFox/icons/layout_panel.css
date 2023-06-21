@@ -32,7 +32,7 @@
 }
 #appMenu-multiView .subviewbutton::before,
 #appMenu-proton-update-banner::before {
-  display: -moz-inline-box;
+  display: inline-flex !important;
   margin-inline-end: var(--arrowpanel-menutext-padding);
   width: 16px;
   height: 16px;

@@ -269,6 +269,9 @@
 }
 #menu_HelpPopup_reportPhishingErrortoolmenu {
 }
+#helpSwitchDevice {
+  --menuitem-image: url("./../images/add-device.svg");
+}
 #aboutName {
   --menuitem-image: url("chrome://branding/content/icon16.png");
 }
