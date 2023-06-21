@@ -1,3 +1,6 @@
+/** Compatibility ********************************************************************/
+@import "./contents/compatibility.css";
+
 /** Video player *********************************************************************/
 @import "./contents/video_player.css";
 
