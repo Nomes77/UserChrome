@@ -1,6 +1,6 @@
 /*= Identity Box Border =============================================================*/
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
-  #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not(:hover, [open]),
+  #identity-box[pageproxystate="valid"].notSecureText > #identity-icon-box:not(:hover, [open]),
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, [open]),
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
@@ -9,7 +9,7 @@
     background-color: transparent !important;
 }
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
-  #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button::after,
+  #identity-box[pageproxystate="valid"].notSecureText > #identity-icon-box::after,
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button::after,
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
@@ -29,7 +29,7 @@
     background-color: rgb(150, 150, 150) !important;
 }
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
-  #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not(:hover, :active, [open=true])::after,
+  #identity-box[pageproxystate="valid"].notSecureText > #identity-icon-box:not(:hover, :active, [open=true])::after,
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
   #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, :active, [open=true])::after,
 :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
@@ -38,11 +38,15 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
-    #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button::after,
+    #identity-box[pageproxystate="valid"].notSecureText > #identity-icon-box::after,
   :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
     #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button::after,
   :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
     #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button::after {
       transition: opacity 0.2s var(--animation-easing-function);
   }
+}
+#identity-box[pageproxystate="valid"].notSecureText > #identity-permission-box,
+#identity-box[pageproxystate="valid"].notSecureText > #notification-popup-box {
+  margin-inline-end: -5px;
 }
