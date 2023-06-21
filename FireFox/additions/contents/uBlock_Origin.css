@@ -1,14 +1,8 @@
 /* uBlock Origin *********************************************************************/
-@-moz-document url-prefix("moz-extension://a3405601-61e0-4e55-9f8e-9b37f2b5785a"),
-               url-prefix("moz-extension://879c662f-a6ee-4054-a83c-98127d8ece0b") {
+@-moz-document url-prefix("moz-extension://a3405601-61e0-4e55-9f8e-9b37f2b5785a") {
   @supports -moz-bool-pref("userChrome+Content.additions.uBlock_Origin.hide_default_unused") {
-    body.hideUnused div#lists > .groupEntry.hideUnused > .listEntries > .listEntry.isDefault.unused {
+    body div#lists > .listEntries > .listEntry.expandable:not(.expanded) > .listEntries > .listEntry.isDefault:not(.checked) {
       display: none !important;
-    }
-  }
-  @supports -moz-bool-pref("userChrome+Content.additions.uBlock_Origin.show_shortcuts") {
-    .tabButton[data-pane="shortcuts.html"] {
-      display: inline-block !important;
     }
   }
 }

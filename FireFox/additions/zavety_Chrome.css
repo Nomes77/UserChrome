@@ -36,35 +36,4 @@
       display: none;
     }
   }
-  html[id="main-window"]:not([customizing="true"]) #nav-bar[nonemptyoverflow="true"] :has(toolbarbutton[cui-areatype="toolbar"]) + #nav-bar-overflow-button,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar :has(toolbarbutton[cui-areatype="toolbar"]) + #unified-extensions-button,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"],
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target 
-    > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem + toolbaritem,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar :has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-    + toolbarbutton[cui-areatype="toolbar"]) + #unified-extensions-button,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
-    + toolbarbutton[cui-areatype="toolbar"],
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"],
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"] + toolbaritem,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem ,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar #nav-bar-customization-target:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-    + toolbarbutton[cui-areatype="toolbar"]) > toolbarbutton[cui-areatype="toolbar"] + toolbaritem + toolbaritem + toolbaritem + toolbaritem,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar[unifiedextensionsbuttonshown="true"][overflowing="true"] #nav-bar-overflow-button,
-  html[id="main-window"]:not([customizing="true"]) #nav-bar[unifiedextensionsbuttonshown="true"][overflowing="true"] #unified-extensions-button {
-    transform: none !important;
-  }
 }
