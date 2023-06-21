@@ -5,7 +5,7 @@
   > .tab-stack
   > .tab-content
   > .tab-close-button:not([selected="true"]) {
-  display: -moz-inline-box !important;
+  display: inline-flex !important;
 }
 #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([visuallyselected]) .tab-close-button {
   visibility: collapse !important;

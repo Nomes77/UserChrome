@@ -7,7 +7,7 @@
 }
 .tabbrowser-tab[pictureinpicture]:not([pinned]) .tab-content::after {
   /* Shape */
-  display: -moz-inline-box !important;
+  display: inline-flex !important;
   width: 14px;
   height: 14px;
   background-size: 14px;
@@ -36,8 +36,25 @@
   .tab-close-button {
   margin-left: 3px !important;
 }
+/*- PictureInPicture Player --------------------------------------------*/
+:root {
+  --controls-bottom-distance: 5px !important;
+  --controls-bottom-upper-height: 25px !important;
+  --resize-margin: 0px !important;
+}
+#scrubber::-moz-range-thumb {
+  width: 7px !important;
+  height: 7px !important;
+  border: 3px solid color-mix(in srgb, #FFFFFF 50%, transparent) !important;
+}
+#scrubber::-moz-range-track {
+  background-color: color-mix(in srgb, #969696 65%, transparent) !important;
+}
+#scrubber::-moz-range-progress {
+  background-color: color-mix(in srgb, #FFFFFF 50%, transparent) !important;
+}
 #unpip {
-  background-image: url("./../images/link-square.svg") !important;
+  background-image: url("./../images/link-square-pip.svg") !important;
 }
 #controls:not(.playing) #playpause {
   background-image: url("./../images/play.svg") !important;
@@ -50,6 +67,21 @@
 }
 #controls.muted #audio {
   background-image: url("./../images/audio-muted.svg") !important;
+}
+/* #controls #seekBackward {
+  background-image: url("./../images/skip-backward.svg") !important;
+} */
+#controls seekForward {
+  background-image: url("./../images/closed-caption.svg") !important;
+}
+/* #controls #closed-caption {
+  background-image: url("./../images/skip-forward.svg") !important;
+} */
+body:not(:fullscreen) #controls #fullscreen {
+  background-image: url("./../images/fullscreenEnterButton.svg") !important;
+}
+body:fullscreen #controls #fullscreen {
+  background-image: url("./../images/fullscreenExitButton.svg") !important;
 }
 #close {
   background-image: url("./../images/dismiss.svg") !important;

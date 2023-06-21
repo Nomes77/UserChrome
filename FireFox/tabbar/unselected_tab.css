@@ -50,7 +50,7 @@
   .tab-stack::before,
 #navigator-toolbox
   #tabbrowser-arrowscrollbox[overflowing]
-  tab.tabbrowser-tab[first-visible-unpinned-tab]
+  tab.tabbrowser-tab:is([first-visible-unpinned-tab], :nth-child(1 of :not([pinned], [hidden])))
   .tab-stack::before {
     opacity: 0 !important;
 }

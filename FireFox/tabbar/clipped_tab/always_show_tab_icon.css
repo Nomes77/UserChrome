@@ -1,6 +1,6 @@
 /*- Clipped tabs - Always show tab icon  --------------------------------------------*/
 .tab-icon-image:not([src], [busy], [progress]) {
-  display: -moz-inline-box !important;
+  display: inline-flex !important;
 }
 .tab-icon-image[crashed] {
   display: none !important;

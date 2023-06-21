@@ -196,7 +196,7 @@
   #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:first-of-type {
     margin-left: var(--uc-tab-corner-half-size) !important;
   }
-  #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-unpinned-tab] {
+  #tabbrowser-tabs[overflow] .tabbrowser-tab:is([first-visible-unpinned-tab], :nth-child(1 of :not([pinned], [hidden]))) {
     margin-left: calc(var(--uc-tab-corner-half-size) / 2) !important;
   }
   @supports -moz-bool-pref("userChrome+Content.padding.first_tab") {

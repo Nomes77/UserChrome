@@ -8,7 +8,7 @@
 /* Show Label */
 @supports -moz-bool-pref("userChrome+Content.tab.show_sound_label") {
   .tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
-    display: -moz-box !important;
+    display: flex !important;
   }
   .tab-icon-sound-label {
     transform: translateY(-3px);

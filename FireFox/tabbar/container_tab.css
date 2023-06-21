@@ -63,7 +63,7 @@
   background-image: var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image),
                     var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image),
                     var(--dotted-identity-image), var(--dotted-identity-image) !important;
-  background-position-x: var(--uc-pinned-attention-container-position-x) !important;
+  background-position-x: var(--uc-attention-container-position-x) !important;
   background-position-y: bottom calc(var(--uc-container-position-y) / 2 - 1.5px) !important;
 }
 /* Pinned Tab - Attention Indicator override */
