@@ -1,0 +1,30 @@
+/** Compatibility ********************************************************************/
+@-moz-document url-prefix("about:preferences") {
+  .content-blocking-warning.info-box-container > hbox > .content-blocking-warning-image {
+    margin-inline-start: -12px !important;
+  }
+  #pane-experimental-search-results-header,
+  #pane-experimental-subtitle {
+    min-height: 27px !important;
+    padding-inline-start: 35px !important;
+  }
+  #firefoxExperimentalCategory:not([hidden="true"]) {
+    display: inline-block;
+  }
+  #firefoxExperimentalCategory > label {
+    float: left;
+  }
+  #firefoxExperimentalCategory > hbox {
+    transform: translateY(5px);
+  }
+  #pane-experimental-featureGates > html|p[data-l10n-id="pane-experimental-description2"] {
+    border-bottom: 1px solid var(--in-content-border-color);
+    padding-bottom: 1.5em;
+  }
+}
+@-moz-document url-prefix("about:addons") {
+  #updates-message + .page-options-menu > .more-options-button {
+    box-sizing: content-box;
+    padding: 0 !important;
+  }
+}

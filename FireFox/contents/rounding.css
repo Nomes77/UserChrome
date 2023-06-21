@@ -44,19 +44,9 @@
   }
 }
 @supports -moz-bool-pref("userChrome+Content.rounding.square_dialog") {
-  @-moz-document url-prefix("about:") {
-    .dialogBox {
-      border-radius: 0 !important;
-    }
-  }
   @-moz-document url("about:home"),
                  url("about:newtab") {
     .modal {
-      border-radius: 0 !important;
-    }
-  }
-  @-moz-document regexp(".*.pdf$") {
-    dialog {
       border-radius: 0 !important;
     }
   }
@@ -83,7 +73,8 @@
     richlistbox,
     search-textbox,
     .web-appearance-choice,
-    .content-blocking-category {
+    .content-blocking-category,
+    #translations-manage-install-list {
       border-radius: 0 !important;
     }
   }
@@ -109,6 +100,7 @@
 @supports -moz-bool-pref("userChrome+Content.rounding.square_menupopup") {
   @-moz-document url-prefix("about:"),
                  url-prefix("chrome://") {
+    panel,
     menupopup {
       --panel-border-radius: 0 !important;
     }
@@ -153,6 +145,23 @@
   }
   @-moz-document url-prefix("about:debugging") {
     .message {
+      border-radius: 0 !important;
+    }
+  }
+  @-moz-document url-prefix("about:firefoxview") {
+    .card,
+    .card::before,
+    .empty-container,
+    .synced-tab-a,
+    .synced-tab-li-placeholder {
+      border-radius: 0 !important;
+    }
+  }
+}
+@supports -moz-bool-pref("userChrome+Content.rounding.square_dialog") {
+  @-moz-document url-prefix("about:"), regexp(".*.pdf$") {
+    dialog,
+    .dialogBox {
       border-radius: 0 !important;
     }
   }

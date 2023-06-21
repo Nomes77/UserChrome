@@ -188,7 +188,7 @@
   }
   #contentSearchSettingsButton::before {
     content: url("./../images/settings.svg") !important;
-    display: -moz-inline-box;
+    display: inline-flex;
     /* Color */
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
