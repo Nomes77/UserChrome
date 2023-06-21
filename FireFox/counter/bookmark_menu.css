@@ -4,7 +4,7 @@
     counter-reset: bookmark-counts 0;
   }
   menupopup[placespopup="true"] > menu.bookmark-item::after {
-    display: -moz-inline-box;
+    display: inline-flex !important;
     content: "(" counter(bookmark-counts) ")";
   }
   menupopup[placespopup="true"] > menu.bookmark-item > .menu-iconic-highlightable-text,
