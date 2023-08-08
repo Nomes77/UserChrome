@@ -14,27 +14,3 @@
 #TabsToolbar #new-tab-button {
   list-style-image: url("./../images/add.svg") !important;
 }
-@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
-  #tabs-newtab-button:not(:active):hover > image,
-  #TabsToolbar #new-tab-button:not(:active):hover > image,
-  #tabbrowser-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):hover,
-  #tabbrowser-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):hover,
-  #alltabs-button.toolbarbutton-1:not([disabled="true"], [checked], [open], :active):hover > .toolbarbutton-icon,
-  #alltabs-button.toolbarbutton-1:not([disabled="true"], [checked], [open], :active):hover > .toolbarbutton-badge-stack {
-    background-color: color-mix(in srgb, currentColor 10%, transparent) !important;
-  }
-  #tabs-newtab-button:active > image,
-  #tabs-newtab-button:hover:active > image,
-  #TabsToolbar #new-tab-button:active > image,
-  #TabsToolbar #new-tab-button:hover:active > image,
-  #tabbrowser-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):active,
-  #tabbrowser-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):hover:active,
-  #tabbrowser-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):active,
-  #tabbrowser-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):hover:active,
-  #alltabs-button.toolbarbutton-1:active > .toolbarbutton-icon,
-  #alltabs-button.toolbarbutton-1:hover:active > .toolbarbutton-icon,
-  #alltabs-button.toolbarbutton-1:active > .toolbarbutton-badge-stack,
-  #alltabs-button.toolbarbutton-1:hover:active > .toolbarbutton-badge-stack {
-    background-color: color-mix(in srgb, currentColor 15%, transparent) !important;
-  }
-}
