@@ -1,5 +1,6 @@
 /* About_Logins **************************************************************/
-@-moz-document url("about:logins") {
+@-moz-document url("about:logins"),
+               url-prefix("about:logins") {
   login-list:not(:hover) {
     width: 40%;
     scrollbar-width: none;
