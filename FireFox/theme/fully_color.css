@@ -4,7 +4,7 @@
     /* is same as toolbar color https://github.com/mozilla/gecko-dev/blob/master/toolkit/themes/windows/global/global.css#L17-L67 */
     --menu-color: var(--arrowpanel-color, var(--in-content-page-color));
     --menu-background-color: var(--arrowpanel-background, var(--in-content-button-background));
-    --menu-border-color: var(--toolbarbutton-active-background, var(--button-active-bgcolor, var(--card-outline-color)));
+    --menu-border-color: var(--panel-separator-color, var(--toolbarbutton-active-background, var(--button-active-bgcolor, var(--card-outline-color))));
     --menuitem-hover-background-color: var(--toolbarbutton-hover-background, var(--button-hover-bgcolor, var(--in-content-button-background-hover)));
     --menu-disabled-color: color-mix(in srgb, var(--menu-color) 40%, transparent) !important;
     --menuitem-disabled-hover-background-color: color-mix(in srgb, var(--menuitem-hover-background-color) 40%, transparent);
@@ -20,8 +20,10 @@
   :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
     menupopup:not(.in-menulist):not([placespopup]) menuseparator,
   :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
+    menupopup:not(.in-menulist):not([placespopup]) menuseparator::before,
+  :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
     menupopup:not(.in-menulist)[placespopup] menuseparator::before {
-      border-top: 1px solid var(--menu-border-color);
+      border-color: solid var(--menu-border-color);
   }
   :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
     menupopup:not(.in-menulist) menu[disabled="true"],
