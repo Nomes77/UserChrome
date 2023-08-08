@@ -1,0 +1,38 @@
+/*= abouts:preferences =======================================================*/
+@-moz-document url-prefix("chrome://browser/content") {
+  @media not (prefers-color-scheme: dark) {
+    :host,
+    :root {
+      --uc-warning-icon-bgcolor: #ffa436;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :host,
+    :root {
+      --uc-warning-icon-bgcolor: #ffbd4f;
+    }
+  }
+  #sanitizeEverythingWarningIcon {
+    list-style-image: url("./../../images/warning-filled.svg") !important;
+    -moz-context-properties: fill;
+    fill: var(--uc-warning-icon-bgcolor);
+    width: 48px;
+    height: 48px;
+  }
+}
+@-moz-document url-prefix("about:preferences") {
+  #handlersView > richlistitem:hover,
+  #translations-manage-install-list > .translations-manage-language:hover {
+    background-color: var(--in-content-item-hover);
+    color: var(--in-content-item-hover-text);
+  }
+  #handlersView > richlistitem[selected="true"],
+  #translations-manage-install-list > .translations-manage-language[selected="true"] {
+    background-color: var(--in-content-item-selected);
+    color: var(--in-content-item-selected-text);
+  }
+  #handlersView > richlistitem:nth-child(even):not([selected="true"], :hover),
+  #translations-manage-install-list > .translations-manage-language:nth-child(even):not([selected="true"], :hover) {
+    background-color: var(--in-content-box-background-odd);
+  }
+}
