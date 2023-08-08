@@ -1,28 +1,62 @@
 /*= Panel UI Button Seperator =======================================================*/
-html[id="main-window"][chromehidden=""] #nav-bar:has(#nav-bar-customization-target:has(
-  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(1),
-  toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1)))
-  #PanelUI-button::before {
+html[id="main-window"][chromehidden=""] #PanelUI-button::before {
     /* Box Model */
     content: "";
-    display: block;
+    display: none;
     position: absolute;
     /* Position */
     top: calc(var(--urlbar-toolbar-height) / 4);
-    transform: translateX(calc(-2 * var(--toolbarbutton-inner-padding) + -2.5 * var(--toolbarbutton-outer-padding) - 16px));
     /* Bar shape */
     width: 1.75px;
     height: calc(var(--urlbar-toolbar-height) / 2);
-    /* Bar Color */
+    /* Color */
     background-color: rgb(218, 218, 218); /* or var(--toolbarseparator-color) */
-}
-html[id="main-window"][chromehidden=""] #nav-bar:has(toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #downloads-button) 
-  + toolbarbutton[cui-areatype="toolbar"]) #PanelUI-button::before {
-    transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -4.5 * var(--toolbarbutton-outer-padding) - 32px));
 }
 @media (prefers-color-scheme: dark) {
   html[id="main-window"][chromehidden=""] #PanelUI-button::before {
     /* Bar Color Dark Mode */
     background-color: rgb(99, 99, 99) !important;
   }
+}
+html[id="main-window"][chromehidden=""] #nav-bar:not([overflowing]) > #nav-bar-customization-target:has(
+  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(1), toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1))
+  + toolbarbutton + #PanelUI-button::before {
+    display: block;
+    transform: translateX(calc(-2* var(--toolbarbutton-inner-padding) + -2.5 * var(--toolbarbutton-outer-padding) - 16px)) !important;
+}
+html[id="main-window"][chromehidden=""] #nav-bar:not([overflowing]) > #nav-bar-customization-target:has(
+  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #unified-extensions-button) 
+  + toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #unified-extensions-button):nth-last-child(1))
+  + toolbarbutton + #PanelUI-button::before {
+    display: block;
+    transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -5 * var(--toolbarbutton-outer-padding) - 32px)) !important;
+}
+html[id="main-window"][chromehidden=""] #nav-bar:not([overflowing]) > #nav-bar-customization-target:has(
+  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #unified-extensions-button)
+  + toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #unified-extensions-button)
+  + toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #unified-extensions-button):nth-last-child(1))
+  + toolbarbutton + #PanelUI-button::before {
+    display: block;
+    transform: translateX(calc(-6 * var(--toolbarbutton-inner-padding) + -7.5 * var(--toolbarbutton-outer-padding) - 48px)) !important;
+}
+html[id="main-window"][chromehidden=""] #nav-bar[overflowing] > #nav-bar-customization-target:has(
+  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(1), toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1))
+  + toolbarbutton + #PanelUI-button::before {
+    display: block;
+    transform: translateX(calc(-2* var(--toolbarbutton-inner-padding) + -2.5 * var(--toolbarbutton-outer-padding) - 16px)) !important;
+}
+html[id="main-window"][chromehidden=""] #nav-bar[overflowing] > #nav-bar-customization-target:has(
+  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]) 
+  + toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #unified-extensions-button):nth-last-child(1))
+  + toolbarbutton + #PanelUI-button::before {
+    display: block;
+    transform: translateX(calc(-4 * var(--toolbarbutton-inner-padding) + -5 * var(--toolbarbutton-outer-padding) - 32px)) !important;
+}
+html[id="main-window"][chromehidden=""] #nav-bar[overflowing] > #nav-bar-customization-target:has(
+  toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"])
+  + toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"])
+  + toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"], #unified-extensions-button):nth-last-child(1))
+  + toolbarbutton + #PanelUI-button::before {
+    display: block;
+    transform: translateX(calc(-6 * var(--toolbarbutton-inner-padding) + -7.5 * var(--toolbarbutton-outer-padding) - 48px)) !important;
 }
