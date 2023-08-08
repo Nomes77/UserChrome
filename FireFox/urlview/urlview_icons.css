@@ -96,22 +96,6 @@
 #identity-popup[connection=extension] .identity-popup-security-connection {
   list-style-image: url("./../images/extension.svg") !important;
 }
-@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
-  #identity-box[pageproxystate="valid"].onionUnknownIdentity #identity-icon,
-  #identity-box[pageproxystate="valid"].onionVerifiedDomain #identity-icon,
-  #identity-box[pageproxystate="valid"].onionMixedActiveBlocked #identity-icon {
-    list-style-image: url(chrome://browser/skin/onion.svg) !important;
-  }
-  #identity-box[pageproxystate="valid"].onionMixedDisplayContent #identity-icon,
-  #identity-box[pageproxystate="valid"].onionMixedDisplayContentLoadedActiveBlocked #identity-icon,
-  #identity-box[pageproxystate="valid"].onionCertUserOverridden #identity-icon {
-    list-style-image: url(chrome://browser/skin/onion-warning.svg) !important;
-    fill: #b31616 !important; /* or var(--red-70) */
-  }
-  #identity-box[pageproxystate="valid"].onionMixedActiveContent #identity-icon {
-    list-style-image: url(chrome://browser/skin/onion-slash.svg) !important;
-  }
-}
 /* URLbar-Searchbar */
 #urlbar.searchButton > #urlbar-input-container > #urlbar-search-button {
   background-image: url("./../images/search-glass.svg") !important;
