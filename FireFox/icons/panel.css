@@ -40,18 +40,6 @@
 #appMenu-new-private-window-button2 {
   list-style-image: url("./../images/privateBrowsing.svg");
 }
-@supports -moz-bool-pref("userChrome+Content.tor.compatibility") {
-  #appMenuNewIdentity, /* Legacy */
-  #appMenu-new-identity {
-    list-style-image: url("chrome://browser/skin/new_identity.svg");
-  }
-  #appMenuNewCircuit {
-    list-style-image: url("chrome://browser/skin/new_circuit.svg");
-  }
-  #appMenu_torBrowserUserManual {
-    list-style-image: url("chrome://browser/skin/onion.svg");
-  }
-}
 #appMenu-bookmarks-button {
   list-style-image: url("./../images/star-line-horizontal.svg");
 }
@@ -311,25 +299,34 @@ panelMenuBookmarkThisPage[starred] {
 #identity-popup-clear-sitedata-button {
   list-style-image: url("./../images/broom.svg");
 }
-#identity-popup-more-info {
+#identity-popup-more-info.subviewbutton {
   list-style-image: url("./../images/info.svg");
 }
+#identity-popup-more-info:is(menuitem) {
+  --menuitem-image: url("./../images/info.svg");
+}
 /*= sidebarMenu-popup ========================================================*/
-#sidebar-box[sidebarcommand="viewBookmarksSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon,
-#sidebar-switcher-bookmarks {
+#sidebar-box[sidebarcommand="viewBookmarksSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon {
   list-style-image: url("./../images/star-line-horizontal.svg") !important;
 }
-#sidebar-box[sidebarcommand="viewHistorySidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon,
-#sidebar-switcher-history {
+#sidebar-switcher-bookmarks:is(menuitem) {
+  --menuitem-image: url("./../images/star-line-horizontal.svg");
+}
+#sidebar-box[sidebarcommand="viewHistorySidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon {
   list-style-image: url("./../images/history.svg") !important;
 }
-#sidebar-box[sidebarcommand="viewTabsSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon,
-#sidebar-switcher-tabs {
+#sidebar-switcher-history:is(menuitem) {
+  --menuitem-image: url("./../images/history.svg");
+}
+#sidebar-box[sidebarcommand="viewTabsSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon {
   list-style-image: url("./../images/phone-tablet.svg") !important;
 }
-#sidebar-reverse-position {
-  list-style-image: var(--uc-sidebar-icon-reverse) !important;
+#sidebar-switcher-tabs:is(menuitem) {
+  --menuitem-image: url("./../images/phone-tablet.svg");
 }
-#sidebarMenu-popup > .subviewbutton[data-l10n-id="sidebar-menu-close"] {
-  list-style-image: url("./../images/dismiss.svg") !important;
+#sidebar-reverse-position:is(menuitem) {
+  --menuitem-image: var(--uc-sidebar-icon-reverse);
+}
+#sidebarMenu-popup > *:is(menuitem)[data-l10n-id="sidebar-menu-close"] {
+  --menuitem-image: url("./../images/dismiss.svg");
 }

@@ -164,3 +164,10 @@ menuitem.searchbar-clear-history {
 .unified-extensions-context-menu-report-extension {
   --menuitem-image: url("./../images/share.svg");
 }
+/*= urlbarView-result-menu ===================================================*/
+.urlbarView-result-menuitem[data-command="dismiss"] {
+  --menuitem-image: url("./../images/delete.svg");
+}
+.urlbarView-result-menuitem[data-command="help"] {
+  --menuitem-image: url("./../images/info.svg");
+}

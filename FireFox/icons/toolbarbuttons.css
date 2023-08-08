@@ -116,6 +116,9 @@
 #email-link-button {
   list-style-image: url("./../images/mail.svg") !important;
 }
+#logins-button {
+  list-style-image: url("./../images/login.svg") !important;
+}
 #sidebar-button,
 #sidebar-button:-moz-locale-dir(ltr):not([positionend]),
 #sidebar-button:-moz-locale-dir(rtl)[positionend] {
