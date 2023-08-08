@@ -57,8 +57,6 @@
 @import "./icons/toolbarbuttons.css";
 /** Libray Menu **********************************************************************/
 @import "./icons/library.css";
-/** Others UI ************************************************************************/
-@import "./counter/index.css";
 /** Auto Hide ************************************************************************/
 @import "./autohide/index.css";
 
@@ -78,3 +76,41 @@
 @charset "UTF-8";
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 @namespace html "http://www.w3.org/1999/xhtml";
+
+
+@media (width <= 630px) {
+  .end-controls {
+    grid-template-columns: 1fr 2fr 1fr 1fr !important;
+    grid-template-areas: "audio audio-scrubber closedcaption fullscreen" !important;
+  }
+  #audio-scrubber {
+    display: inline-block !important;
+  }
+}
+@media (height <= 325px), (width <= 475px) {
+  .end-controls {
+    grid-template-columns: 1fr 2fr 1fr 1fr !important;
+    grid-template-areas: "audio audio-scrubber closedcaption fullscreen" !important;
+  }
+  #closed-caption, #audio-scrubber {
+    display: inline-block !important;
+  }
+}
+@media (width <= 460px) {
+  .end-controls {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "audio closedcaption fullscreen";
+  }
+  #closed-caption {
+    display: inline-block !important;
+  }
+}
+@media (width <= 440px) {
+  .end-controls {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-areas: "audio fullscreen" !important;
+  }
+  #closed-caption, #audio-scrubber {
+    display: none !important;
+  }
+}
