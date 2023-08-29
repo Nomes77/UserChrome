@@ -596,7 +596,7 @@
       outline: 2px solid var(--focus-outline-color, AccentColor) !important;
       outline-offset: var(--focus-outline-offset, 2px) !important;
     }
-    @media (prefers-contrast) {
+    @media (-moz-gtk-csd-available) and (prefers-contrast) {
       menuitem[type="checkbox"]:not([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon {
         /* color will set the border-color on the check due to how HCM works for in-content pages. */
         color: var(--checkbox-checked-border-color, color-mix(in srgb, AccentColor 4%, Field)) !important;
