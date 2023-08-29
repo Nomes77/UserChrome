@@ -42,28 +42,11 @@
     }
   }
   /* Padding */
-  /* Imported from "padding/panel" */
-  :root {
-    --arrowpanel-menuitem-margin: 0 8px; /* Original: 0 8px */
-    --arrowpanel-menuitem-padding-block: 5px !important; /* Original: 8px */
-    --arrowpanel-menuitem-padding-inline: 5px !important; /* Original: 8px */
-    --arrowpanel-menuitem-padding: var(--arrowpanel-menuitem-padding-block) var(--arrowpanel-menuitem-padding-inline) !important; /* Compatibility */
-    --arrowpanel-padding: 0.8em !important; /* Original: 16px or .cui-widget-panel, .cui-widget-panel::part(arrowcontent) => 4px 0 */
-  }
-  :root[uidensity="compact"] {
-    --arrowpanel-menuitem-margin: 0 5px !important;
-    --arrowpanel-menuitem-padding-block: 3px !important;
-    --arrowpanel-menuitem-padding-inline: 3px !important;
-  }
-  :root[uidensity="touch"] {
-    --arrowpanel-menuitem-padding-block: 8px !important; /* Original: 8px */
-    --arrowpanel-menuitem-padding-inline: 8px !important; /* Original: 8px */
-  }
   /* Padding as Arrow Panel */
   :root {
     --uc-menu-background-position: left;
-    --context-menu-background-padding: var(--arrowpanel-menuitem-padding-inline);
-  }  
+    --context-menu-background-padding: 3px /* var(--arrowpanel-menuitem-padding-inline); */
+  }
   :root:-moz-locale-dir(rtl) {
     --uc-menu-background-position: right;
   }
@@ -76,7 +59,7 @@
   menupopup:is(#viewMenuPopup, #maintenanceButtonPopup) > menu:not(.menu-iconic, .in-menulist, [checked="true"]) {
     background-position: var(--uc-menu-background-position) var(--context-menu-background-padding) center !important;
     padding-inline-start: var(--context-menu-background-padding) !important;
-    margin: var(--arrowpanel-menuitem-margin);
+    margin: 0 5px; /* var(--arrowpanel-menuitem-margin); */
   }
   /* Padding - Non Native */
   @media (-moz-platform: windows), (-moz-gtk-csd-available) {
