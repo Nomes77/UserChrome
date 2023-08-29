@@ -1,9 +1,0 @@
-@supports -moz-bool-pref("outlook2003.theme") {
-  @media (-moz-windows-default-theme) {
-    /* CALENDAR & TASK */
-    #today-pane-panel:-moz-lwtheme > .sidebar-header,
-    :root[lwt-tree] #unifinder-searchBox, :root[lwt-tree-brighttext] #unifinder-searchBox,
-    :root[lwt-tree] #task-addition-box {
-      color: var(--win-black-color) !important;
-  }
-}
