@@ -3,43 +3,572 @@
 @import "./src/my-variables.css";
 /*= VARIABLES ==================*/
 @import "./src/variables.css";
-/*= GLOBAL =====================*/
-@import "./src/global.css";
-/*= MESSENGER ==================*/
-@import "./src/messenger.css";
-
-/** GLOBAL SHARED ********************/
-@import "./src/global-shared.css";
-/** CHECKBOX & RADIO *****************/
-@import "./src/checkbox_radio.css";
-/** MENU *****************************/
-@import "./src/menu.css";
-/** FOLDERPANE ***********************/
-@import "./src/folderPane.css";
-/** MAILWINDOW ***********************/
-@import "./src/mailWindow.css";
-/** TREE *****************************/
-@import "./src/tree.css";
-/** TABMAIL **************************/
-@import "./src/tabmail.css";
-/** TOOLBAR **************************/
-@import "./src/toolbar.css";
-/** PANELUI **************************/
-@import "./src/panelUi.css";
-/** MESSAGEWINDOW ********************/
-@import "./src/messageWindow.css";
-/** MESSAGEHEADER ********************/
-@import "./src/messageHeader.css";
-/** MESSENGERCOMPOSE *****************/
-@import "./src/messengerCompose.css";
-/** QUICKFILTERBAR *******************/
-@import "./src/quickFilterBar.css";
-/** CALENDAR & TASK ******************/
-@import "./src/calendar_task.css";
-/** EXTENSIONS ***********************/
-@import "./src/extensions.css";
 
 /** ICONS ****************************/
 @import "./src/icons-variables.css";
 @import "./src/icons.css";
 @import "./src/icons-layout.css";
+
+
+
+@supports -moz-bool-pref("outlook2003.theme") {
+  @media (-moz-windows-default-theme) {
+/* Transform Unified Toolbar and Toolbar */
+    toolbox#navigation-toolbox > #titlebar >  #toolbar-menubar {
+      transform: translateY(calc(-1 * var(--unified-toolbar-content-min-height) - (2 * var(--unified-toolbar-padding))));
+    }
+    toolbox#navigation-toolbox > #titlebar > unified-toolbar {
+      transform: translateY(calc(19px + 3px));
+        /* +3px is needed because margin and padding of buttons is set to 1/2px in stead of 3px of button-margin/padding */
+    }
+/* Toolbar Color */
+    #navigation-toolbox,
+    #mail-toolbox,
+    #compose-toolbox {
+    /* [id^="addressBookTab"] browser[id^="addressBookTabBrowser"] #toolbox,
+    #tabs-toolbar */
+      background-image: var(--win-toolbox-background-image) !important;
+      color: var(--win-black-color) !important;
+    }
+    .mail-toolbox > toolbar:not([type="menubar"]),
+    #compose-toolbox > toolbar:not([type="menubar"]) {
+      background-image: var(--win-toolbar-background-image) !important;
+    }
+/* Toolbar Borders */
+    #navigation-toolbox-background,
+    .mail-toolbox::after,
+    #compose-toolbox {
+      border-bottom: var(--win-window-dark-blue-border) !important;
+    }
+/* Unified Toolbar Layout */
+    unified-toolbar {
+      border-bottom: none !important;
+    }
+    :root[uidensity="compact"] {
+      --unified-toolbar-padding: 2px !important;
+    }
+/* FolderPane and Thread Border */
+    #folderPane,
+    #threadPane {
+      border: var(--win-window-dark-blue-border) !important;
+    }
+    hr#folderPaneSplitter[is="pane-splitter"] {
+      width: 10px !important;
+      border-width: 7px !important;
+      border-color: var(--win-folderpane-border-background) !important;
+    }
+    #messengerBody #mail3PaneTab1 {
+      border: 3px solid var(--win-folderpane-border-background);
+      margin-bottom: -1px;
+    }
+/* Toolbar Layout on Hover, Active, Open */
+    .button.toolbar-button,
+    .button.unified-toolbar-button:not([id^="threadPane"]),
+    .toolbarbutton-1,
+    .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+      transition: none !important;
+    }
+    .button.unified-toolbar-button[aria-pressed="true"]:not([id^="threadPane"]):enabled,
+    .toolbarbutton-1,
+    .toolbarbutton-menubutton-button,
+    .toolbarbutton-menubutton-dropmarker {
+      box-shadow: none !important;
+    }
+    .button.toolbar-button:not([disabled="true"]):hover,
+    .button.unified-toolbar-button:not([id^="threadPane"]):enabled:hover,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-button,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-dropmarker {
+      background-color: transparent !important;
+      background-image: var(--win-toolbarbutton-hover-background) !important;
+      border-color: var(--win-toolbarbutton-border-color) !important;
+    }
+    .button.toolbar-button:not([disabled="true"]):hover:active,
+    .button.unified-toolbar-button:not([id^="threadPane"]):enabled:hover:active,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active > .toolbarbutton-menubutton-button,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active > .toolbarbutton-menubutton-dropmarker {
+      background-color: transparent !important;
+      background-image: var(--win-toolbarbutton-active-background) !important;
+      border-color: var(--win-toolbarbutton-border-color) !important;
+    }
+    .button.toolbar-button[open="true"]:not([disabled="true"]),
+    .button.unified-toolbar-button[aria-pressed="true"]:not([id^="threadPane"]):enabled,
+    .toolbarbutton-1[open="true"]:not([disabled="true"]),
+    .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-button {
+      background-color: transparent !important;
+      background-image: var(--win-toolbarbutton-active-background-open) !important;
+      border-color: var(--win-toolbarbutton-border-color) !important;
+      border-bottom: 1px solid rgb(246, 246, 246) !important;
+    }
+    .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-dropmarker {
+      border-bottom: 0px solid rgb(246, 246, 246) !important;
+    }
+    .unified-toolbar-button[popup]:is(:hover, :hover:active, [aria-pressed="true"])::after {
+      border-color: var(--win-toolbarbutton-border-color) !important;
+    }
+/* Toolbar Icons Layout */
+    .unified-toolbar-button[popup]:not([id^="threadPane"]) {
+      padding-inline-end: var( --button-padding) !important;
+      background-position: unset !important;
+    }
+    .unified-toolbar-button[popup]:not([id^="threadPane"]):is([disabled="true"], :not(:hover)) {
+      background-image: none !important;
+    }
+    .unified-toolbar-button[popup]:not([id^="threadPane"])::after {
+      content: '';
+      border-left: 1px solid transparent;
+      height: 24px;
+      width: 15px;
+      background-size: 12px;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -4px -4px -4px 0;
+    }
+    .unified-toolbar .button-icon {
+      height: 16px;
+      object-fit: contain;
+    }
+    .unified-toolbar .move-to .button-label,
+    .unified-toolbar .move-to .unified-toolbar-button[popup]::after,
+    .unified-toolbar .junk .button-label,
+    .unified-toolbar .delete .button-label {
+      display: none !important;
+    }
+    .unified-toolbar .button:not(:nth-child(1)) {
+      padding: 2px !important;
+      margin: 1px !important;
+    }
+    .unified-toolbar .button:nth-child(1) {
+      padding: 2px !important;
+      margin-right: 1px !important;
+      margin-top: 1px !important;
+      margin-bottom: 1px !important;
+    }
+    .toolbarbutton-1 {
+      height: 20px !important;
+      min-width: 20px !important;
+      margin: 1px !important;
+    }
+    toolbarbutton.toolbarbutton-1:not([is="toolbarbutton-menu-button"]),
+    toolbarbutton.toolbarbutton-menubutton-button {
+      padding: 2px !important;
+    }
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+      padding: 0 !important;
+    }
+    .toolbarbutton-1 .toolbarbutton-menu-dropmarker::part(icon),
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker::part(icon) {
+      width: 8px !important;
+      height: 8px !important;
+      margin: auto !important;
+    }
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker::before,
+    #button-print > .toolbarbutton-text,
+    #button-file > .toolbarbutton-text,
+    #button-file > dropmarker {
+      display: none !important;
+    }
+    .inline-toolbar toolbarpaletteitem toolbarseparator,
+    .inline-toolbar > toolbarseparator {
+      height: 20px !important;
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+    }
+    .chromeclass-toolbar toolbarseparator {
+      min-width: 1.5px !important;
+      background-image: linear-gradient(to right, rgb(70, 105, 170), rgb(245, 250, 255)) !important;
+    }
+/* Menubar Layout on Hover, Active, Open */
+    :root {
+      --menu-item-margin: 0 3px !important;
+      --menu-item-padding: 3px !important;
+    }
+    :root[uidensity="compact"] {
+      --menu-item-margin: 0 1px !important;
+      --menu-item-padding: 1px !important;
+    }
+    :root[uidensity="touch"] {
+      --menu-item-padding: 6px !important;
+    }
+    :root[uidensity="compact"] menupopup {
+      --arrowpanel-padding: 1px 0 !important;
+    }
+    menupopup {
+      --arrowpanel-padding: 3px 0 !important;
+    }
+    menubar > menu {
+      border: 1px solid transparent;
+    }
+    #menubar-items > #mail-menubar > menu {
+      appearance: none !important;
+    }
+    menubar > menu[_moz-menuactive="true"]:not([disabled="true"]) {
+      background-color: transparent !important;
+      background-image: var(--win-toolbarbutton-hover-background) !important;
+      border-color: var(--win-toolbarbutton-border-color) !important;
+    }
+    menubar > menu[_moz-menuactive="true"][open="true"]:not([disabled="true"]) {
+      background-color: transparent !important;
+      background-image: var(--win-toolbarbutton-active-background-open) !important;
+      border-color: var(--win-toolbarbutton-border-color) !important;
+      border-bottom: 1px solid rgb(246, 246, 246) !important;
+    }
+/* MenuPopup Layout */
+    :is(toolbar, popupset) menupopup > menu::after {
+      height: 16px;
+    }
+    menupopup {
+        --panel-border-color: var(--win-toolbarbutton-border-color) !important;
+    }
+    :is(panel, menupopup)::part(content) {
+      border: 1px solid var(--win-toolbarbutton-border-color) !important;
+    }
+    menupopup > :is(menu, menuitem) menu-accel, .menu-iconic-accel,
+    menu-accel, .menu-iconic-accel {
+      margin-inline-end: 3px !important;
+      margin-inline: 2em 3px !important;
+    }
+    menupopup > :is(menu, menuitem) {
+      border: 1px solid transparent !important;
+      border-radius: 0px !important;
+    }
+    menupopup > :is(menu, menuitem)[_moz-menuactive="true"]:not([disabled="true"]) {
+      background-color: var(--win-menuitem-hover-background-color) !important;
+      border: 1px solid var(--win-menuitem-border-color) !important;
+    }
+/* Padding of ToolBar */
+    #navigation-toolbox #toolbar-menubar {
+      padding-left: 4px;
+    }
+    #compose-toolbox > toolbar[type="menubar"],
+    #mail-toolbox > toolbar[type="menubar"] {
+      padding-left: 2px;
+    }
+
+
+/* Tree Variables */
+    :root {
+      --treeitem-border-radius: 0px !important;
+    }
+    @media not (prefers-contrast) {
+      :root {
+        --foldertree-background: rgb(255, 255, 255) !important;
+        --folderpane-unread-new-count-background: rgb(0, 0, 255) !important;
+        --treeitem-background-selected: rgb(236, 233, 216) !important;
+        --treeitem-background-hover: transparent !important;
+        --treeitem-text-active: rgb(255, 255, 255) !important;
+        --treeitem-background-active: rgb(0, 120, 215) !important;
+        --listbox-selected-bg: rgb(240, 240, 240) !important;
+        --listbox-focused-selected-bg: rgb(0, 120, 215) !important;
+        --listbox-hover: transparent !important;
+        --tree-view-bg: rgb(255, 255, 255) !important;
+        --tree-view-color: rgb(0, 0, 0) !important;
+        --tree-view-header-bg: rgb(240, 240, 240) !important;
+        --tree-view-header-hover-bg: transparent !important;
+        --tree-view-header-hover-active-bg: rgb(0, 0, 0) !important;
+        --tree-view-header-border-color: rgb(208, 208, 208) !important;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --foldertree-background: var(--color-gray-90) !important;
+          --folderpane-unread-new-count-background: var(--color-blue-50) !important;
+          --treeitem-background-selected: var(--color-gray-70) !important;
+          --treeitem-background-hover: transparent !important;
+          --treeitem-text-active: rgb(255, 255, 255) !important;
+          --treeitem-background-active: rgb(0, 120, 215) !important;
+          --listbox-selected-bg: var(--color-gray-60) !important;
+          --listbox-focused-selected-bg: rgb(0, 120, 215) !important;
+          --tree-view-bg: var(--color-gray-90) !important;
+          --tree-view-color: rgb(255, 255, 255) !important;
+          --tree-view-header-bg: var(--color-gray-40) !important;
+          --tree-view-header-hover-bg: transparent !important;
+          --tree-view-header-hover-active-bg: rgb(0, 0, 0) !important;
+          --tree-view-header-border-color: var(--splitter-color) !important;
+        }
+      }
+    }
+    :root {
+      --listbox-selected-outline: none;
+      --tree-header-table-height: 22px !important;
+      --tree-header-cell-padding: 6px;
+      --tree-header-cell-indent: 0;
+      --list-item-min-height: 26px;
+      --list-item-buttons-size: 22px;
+    }
+    :root[uidensity="compact"] {
+      --tree-header-table-height: 18px !important;
+    }
+    :root[uidensity="touch"] {
+      --tree-header-table-height: 26px !important;
+    }
+/* Folder Tree Pane colors */
+    li.selected > .container,
+    li:not(.selected) > .container:hover,
+    li.context-menu-target:not(.selected) > .container,
+    li.context-menu-target:not(.selected) > .container:hover,
+    #folderTree:focus-within li.selected > .container,
+    #folderTree li.drop-target > .container {
+      background-color: transparent !important;
+      outline: unset !important;
+    }
+    li.selected > .container > .name {
+      background-color: var(--treeitem-background-selected);
+    }
+    li:not(.selected) > .container:hover > .name {
+      background-color: var(--treeitem-background-hover);
+    }
+    #folderTree:focus-within li.selected > .container > .name ,
+    #folderTree li.drop-target > .container > .name {
+      background-color: var(--treeitem-background-active);
+      color: var(--treeitem-text-active);
+    }
+    #folderTree:focus-within li.selected > .container .name {
+      outline: 1px dashed rgb(255, 135, 40);
+      outline-offset: -1px;
+    }
+    #folderTree li > .container .name {
+      /* apply background-color and outline only to the folder name */
+      flex: unset !important;
+      margin-inline: 0 7px !important;
+      padding: 0 3px !important;
+    }
+    .new-messages > .container > .name {
+      /* don't change color on new messages */
+      color: unset !important;
+    }
+/* Folder Tree Pane icons layout */
+    #folderTree .icon {
+      background-size: contain;
+    }
+    #folderTree li.children > .container > .twisty {
+      background: no-repeat center;
+    }
+    #folderTree li > .container .twisty-icon {
+      display: none;
+    }
+    #folderTree li.children.collapsed > .container .twisty-icon,
+    #folderTree li.children.collapsed:dir(rtl) > .container .twisty-icon {
+      transform: none !important;
+    }
+    .new-messages:not([data-server-type]) > .container > .icon::after {
+      content: none !important;
+    }
+/* Opacity of Folder items */
+    #folderTree li[data-is-paused="true"] > .container > .icon,
+    #folderTree li[data-is-paused="true"] > .container > .name,
+    #folderTree li[data-is-paused="true"] ul > li > .container > .icon,
+    #folderTree li[data-is-paused="true"] ul > li > .container > .name {
+      opacity: 0.6;
+    }
+    .noselect-folder > .container > .name {
+      font-style: italic;
+      opacity: 0.6;
+    }
+    #folderTree:focus-within li.noselect-folder.selected > .container > .name {
+      opacity: 0.8;
+    }
+/* Table Header Bar */
+    :root {
+      --thread-pane-header-padding: 0px 6px !important;
+    }
+    :root[uidensity="touch"] {
+      --thread-pane-header-padding: 3px 9px !imortant;
+    }
+    .list-header-bar:not([hidden]) {
+      color: rgb(255, 255, 255) !important;
+      border-bottom: none !important;
+      background-image: linear-gradient(rgb(89, 135, 214), rgb(0, 45, 150));
+    }
+    .list-header-title {
+      font-size: 1.4rem !important;
+    }
+    #threadPaneQuickFilterButton {
+      background-image: var(--icon-filter);
+    }
+    #threadPaneDisplayButton {
+      background-image: var(--icon-display-options);
+    }
+/* Table Header Columns */
+    th[is="tree-view-table-header-cell"] {
+      color: rgb(0, 0, 0) !important;
+      background-color: var(--tree-view-header-bg) !important;
+    }
+    thead[is="tree-view-table-header"]::after {
+      border-bottom: 3px solid !important;
+      border-image: linear-gradient(rgb(220, 220, 220), rgb(208, 208, 208), rgb(192, 192, 192));
+      border-image-slice: 0 0 100%;
+    }
+    @media (prefers-color-scheme: dark) {
+      thead[is="tree-view-table-header"]::after {
+        border-image: linear-gradient(rgb(190, 190, 190), rgb(202, 202, 202), rgb(218, 218, 218));
+        border-image-slice: 0 0 100%;
+      }
+    }
+    .tree-table-cell-container button:hover:active {
+      color: rgb(255, 255, 255) !important;
+    }
+    thead[is="tree-view-table-header"] + tbody > tr > td {
+      height: 2px !important;
+    }
+    th[is="tree-view-table-header-cell"][data-type="icon"] {
+      width: 20px !important;
+      min-width: 20px !important;
+    }
+    th[is="tree-view-table-header-cell"][data-type="icon"] .tree-table-cell-container button.sorting {
+      padding-inline-end: unset !important;
+    }
+    #unreadButtonColHeader img {
+      width: 12px;
+      height: 12px;
+    }
+    th[is="tree-view-table-column-picker"] {
+      width: 0 !important;
+      min-width: 0 !important;
+    }
+    th[is="tree-view-table-column-picker"] > button {
+      display: none !important;
+    }
+/* Table Row Icon Colums Layout */
+    table[is="tree-view-table"] td:is(.selectcol-column, .tree-view-row-thread, .tree-view-row-flag, .tree-view-row-spam, .tree-view-row-unread, .tree-view-row-delete, .attachmentcol-column) {
+      padding: 0 3px !important;
+    }
+    .tree-view-row-thread img,
+    .tree-view-row-flag img,
+    .tree-view-row-spam img,
+    .tree-view-row-unread img,
+    .tree-view-row-delete img,
+    .attachmentcol-column img {
+      margin-inline: auto !important;
+    }
+    .tree-view-row-unread img {
+      width: 16px;
+      height: 16px;
+    }
+    .tree-view-row-thread img,
+    .tree-view-row-flag img,
+    :is(.tree-view-row-spam button, .button-spam),
+    .tree-view-row-unread button,
+    .tree-view-row-delete button,
+    :is(.attachmentcol-column img, .attachment-icon) {
+      opacity: 1 !important;
+    }
+    tr:is([is="thread-row"], [is="thread-card"]) .twisty {
+      width: 16px;
+      height: 16px;
+    }
+    #threadTree tr[is="thread-card"] button.twisty {
+      width: 12px;
+      height: 13px;
+      min-width: 12px;
+      min-height: 13px;
+    }
+    tr:is([is="thread-row"], [is="thread-card"]) .twisty-icon {
+      width: 12px;
+      height: 12px;
+      margin: 1px;
+    }
+    tr:is([is="thread-row"], [is="thread-card"]).children.collapsed .twisty-icon,
+    tr:is([is="thread-row"], [is="thread-card"]).children.collapsed:dir(rtl) .twisty-icon {
+      transform: none !important;
+    }
+    /* Subject Column Layout */
+    #subjectColButton {
+      padding-inline-start: var(--tree-header-cell-padding) !important;
+      text-indent: var(--tree-header-cell-indent) !important;
+    }
+    .threaded #subjectColButton {
+      padding-inline-start: calc(var(--tree-header-cell-padding) + 16px) !important;
+    }
+    tr[is="thread-row"] td > .thread-container {
+      padding: 0 6px !important;
+    }
+    tr[is="thread-row"] .subject-line {
+      margin-inline-start: calc(16px * var(--thread-level));
+    }
+    tr[is="thread-row"] .subject-line img {
+      display: none !important;
+    }
+    /* Vertical Cards Layout */
+    tr[data-properties~="new"] .thread-card-container:after {
+      display: none !important
+    }
+    #threadTree [data-properties~="new"]:not(.selected) .thread-card-container :is(.subject, .date) {
+      color: currentColor !important;
+    }
+/* Table Row Outline and Animations */
+    :not(.multi-selected) [is="tree-view-table-body"]:focus-within > .selected.current,
+    .multi-selected [is="tree-view-table-body"]:focus-within > .selected.current,
+    :not(.multi-selected) [is="tree-view-table-body"]:focus > .selected.current,
+    .multi-selected [is="tree-view-table-body"]:focus > .selected.current {
+      outline: 1px dashed rgb(255, 135, 40) !important;
+      outline-offset: -1px;
+    }
+    :not(.multi-selected) [is="tree-view-table-body"] > .selected.current,
+    .multi-selected [is="tree-view-table-body"] > .selected.current {
+      outline: unset !important;
+    }
+    table[is="tree-view-table"] tbody tr {
+      transition: unset !important;
+    }
+    table[is="tree-view-table"] tbody tr img {
+      transition: unset !important;
+    }
+
+/* Message Header Layout */
+    #messagepanebox > #singleMessage {
+      background-color: rgb(240, 240, 240);
+    }
+    #messageHeader
+      color: black !important;
+      opacity: 1;
+    }
+    .message-header-label {
+      align-self: center !important;
+      font-size: 11px;
+      font-family: Arial;
+      opacity: 1 !important;
+      color: rgb(0,0,0) !important;
+    }
+    .message-header-container,
+    .message-header-extra-container {
+      row-gap: 3px !important;
+    }
+    #expandedsubjectBox {
+      font-weight: unset !important;
+    }
+    .header-row {
+      line-height: unset !important;
+    }
+    .recipient-address-book-button img {
+      fill: transparent !important;
+      stroke: transparent !important;
+    }
+    .header-recipient:hover .recipient-address-book-button img {
+      opacity: 1 !important;
+    }
+    #mail-notification-top {
+      border-bottom: 1px solid rgb(130, 135, 145) !important;
+    }
+    [message-bar-type="infobar"]:first-of-type {
+      margin-top: 0 !important;
+    }
+    .container.infobar {
+      max-height: 20px;
+    }
+    .container.infobar button.notification-button.button-menu-list {
+      padding: 5px 2px !important;
+      padding-block: 2px !important;
+      padding-inline-end: 16px !important;
+      background-position: right 2px center !important;
+      height: 18px;
+      min-height: 16px !important;
+    }
+    .container.infobar .notification-close {
+      background-size: 18px !important;
+      height: 18px !important;
+      width: 18px !important;
+    }
+  }
+}
