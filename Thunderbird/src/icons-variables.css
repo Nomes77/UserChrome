@@ -1,0 +1,180 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  @media (-moz-windows-default-theme) {
+    :root {
+      --outl-icon-account-settings: url("./../../images/accounts.ico");
+      /* --outl-icon-add: url("chrome://messenger/skin/icons/new/compact/add.svg"); */
+      --outl-icon-address-book: url("./../../images/address-book.ico");
+      /* --outl-icon-app-menu: url("chrome://messenger/skin/icons/new/compact/app-menu.svg"); */
+      /* --outl-icon-app-meun-badged: url("chrome://messenger/skin/icons/new/compact/app-meun-badged.svg"); */
+      --outl-icon-archive: url("./../../images/ico/archive-auto.ico");
+      --outl-icon-attachment: url("./../../images/attachment.png");
+      --outl-icon-avatar: url("./../../images/avatar.png");
+      /* --outl-icon-calendar-today: url("chrome://messenger/skin/icons/new/compact/calendar-today.svg"); */
+      --outl-icon-calendar: url("./../../images/calender.ico");
+      --outl-icon-chat: url("chrome://messenger/skin/icons/new/compact/chat.svg");
+      --outl-icon-check: url("./../../images/check.svg");
+      /* --outl-icon-close: url("chrome://messenger/skin/icons/new/compact/close.svg"); */
+      --outl-icon-collapse: url("./../../images/chevron-rtl.gif");
+      --outl-icon-compress: url("./../../images/compress.ico");
+      --outl-icon-contact: url("./../../images/contact.gif");
+      /* --outl-icon-conversation: url("chrome://messenger/skin/icons/new/compact/conversation.svg"); */
+      /* --outl-icon-copy: url("chrome://messenger/skin/icons/new/compact/copy.svg"); */
+      /* --outl-icon-cut: url("chrome://messenger/skin/icons/new/compact/cut.svg"); */
+      --outl-icon-delete: url("./../../images/delete.png");
+      /* --outl-icon-download: url("chrome://messenger/skin/icons/new/compact/download.svg"); */
+      --outl-icon-draft: url("./../../images/concepts.ico");
+      --outl-icon-error: url("./../../images/error.ico");
+      /* --outl-icon-export: url("chrome://messenger/skin/icons/new/compact/export.svg"); */
+      /* --outl-icon-extension: url("chrome://messenger/skin/icons/new/compact/extension.svg"); */
+      --outl-icon-eye: url("./../../images/eye.png");
+      /* --outl-icon-features: url("chrome://messenger/skin/icons/new/compact/features.svg"); */
+      --outl-icon-file: url("./../../images/file.png");
+      --outl-icon-filter: url("./../../images/filter.png");
+      --outl-icon-folder-filter: url("./../../images/search-folder.ico");
+      --outl-icon-folder-rss: url("./../../images/feeds-folder.ico");
+      --outl-icon-folder-save: url("./../../images/save.ico");
+      --outl-icon-folder: url("./../../images/folder.ico");
+      --outl-icon-forward: url("./../../images/forward.gif");
+      --outl-icon-get-mail: url("./../../images/sent-get.ico");
+      --outl-icon-globe-secure: url("./../../images/globe-secure.ico");
+      --outl-icon-globe: url("./../../images/globe.ico");
+      /* --outl-icon-handshake: url("chrome://messenger/skin/icons/new/compact/handshake.svg"); */
+      --outl-icon-help: url("./../../images/help.ico");
+      --outl-icon-home: url("./../../images/home.ico");
+      --outl-icon-logbook: url("./../../images/logboek.ico");
+      /* --outl-icon-id: url("chrome://messenger/skin/icons/new/compact/id.svg"); */
+      /* --outl-icon-import: url("chrome://messenger/skin/icons/new/compact/import.svg"); */
+      --outl-icon-inbox: url("./../../images/inbox.ico");
+      --outl-icon-info: url("./../../images/info.ico");
+      --outl-icon-junk: url("./../../images/spam.png");
+      --outl-icon-no-junk: url("./../../images/no-spam.png");
+      --outl-icon-key: url("./../../images/signed-encrypted.gif");
+      --outl-icon-key-encrypted: url("./../../images/smime-encrypted.gif");
+      --outl-icon-key-signed: url("./../../images/smime-signed.gif");
+      --outl-icon-key-badsigned: url("./../../images/smime-badsign.gif");
+      --outl-icon-key-unknown: url("./../../images/smime-unknown.gif");
+      --outl-icon-key-warning: url("./../../images/smime-warning.gif");
+      /* --outl-icon-link: url("chrome://messenger/skin/icons/new/compact/link.svg"); */
+      --outl-icon-layout: url("./../../images/layout.gif");
+      /* --outl-icon-mail-secure: url("chrome://messenger/skin/icons/new/compact/mail-secure.svg"); */
+      --outl-icon-mail: url("./../../images/mail.ico");
+      /* --outl-icon-nav-back: url("chrome://messenger/skin/icons/new/compact/nav-back.svg"); */
+      --outl-icon-nav-down-unread: url("./../../images/item-down.png");
+      --outl-icon-nav-down: url("./../../images/item-down.png");
+      /* --outl-icon-nav-forward: url("chrome://messenger/skin/icons/new/compact/nav-forward.svg"); */
+      /* --outl-icon-nav-left: url("chrome://messenger/skin/icons/new/compact/nav-left.svg"); */
+      /* --outl-icon-nav-right: url("chrome://messenger/skin/icons/new/compact/nav-right.svg"); */
+      --outl-icon-nav-up-unread: url("./../../images/item-up.png");
+      --outl-icon-nav-up: url("./../../images/item-up.png");
+      --outl-icon-new-address-book: url("./../../images/address-book.ico");
+      /* --outl-icon-new-chat: url("chrome://messenger/skin/icons/new/compact/new-chat.svg"); */
+      --outl-icon-new-contact: url("./../../images/contact.gif");
+      --outl-icon-new-event: url("./../../images/calender.ico");
+      --outl-icon-new-mail: url("./../../images/new-mail.gif");
+      --outl-icon-new-task: url("./../../images/task.gif");
+      --outl-icon-new-user-list: url("./../../images/contacts-group.gif");
+      --outl-icon-newsletter: url("./../../images/newsletter.ico");
+      /* --outl-icon-offline: url("chrome://messenger/skin/icons/new/compact/offline.svg"); */
+      /* --outl-icon-online: url("chrome://messenger/skin/icons/new/compact/online.svg"); */
+      --outl-icon-open: url("./../../images/open.ico");
+      --outl-icon-open-down: url("./../../images/open-down.ico");
+      --outl-icon-outbox: url("./../../images/outbox.ico");
+      /* --outl-icon-overflow: url("chrome://messenger/skin/icons/new/compact/overflow.svg"); */
+      /* --outl-icon-paint-brush: url("chrome://messenger/skin/icons/new/compact/paint-brush.svg"); */
+      /* --outl-icon-paste: url("chrome://messenger/skin/icons/new/compact/paste.svg"); */
+      --outl-icon-pencil: url("./../../images/pencil.ico");
+      /* --outl-icon-pin: url("chrome://messenger/skin/icons/new/compact/pin.svg"); */
+      --outl-icon-print: url("./../../images/print.png");
+      --outl-icon-question: url("./../../images/question.png");
+      --outl-icon-quit: url("./../../images/quit.ico");
+      /* --outl-icon-redirect: url("chrome://messenger/skin/icons/new/compact/redirect.svg"); */
+      --outl-icon-remove: url("./../../images/delete.ico");
+      --outl-icon-reply-all: url("./../../images/reply-all.png");
+      --outl-icon-reply-list: url("./../../images/reply-all.png");
+      --outl-icon-reply: url("./../../images/reply.gif");
+      --outl-icon-rss: url("./../../images/feeds.ico");
+      --outl-icon-save: url("./../../images/save.ico");
+      --outl-icon-search: url("./../../images/search.ico");
+      --outl-icon-search-in-folder: url("./../../images/search-in-folder.ico");
+      --outl-icon-sent: url("./../../images/sent-folder.ico");
+      --outl-icon-server: url("./../../images/server.ico");
+      /* --outl-icon-settings: url("chrome://messenger/skin/icons/new/compact/settings.svg"); */
+      --outl-icon-shortcut: url("./../../images/shortcut.ico");
+      /* --outl-icon-spaces-menu: url("chrome://messenger/skin/icons/new/compact/spaces-menu.svg"); */
+      --outl-icon-spam: url("./../../images/spam-folder.ico");
+      --outl-icon-star: url("./../../images/star-folder.ico");
+      /* --outl-icon-sync: url("chrome://messenger/skin/icons/new/compact/sync.svg"); */
+      --outl-icon-tag: url("./../../images/tag.png");
+      --outl-icon-tasks: url("./../../images/tasks.ico");
+      --outl-icon-template: url("./../../images/concepts.ico");
+      --outl-icon-thread: url("./../../images/eye.png");
+      --outl-icon-thread-ignored: url("./../../images/thread-ignored.png");
+      --outl-icon-subthread-ignored: url("./../../images/thread-ignored.png");
+      /* --outl-icon-tools: url("chrome://messenger/skin/icons/new/compact/tools.svg"); */
+      --outl-icon-trash: url("./../../images/trash.ico");
+      --outl-icon-unread: url("./../../images/unread.gif");
+      --outl-icon-user-list: url("./../../images/contacts-group.gif");
+      --outl-icon-twisty-open: url("./../../images/twisty-open.png");
+      --outl-icon-twisty-closed: url("./../../images/twisty-closed.png");
+      --outl-icon-warning: url("./../../images/ico/warning.ico");
+
+      /* --outl-icon-calendar-empty: url("chrome://messenger/skin/icons/new/calendar-empty.svg"); */
+      /* --outl-icon-loading: url("chrome://messenger/skin/icons/new/loading.svg"); */
+
+      --outl-icon-nav-down-sm: url("./../../images/arrow-dn.svg");
+      --outl-icon-nav-left-sm: url("./../../images/arrow-left.svg");
+      --outl-icon-nav-right-sm: url("./../../images/arrow-right.svg");
+      /* --outl-icon-nav-up-sm: url("chrome://messenger/skin/icons/new/nav-up-sm.svg"); */
+      /* --outl-icon-column-menu: url("chrome://messenger/skin/icons/new/column-menu.svg"); */
+      --outl-icon-attachment-sm: url("./../../images/attachment-sm.gif");
+      /* --outl-icon-spam-sm: url("chrome://messenger/skin/icons/new/spam-sm.svg"); */
+      /* --outl-icon-star-sm: url("chrome://messenger/skin/icons/new/star-sm.svg"); */
+      /* --outl-icon-thread-sm: url("chrome://messenger/skin/icons/new/thread-sm.svg"); */
+      /* --outl-icon-trash-sm: url("chrome://messenger/skin/icons/new/trash-sm.svg"); */
+      --outl-icon-unread-sm: url("./../../images/unread-sm.ico");
+      --outl-icon-unread: url("./../../images/unread.gif");
+      --outl-icon-read: url("./../../images/read.gif");
+      --outl-icon-forward-col:  url("./../../images/forward.gif");
+      --outl-icon-reply-col:  url("./../../images/reply.gif");
+      /* --outl-icon-redirect-col: url("chrome://messenger/skin/icons/new/compact/redirect-col.svg"); */
+      /* --outl-icon-forward-redirect-col: url("chrome://messenger/skin/icons/new/compact/forward-redirect-col.svg"); */
+      /* --outl-icon-reply-forward-col: url("chrome://messenger/skin/icons/new/compact/reply-forward-col.svg"); */
+      /* --outl-icon-reply-forward-redirect-col: url("chrome://messenger/skin/icons/new/compact/reply-forward-redirect-col.svg"); */
+      /* --outl-icon-reply-redirect-col: url("chrome://messenger/skin/icons/new/compact/reply-redirect-col.svg"); */
+      /* --outl-icon-status-away: url("chrome://messenger/skin/icons/new/status-away.svg"); */
+      /* --outl-icon-status-away-sm: url("chrome://messenger/skin/icons/new/status-away-sm.svg"); */
+      /* --outl-icon-status-idle: url("chrome://messenger/skin/icons/new/status-idle.svg"); */
+      /* --outl-icon-status-idle-sm: url("chrome://messenger/skin/icons/new/status-idle-sm.svg"); */
+      /* --outl-icon-status-offline: url("chrome://messenger/skin/icons/new/status-offline.svg"); */
+      /* --outl-icon-status-offline-sm: url("chrome://messenger/skin/icons/new/status-offline-sm.svg"); */
+      /* --outl-icon-status-online: url("chrome://messenger/skin/icons/new/status-online.svg"); */
+      /* --outl-icon-status-online-sm: url("chrome://messenger/skin/icons/new/status-online-sm.svg"); */
+
+      --outl-spaces-icon-mail: url("./../../images/mail.ico");
+      --outl-spaces-icon-address-book: url("./../../images/contact.gif");
+      --outl-spaces-icon-calendar: url("./../../images/calender.ico");
+      --outl-spaces-icon-tasks: url("./../../images/tasks.ico");
+      /* --outl-spaces-icon-chat: url("chrome://messenger/skin/icons/new/normal/chat.svg"); */
+      /* --outl-spaces-icon-overflow: url("chrome://messenger/skin/icons/new/normal/overflow.svg"); */
+      /* --outl-spaces-icon-settings: url("chrome://messenger/skin/icons/new/normal/settings.svg"); */
+      --outl-spaces-icon-collapse: url("./../../images/chevron-rtl.gif");
+
+      --outl-addressbook-tree-ab: var(--outl-icon-address-book);
+      --outl-addressbook-tree-list: var(--outl-icon-user-list);
+      --outl-addressbook-tree-remote: var(--outl-icon-globe);
+
+      --outl-account-central-address-book: url("./../../images/address-book.ico");
+      --outl-account-central-calendar: url("./../../images/calender.ico");
+      /* --outl-account-central-chat: url("chrome://messenger/skin/icons/new/normal/chat.svg"); */
+      --outl-account-central-folder: url("./../../images/home.ico");
+      --outl-account-central-globe: url("./../../images/globe.ico");
+      /* --outl-account-central-link: url("chrome://messenger/skin/icons/new/normal/link.svg"); */
+      --outl-account-central-mail: url("./../../images/mail.ico");
+      /* --outl-account-central-newsletter: url("chrome://messenger/skin/icons/new/normal/newsletter.svg"); */
+      --outl-account-central-rss: url("./../../images/feeds.ico");
+
+      --outl-icon-compose: url("./../../images/compose-toolbar.png");
+      --outl-icon-format: url("./../../images/format-buttons.png");
+    }
+  }
+}
