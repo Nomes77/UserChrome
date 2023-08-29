@@ -5,7 +5,7 @@ menupopup menupopup[emptyplacesresult] .menu-text,
   margin-inline-start: 0 !important;
 }
 /* Windows */
-@media (-moz-platform: windows-win10) {
+@media (-moz-platform: windows) {
   /* Bookmark Popup - None icon menu */
   menupopup:is(#BMB_bookmarksPopup)[placespopup="true"]  menuitem:not(.menuitem-iconic, [disabled="true"]),
   menupopup:is(#BMB_bookmarksPopup)[placespopup="true"]  menu:not(.menu-iconic),
