@@ -1,7 +1,5 @@
 /* Firefox Proton userChrome.css tweaks **********************************************/
 /* Github: https://github.com/black7375/Firefox-UI-Fix/blob/master/userChrome.css ****/
-/** Default Theme - Built In Color ***************************************************/
-@import "./theme/built_in_color.css";
 /** Default Theme - Contrast *********************************************************/
 @import "./theme/built_in.css";
 /** Compatibility Fixes **************************************************************/
