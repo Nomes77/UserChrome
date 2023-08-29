@@ -14,6 +14,8 @@
         --menu-icon-opacity: 1;
       }
     }
+  }
+  @media (-moz-gtk-csd-available) {
     /* For Windows 10, prevent using native OS drawing of certain menu elements,
        especially background colors and shadows. */
     menu,

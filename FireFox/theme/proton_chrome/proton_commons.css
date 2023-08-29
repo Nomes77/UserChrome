@@ -453,7 +453,7 @@
     color: var(--in-content-text-color) !important;
   }
   /*- Each OS ------------------------------------------------------------*/
-  @media (-moz-platform: windows-win7), (-moz-platform: windows-win8), (-moz-platform: windows-win10) {
+  @media (-moz-platform: windows) {
     xul|checkbox,
     xul|radio {
       padding-inline-start: 0 !important;

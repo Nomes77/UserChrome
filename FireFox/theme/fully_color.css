@@ -9,7 +9,7 @@
     --menu-disabled-color: color-mix(in srgb, var(--menu-color) 40%, transparent) !important;
     --menuitem-disabled-hover-background-color: color-mix(in srgb, var(--menuitem-hover-background-color) 40%, transparent);
 }
-@media (-moz-windows-non-native-menus) {
+@media (-moz-platform: windows) {
   :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
     menupopup:not(.in-menulist) {
       /* Above FF v105 #466 */
@@ -61,7 +61,7 @@
       background-color: transparent !important;
   }
 }
-@media (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
+@media (-moz-platform: windows) and (prefers-color-scheme: light) {
   :root[style*="background-noodles-right"] menupopup {
     --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
   }
@@ -116,10 +116,10 @@
       > .menu-iconic-left > .menu-iconic-icon {
         background-color: transparent !important;
     }
-    @media (-moz-windows-non-native-menus) and (prefers-color-scheme: light) {
-      :root[style*="background-noodles-right"] menupopup {
-        --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
-      }
+  }
+  @media ((-moz-gtk-csd-available) and (prefers-color-scheme: light) {
+    :root[style*="background-noodles-right"] menupopup {
+      --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
     }
   }
 }

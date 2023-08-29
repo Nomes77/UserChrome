@@ -5,7 +5,7 @@
 :root[style*="--lwt-accent-color: rgb(237, 237, 241); --lwt-text-color: rgba(21, 20, 26);"] {
   --lwt-accent-color: rgb(229, 229, 235) !important; /* Original: rgb(240, 240, 244) */
 }
-@media (-moz-platform: windows-win10) {
+@media (-moz-platform: windows) {
   :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"]) #navigator-toolbox,
   :root[style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"] #navigator-toolbox,
   :root[style*="--lwt-accent-color: rgb(237, 237, 241); --lwt-text-color: rgba(21, 20, 26);"] #navigator-toolbox {
