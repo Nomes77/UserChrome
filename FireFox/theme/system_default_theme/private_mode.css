@@ -164,7 +164,6 @@
   :root[privatebrowsingmode="temporary"],
   :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"])[privatebrowsingmode="temporary"],
   :root[style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"][privatebrowsingmode="temporary"],
-  :root[style*="--lwt-accent-color: rgb(237, 237, 241); --lwt-text-color: rgba(21, 20, 26);"][privatebrowsingmode="temporary"],
   :root[lwtheme-mozlightdark][lwthemetextcolor="bright"][privatebrowsingmode="temporary"],
   :root[style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"][privatebrowsingmode="temporary"] {
     --lwt-additional-images: none !important;
