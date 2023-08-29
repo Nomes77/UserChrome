@@ -11,7 +11,7 @@
   --uc-title-pre-spacer: 25px;
   --uc-title-post-spacer: 30px;
 }
-@media (-moz-platform: windows-win10) {
+@media (-moz-platform: windows) {
   .titlebar-spacer[type="pre-tabs"] {
     width: var(--uc-title-post-spacer) !important;
   }
@@ -19,22 +19,20 @@
     width: var(--uc-title-pre-spacer) !important;
   }
 }
-@media (-moz-gtk-csd-available) {
-  @media (-moz-gtk-csd-reversed-placement) {
-    .titlebar-spacer[type="pre-tabs"] {
-      width: var(--uc-title-pre-spacer) !important;
-    }
-    .titlebar-spacer[type="post-tabs"] {
-      width: var(--uc-title-post-spacer) !important;
-    }
+@media (-moz-gtk-csd-available) and (-moz-gtk-csd-reversed-placement) {
+  .titlebar-spacer[type="pre-tabs"] {
+    width: var(--uc-title-pre-spacer) !important;
   }
-  @media (-moz-gtk-csd-reversed-placement: 0) {
-    .titlebar-spacer[type="pre-tabs"] {
-      width: var(--uc-title-post-spacer) !important;
-    }
-    .titlebar-spacer[type="post-tabs"] {
-      width: var(--uc-title-pre-spacer) !important;
-    }
+  .titlebar-spacer[type="post-tabs"] {
+    width: var(--uc-title-post-spacer) !important;
+  }
+}
+@media (-moz-gtk-csd-available) and (-moz-gtk-csd-reversed-placement: 0) {
+  .titlebar-spacer[type="pre-tabs"] {
+    width: var(--uc-title-post-spacer) !important;
+  }
+  .titlebar-spacer[type="post-tabs"] {
+    width: var(--uc-title-pre-spacer) !important;
   }
 }
 /* Tabbar Buttons */

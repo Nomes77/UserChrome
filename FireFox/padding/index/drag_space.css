@@ -4,7 +4,7 @@
     --uc-space-above-tabbar: 8px; /* If you want drag space, set to 8px */
   }
   @supports not -moz-bool-pref("userChrome+Content.autohide.menubar") {
-    @media (-moz-platform: windows-win10) {
+    @media (-moz-platform: windows) {
       :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"]:not([inactive]) {
         height: calc(var(--tab-min-height) + var(--uc-space-above-tabbar) - var(--tabs-navbar-shadow-size)) !important;
       }
@@ -15,7 +15,7 @@
       }
     }
   }
-  @media (-moz-platform: windows-win10), (-moz-gtk-csd-available) {
+  @media (-moz-platform: windows), (-moz-gtk-csd-available) {
     /* Add extra space to titlebar for dragging */
     :root[tabsintitlebar][sizemode="normal"][chromehidden~="menubar"] #TabsToolbar > .toolbar-items,
     :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar > .toolbar-items {

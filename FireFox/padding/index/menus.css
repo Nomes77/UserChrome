@@ -21,7 +21,7 @@ menupopup > menu {
   padding-block: var(--menu-padding) !important; /* Original: 0.5em */
   padding-inline-start: var(--arrowpanel-menuitem-padding-inline) !important;
 }
-@media (-moz-platform: windows-win10) {
+@media (-moz-platform: windows) {
   #ContentSelectDropdown > menupopup > menucaption,
   #ContentSelectDropdown > menupopup > menuitem {
     padding-block: 0 !important;
