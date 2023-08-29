@@ -6,12 +6,14 @@
                regexp("^(((jar:)?file:///)|(chrome://)).*/$") {
   /*= Default Colors - Hard Coded =====================================================*/
   /* Based on chrome://global/skin/in-content/common-shared.css */
+  /* Adding `@media not (prefers-color-scheme: dark) {` because I made changes with the original one using `!important`.
+     For the same reason everything is double. */
   @media not (prefers-color-scheme: dark) {
     :host,
     :root {
       --in-content-page-color: rgb(0, 0, 0) !important; /* rgb(21, 20, 26) */
       --in-content-page-background: rgb(247, 247, 247) !important; /* #fff */
-      --in-content-text-color: rgb(0, 0, 0) !important;
+      --in-content-text-color: var(--in-content-page-color);
       --in-content-deemphasized-text: rgb(113, 113, 113) !important; /* rgb(91, 91, 102) */
       --in-content-box-background: #fff;
       --in-content-box-background-odd: rgba(12, 12, 13, 0.05); /* grey 90 a05 */
@@ -210,7 +212,7 @@
     }
   }
   /*- Menu color #477 ----------------------------------------------------*/
-  @media (-moz-windows-non-native-menus) {
+  @media (-moz-platform: windows) {
     :root {
       /* Override some menu color variables for light browser themes. */
       --menuitem-hover-background-color: #e0e0e6; /* var(--win-hover-bgcolor) */
@@ -231,7 +233,7 @@
     }
   }
   /* Override the menu color variables for dark browser themes. */
-  @media (-moz-windows-non-native-menus) and (prefers-color-scheme: dark) {
+  @media (-moz-platform: windows) and (prefers-color-scheme: dark) {
     :root {
       --menuitem-hover-background-color: var(--dark-menuitem-hover-background-color);
       --menu-background-color: var(--dark-menu-background-color);
@@ -262,17 +264,17 @@
         --dark-menu-border-color: #5b5b66;
         --dark-menu-icon-opacity: 1;
       }
-      /* Override the menu color variables for dark browser themes. */
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --menuitem-hover-background-color: var(--dark-menuitem-hover-background-color);
-          --menu-background-color: var(--dark-menu-background-color);
-          --menu-color: var(--dark-menu-color);
-          --menuitem-disabled-hover-background-color: var(--dark-menuitem-disabled-hover-background-color);
-          --menu-disabled-color: var(--dark-menu-disabled-color);
-          --menu-border-color: var(--dark-menu-border-color);
-          --menu-icon-opacity: var(--dark-menu-icon-opacity);
-        }
+    }
+    /* Override the menu color variables for dark browser themes. */
+    @media (-moz-gtk-csd-available) and (prefers-color-scheme: dark) {
+      :root {
+        --menuitem-hover-background-color: var(--dark-menuitem-hover-background-color);
+        --menu-background-color: var(--dark-menu-background-color);
+        --menu-color: var(--dark-menu-color);
+        --menuitem-disabled-hover-background-color: var(--dark-menuitem-disabled-hover-background-color);
+        --menu-disabled-color: var(--dark-menu-disabled-color);
+        --menu-border-color: var(--dark-menu-border-color);
+        --menu-icon-opacity: var(--dark-menu-icon-opacity);
       }
     }
   }

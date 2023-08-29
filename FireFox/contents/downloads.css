@@ -1,6 +1,9 @@
 /** Download Panel *******************************************************************/
 @-moz-document url-prefix("about:downloads") {
   @media (prefers-reduced-motion: no-preference) {
+    .downloadIconShow > .button-box > .button-icon {
+      list-style-image: url("./../images/folder-open.svg") !important;
+    }
     /* Accent Color for downloaded item */
     #downloadsListBox .download-state[exists] .downloadDetails {
       color: var(--button-primary-bgcolor);
