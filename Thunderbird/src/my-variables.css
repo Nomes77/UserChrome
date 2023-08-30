@@ -1,0 +1,56 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  @media (-moz-windows-default-theme) {
+    /** VARIABLES **********************************************************************/
+    :host, :root {
+      --lwt-text-color: rgb(0, 0, 0) !important;
+      --lwt-toolbar-field-focus-color: rgb(0, 0, 0) !important;
+      --sidebar-text-color: rgb(0, 0, 0) !important;
+      --win-theme-color: rgb(255, 255, 255);
+      --win-black-color: rgb(0, 0, 0);
+      --win-white-color: rgb(255, 255, 255);
+      --win-checkbox-color: transparent !important;
+      --win-checkbox-bgcolor: rgb(255, 255, 255) !important;
+      --win-checkbox-active-bgcolor: rgb(204, 228, 247) !important;
+      --win-checkbox-border-color: rgb(51, 51, 51) !important;
+      --win-checkbox-hover-border-color: rgb(0, 120, 215) !important;
+      --win-checkbox-active-border-color: rgb(0, 84, 153) !important;
+      --win-toolbox-background-color: unset;
+      --win-toolbox-background-image: linear-gradient(to right, rgb(158, 190, 245), rgb(158, 190, 245), rgb(195, 217, 250), rgb(195, 217, 250), rgb(195, 217, 250));
+      --win-toolbar-background-color: none;
+      --win-toolbar-background-image: linear-gradient(rgb(221, 235, 254), rgb(131, 170, 227));
+      --win-toolbarbutton-border-color: rgb(0, 0, 128);
+      --win-menuitem-border-color: var(--win-toolbarbutton-border-color);
+      --win-menuitem-hover-background-color: rgb(255, 238, 193);
+      --win-menuitem-active-background-color: rgb(254, 162, 95);
+      --win-menuitem-disabled-hover-background-color: unset;
+      --win-toolbarbutton-hover-background: linear-gradient(rgb(255, 248, 211), rgb(255, 208, 145));
+      --win-toolbarbutton-active-background: linear-gradient(rgb(254, 138, 72), rgb(255, 208, 145));
+      --win-toolbarbutton-checked-background: linear-gradient(rgb(255, 215, 143), rgb(255, 172, 85));
+      --win-toolbarbutton-active-background-open: linear-gradient(rgb(227, 239, 255), rgb(129, 168, 225));
+      --win-folderpane-border-background: rgb(196, 218, 250);
+      --win-window-dark-blue-border: 1px solid rgb(0, 45, 150);
+      --win-disabled-icon-opacity: 0.5;
+      --win-border-radius: 0px;
+      --win-toolbar-height: 24px;
+      --win-header-background-color: rgb(240, 240, 240);
+    }
+    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+      :host, :root {
+        --lwt-text-color: rgb(255, 255, 255) !important;
+        --lwt-toolbar-field-focus-color: rgb(255, 255, 255) !important;
+        --sidebar-text-color: rgb(255, 255, 255) !important;
+        --win-theme-color: rgb(0, 0, 0);
+        --win-menuitem-border-color: rgb(0, 255, 0);
+        --win-header-background-color: rgb(15, 15, 15);
+       }
+    }
+    /** COMMON *************************************************************************/
+    :host, :root {
+      --in-content-button-background: rgb(225, 225, 225) !important;
+      --in-content-button-background-hover: rgb(229, 241, 251) !important;
+      --in-content-button-background-active: rgb(204, 228, 247) !important;
+      --in-content-button-border-radius: 0px !important;
+      --in-content-focus-outline-color: var(--button-border-color) !important;
+    }
+  }
+}
