@@ -87,7 +87,7 @@ menupopup:is(#toolbar-context-menu, #contentAreaContextMenu) > menu > menupopup[
   padding-inline-start: var(--context-menu-background-padding) !important;
 }
 /* Menubar */
-#main-menubar > menu > menupopup menupopup {
+#main-menubar > menu menupopup {
   --menuitem-image: none; /* Prevent Image Inheritance */
 }
 /* Padding - Non Native */
