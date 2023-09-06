@@ -160,7 +160,7 @@
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
     #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-     background-color: white;
+      background-color: white;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .urlbarView-row:not([type="tip"], 
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) [type="dynamic"])[selected] > .urlbarView-row-inner, 
