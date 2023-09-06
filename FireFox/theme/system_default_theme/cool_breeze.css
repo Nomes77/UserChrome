@@ -93,7 +93,6 @@
     .tab-background[multiselected="true"]:not([selected="true"]) > .tab-loading-burst:not([bursting]) {
       background-color: rgb(146, 187, 211) !important;
   }
-
   /* Menubar Text Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #main-menubar > menu,
@@ -154,7 +153,7 @@
       color: black !important;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .browser-toolbar:not(.titlebar-color) {
-      color: black !important;
+    color: black !important;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #urlbar { 
     color: black !important;
@@ -191,8 +190,8 @@
     #nav-bar:has(#nav-bar-customization-target toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(2), 
     toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1)) 
     #PanelUI-button::after {
-        top: calc(var(--urlbar-toolbar-height) / 3.5) !important; 
-        height: calc(var(--urlbar-toolbar-height) / 2.25) !important;
-        background-color: rgb(91, 91, 91) !important;
+      top: calc(var(--urlbar-toolbar-height) / 3.5) !important; 
+      height: calc(var(--urlbar-toolbar-height) / 2.25) !important;
+      background-color: rgb(91, 91, 91) !important;
   }
 }
