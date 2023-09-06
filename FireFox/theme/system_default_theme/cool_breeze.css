@@ -1,12 +1,19 @@
 @supports -moz-bool-pref("userChrome+Content.theme.cool_breeze") {
+  :root:is(#main-window):not(:-moz-lwtheme, [privatebrowsingmode=temporary]),
+  :root[lwt-default-theme-in-dark-mode]:is(#main-window):not([privatebrowsingmode=temporary]) {
+    --win-component-bgcolor: rgb(163, 198, 218) !important;
+  }
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]),
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) {
-    --win-component-bgcolor: rgb(163, 198, 218) !important;
     --urlbar-box-hover-bgcolor: rgb(182, 200, 211) !important;
     --urlbar-box-active-bgcolor: rgb(153, 168, 177) !important;
     --win-toolbarbutton-hover-background: rgb(150, 182, 201) !important;
     --win-toolbarbutton-active-background: rgb(141, 172, 189) !important;
     --toolbar-field-background-color: rgb(202, 222, 234) !important;
+    --toolbarseparator-color: rgb(47, 77, 94) !important;
+  }
+  :root:is(#main-window):not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #navigator-toolbox {
+    border-bottom: 1px solid rgb(126, 153, 168) !important;
   }
   :root[tabsintitlebar]:not(:-moz-window-inactive, :-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-color,
   :root[tabsintitlebar][lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive, [privatebrowsingmode=temporary]) .titlebar-color {
@@ -17,10 +24,17 @@
   :root[tabsintitlebar][lwt-default-theme-in-dark-mode]:-moz-window-inactive:not([privatebrowsingmode=temporary]) .titlebar-color {
     background-color: rgb(96, 157, 191) !important; 
   }
-  /* Hover background for extensions */
-  #nav-bar-customization-target .toolbaritem-combined-buttons.unified-extensions-item > toolbarbutton:hover {
-    background-color: rgb(150, 182, 201) !important; /* var(--panel-item-hover-bgcolor) */
+
+  /* Toolbar seperator line */
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #nav-bar:has(#nav-bar-customization-target toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(2), 
+    toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1)) 
+    #PanelUI-button::after {
+        top: calc(var(--urlbar-toolbar-height) / 3.5) !important; 
+        height: calc(var(--urlbar-toolbar-height) / 2.25) !important;
+        background-color: rgb(126, 153, 168) !important;
   }
+
   /* Color of right mouse and other popup menu's  (counter toolbarbutton color) --> needed to change fully_color.css */
   /* :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) html#main-window menupopup:not(.in-menulist) {
       --menuitem-hover-background-color: rgb(230, 230, 230) !important;
@@ -29,6 +43,7 @@
     html#main-window menupopup:not(.in-menulist) menuitem[_moz-menuactive="true"]:not([disabled="true"]) { 
       background-color: rgb(230, 230, 230) !important;
   }
+
   /* Boxes in url-bar */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
     #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button, 
@@ -74,6 +89,7 @@
     #urlbar-zoom-button:hover {
       background-color: var(--urlbar-box-hover-bgcolor) !important;
   }
+
   /* Tab Color when Multiselected */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
     .tab-background[multiselected="true"]:not([selected="true"]) > .tab-loading-burst:not([bursting]),
@@ -81,6 +97,7 @@
     .tab-background[multiselected="true"]:not([selected="true"]) > .tab-loading-burst:not([bursting]) {
       background-color: rgb(146, 187, 211) !important;
   }
+
   /* Menubar Text Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #main-menubar > menu,
@@ -91,54 +108,67 @@
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]),
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]) {
-    color: black !important;
+      color: black !important;
   }
   /* Titlebar Button Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .toolbarbutton-animatable-box,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .toolbarbutton-1,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .toolbarbutton-animatable-box,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .toolbarbutton-1 {
-    color: black !important;
+      color: black !important;
   }
   /* :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
-      background-color: rgb(81, 132, 161) !important;
+      background-color: rgb(81,132,161) !important;
   } */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-button {
-    stroke: black !important;
+      stroke: black !important;
   }
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button:hover,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-button:hover,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"],
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"] { 
-    background-color: rgb(86, 141, 172) !important;
+      background-color: rgb(86,141,172) !important;
   }
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-close:hover,
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-close:hover { 
-    background-color: hsl(355, 86%, 49%) !important;
+    background-color: hsl(355,86%,49%) !important;
   }
+
+  /* Hover background for extensions */
+  #nav-bar-customization-target .toolbaritem-combined-buttons.unified-extensions-item > toolbarbutton:hover {
+    background-color: rgb(150, 182, 201) !important; /* var(--panel-item-hover-bgcolor) */
+  }
+  /* Hover in sidebar */
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary], [lwt-default-theme-in-dark-mode]) #sidebar-switcher-target:hover, 
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary], [lwt-default-theme-in-dark-mode]) #sidebar-switcher-target:hover:active,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary], [lwt-default-theme-in-dark-mode]) #sidebar-switcher-target.active {
+    background-color: rgb(229, 229, 229) !important;
+  }
+
+
   /* Fixes for system dark theme */
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) {
     --toolbarbutton-icon-fill: black !important;
     --lwt-tab-text: black !important;
   }
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tab-icon-image { 
+  /* :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tab-icon-image { 
     fill: white !important;
-  }
+  } */
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
     .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
       color: black !important;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .browser-toolbar:not(.titlebar-color) {
-    color: black !important;
+      color: black !important;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #urlbar { 
     color: black !important;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
     #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-      background-color: white;
+     background-color: white;
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .urlbarView-row:not([type="tip"], 
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) [type="dynamic"])[selected] > .urlbarView-row-inner, 
@@ -148,5 +178,30 @@
   }
   :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .urlbarView {
     background-color: white !important;
+  }
+
+
+  /* Fixes for Private browsing */
+  :root[lwt-default-theme-in-dark-mode] #navigator-toolbox, 
+  :root[privatebrowsingmode=temporary] #navigator-toolbox {
+    border-bottom: 1px solid rgb(104, 104, 104) !important;
+  }
+  :root[privatebrowsingmode=temporary] .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
+  :root[privatebrowsingmode=temporary] .tabbrowser-tab:not([selected="true"]) {
+    color: black !important;
+  }
+  :root[privatebrowsingmode=temporary] .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
+    color: black !important;
+  }
+  :root[privatebrowsingmode=temporary] #TabsToolbar #tabs-newtab-button > .toolbarbutton-icon {
+    color: black !important; 
+  }
+  :root[privatebrowsingmode=temporary] 
+    #nav-bar:has(#nav-bar-customization-target toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(2), 
+    toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1)) 
+    #PanelUI-button::after {
+        top: calc(var(--urlbar-toolbar-height) / 3.5) !important; 
+        height: calc(var(--urlbar-toolbar-height) / 2.25) !important;
+        background-color: rgb(91, 91, 91) !important;
   }
 }
