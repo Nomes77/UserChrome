@@ -17,7 +17,7 @@ panelmultiview[mainViewId="widget-overflow-mainView"] panelview > .panel-subview
 }
 /* Unified Extensions */
 panelmultiview[mainViewId="unified-extensions-view"] panelview > .panel-header,
-panelmultiview[mainViewId="unified-extensions-view"] panelview > toolbarseparator:last-of-type,
+panelmultiview[mainViewId="unified-extensions-view"] panelview > toolbarseparator,
 panelmultiview[mainViewId="unified-extensions-view"] panelview > toolbarbutton#unified-extensions-manage-extensions,
 panelmultiview[mainViewId="unified-extensions-view"] .unified-extensions-item[extension-id]:has(.unified-extensions-item-action-button[disabled="true"]),
 panelmultiview[mainViewId="unified-extensions-view"] .unified-extensions-item .unified-extensions-item-message-deck {
