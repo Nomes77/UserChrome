@@ -66,20 +66,23 @@
     .button.unified-toolbar-button:not([id^="threadPane"]),
     .toolbarbutton-1,
     .toolbarbutton-1 > .toolbarbutton-menubutton-button,
-    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+    #composeToolbar2 toolbaritem > menulist {
       transition: none !important;
     }
     .button.unified-toolbar-button[aria-pressed="true"]:not([id^="threadPane"]):enabled,
     .toolbarbutton-1,
     .toolbarbutton-menubutton-button,
-    .toolbarbutton-menubutton-dropmarker {
+    .toolbarbutton-menubutton-dropmarker,
+    #composeToolbar2 toolbaritem > menulist {
       box-shadow: none !important;
     }
     .button.toolbar-button:not([disabled="true"]):hover,
     .button.unified-toolbar-button:not([id^="threadPane"]):enabled:hover,
     .toolbarbutton-1:not([disabled="true"], [open="true"]):hover,
     .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-button,
-    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-dropmarker {
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-dropmarker,
+    #composeToolbar2 toolbaritem > menulist:not([disabled="true"], [open="true"]):hover {
       background-color: transparent !important;
       background-image: var(--win-toolbarbutton-hover-background) !important;
       border-color: var(--win-toolbarbutton-border-color) !important;
@@ -88,7 +91,8 @@
     .button.unified-toolbar-button:not([id^="threadPane"]):enabled:hover:active,
     .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active,
     .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active > .toolbarbutton-menubutton-button,
-    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active > .toolbarbutton-menubutton-dropmarker {
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active > .toolbarbutton-menubutton-dropmarker,
+    #composeToolbar2 toolbaritem > menulist:not([disabled="true"], [open="true"]):hover:active {
       background-color: transparent !important;
       background-image: var(--win-toolbarbutton-active-background) !important;
       border-color: var(--win-toolbarbutton-border-color) !important;
@@ -96,11 +100,20 @@
     .button.toolbar-button[open="true"]:not([disabled="true"]),
     .button.unified-toolbar-button[aria-pressed="true"]:not([id^="threadPane"]):enabled,
     .toolbarbutton-1[open="true"]:not([disabled="true"]),
-    .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-button {
+    .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-button,
+    #composeToolbar2 toolbaritem > menulist[open="true"]:not([disabled="true"]) {
       background-color: transparent !important;
       background-image: var(--win-toolbarbutton-active-background-open) !important;
       border-color: var(--win-toolbarbutton-border-color) !important;
       border-bottom: 1px solid rgb(246, 246, 246) !important;
+    }
+    #composeToolbar2 toolbaritem > menulist,
+    #FormatToolbar menulist {
+      border: 1px solid !important;
+    }
+    #composeToolbar2 toolbaritem > menulist:not(:hover, [open="true"]),
+    #FormatToolbar menulist:not(:hover, [open="true"]) {
+      border-color: transparent !important;
     }
     .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-dropmarker {
       border-bottom: 0px solid rgb(246, 246, 246) !important;
@@ -120,11 +133,11 @@
       content: '';
       border-left: 1px solid transparent;
       height: 24px;
-      width: 15px;
+      width: 13px;
       background-size: 12px;
-      background-position: center;
+      background-position: center 55%;
       background-repeat: no-repeat;
-      margin: -4px -4px -4px 0;
+      margin: -4px -2px -4px 1px;
     }
     .unified-toolbar .button-icon {
       height: 16px;
@@ -146,23 +159,21 @@
       margin-top: 1px !important;
       margin-bottom: 1px !important;
     }
-    .toolbarbutton-1 {
+    .toolbarbutton-1,
+    #composeToolbar2 toolbaritem > menulist {
       height: 20px !important;
       min-width: 20px !important;
       margin: 1px !important;
+    }
+    #composeToolbar2 toolbaritem > menulist#priorityMenu-button {
+      padding: 0 2px 1px !important;
     }
     toolbarbutton.toolbarbutton-1:not([is="toolbarbutton-menu-button"]),
     toolbarbutton.toolbarbutton-menubutton-button {
       padding: 2px !important;
     }
     .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
-      padding: 0 !important;
-    }
-    .toolbarbutton-1 .toolbarbutton-menu-dropmarker::part(icon),
-    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker::part(icon) {
-      width: 8px !important;
-      height: 8px !important;
-      margin: auto !important;
+      padding: 0px !important;
     }
     .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker::before,
     #button-print > .toolbarbutton-text,
@@ -171,7 +182,9 @@
       display: none !important;
     }
     .inline-toolbar toolbarpaletteitem toolbarseparator,
-    .inline-toolbar > toolbarseparator {
+    .inline-toolbar > toolbarseparator,
+    .chromeclass-toolbar#composeToolbar2 > toolbarseparator,
+    .chromeclass-toolbar#FormatToolbar > toolbarseparator {
       height: 20px !important;
       margin-top: auto !important;
       margin-bottom: auto !important;
@@ -492,7 +505,7 @@
     }
     /* Vertical Cards Layout */
     tr[data-properties~="new"] .thread-card-container:after {
-      display: none !important
+      display: none !important;
     }
     #threadTree [data-properties~="new"]:not(.selected) .thread-card-container :is(.subject, .date) {
       color: currentColor !important;
@@ -570,5 +583,29 @@
       height: 18px !important;
       width: 18px !important;
     }
+
+/* Messager Compose Header Layout */
+    #MsgHeadersToolbar menupopup > menuitem[selected="true"][_moz-menuactive="true"] {
+      color: var(--button-text-color) !important;
+    }
+    #MsgHeadersToolbar > #recipientsContainer {
+      margin-top: -3px;
+    }
+    #msgIdentity, .address-container {
+      min-height: 24px !important;
+    }
+
+/* AcountCentral Icons Layout */
+    #rssSubscriptionButton::before,
+    #readButton::before,
+    #composeButton::before,
+    #searchButton::before,
+    #featuresLink::before,
+    #supportLink::before,
+    #settingsButton::before,
+    #e2eButton::before {
+      background-size: contain;
+    }
+
   }
 }
