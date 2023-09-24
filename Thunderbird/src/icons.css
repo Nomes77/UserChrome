@@ -301,7 +301,7 @@
       list-style-image: var(--outl-icon-tasks) !important;
     }
     #chatButton img {
-      content: var(--spaces-icon-chat) !important;;
+      content: var(--outl-spaces-icon-chat) !important;;
     }
     #spacesPopupButtonChat {
       list-style-image: var(--outl-icon-chat) !important;;
@@ -438,7 +438,7 @@
     }
     .unified-toolbar .chat .button-icon,
     .chat .preview-icon {
-      content: var(--out-icon-chat) !important;
+      content: var(--outl-icon-chat) !important;
     }
     .unified-toolbar .add-ons-and-themes .button-icon,
     .add-ons-and-themes .preview-icon {
@@ -466,7 +466,7 @@
     }
     .unified-toolbar .synchronize .button-icon,
     .synchronize .preview-icon {
-      content: var(--icon-sync);
+      content: var(--outl-icon-sync) !important;
     }
     .unified-toolbar .new-event .button-icon,
     .new-event .preview-icon {
@@ -490,15 +490,15 @@
     }
     .unified-toolbar .go-back .button-icon,
     .go-back .preview-icon {
-      content: var(--icon-nav-back);
+      content: var(--outl-icon-nav-back) !important;
     }
     .unified-toolbar .go-forward .button-icon,
     .go-forward .preview-icon {
-      content: var(--icon-nav-forward);
+      content: var(--outl-icon-nav-forward) !important;
     }
     .unified-toolbar .stop .button-icon,
     .stop .preview-icon {
-      content: var(--icon-close);
+      content: var(--outl-icon-close) !important;
     }
     .unified-toolbar-button[popup]::after {
       background-image: var(--outl-icon-nav-down-sm) !important;
@@ -696,10 +696,10 @@
       list-style-image: var(--outl-icon-folder) !important;
     }
     #appMenu-uiDensity-controls .toolbarbutton-icon {
-      content: var(--icon-spaces-menu);
+      content: var(--outl-icon-density) !important;
     }
     #appMenu-fontSize-controls .toolbarbutton-icon {
-      content: var(--icon-font);
+      content: var(--outl-icon-font) !important;
     }
     #appmenu_newCard {
       list-style-image: var(--outl-icon-new-contact) !important;
@@ -729,13 +729,13 @@
       list-style-image: var(--font-size-increase);
     }
     #appmenu_import {
-      list-style-image: none !important;
+      list-style-image: var(--outl-icon-import) !important;
     }
     #appmenu_export {
-      list-style-image: none !important;
+      list-style-image: var(--outl-icon-export) !important;
     }
     #appmenu_searchCmd {
-      list-style-image: var(--outl-icon-search-in-folder) !important;
+      list-style-image: var(--outl-icon-search) !important;
     }
     #appmenu_filtersCmd {
       list-style-image: var(--outl-icon-filter) !important;
@@ -758,7 +758,7 @@
       list-style-image: var(--outl-icon-help) !important;
     }
     #appmenu_openTour {
-      list-style-image: none !important;
+      list-style-image: var(--outl-icon-features) !important;
     }
     #appmenu_keyboardShortcuts {
       list-style-image: var(--outl-icon-shortcut) !important;
@@ -1056,7 +1056,7 @@
       background-image: var(--outl-account-central-newsletter) !important;
     }
     #importButton::before {
-      background-image:  var(--icon-import);
+      background-image:  var(--outl-icon-import) !important;
     }
     #setupEmail.btn-inline::before {
       background-image: var(--outl-icon-mail) !important;
@@ -1082,7 +1082,7 @@
       background-image:  var(--outl-icon-newsletter) !important;
     }
     #featuresLink::before {
-      background-image: var(--icon-features);
+      background-image: var(--outl-icon-features) !important;
     }
     #supportLink::before {
       background-image: var(--outl-icon-help) !important;
@@ -1264,16 +1264,20 @@
     }
     .message-icon {
       list-style-image: var(--outl-icon-info) !important;
+      content: var(--outl-icon-info) !important;
     }
     .alert-dialog #infoIcon,
     .alert-icon {
       list-style-image: var(--outl-icon-warning) !important;
+      content: var(--outl-icon-warning) !important;
     }
     .error-icon {
       list-style-image: var(--outl-icon-error) !important;
+      content: var(--outl-icon-error) !important;
     }
     .question-icon {
       list-style-image: var(--outl-icon-question) !important;
+      content: var(--outl-icon-question) !important;
     }
     #print-preview-portrait-button {
       list-style-image: url("chrome://global/skin/icons/Print-preview.png");
@@ -1283,58 +1287,5 @@
       list-style-image: url("chrome://global/skin/icons/Print-preview.png");
       -moz-image-region: rect(0px 32px 16px 16px);
     }
-  }
-}
-
-@supports -moz-bool-pref("outlook2003.theme") {
-  @media (-moz-windows-default-theme) {
-/** CHECKBOX & RADIO **************************************************************/
-  /*= CHECKBOX =========================================================*/
-    /* ..... disabled state ..... */
-    checkbox[disabled="true"] {
-      opacity: var(--win-disabled-icon-opacity) !important; /* 0.6 */
-    }
-    /* ::::: checkmark image ::::: */
-    .checkbox-check {
-      color: transparent !important; /* var(--win-checkbox-color) */
-      background-color: rgb(255, 255, 255) !important; /* var(--win-checkbox-bgcolor) */
-      border: 1px solid rgb(51, 51, 51) !important; /* var(--win-checkbox-border-color) */
-      border-radius: 0px !important;
-    }
-    /* .checkbox-check:not([native]) {
-      height: 16px;
-      width: 16px;
-    } */
-    checkbox:not([disabled="true"]):is(:hover, :active) > .checkbox-check {
-      background-color: rgb(255, 255, 255) !important; /* var(--win-checkbox-bgcolor) */
-      border-color: rgb(0, 120, 215) !important; /* var(--win-checkbox-hover-border-color) */
-    }
-    checkbox:not([disabled="true"]):hover:active > .checkbox-check {
-      background-color: rgb(204, 228, 247) !important; /* var(--win-checkbox-active-bgcolor) */
-      border-color: rgb(0, 84, 153) !important; /* var(--win-checkbox-active-border-color) */
-    }
-    .checkbox-check[checked] {
-      border: 1px solid rgb(51, 51, 51) !important; /* var(--win-checkbox-border-color) */
-      background-color: rgb(255, 255, 255) !important; /* var(--win-checkbox-bgcolor) */
-      background-image: url("./../images/check.svg") !important; /* var(--outl-icon-check) */
-      fill: rgb(51, 51, 51) !important; /* var(--win-checkbox-border-color) */
-      color: transparent !important; /* var(--win-checkbox-color) */
-      border-radius: 0px !important;
-    }
-    checkbox:not([disabled="true"]):is(:hover, :active) > .checkbox-check[checked] {
-      background-color: rgb(255, 255, 255) !important; /* var(--win-checkbox-bgcolor) */
-      border-color: rgb(0, 120, 215) !important; /* var(--win-checkbox-hover-border-color) */
-      fill: rgb(0, 120, 215) !important; /* var(--win-checkbox-hover-border-color) */
-    }
-    checkbox:not([disabled="true"]):hover:active > .checkbox-check[checked] {
-      background-color: rgb(204, 228, 247) !important; /* var(--win-checkbox-active-bgcolor) */
-      border-color: rgb(0, 84, 153) !important; /* var(--win-checkbox-active-border-color) */
-      fill: rgb(0, 84, 153) !important; /* var(--win-checkbox-active-border-color) */
-    }
-    /* checkbox:not([native]):focus-visible > .checkbox-check {
-      outline: var(--focus-outline);
-      outline-offset: var(--focus-outline-offset);
-    } */
-  /*= RADIO ============================================================*/
   }
 }
