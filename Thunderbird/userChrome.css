@@ -214,6 +214,7 @@
     menubar > menu {
       border: 1px solid transparent;
     }
+    menubar > menu:-moz-lwtheme,
     #menubar-items > #mail-menubar > menu {
       appearance: none !important;
     }
@@ -251,6 +252,11 @@
       background-color: var(--win-menuitem-hover-background-color) !important;
       border: 1px solid var(--win-menuitem-border-color) !important;
     }
+    @media (prefers-color-scheme: dark) {
+      menupopup > :is(menu, menuitem):not([disabled="true"], :active)[_moz-menuactive] {
+        color: var(--win-theme-color) !important;
+      }
+    }
 /* Padding of ToolBar */
     #navigation-toolbox #toolbar-menubar {
       padding-left: 4px;
@@ -259,7 +265,6 @@
     #mail-toolbox > toolbar[type="menubar"] {
       padding-left: 2px;
     }
-
 
 /* Tree Variables */
     :root {
@@ -593,6 +598,15 @@
     }
     #msgIdentity, .address-container {
       min-height: 24px !important;
+    }
+
+/* Calender & Tasks */
+    .button.minimonth-nav-btn.today-button,
+    #todayViewButton,
+    #newCalendarSidebarButton,
+    #refreshCalendar,
+    #newCalendarSidebarButton {
+      background-size: 16px !important;
     }
 
 /* AcountCentral Icons Layout */
