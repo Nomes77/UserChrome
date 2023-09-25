@@ -34,7 +34,7 @@
       --win-toolbar-height: 24px;
       --win-header-background-color: rgb(240, 240, 240);
     }
-    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
       :host, :root {
         --lwt-text-color: rgb(255, 255, 255) !important;
         --lwt-toolbar-field-focus-color: rgb(255, 255, 255) !important;
@@ -42,7 +42,10 @@
         --win-theme-color: rgb(0, 0, 0);
         --win-menuitem-border-color: rgb(0, 255, 0);
         --win-header-background-color: rgb(15, 15, 15);
-       }
+      }
+      html[lwtheme-image="true"] {
+        --win-toolbarbutton-border-color: rgb(0, 255, 0);
+      } 
     }
   }
 }
