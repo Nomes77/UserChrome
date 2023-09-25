@@ -1,0 +1,224 @@
+@supports -moz-bool-pref("outlook2003.theme") {
+  @media (-moz-windows-default-theme) {
+/** ICONS CONTENT *********************************************************/
+    /* Toolbar Dropmarker */
+    .toolbarbutton-menu-dropmarker,
+    .toolbarbutton-menubutton-dropmarker,
+    .toolbarbutton-combined-buttons-dropmarker {
+      list-style-image: var(--outl-icon-nav-down-sm) !important;
+    }
+
+    /* AddressBook */
+    #toolbarCreateBook {
+      list-style-image: var(--outl-icon-new-address-book) !important;
+    }
+    #toolbarCreateContact {
+      list-style-image: var(--outl-icon-new-contact) !important;
+    }
+    #toolbarCreateList {
+      list-style-image: var(--outl-icon-new-user-list) !important;
+    }
+    #toolbarImport {
+      list-style-image: var(--outl-icon-import) !important;
+    }
+    #detailsWriteButton::before {
+      background-image: var(--outl-icon-new-mail) !important;
+    }
+    #detailsEventButton::before {
+      background-image: var(--outl-icon-new-event) !important;
+    }
+    #detailsSearchButton::before {
+      background-image: var(--outl-icon-search) !important;
+    }
+    #detailsNewListButton::before {
+      background-image: var(--outl-icon-new-user-list) !important;
+    }
+    #detailsDeleteButton::before,
+    .icon-button-delete {
+      background-image: var(--outl-icon-delete) !important;
+    }
+    #placeholderEmptyBook::before,
+    #placeholderSearchOnly::before {
+      background-image: var(--outl-addressbook-tree-list) !important;
+    }
+    #placeholderCreateContact::before {
+      background-image: var(--outl-icon-new-contact) !important;
+    }
+    #placeholderSearching::before,
+    #placeholderNoSearchResults::before {
+      background-image: var(--outl-icon-search) !important;
+    }
+    .bookRow-icon {
+      background-image: var(--outl-addressbook-tree-ab) !important;
+    }
+    .listRow-icon {
+      background-image: var(--outl-addressbook-tree-list) !important;
+    }
+    treechildren::-moz-tree-image(GeneratedName) {
+      list-style-image: var(--outl-icon-contact) !important; 
+    }
+    treechildren::-moz-tree-image(GeneratedName, MailList) {
+      list-style-image: var(--outl-icon-user-list) !important; 
+    }
+
+    /* Account Manager */
+    #accounttree li.children .twisty-icon {
+      content: var(--outl-icon-twisty-open);
+    }
+    #accounttree li.children.collapsed .twisty-icon,
+    #accounttree li.children.collapsed:dir(rtl) .twisty-icon {
+      content: var(--outl-icon-twisty-closed);
+    }
+    #accounttree li div.icon {
+      background-image: var(--outl-icon-folder) !important;
+    }
+    #accounttree li.serverType-imap.isSecure div.icon,
+    #accounttree li.serverType-pop3.isSecure div.icon {
+      background-image: var(--outl-icon-server) !important;
+    }
+    #accounttree li.serverType-feeds div.icon,
+    #accounttree li.serverType-rss div.icon {
+      list-style-image: var(--outl-icon-rss) !important;
+    }
+    #accounttree li.serverType-im div.icon {
+      background-image: var(--outl-spaces-icon-chat) !important;
+    }
+    #accounttree li.serverType-news div.icon {
+      background-image: var(--outl-icon-newsletter) !important;
+    }
+    #accounttree li.serverType-nntp div.icon {
+      background-image: var(--outl-icon-globe) !important;
+    }
+    #accounttree li.serverType-nntp.isSecure div.icon {
+      background-image: var(--outl-icon-globe-secure) !important;
+    }
+    #accounttree li.serverType-none div.icon {
+      background-image: var(--outl-icon-home) !important;
+    }
+    #accounttree li.serverType-smtp div.icon {
+      background-image: var(--outl-icon-outbox) !important;
+    }
+    .folderMenuItem:not(menulist) {
+      list-style-image: var(--outl-icon-folder) !important;
+    }
+    .folderMenuItem[ServerType="nntp"]:not(menulist) {
+      list-style-image: var(--outl-icon-newsletter) !important;
+    }
+    .folderMenuItem[IsFeedFolder="true"]:not(menulist) {
+      list-style-image: var(--outl-icon-folder-rss) !important;
+    }
+    .folderMenuItem[SpecialFolder="Inbox"]:not(menulist) {
+      list-style-image: var(--outl-icon-inbox) !important;
+    }
+    .folderMenuItem[SpecialFolder="Sent"]:not(menulist) {
+      list-style-image: var(--outl-icon-sent-folder) !important;
+    }
+    .folderMenuItem[SpecialFolder="Outbox"]:not(menulist) {
+      list-style-image: var(--outl-icon-outbox) !important;
+    }
+    .folderMenuItem[SpecialFolder="Drafts"]:not(menulist) {
+      list-style-image: var(--outl-icon-draft) !important;
+    }
+    .folderMenuItem[SpecialFolder="Templates"]:not(menulist) {
+      list-style-image: var(--outl-icon-templates) !important;
+    }
+    .folderMenuItem[SpecialFolder="Junk"]:not(menulist) {
+      list-style-image: var(--outl-icon-spam) !important;
+    }
+    .folderMenuItem[SpecialFolder="Trash"]:not(menulist) {
+      list-style-image: var(--outl-icon-trash) !important;
+    }
+    .folderMenuItem[SpecialFolder="Archive"]:not(menulist) {
+      list-style-image: var(--outl-icon-archive) !important;
+    }
+    .folderMenuItem[SpecialFolder="Virtual"]:not(menulist) {
+      list-style-image: var(--outl-icon-folder-filter) !important;
+    }
+    .folderMenuItem[IsServer="true"][ServerType="imap"][IsSecure="true"]:not(menulist),
+    .folderMenuItem[IsServer="true"][ServerType="pop3"][IsSecure="true"]:not(menulist) {
+      list-style-image: var(--outl-icon-server) !important;
+    }
+    .folderMenuItem[IsServer="true"][ServerType="none"]:not(menulist) {
+      list-style-image: var(--outl-icon-home) !important;
+    }
+    .folderMenuItem[IsServer="true"][ServerType="nntp"]:not(menulist) {
+      list-style-image: var(--outl-icon-globe) !important;
+    }
+    .folderMenuItem[IsServer="true"][ServerType="nntp"][IsSecure="true"]:not(menulist) {
+      list-style-image: var(--outl-icon-globe-secure) !important;
+    }
+    .folderMenuItem[IsServer="true"][ServerType="rss"]:not(menulist) {
+      list-style-image: var(--outl-icon-rss) !important;
+    }
+    menulist.folderMenuItem {
+      background-image: var(--outl-icon-folder) !important;
+    }
+    menulist.folderMenuItem[ServerType="nntp"] {
+      background-image: var(--outl-icon-newsletter) !important;
+    }
+    menulist.folderMenuItem[IsFeedFolder="true"] {
+      background-image: var(--outl-icon-folder-rss) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Inbox"] {
+      background-image: var(--outl-icon-inbox) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Sent"] {
+      background-image: var(--outl-icon-sent-folder) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Outbox"] {
+      background-image: var(--outl-icon-outbox) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Drafts"] {
+      background-image: var(--outl-icon-draft) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Templates"] {
+      background-image: var(--outl-icon-templates) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Junk"] {
+      background-image: var(--outl-icon-spam) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Trash"] {
+      background-image: var(--outl-icon-trash) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Archive"] {
+      background-image: var(--outl-icon-archive) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Virtual"] {
+      background-image: var(--outl-icon-folder-filter) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="imap"][IsSecure="true"],
+    menulist.folderMenuItem[IsServer="true"][ServerType="pop3"][IsSecure="true"] {
+      background-image: var(--outl-icon-server) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="none"] {
+      background-image: var(--outl-icon-home) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="nntp"] {
+      background-image: var(--outl-icon-globe) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="nntp"][IsSecure="true"] {
+      background-image: var(--outl-icon-globe-secure) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="rss"] {
+      background-image: var(--outl-icon-rss) !important;
+    }
+    menulist > menupopup .menu-right {
+      list-style-image: var(--outl-icon-nav-left-sm) !important;
+    }
+    .arrowhead {
+      list-style-image: url("chrome://messenger/skin/icons/new/nav-down-sm.svg");
+    }
+    .arrowhead.up {
+      list-style-image: url("chrome://messenger/skin/icons/new/nav-up-sm.svg");
+    }
+    .openpgp-add-key-button {
+      list-style-image: url("chrome://messenger/skin/icons/new-key.svg");
+    }
+    .openpgp-props-btn {
+      list-style-image: url("chrome://messenger/skin/icons/developer.svg");
+    }
+    .openpgp-more-btn .button-menu-dropmarker {
+      list-style-image: url("chrome://messenger/skin/icons/new/nav-down-sm.svg");
+    }
+  }
+}
