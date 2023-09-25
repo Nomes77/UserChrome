@@ -22,12 +22,13 @@
     .toolbarbutton-menubutton-dropmarker {
       box-shadow: none !important;
     }
-    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover,
-    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-button,
-    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-dropmarker {
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):is(:hover, :active),
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):is(:hover, :active) > .toolbarbutton-menubutton-button,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):is(:hover, :active) > .toolbarbutton-menubutton-dropmarker {
       background-color: transparent !important;
       background-image: var(--win-toolbarbutton-hover-background) !important;
       border-color: var(--win-toolbarbutton-border-color) !important;
+      color: var(--win-black-color) !important;
     }
     .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active,
     .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active > .toolbarbutton-menubutton-button,
@@ -35,6 +36,7 @@
       background-color: transparent !important;
       background-image: var(--win-toolbarbutton-active-background) !important;
       border-color: var(--win-toolbarbutton-border-color) !important;
+      color: var(--win-black-color) !important;
     }
     .toolbarbutton-1[open="true"]:not([disabled="true"]),
     .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-button {
@@ -42,6 +44,10 @@
       background-image: var(--win-toolbarbutton-active-background-open) !important;
       border-color: var(--win-toolbarbutton-border-color) !important;
       border-bottom: 1px solid rgb(246, 246, 246) !important;
+      color: var(--win-black-color) !important;
+    }
+    .toolbarbutton-1:not([disabled="true"]):is(:hover, :active, :hover:active, [open="true"]) > .toolbarbutton-menubutton-dropmarker {
+      border-color: var(--win-toolbarbutton-border-color) !important;      
     }
     .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-dropmarker {
       border-bottom: 0px solid rgb(246, 246, 246) !important;
@@ -99,7 +105,7 @@
     treechildren::-moz-tree-image(GeneratedName, MailList) {
       height: 16px;
     }
-    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
       .contentTabToolbar > .toolbarbutton-1:not([disabled="true"]):is(:hover, [open="true"], :hover:active) {
         color: rgb(0, 0, 0) !important;
       }
