@@ -7,7 +7,7 @@
 /** ICONS ****************************/
 @import "./src/icons-variables.css";
 @import "./src/iconsContent.css";
-@import "./src/icons-layout.css";
+
 
 @supports -moz-bool-pref("outlook2003.theme") {
   @media (-moz-windows-default-theme) {
