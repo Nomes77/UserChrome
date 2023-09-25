@@ -18,16 +18,16 @@
       background-image: var(--outl-icon-folder) !important;
     }    
     #folderTree li:is([data-server-type="imap"], [data-server-type="pop3"]) > .container > .icon {
-      background-image: var(--out-icon-globe) !important;
+      background-image: var(--outl-icon-server) !important;
     }
     menuitem.server:is([data-server-type="imap"], [data-server-type="pop3"]) {
-      list-style-image: var(--out-icon-globe) !important;
+      list-style-image: var(--outl-icon-server) !important;
     }
     #folderTree li:is([data-server-type="imap"], [data-server-type="pop3"])[data-server-secure="true"] > .container > .icon {
-      background-image: var(--out-icon-globe-secure) !important;
+      background-image: var(--outl-icon-server) !important;
     }
     menuitem.server:is([data-server-type="imap"], [data-server-type="pop3"])[data-server-secure="true"] {
-      list-style-image: var(--out-icon-globe-secure) !important;
+      list-style-image: var(--outl-icon-server) !important;
     }
     #folderTree li[data-server-type="none"] > .container > .icon {
       background-image: var(--outl-icon-home) !important;
@@ -1034,6 +1034,7 @@
     }
     
     /* TabMail */
+    .tabmail-tab[type="contentTab"] .tab-content > .tab-icon-image[src="chrome://messenger/skin/icons/new/compact/new-mail.svg"],
     .tabmail-tab[type="contentTab"] .tab-content > .tab-icon-image[src="chrome://messenger/skin/icons/new/compact/account-settings.svg"] {
       content: var(--outl-icon-account-settings) !important;
     }
@@ -1069,6 +1070,9 @@
     }
     .tabmail-tab[type="undefined"] .tab-content > .tab-icon-image[src$="sent.svg"] {
       content: var(--outl-icon-sent) !important;
+    }
+    .tabmail-tab[type="undefined"] .tab-content > .tab-icon-image[src$="mail.svg"] {
+      content: var(--outl-icon-server) !important;
     }
     .tabmail-tab[type="undefined"] .tab-content > .tab-icon-image[src$="mail-secure.svg"] {
       content: var(--outl-icon-server) !important;

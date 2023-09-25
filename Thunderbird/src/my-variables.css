@@ -42,6 +42,7 @@
         --win-theme-color: rgb(0, 0, 0);
         --win-menuitem-border-color: rgb(0, 255, 0);
         --win-header-background-color: rgb(15, 15, 15);
+        --win-window-dark-blue-border: 1px solid rgb(255, 110, 105);
       }
       html[lwtheme-image="true"] {
         --win-toolbarbutton-border-color: rgb(0, 255, 0);

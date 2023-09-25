@@ -412,7 +412,7 @@
 
 /* Folder Tree Pane icons layout */
     #folderTree .icon {
-      background-size: contain;
+      background-size: 16px;
     }
     #folderTree li.children > .container > .twisty {
       background: no-repeat center;
