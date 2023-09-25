@@ -840,14 +840,12 @@
     #button-save {
       list-style-image: var(--outl-icon-save) !important;
     }
-    /* #quoteButton {
-      list-style-image: var(--outl-icon-compose) !important;
-      -moz-image-region: rect(24px 168px 48px 144px) !important;
+    #quoteButton {
+      list-style-image: var(--outl-icon-quote) !important;
     }
     #cut-button {
-      list-style-image: var(--outl-icon-compose) !important;
-      -moz-image-region: rect(24px 192px 48px 168px) !important;
-    } */
+      list-style-image: var(--outl-icon-cut) !important;
+    }
     #button-returnReceipt {
       list-style-image: var(--out-icon-receipt) !important;
     }
@@ -860,24 +858,21 @@
     #button-print {
       list-style-image: var(--outl-icon-print) !important;
     }
-    /* #FormatToolbar > toolbarbutton:not(#AbsoluteFontSizeButton, #removeStylingButton, #ulButton, #olButton, #outdentButton, #indentButton, #AlignPopupButton) {
-      list-style-image: var(--outl-icon-format) !important;
-    }
     #DecreaseFontSizeButton {
-      -moz-image-region: rect(0px 16px 16px 0px) !important;
+      list-style-image: url("./../images/fontDecrease.png") !important;
     }
     #IncreaseFontSizeButton {
-      -moz-image-region: rect(0px 32px 16px 16px) !important;
+      list-style-image: url("./../images/fontIncrease.png") !important;
     }
     #boldButton {
-      -moz-image-region: rect(0px 48px 16px 32px) !important;
+      list-style-image: url("./../images/fontBold.png") !important;
     }
     #italicButton {
-      -moz-image-region: rect(0px 64px 16px 48px) !important;
+      list-style-image: url("./../images/fontItalic.png") !important;
     }
     #underlineButton {
-      -moz-image-region: rect(0px 80px 16px 64px) !important;
-    } */
+      list-style-image: url("./../images/fontUnderline.png") !important;
+    }
     #ulButton {
       list-style-image: url("./../images/ul.png") !important;
     }
@@ -893,12 +888,12 @@
     #AlignPopupButton {
       list-style-image: url("./../images/align_center.png") !important;
     }
-    /* #InsertPopupButton {
-      -moz-image-region: rect(0px 256px 16px 240px) !important;
+    #InsertPopupButton {
+      list-style-image: url("./../images/insertPopup-image.png") !important;
     }
     #smileButtonMenu {
-      -moz-image-region: rect(0px 304px 16px 288px) !important;
-    } */
+      list-style-image: url("./../images/smile.png") !important;
+    }
     #AlignLeftItem, #AlignPopupButton[state="left"] {
       list-style-image: url("./../images/align_left.png") !important;
     }
@@ -911,24 +906,21 @@
     #AlignJustifyItem, #AlignPopupButton[state="justify"] {
       list-style-image: url("./../images/align_justify.png") !important;
     }
-    /* #InsertPopup > menuitem {
-      list-style-image: var(--outl-icon-format) !important;
-    }
     #InsertLinkItem {
-      -moz-image-region: rect(0px 224px 16px 208px) !important;
+      list-style-image: url("./../images/insertPopup-link.png") !important;
     }
     #InsertAnchorItem {
-      -moz-image-region: rect(0px 240px 16px 224px) !important;
+      list-style-image: url("./../images/insertPopup-anchor.png") !important;
     }
     #InsertImageItem {
-      -moz-image-region: rect(0px 256px 16px 240px) !important;
+      list-style-image: url("./../images/insertPopup-image.png") !important;
     }
     #InsertHRuleItem {
-      -moz-image-region: rect(0px 272px 16px 256px) !important;
+      list-style-image: url("./../images/insertPopup-HRule.png") !important;
     }
     #InsertTableItem {
-      -moz-image-region: rect(0px 288px 16px 272px) !important;
-    } */
+      list-style-image: url("./../images/insertPopup-table.png") !important;
+    }
     
     /* Calender & Tasks */
     .button.minimonth-nav-btn.today-button,

@@ -7,8 +7,6 @@
 /** ICONS ****************************/
 @import "./src/icons-variables.css";
 @import "./src/icons.css";
-@import "./src/icons-layout.css";
-
 
 
 @supports -moz-bool-pref("outlook2003.theme") {
@@ -21,6 +19,7 @@
       transform: translateY(calc(19px + 3px));
         /* +3px is needed because margin and padding of buttons is set to 1/2px in stead of 3px of button-margin/padding */
     }
+
 /* Toolbar Color */
     #navigation-toolbox,
     #mail-toolbox,
@@ -34,12 +33,17 @@
     #compose-toolbox > toolbar:not([type="menubar"]) {
       background-image: var(--win-toolbar-background-image) !important;
     }
+    #compose-toolbox > toolbar[type="menubar"] {
+      background-color: transparent !important;
+    }
+
 /* Toolbar Borders */
     #navigation-toolbox-background,
     .mail-toolbox::after,
     #compose-toolbox {
       border-bottom: var(--win-window-dark-blue-border) !important;
     }
+
 /* Unified Toolbar Layout */
     unified-toolbar {
       border-bottom: none !important;
@@ -47,6 +51,7 @@
     :root[uidensity="compact"] {
       --unified-toolbar-padding: 2px !important;
     }
+
 /* FolderPane and Thread Border */
     #folderPane,
     #threadPane {
@@ -61,6 +66,7 @@
       border: 3px solid var(--win-folderpane-border-background);
       margin-bottom: -1px;
     }
+
 /* Toolbar Layout on Hover, Active, Open */
     .button.toolbar-button,
     .button.unified-toolbar-button:not([id^="threadPane"]),
@@ -121,6 +127,7 @@
     .unified-toolbar-button[popup]:is(:hover, :hover:active, [aria-pressed="true"])::after {
       border-color: var(--win-toolbarbutton-border-color) !important;
     }
+
 /* Toolbar Icons Layout */
     .unified-toolbar-button[popup]:not([id^="threadPane"]) {
       padding-inline-end: var( --button-padding) !important;
@@ -193,6 +200,28 @@
       min-width: 1.5px !important;
       background-image: linear-gradient(to right, rgb(70, 105, 170), rgb(245, 250, 255)) !important;
     }
+
+/* Spaces Toolbar Icons Layout */
+    #collapseButton img {
+      width: calc(var(--spaces-icon-size) / 1.5) !important;
+      height: calc(var(--spaces-icon-size) / 1.5 / 8 * 5) !important;
+    }
+    #collapseButton {
+      transform: translateX(2.6666px) !important;
+    }
+    #spacesPopupButtonReveal image {
+      width: calc(var(--spaces-icon-size) / 1.5) !important;
+      height: calc(var(--spaces-icon-size) / 1.5 / 8 * 5) !important;
+      transform: translateX(2.6666px) scaleX(-1) !important;
+    }
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      #collapseButton img,
+      #spacesPopupButtonReveal:not(:hover:not([disabled="true"]:hover), [open="true"]) image {
+        filter: invert(1) !important;
+      }
+    }
+
 /* Menubar Layout on Hover, Active, Open */
     :root {
       --menu-item-margin: 0 3px !important;
@@ -229,6 +258,7 @@
       border-color: var(--win-toolbarbutton-border-color) !important;
       border-bottom: 1px solid rgb(246, 246, 246) !important;
     }
+
 /* MenuPopup Layout */
     :is(toolbar, popupset) menupopup > menu::after {
       height: 16px;
@@ -257,6 +287,7 @@
         color: var(--win-theme-color) !important;
       }
     }
+
 /* Padding of ToolBar */
     #navigation-toolbox #toolbar-menubar {
       padding-left: 4px;
@@ -321,6 +352,7 @@
     :root[uidensity="touch"] {
       --tree-header-table-height: 26px !important;
     }
+
 /* Folder Tree Pane colors */
     li.selected > .container,
     li:not(.selected) > .container:hover,
@@ -356,6 +388,7 @@
       /* don't change color on new messages */
       color: unset !important;
     }
+
 /* Folder Tree Pane icons layout */
     #folderTree .icon {
       background-size: contain;
@@ -373,7 +406,19 @@
     .new-messages:not([data-server-type]) > .container > .icon::after {
       content: none !important;
     }
-/* Opacity of Folder items */
+
+/* Opacity disabled items */
+    menubar > menu[disabled="true"],
+    #unifiedToolbarContent .unified-toolbar-button[disabled],
+    .toolbarbutton-1[disabled="true"] .toolbarbutton-icon,
+    .toolbarbutton-1[disabled="true"] .toolbarbutton-text,
+    .toolbarbutton-1[disabled="true"] .toolbarbutton-menu-dropmarker,
+    .toolbarbutton-1[disabled="true"] > .toolbarbutton-menubutton-dropmarker,
+    #FormatToolbar menulist[disabled="true"],
+    toolbarbutton.formatting-button[disabled="true"] > .toolbarbutton-icon,
+    .formatting-button[disabled="true"] > .toolbarbutton-menu-dropmarker {
+      opacity: var(--win-disabled-icon-opacity) !important;
+    }
     #folderTree li[data-is-paused="true"] > .container > .icon,
     #folderTree li[data-is-paused="true"] > .container > .name,
     #folderTree li[data-is-paused="true"] ul > li > .container > .icon,
@@ -387,6 +432,7 @@
     #folderTree:focus-within li.noselect-folder.selected > .container > .name {
       opacity: 0.8;
     }
+
 /* Table Header Bar */
     :root {
       --thread-pane-header-padding: 0px 6px !important;
@@ -408,6 +454,7 @@
     #threadPaneDisplayButton {
       background-image: var(--icon-display-options);
     }
+
 /* Table Header Columns */
     th[is="tree-view-table-header-cell"] {
       color: rgb(0, 0, 0) !important;
@@ -448,6 +495,7 @@
     th[is="tree-view-table-column-picker"] > button {
       display: none !important;
     }
+
 /* Table Row Icon Colums Layout */
     table[is="tree-view-table"] td:is(.selectcol-column, .tree-view-row-thread, .tree-view-row-flag, .tree-view-row-spam, .tree-view-row-unread, .tree-view-row-delete, .attachmentcol-column) {
       padding: 0 3px !important;
@@ -515,6 +563,7 @@
     #threadTree [data-properties~="new"]:not(.selected) .thread-card-container :is(.subject, .date) {
       color: currentColor !important;
     }
+
 /* Table Row Outline and Animations */
     :not(.multi-selected) [is="tree-view-table-body"]:focus-within > .selected.current,
     .multi-selected [is="tree-view-table-body"]:focus-within > .selected.current,
@@ -535,19 +584,43 @@
     }
 
 /* Message Header Layout */
-    #messagepanebox > #singleMessage {
-      background-color: rgb(240, 240, 240);
+    @media (prefers-color-scheme: light) {
+      #messagepanebox > #singleMessage {
+        background-color: rgb(240, 240, 240);
+      }
+      #messageHeader {
+        color: rgb(0, 0, 0) !important;
+        opacity: 1;
+      }
+      .message-header-label {
+        align-self: center !important;
+        font-size: 11px;
+        font-family: Arial;
+        opacity: 1 !important;
+        color: rgb(0, 0, 0) !important;
+      }
     }
-    #messageHeader
-      color: black !important;
-      opacity: 1;
-    }
-    .message-header-label {
-      align-self: center !important;
-      font-size: 11px;
-      font-family: Arial;
-      opacity: 1 !important;
-      color: rgb(0,0,0) !important;
+    @media (prefers-color-scheme: dark) {
+      #messagepanebox > #singleMessage {
+        background-color: rgb(15, 15, 15);
+      }
+      #messageHeader {
+        color: rgb(255, 255, 255) !important;
+        opacity: 1;
+      }
+      #messageHeader toolbarbutton.message-header-view-button:not([disabled="true"]):is(:hover, [open="true"]) {
+        color: rgb(0, 0, 0) !important;
+      }
+      #messageHeader toolbarbutton#hdrTrashButton:not(:hover, :active, :hover:active) > image {
+        filter: invert(1) !important;
+      }
+      .message-header-label {
+        align-self: center !important;
+        font-size: 11px;
+        font-family: Arial;
+        opacity: 1 !important;
+        color: rgb(255, 255, 255) !important;
+      }
     }
     .message-header-container,
     .message-header-extra-container {
@@ -591,13 +664,26 @@
 
 /* Messager Compose Header Layout */
     #MsgHeadersToolbar menupopup > menuitem[selected="true"][_moz-menuactive="true"] {
-      color: var(--button-text-color) !important;
+      color: var(--win-theme-color) !important;
     }
     #MsgHeadersToolbar > #recipientsContainer {
       margin-top: -3px;
     }
     #msgIdentity, .address-container {
       min-height: 24px !important;
+    }
+
+/* Messager Compose Toolbar Layout */
+    @media (prefers-color-scheme: dark) {
+      #FormatToolbar > toolbarbutton:is(#DecreaseFontSizeButton, #IncreaseFontSizeButton, #boldButton, #italicButton, #underlineButton, #ulButton, 
+         #olButton, #outdentButton, #indentButton, #AlignPopupButton):not(:hover:not([disabled="true"]:hover), [open="true"]) .toolbarbutton-icon,
+      #AbsoluteFontSizeButton:not([disabled="true"]):is(:hover, [open="true"]) > .toolbarbutton-icon,
+      #removeStylingButton:not([disabled="true"]):hover > .toolbarbutton-icon,
+      .formatting-button:not(:hover:not([disabled="true"]:hover), [open="true"]) > .toolbarbutton-menu-dropmarker,
+      #AlignPopupButton menuitem:not([disabled="true"], :hover, :active) .menu-iconic-icon,
+      #InsertPopup > menuitem:not([disabled="true"],:hover, :active):is(#InsertHRuleItem, #InsertTableItem) .menu-iconic-icon {
+        filter: invert(1) !important;
+      }
     }
 
 /* Calender & Tasks */

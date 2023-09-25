@@ -18,8 +18,8 @@
       --outl-icon-compress: url("./../images/compress.ico");
       --outl-icon-contact: url("./../images/contact.gif");
       /* --outl-icon-conversation: url("chrome://messenger/skin/icons/new/compact/conversation.svg"); */
-      --outl-icon-copy: url("./../images/copy.ico");
-      /* --outl-icon-cut: url("chrome://messenger/skin/icons/new/compact/cut.svg"); */
+      --outl-icon-copy: url("./../images/copy.png");
+      --outl-icon-cut: url("./../images/cut.png");
       --outl-icon-density: url("./../images/density.ico");
       --outl-icon-delete: url("./../images/delete.png");
       /* --outl-icon-download: url("chrome://messenger/skin/icons/new/compact/download.svg"); */
@@ -91,6 +91,7 @@
       --outl-icon-print: url("./../images/print.png");
       --outl-icon-question: url("./../images/question.png");
       --outl-icon-quit: url("./../images/quit.ico");
+      --outl-icon-quote: url("./../images/quote.png");
       --outl-icon-receipt: url("./../images/receipt.ico");
       /* --outl-icon-redirect: url("chrome://messenger/skin/icons/new/compact/redirect.svg"); */
       --outl-icon-remove: url("./../images/delete.ico");
