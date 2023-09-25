@@ -1,11 +1,127 @@
-/** FOLDERPANE ***********************/
-@import "./src/folderPane.css";
-/** MESSAGE **************************/
-@import "./src/message.css";
-/** PREFERENCES **********************/
-@import "./src/preferences.css";
+/** VARIABLES ************************/
+/*= MY VARIABLES ===============*/
+@import "./src/my-variables.css";
+/*= VARIABLES ==================*/
+@import "./src/variables.css";
 
 /** ICONS ****************************/
 @import "./src/icons-variables.css";
-@import "./src/icons.css";
+@import "./src/iconsContent.css";
 @import "./src/icons-layout.css";
+
+@supports -moz-bool-pref("outlook2003.theme") {
+  @media (-moz-windows-default-theme) {
+/* Toolbar Layout on Hover, Active, Open */
+    .toolbarbutton-1,
+    .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+      transition: none !important;
+    }
+    .toolbarbutton-1,
+    .toolbarbutton-menubutton-button,
+    .toolbarbutton-menubutton-dropmarker {
+      box-shadow: none !important;
+    }
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-button,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover > .toolbarbutton-menubutton-dropmarker {
+      background-color: transparent !important;
+      background-image: var(--win-toolbarbutton-hover-background) !important;
+      border-color: var(--win-toolbarbutton-border-color) !important;
+    }
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active > .toolbarbutton-menubutton-button,
+    .toolbarbutton-1:not([disabled="true"], [open="true"]):hover:active > .toolbarbutton-menubutton-dropmarker {
+      background-color: transparent !important;
+      background-image: var(--win-toolbarbutton-active-background) !important;
+      border-color: var(--win-toolbarbutton-border-color) !important;
+    }
+    .toolbarbutton-1[open="true"]:not([disabled="true"]),
+    .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-button {
+      background-color: transparent !important;
+      background-image: var(--win-toolbarbutton-active-background-open) !important;
+      border-color: var(--win-toolbarbutton-border-color) !important;
+      border-bottom: 1px solid rgb(246, 246, 246) !important;
+    }
+    .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-dropmarker {
+      border-bottom: 0px solid rgb(246, 246, 246) !important;
+    }
+
+/* Toolbar Icons Layout */
+    .toolbarbutton-1 {
+      height: 20px !important;
+      min-width: 20px !important;
+      margin: 1px !important;
+    }
+    toolbarbutton.toolbarbutton-1:not([is="toolbarbutton-menu-button"]),
+    toolbarbutton.toolbarbutton-menubutton-button {
+      padding: 2px !important;
+    }
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+      padding: 0px !important;
+    }
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker::before,
+    #button-print > .toolbarbutton-text,
+    #button-file > .toolbarbutton-text,
+    #button-file > dropmarker {
+      display: none !important;
+    }
+    .inline-toolbar toolbarpaletteitem toolbarseparator,
+    .inline-toolbar > toolbarseparator,
+    .chromeclass-toolbar#composeToolbar2 > toolbarseparator,
+    .chromeclass-toolbar#FormatToolbar > toolbarseparator {
+      height: 20px !important;
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+    }
+    .chromeclass-toolbar toolbarseparator {
+      min-width: 1.5px !important;
+      background-image: linear-gradient(to right, rgb(70, 105, 170), rgb(245, 250, 255)) !important;
+    }
+
+/* AddressBook Icons layout */
+    #detailsWriteButton::before,
+    #detailsEventButton::before,
+    #detailsSearchButton::before,
+    #detailsNewListButton::before,
+    #detailsDeleteButton::before,
+    #placeholderEmptyBook::before,
+    #placeholderSearchOnly::before,
+    #placeholderCreateContact::before,
+    #placeholderSearching::before,
+    #placeholderNoSearchResults::before,
+    .icon-button-delete,
+    .bookRow-icon,
+    .listRow-icon {
+      background-size: contain;
+    }
+    treechildren::-moz-tree-image(GeneratedName),
+    treechildren::-moz-tree-image(GeneratedName, MailList) {
+      height: 16px;
+    }
+    @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+      .contentTabToolbar > .toolbarbutton-1:not([disabled="true"]):is(:hover, [open="true"], :hover:active) {
+        color: rgb(0, 0, 0) !important;
+      }
+    }
+    
+/* Account Manager Icons Layout */
+    #accounttree li:not(.children) .twisty-icon {
+      display: none;
+    }
+    #accounttree li.children.collapsed .twisty-icon,
+    #accounttree li.children.collapsed:dir(rtl) .twisty-icon {
+      transform: none !important;
+    }
+    #accounttree li div.icon {
+      background-size: contain;
+    }
+    menulist.folderMenuItem:not(.menuitem-iconic) {
+      padding: 0 6px 0 24px !important;
+      list-style-image: none !important;
+      background-size: 16px;
+      background-repeat: no-repeat;
+      background-position: 6px center;
+    }
+  }
+}
