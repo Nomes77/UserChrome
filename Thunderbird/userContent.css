@@ -85,6 +85,11 @@
       background-image: linear-gradient(to right, rgb(70, 105, 170), rgb(245, 250, 255)) !important;
     }
 
+/* Padding of ToolBar */
+    #toolbox.contentTabToolbox .contentTabToolbar {
+      padding-left: 4px;
+    }
+
 /* AddressBook Icons layout */
     #detailsWriteButton::before,
     #detailsEventButton::before,

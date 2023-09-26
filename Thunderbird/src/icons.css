@@ -96,57 +96,112 @@
       background-image: var(--outl-icon-twisty-closed) !important;
     }
     /* Folder MenuItem Icons */
-    .folderMenuItem {
+    .folderMenuItem:not(menulist) {
       list-style-image: var(--outl-icon-folder) !important;
     }
-    .folderMenuItem[ServerType="nntp"] {
+    .folderMenuItem[ServerType="nntp"]:not(menulist) {
       list-style-image: var(--outl-icon-newsletter) !important;
     }
-    .folderMenuItem[IsFeedFolder="true"] {
+    .folderMenuItem[IsFeedFolder="true"]:not(menulist) {
       list-style-image: var(--outl-icon-folder-rss) !important;
     }
-    .folderMenuItem[SpecialFolder="Inbox"] {
+    .folderMenuItem[SpecialFolder="Inbox"]:not(menulist) {
       list-style-image: var(--outl-icon-inbox) !important;
     }
-    .folderMenuItem[SpecialFolder="Sent"] {
+    .folderMenuItem[SpecialFolder="Sent"]:not(menulist) {
       list-style-image: var(--outl-icon-sent-folder) !important;
     }
-    .folderMenuItem[SpecialFolder="Outbox"] {
+    .folderMenuItem[SpecialFolder="Outbox"]:not(menulist) {
       list-style-image: var(--outl-icon-outbox) !important;
     }
-    .folderMenuItem[SpecialFolder="Drafts"] {
+    .folderMenuItem[SpecialFolder="Drafts"]:not(menulist) {
       list-style-image: var(--outl-icon-draft) !important;
     }
-    .folderMenuItem[SpecialFolder="Templates"] {
+    .folderMenuItem[SpecialFolder="Templates"]:not(menulist) {
       list-style-image: var(--outl-icon-templates) !important;
     }
-    .folderMenuItem[SpecialFolder="Junk"] {
+    .folderMenuItem[SpecialFolder="Junk"]:not(menulist) {
       list-style-image: var(--outl-icon-spam) !important;
     }
-    .folderMenuItem[SpecialFolder="Trash"] {
+    .folderMenuItem[SpecialFolder="Trash"]:not(menulist) {
       list-style-image: var(--outl-icon-trash) !important;
     }
-    .folderMenuItem[SpecialFolder="Archive"] {
+    .folderMenuItem[SpecialFolder="Archive"]:not(menulist) {
       list-style-image: var(--outl-icon-archive) !important;
     }
-    .folderMenuItem[SpecialFolder="Virtual"] {
+    .folderMenuItem[SpecialFolder="Virtual"]:not(menulist) {
       list-style-image: var(--outl-icon-folder-filter) !important;
     }
-    .folderMenuItem[IsServer="true"][ServerType="imap"][IsSecure="true"],
-    .folderMenuItem[IsServer="true"][ServerType="pop3"][IsSecure="true"] {
+    .folderMenuItem[IsServer="true"][ServerType="imap"][IsSecure="true"]:not(menulist),
+    .folderMenuItem[IsServer="true"][ServerType="pop3"][IsSecure="true"]:not(menulist) {
       list-style-image: var(--outl-icon-server) !important;
     }
-    .folderMenuItem[IsServer="true"][ServerType="none"] {
+    .folderMenuItem[IsServer="true"][ServerType="none"]:not(menulist) {
       list-style-image: var(--outl-icon-home) !important;
     }
-    .folderMenuItem[IsServer="true"][ServerType="nntp"] {
+    .folderMenuItem[IsServer="true"][ServerType="nntp"]:not(menulist) {
       list-style-image: var(--outl-icon-globe) !important;
     }
-    .folderMenuItem[IsServer="true"][ServerType="nntp"][IsSecure="true"] {
+    .folderMenuItem[IsServer="true"][ServerType="nntp"][IsSecure="true"]:not(menulist) {
       list-style-image: var(--outl-icon-globe-secure) !important;
     }
-    .folderMenuItem[IsServer="true"][ServerType="rss"] {
+    .folderMenuItem[IsServer="true"][ServerType="rss"]:not(menulist) {
       list-style-image: var(--outl-icon-rss) !important;
+    }
+    menulist.folderMenuItem {
+      background-image: var(--outl-icon-folder) !important;
+    }
+    menulist.folderMenuItem[ServerType="nntp"] {
+      background-image: var(--outl-icon-newsletter) !important;
+    }
+    menulist.folderMenuItem[IsFeedFolder="true"] {
+      background-image: var(--outl-icon-folder-rss) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Inbox"] {
+      background-image: var(--outl-icon-inbox) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Sent"] {
+      background-image: var(--outl-icon-sent-folder) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Outbox"] {
+      background-image: var(--outl-icon-outbox) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Drafts"] {
+      background-image: var(--outl-icon-draft) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Templates"] {
+      background-image: var(--outl-icon-templates) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Junk"] {
+      background-image: var(--outl-icon-spam) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Trash"] {
+      background-image: var(--outl-icon-trash) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Archive"] {
+      background-image: var(--outl-icon-archive) !important;
+    }
+    menulist.folderMenuItem[SpecialFolder="Virtual"] {
+      background-image: var(--outl-icon-folder-filter) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="imap"][IsSecure="true"],
+    menulist.folderMenuItem[IsServer="true"][ServerType="pop3"][IsSecure="true"] {
+      background-image: var(--outl-icon-server) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="none"] {
+      background-image: var(--outl-icon-home) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="nntp"] {
+      background-image: var(--outl-icon-globe) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="nntp"][IsSecure="true"] {
+      background-image: var(--outl-icon-globe-secure) !important;
+    }
+    menulist.folderMenuItem[IsServer="true"][ServerType="rss"] {
+      background-image: var(--outl-icon-rss) !important;
+    }
+    menulist > menupopup .menu-right {
+      list-style-image: var(--outl-icon-nav-left-sm) !important;
     }
    
     /* Table Columns Icons */
@@ -929,10 +984,7 @@
       background-image: var(--outl-icon-calendar) !important;
     }
     #calendar-add-task-button {
-      list-style-image: var(--outl-icon-new-task) !important;
-    }
-    #newCalendarSidebarButton {
-      background-image: var(--outl-icon-new-task) !important;
+      list-style-image: var(--outl-icon-new-calender) !important;
     }
     #refreshCalendar {
       background-image: var(--outl-icon-sync) !important;

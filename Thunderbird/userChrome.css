@@ -133,7 +133,7 @@
       border: 1px solid !important;
     }
     #composeToolbar2 toolbaritem > menulist:not(:hover, [open="true"]),
-    #FormatToolbar menulist:not(:hover, [open="true"]) {
+    #FormatToolbar menulist:is(:not(:hover, [open="true"]), [disabled="true"]) {
       border-color: transparent !important;
     }
     .toolbarbutton-1[open="true"]:not([disabled="true"]) > .toolbarbutton-menubutton-dropmarker {
@@ -428,6 +428,21 @@
       content: none !important;
     }
 
+/* Folder MenuItem Icons Layout */
+    menulist.folderMenuItem:not(.menuitem-iconic) {
+      padding: 0 6px 0 24px !important;
+      list-style-image: none !important;
+      background-size: 16px;
+      background-repeat: no-repeat;
+      background-position: 6px center;
+    }
+    #FilterEditor #filterActionsBox richlistitem menulist.folderMenuItem:not([disabled="true"]) {
+      background-color: var(--button-background-color) !important;
+    }
+    #FilterEditor #filterActionsBox richlistitem menulist.folderMenuItem:not([disabled="true"]):is(:hover, [open="true"]) {
+      background-color: var(--button-hover-background-color) !important;
+    }
+
 /* Opacity disabled items */
     menubar > menu[disabled="true"],
     #unifiedToolbarContent .unified-toolbar-button[disabled],
@@ -684,7 +699,7 @@
 
 /* Messager Compose Header Layout */
     #MsgHeadersToolbar menupopup > menuitem[selected="true"][_moz-menuactive="true"] {
-      color: var(--win-theme-color) !important;
+      color: var(--win-black-color) !important;
     }
     #MsgHeadersToolbar > #recipientsContainer {
       margin-top: -3px;
@@ -701,10 +716,10 @@
       #removeStylingButton:not([disabled="true"]):hover > .toolbarbutton-icon,
       .formatting-button:not(:hover:not([disabled="true"]:hover), [open="true"]) > .toolbarbutton-menu-dropmarker,
       #AlignPopupButton menuitem:not([disabled="true"], :hover, :active) .menu-iconic-icon,
-      #InsertPopup > menuitem:not([disabled="true"],:hover, :active):is(#InsertHRuleItem, #InsertTableItem) .menu-iconic-icon {
+      #InsertPopup > menuitem:not([disabled="true"], :hover, :active):is(#InsertHRuleItem, #InsertTableItem) .menu-iconic-icon {
         filter: invert(1) !important;
       }
-      #FormatToolbar > menulist:not([disabled="true"]):is(:hover, , [open="true"]) {
+      #FormatToolbar > menulist:not([disabled="true"]):is(:hover, :active, [open="true"]) {
         color: var(--win-black-color) !important;
       }
     }
@@ -728,6 +743,11 @@
     #settingsButton::before,
     #e2eButton::before {
       background-size: contain;
+    }
+
+/* Tabmail */
+    .tabmail-tab button.tab-close-button {
+      padding: 0 !important;
     }
 
   }
