@@ -984,7 +984,7 @@
       background-image: var(--outl-icon-calendar) !important;
     }
     #calendar-add-task-button {
-      list-style-image: var(--outl-icon-new-calender) !important;
+      list-style-image: var(--outl-icon-new-task) !important;
     }
     #refreshCalendar {
       background-image: var(--outl-icon-sync) !important;
