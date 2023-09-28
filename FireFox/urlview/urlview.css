@@ -39,6 +39,9 @@
   .urlbarView-row {
     padding-inline: calc(var(--uc-urlView-full-width-padding) + var(--urlbarView-item-inline-padding)) !important;
     height: 36px !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
     border-radius: 0px !important;
   }
   :root:not([lwt-toolbar-field-focus-brighttext="true"]) 
