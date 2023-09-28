@@ -154,11 +154,6 @@
       min-width: 0 !important;
       min-height: 0 !important;
     }
-    @supports -moz-bool-pref("userChrome+Content.rounding.square_menupopup") {
-      .menupopup-arrowscrollbox[part*="content"] {
-        border-radius: 0px !important;
-      }
-    }
     menupopup > menu > menupopup {
       /* align submenus */
       margin-inline-start: var(--nested-margin) !important;
