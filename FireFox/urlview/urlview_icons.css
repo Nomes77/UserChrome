@@ -117,7 +117,7 @@
 .urlbar-page-action,
 #urlbar-go-button,
 .search-go-button {
-  width: 22px !important; /* Changed because of --urlbar-min-height set to 32px instead of 26 px */
+  width: auto !important; /* Changed because of --urlbar-min-height set to 32px instead of 26 px */
   height: calc(var(--urlbar-min-height) - 2px - 2 * var(--urlbar-container-padding));
   padding-top: 6px !important; /* Changed because of --urlbar-min-height set to 32px instead of 26 px */
 }
