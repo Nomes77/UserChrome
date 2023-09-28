@@ -205,11 +205,6 @@
       padding: 5px !important;
       border-radius: 4px !important;
     }
-    @supports -moz-bool-pref("userChrome+Content.rounding.square_button") {
-      #placesToolbar > toolbarbutton {
-        border-radius: 0 !important;
-      }
-    }
     #placesToolbar > toolbarbutton[disabled] {
       opacity: 0.6 !important;
     }
@@ -237,11 +232,6 @@
       border-radius: 4px !important;
       margin-inline-end: 2px !important;
     }
-    @supports -moz-bool-pref("userChrome+Content.rounding.square_button") {
-      #placesMenu > menu {
-        border-radius: 0 !important;
-      }
-    }
     #placesMenu > menu[_moz-menuactive="true"],
     #placesMenu > menu:hover {
       background-color: var(--organizer-hover-background) !important;
@@ -267,12 +257,6 @@
       margin: 0 !important;
       padding-block: 2px !important;
       min-height: 24px !important;
-    }
-    @supports -moz-bool-pref("userChrome+Content.rounding.square_field") {
-      #searchFilter,
-      #detailsPane html|input {
-        border-radius: 0 !important;
-      }
     }
     #searchFilter[focused] {
       box-shadow: var(--organizer-toolbar-field-focus-box-shadow) !important;
@@ -415,12 +399,6 @@
       -moz-context-properties: fill !important;
       fill: currentColor !important;
     }
-    @supports -moz-bool-pref("userChrome+Content.rounding.square_button") {
-      #editBookmarkPanelRows .expander-up,
-      #editBookmarkPanelRows .expander-down {
-        border-radius: 0 !important;
-      }
-    }
     #editBookmarkPanelRows .expander-up:hover,
     #editBookmarkPanelRows .expander-down:hover {
       background-color: var(--organizer-hover-background) !important;
@@ -454,11 +432,6 @@
       min-height: 20px !important;
       padding-inline: 4px !important;
     }
-    @supports -moz-bool-pref("userChrome+Content.rounding.square_field") {
-      #places input {
-        border-radius: 0 !important;
-      }
-    }
     #places input:focus {
       outline: 2px solid var(--organizer-outline-color) !important;
       outline-offset: -1px !important;
@@ -476,11 +449,6 @@
       background-color: var(--organizer-content-background) !important;
       border: 1px solid var(--organizer-border-color) !important;
       border-radius: 4px !important;
-    }
-    @supports -moz-bool-pref("userChrome+Content.rounding.square_field") {
-      #editBMPanel_tagsSelectorRow > richlistbox {
-        border-radius: 0 !important;
-      }
     }
     #editBMPanel_tagsSelectorRow > richlistbox > richlistitem {
       border: 1px solid transparent !important;
