@@ -17,7 +17,7 @@
   /*= Background =========================================================*/
   @supports -moz-bool-pref("userChrome+Content.newTab.image") {
     @supports not -moz-bool-pref("userChrome+Content.newTab.image.Edge") {
-      @supports not -moz-bool-pref("userChrome+Content.zavety") {
+      @supports -moz-bool-pref("userChrome+Content.zavety") {
         html.private {
           --searchbar-bgcolor: color-mix(in srgb, rgb(43, 43, 43), transparent 60%) !important;
           --searchbar-bgcolor-hover: color-mix(in srgb, rgb(61, 61, 61), transparent 60%) !important;
