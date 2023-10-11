@@ -19,5 +19,5 @@
   margin: var(--arrowpanel-menuitem-margin) !important;
 }
 .unified-extensions-item-menu-button.subviewbutton {
-  padding: var(--arrowpanel-menuitem-padding) !important;
+  padding: 0 !important;
 }
