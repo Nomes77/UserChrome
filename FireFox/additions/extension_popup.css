@@ -26,29 +26,20 @@ panelmultiview[mainViewId="unified-extensions-view"] .unified-extensions-item .u
 panelmultiview[mainViewId="unified-extensions-view"] {
   --uei-icon-size: 16px !important
 }
-panelmultiview[mainViewId="unified-extensions-view"] toolbarbutton.unified-extensions-item-action-button,
-panelmultiview[mainViewId="unified-extensions-view"] toolbarbutton.unified-extensions-item-menu-button {
+panelmultiview[mainViewId="unified-extensions-view"] toolbarbutton.unified-extensions-item-action-button {
   min-height: var(--uei-icon-size) !important;
 }
-panelmultiview[mainViewId="unified-extensions-view"] panelview toolbaritem {
-  margin-block: -2px !important;
+panelmultiview[mainViewId="unified-extensions-view"] panelview .unified-extensions-item-menu-button.subviewbutton {
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+}
+panelmultiview[mainViewId="unified-extensions-view"] panelview .unified-extensions-item:first-child {
+  margin-top: var(--arrowpanel-menuitem-margin-inline) !important;
 }
 panelmultiview[mainViewId="unified-extensions-view"] panelview .unified-extensions-item:last-child {
   margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
 }
 panelmultiview[mainViewId="unified-extensions-view"] panelview .unified-extensions-item-name {
   padding-inline-start: 0.125em !important;
-}
-panelmultiview[mainViewId="unified-extensions-view"] panelview .unified-extensions-item > .subviewbutton {
-  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
-  margin-top: 5px !important;
-  margin-bottom 5px !important;
-}
-panelmultiview[mainViewId="unified-extensions-view"] toolbarbutton.unified-extensions-item-menu-button {
-  padding: 0px !important;
-}
-panelmultiview[mainViewId="unified-extensions-view"] .unified-extensions-item .webextension-browser-action.subviewbutton > .toolbarbutton-badge-stack {
-  margin-inline-end: 2px !important;
 }
 panelmultiview[mainViewId="unified-extensions-view"] panelview {
   max-width: 22em !important;

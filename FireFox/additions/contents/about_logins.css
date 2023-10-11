@@ -8,10 +8,13 @@
   [role="listbox"][data-l10n-id="login-list"] {
     scrollbar-width: none;
   }
-  .login-list-item {
+  login-list-item {
     padding-block: 0px !important;
   }
-  .login-list-section > .login-list-item .username {
+  .labels[slot="login-info"] {
+    min-height: unset !important;
+  }
+  .labels[slot="login-info"] .subtitle {
     display: none !important;
   }
   input[type="password"]:read-only:not(:hover),
@@ -22,8 +25,11 @@
   input[name="password"][readonly] {
     width: 250px !important;
   }
-  .delete-button {
-    background-image: url("./../../images/delete.svg") !important;
+  button.ghost-button > img[src="chrome://global/skin/icons/edit.svg"] {
+    content: url("./../../images/edit.svg") !important;
+  }
+  button.ghost-button > img[src="chrome://global/skin/icons/delete.svg"] {
+    content: url("./../../images/delete.svg") !important;
   }
   .copied-button-text {
     background-image: url("./../../images/check.svg") !important;

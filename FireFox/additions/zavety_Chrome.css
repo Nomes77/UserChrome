@@ -1,29 +1,75 @@
-@supports -moz-bool-pref("userChrome+Content.zavety") {
-  #appMenu-passwords-button,
-  /* #appMenu-extensions-themes-button, */
-  #main-menubar menuitem#menu_importFromAnotherBrowser,
-  #main-menubar menuitem#menu_importFromAnotherBrowser + menuseparator,
-  toolbaritem#_windscribeff-browser-action,
-  toolbaritem#_uextra-browser-action,
-  toolbarbutton#unified-extensions-button,
-  #nav-bar:not([overflowing="true"]) toolbarbutton#nav-bar-overflow-button,
-  panelmultiview[mainViewId="widget-overflow-mainView"] panelview #widget-overflow-fixed-separator,
-  panelmultiview[mainViewId="widget-overflow-mainView"] panelview #widget-overflow-fixed-list,
-  .urlbar-addon-page-action[actionid="_316cb7eb-36d4-4cc7-a77c-61b6998e7505_"],
+@supports not -moz-bool-pref("userChrome+Content.zavety") {
+  #appMenu-passwords-button {
+    display: none !important;
+  }
+  /* #appMenu-extensions-themes-button {
+    display: none !important;
+  } */
+  #main-menubar menuitem#menu_importFromAnotherBrowser {
+    display: none !important;
+  }
+  #main-menubar menuitem#menu_importFromAnotherBrowser + menuseparator {
+    display: none !important;
+  }
+  toolbaritem#_windscribeff-browser-action {
+    display: none !important;
+  }
+  toolbaritem#_uextra-browser-action {
+    display: none !important;
+  }
+  toolbarbutton#unified-extensions-button {
+    display: none !important;
+  }
+  #nav-bar:not([overflowing="true"]) toolbarbutton#nav-bar-overflow-button {
+    display: none !important;
+  }
+  panelmultiview[mainViewId="widget-overflow-mainView"] panelview #widget-overflow-fixed-separator {
+    display: none !important;
+  }
+  panelmultiview[mainViewId="widget-overflow-mainView"] panelview #widget-overflow-fixed-list {
+    display: none !important;
+  }
+  .urlbar-addon-page-action[actionid="_316cb7eb-36d4-4cc7-a77c-61b6998e7505_"] {
+    display: none !important;
+  }
 
-  #urlbar #identity-box > #notification-popup-box > #password-notification-icon,
-  panel#notification-popup > popupnotification#password-notification,
-  notification-message[value="master-password-login-required"],
-  notification-message[value="primary-password-login-required"],
-  panel#PopupAutoComplete[is="autocomplete-richlistbox-popup"],
+  #urlbar #identity-box > #notification-popup-box > #password-notification-icon {
+    display: none !important;
+  }
+  panel#notification-popup > popupnotification#password-notification {
+    display: none !important;
+  }
+  notification-message[value="master-password-login-required"] {
+    display: none !important;
+  }
+  notification-message[value="primary-password-login-required"] {
+    display: none !important;
+  }
+  panel#PopupAutoComplete[is="autocomplete-richlistbox-popup"] {
+    display: none !important;
+  }
 
-  .panel-subview-body > #appmenu-moreTools-button,
-  .panel-subview-body > #appmenu-moreTools-button + toolbarseparator,
-  #toolbar-context-menu #viewToolbarsMenuSeparator,
-  #toolbar-context-menu .viewCustomizeToolbar,
-  #toolbar-context-menu .customize-context-moveToPanel,
-  #menu_viewPopup #view-menu-popup > menuseparator,
-  #menu_viewPopup #view-menu-popup > #menu_customizeToolbars,
+  .panel-subview-body > #appmenu-moreTools-button {
+    display: none !important;
+  }
+  .panel-subview-body > #appmenu-moreTools-button + toolbarseparator {
+    display: none !important;
+  }
+  #toolbar-context-menu #viewToolbarsMenuSeparator {
+    display: none !important;
+  }
+  #toolbar-context-menu .viewCustomizeToolbar {
+    display: none !important;
+  }
+  #toolbar-context-menu .customize-context-moveToPanel {
+    display: none !important;
+  }
+  #menu_viewPopup #view-menu-popup > menuseparator {
+    display: none !important;
+  }
+  #menu_viewPopup #view-menu-popup > #menu_customizeToolbars {
+    display: none !important;
+  }
 
   #customization-panelHolder > #widget-overflow-fixed-list > toolbarpaletteitem[id$="-browser-action"] {
     display: none !important;
