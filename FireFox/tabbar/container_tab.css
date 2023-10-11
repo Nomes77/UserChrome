@@ -48,11 +48,11 @@
   width: 16px;
 }
 /* Tab - Hide Titlechanged Indicator */
-.tabbrowser-tab > .tab-stack > .tab-content[titlechanged]:not([selected="true"]) {
+.tabbrowser-tab > .tab-stack > .tab-content[titlechanged]:not([selected]) {
   background-image: none !important;
 }
 /* Tab - Attention Indicator override */
-.tabbrowser-tab:not([pinned])[usercontextid] > .tab-stack > .tab-content[attention]:not([selected="true"]) {
+.tabbrowser-tab:not([pinned])[usercontextid] > .tab-stack > .tab-content[attention]:not([selected]) {
   /* Original: radial-gradient(circle, var(--attention-icon-color), var(--attention-icon-color) 2px, transparent 2px); */
   --dotted-identity-image: radial-gradient(
     circle,
@@ -67,7 +67,7 @@
   background-position-y: bottom calc(var(--uc-container-position-y) / 2 - 1.5px) !important;
 }
 /* Pinned Tab - Attention Indicator override */
-.tabbrowser-tab[pinned][usercontextid] > .tab-stack > .tab-content[attention]:not([selected="true"]) {
+.tabbrowser-tab[pinned][usercontextid] > .tab-stack > .tab-content[attention]:not([selected]) {
   background-image: var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image) !important;
   background-position-x: var(--uc-pinned-attention-container-position-x) !important;
 }
