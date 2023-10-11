@@ -69,7 +69,6 @@ user_pref("userChrome+Content.theme.non_native_menu", false);
 user_pref("userChrome+Content.theme.private_mode", true);
 user_pref("userChrome+Content.urlview.always_show_page_actions", false);
 user_pref("userChrome+Content.urlview.permissions.hide_granted-icon", true);
-user_pref("userChrome+Content.zavety", false);
 
 // ** Useful Options ******************************************************************
 // Integrated calculator at urlbar
