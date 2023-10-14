@@ -28,9 +28,7 @@ user_pref("userChrome+Content.additions.about_addons_show_management_buttons", f
 user_pref("userChrome+Content.additions.about_addons_show_version_number", true);
 user_pref("userChrome+Content.additions.about_config_compact", true);
 user_pref("userChrome+Content.additions.about_page_scrollbars", true);
-user_pref("userChrome+Content.additions.enable_selection", false);          // enable selection and copying on every website
 user_pref("userChrome+Content.additions.floating_findbar_on_top", true);
-user_pref("userChrome+Content.additions.standalone_image_page_mods", true);
 user_pref("userChrome+Content.additions.uBlock_Origin.hide_default_unused", true);
 user_pref("userChrome+Content.autohide.bookmarkbar", false);
 user_pref("userChrome+Content.autohide.forward_button", false);
