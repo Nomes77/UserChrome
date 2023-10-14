@@ -37,8 +37,6 @@
 @import "./additions/contents/message_bar.css";
 @import "./additions/contents/pdf_viewer.css";
 @import "./additions/contents/uBlock_Origin.css";
-@import "./additions/contents/standalone_images.css";
-@import "./additions/contents/enable_selection.css";
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
