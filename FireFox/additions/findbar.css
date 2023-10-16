@@ -1,38 +1,25 @@
 /* Other Problems ********************************************************************/
-@supports not -moz-bool-pref("userChrome+Content.additions.floating_findbar_on_top") {
-  findbar > .findbar-container > description[class="findbar-label findbar-find-status"] {
-    width: 190px !important;
-    margin-top: -2px !important;
-    margin-bottom: -2px !important;
-  }
-}
-
 @supports -moz-bool-pref("userChrome+Content.additions.floating_findbar_on_top") {
-  #main-window > body > box {
-  /* #navigator-toolbox-background for compatibility */
-    z-index: 1;
-  }
   findbar {
-    order: -1 !important;
+    order: -1;
+    margin-bottom: -33px;
+    margin-right: 25px;
     position: relative;
-    overflow: visible;
     border-top: none !important;
-    padding: 2.5px !important;
+    padding: 0 !important;
     transition: transform 82ms linear, opacity 82ms linear 32ms !important;
     background: none !important;
     pointer-events: none;
     z-index: 1;
-    margin-bottom: -33px;
-    margin-right: 25px;
+    white-space: nowrap;
+    flex-direction: row-reverse;
+  }
+  .findbar-container > .findbar-find-fast {
+    padding: var(--toolbarbutton-inner-padding) 1px;
+    margin: 0 !important;
   }
   findbar[hidden] {
     transform: translateY(-30px);
-  }
-  findbar > .findbar-container {
-    margin-left: 400px !important;
-  }
-  findbar > .findbar-container:has(.found-matches[hidden="true"]) {
-    margin-left: 475px !important;
   }
   findbar > .findbar-container,
   findbar > .close-icon,
@@ -49,38 +36,42 @@
     border-width: 1px 1px 1px 0px !important;
   }
   findbar > .findbar-container {
+    height: initial !important;
+    margin-inline: 0px !important;
+    overflow-inline: visible !important;
     flex-direction: row-reverse;
     border-radius: var(--uc-rounding-toolbar, var(--toolbarbutton-border-radius)) 0 0 var(--uc-rounding-toolbar, var(--toolbarbutton-border-radius)) !important;
     border-width: 1px 0 1px 1px !important;
   }
-  .findbar-container > .findbar-find-fast {
-    padding: var(--toolbarbutton-inner-padding) 1px;
-    margin: 0 !important;
-  }
-  .findbar-container > .findbar-find-status {
+  .findbar-find-status {
     display: flex;
     overflow: hidden;
-    text-overflow: clip;
-    flex: 100;
-  }
-  findbar > .findbar-container > hbox {
-    margin: 0 -5px 0 5px;
+    text-overflow: ellipsis;
+    flex-grow: 1;
   }
   .findbar-closebutton {
     margin: 0 !important;
+    border-radius: 0 !important;
+    padding: 5px !important;
+    width: initial !important;
+    order: -1;
   }
   .findbar-closebutton > image {
     padding: 3px;
   }
   .findbar-closebutton:hover > image {
     background-color: color-mix(in srgb, currentColor 15%, transparent) !important;
-    border-radius: 4px;
+    border-radius: var(--uc-rounding-toolbar, var(--toolbarbutton-border-radius)) !important;
   }
   .findbar-closebutton:hover:active > image {
     background-color: color-mix(in srgb, currentColor 25%, transparent) !important;
   }
-  .find-status-icon[status="wrapped"] + .findbar-find-status {
-    width: 170px !important;
-    margin-inline-start: inherit !important;
+  findbar > .findbar-container > hbox {
+    margin: 0 -5px 0 5px;
+  }
+  findbar::after {
+    content:"";
+    display: flex;
+    flex-grow: 100;
   }
 }
