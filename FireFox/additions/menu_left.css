@@ -8,6 +8,6 @@ toolbaritem#panelMenu_bookmarksMenu[tooltip="bhTooltip"][role="group"][aria-labe
   display: none !important;
 }
 menupopup#contentAreaContextMenu:has(menu[id^="_testpilot-containers"]) > #context-media-eme-separator,
-menupopup#contentAreaContextMenu:has(menuitem[id^="ublock0_raymondhill_net][id$="uBlock0-viewSource"]) > #context-media-eme-separator {
+menupopup#contentAreaContextMenu:has(menuitem[id^="ublock0_raymondhill_net"][id$="uBlock0-viewSource"]) > #context-media-eme-separator {
   display: none !important;
 }
