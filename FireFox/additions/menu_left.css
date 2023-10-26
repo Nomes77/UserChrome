@@ -1,7 +1,6 @@
 /* MENU-LEFT *************************************************************************/
 menuitem.share-tab-url-item,
 menupopup#placesContext > menuitem#placesContext_open[command="placesCmd_open"][data-l10n-id="places-open"][label="Openen"],
-menuseparator#context-media-eme-separator:nth-last-of-type(2),
 menuitem[id^="ublock0_raymondhill_net"][id$="uBlock0-viewSource"],
 menu[id^="_testpilot-containers"],
 toolbaritem#panelMenu_bookmarksMenu[tooltip="bhTooltip"][role="group"][aria-labelledby="panelMenu_recentBookmarks"][context="placesContext"],
@@ -9,6 +8,6 @@ toolbaritem#panelMenu_bookmarksMenu[tooltip="bhTooltip"][role="group"][aria-labe
   display: none !important;
 }
 menupopup#contentAreaContextMenu:has(menu[id^="_testpilot-containers"]) > #context-media-eme-separator,
-menupopup#contentAreaContextMenu:has(menuitem[id^="ublock0_raymondhill_net][id$="uBlock0-viewSource"]) > #context-media-eme-separator {
+menupopup#contentAreaContextMenu:has(menuitem[id^="ublock0_raymondhill_net"][id$="uBlock0-viewSource"]) > #context-media-eme-separator {
   display: none !important;
 }
