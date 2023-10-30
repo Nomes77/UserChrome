@@ -14,3 +14,6 @@
 .private-browsing-indicator-icon {
   list-style-image: url("./../images/inprivate.svg") !important;
 }
+toolbar[brighttext] .private-browsing-indicator-icon {
+  filter: invert(1);
+}

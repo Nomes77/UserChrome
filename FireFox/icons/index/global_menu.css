@@ -93,7 +93,7 @@
   --menuitem-image: url("./../images/document-css.svg");
 }
 #repair-text-encoding {
-  --menuitem-image: url("chrome://browser/skin/characterEncoding.svg");
+  --menuitem-image: url("./../images/characterEncoding.svg");
 }
 #fullScreenItem {
   --menuitem-image: url("./../images/fullscreenEnterButton.svg");
