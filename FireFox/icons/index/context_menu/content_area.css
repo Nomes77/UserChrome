@@ -169,25 +169,32 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon {
 richlistitem > .ac-login-item > .ac-settings-button {
   background-image: url("./../../../images/settings.svg") !important;
 }
-#context-undo {
+#context-undo,
+#context-pdfjs-undo {
   --menuitem-image: url("./../images/undo.svg");
 }
-#context-redo {
+#context-redo
+#context-pdfjs-redo {
   --menuitem-image: url("./../images/redo.svg");
 }
-#context-cut {
+#context-cut,
+#context-pdfjs-cut {
   --menuitem-image: url("./../images/edit-cut.svg");
 }
-#context-copy {
+#context-copy
+#context-pdfjs-copy {
   --menuitem-image: url("./../images/edit-copy.svg");
 }
-#context-paste {
+#context-paste
+#context-pdfjs-paste {
   --menuitem-image: url("./../images/edit-paste.svg");
 }
-#context-delete {
+#context-delete,
+#context-pdfjs-delete {
   --menuitem-image: url("./../images/delete.svg");
 }
-#context-selectall {
+#context-selectall,
+#context-pdfjs-selectall {
   --menuitem-image: url("./../images/select-all-on.svg");
 }
 #context-reveal-password {
