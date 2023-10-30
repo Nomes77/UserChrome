@@ -1,6 +1,7 @@
 /*= Panel - Reduce Padding ==========================================================*/
 :root {
   --arrowpanel-menuitem-margin: 0 8px; /* Original: 0 8px */
+  --arrowpanel-menuitem-margin-menu: 8px;
   --arrowpanel-menuitem-padding-block: 5px !important; /* Original: 8px */
   --arrowpanel-menuitem-padding-inline: 5px !important; /* Original: 8px */
   --arrowpanel-menuitem-padding: var(--arrowpanel-menuitem-padding-block) var(--arrowpanel-menuitem-padding-inline) !important; /* Compatibility */
@@ -8,6 +9,7 @@
 }
 :root[uidensity="compact"] {
   --arrowpanel-menuitem-margin: 0 5px !important;
+  --arrowpanel-menuitem-margin-menu: 5px !important;
   --arrowpanel-menuitem-padding-block: 3px !important;
   --arrowpanel-menuitem-padding-inline: 3px !important;
 }
