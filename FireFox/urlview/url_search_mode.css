@@ -1,15 +1,15 @@
 /*= Url Search Mode =================================================================*/
-:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+:root:not(:-moz-lwtheme)
   #urlbar[searchmode] > #urlbar-input-container #identity-icon,
-:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+:root:not(:-moz-lwtheme)
   #urlbar[searchmode] > #urlbar-input-container > #urlbar-search-mode-indicator {
     color: var(--uc-urlbarview-selected-border) !important;
 }
-:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+:root:not(:-moz-lwtheme)
   #urlbar[searchmode] > #urlbar-input-container > #urlbar-search-mode-indicator {
     padding-inline: 0px 6px !important;
 }
-:root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+:root:not(:-moz-lwtheme)
   #urlbar[searchmode] > #urlbar-input-container > #urlbar-search-mode-indicator::after {
     /* Box Model */
     content: "";
@@ -29,7 +29,7 @@
 /* Notes */
 /*
    --urlbar-box-focus-bgcolor: var(--button-bgcolor);  -->  --button-bgcolor: var(--win-hover-bgcolor)  -->  --win-hover-bgcolor: rgb(238, 238, 238);
-   :root:-moz-lwtheme-brighttext:not([lwt-default-theme-in-dark-mode]) {
+   :root:-moz-lwtheme-brighttext {
      --urlbar-box-focus-bgcolor: color-mix(in srgb, currentColor 16%, transparent);
    }
    @media (prefers-color-scheme: dark) {
