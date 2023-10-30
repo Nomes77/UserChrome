@@ -47,13 +47,13 @@ menupopup > menu {
   }
 }
 /*= Menus - Set Margin ==============================================================*/
-:not(#ContentSelectDropdown) menupopup:not(.in-menulist) > menuitem,
-:not(#ContentSelectDropdown) menupopup > menu,
-.openintabs-menuitem,
-#blockedPopupDontShowMessage,
-#BMB_viewBookmarksToolbar,
-#clearDownloadsButton /* Library */ {
-  margin: var(--arrowpanel-menuitem-margin) !important;
+@media (-moz-platform: linux) or (-moz-platform: windows) {
+  :not(#bookmarks-menu-button) menupopup {
+    --panel-padding: var(--panel-padding-block) var(--arrowpanel-menuitem-margin-menu) !important;
+  }
+  #bookmarks-menu-button menupopup {
+    --panel-padding: var(--panel-padding-block) 0 !important;
+  }
 }
 /*= Sub Menu - Nested Margin ========================================================*/
 menupopup {
