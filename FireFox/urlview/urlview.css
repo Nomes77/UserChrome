@@ -66,27 +66,27 @@
   }
   /* .urlbarView-row[type="bookmark"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-favicon {
     content: url("./../images/star-filled.svg") !important;
-    fill: var(--win-accent-color) !important;
+    fill: var(--button-primary-bgcolor) !important;
   } */
   .urlbarView-row[type="bookmark"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
     display: none;
     background-image: url("./../images/star-filled.svg") !important;
-    fill: var(--win-accent-color) !important;
+    fill: var(--button-primary-bgcolor) !important;
   }
   .urlbarView-row[selected] > .urlbarView-row-inner > .urlbarView-url {
-     color: var(--win-urlbar-popup-accent-color) !important;
+     color: var(--win-urlbar-popup-accent-color, var(--link-color)) !important;
   }
   .urlbarView-row:is([type=switchtab], [type=remotetab]) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action {
-    background-color: var(--win-disabled-bgcolor) !important; /* --urlbar-box-focus-bgcolor */
-    border: 1px solid var(--win-focus-outline-color); /* 131 ipv 133 */
+    background-color: var(--urlbar-box-bgcolor) !important; /* --urlbar-box-focus-bgcolor */
+    border: 1px solid var(--focus-outline-color); /* 131 ipv 133 */
   }
   .urlbarView-row:is([type=switchtab], [type=remotetab]):is([selected]) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action:hover {
-    background-color: var(--win-toolbarbutton-hover-background) !important; /* 220 ipv 218 */
-    border-color: var(--win-checkbox-checked-bgcolor) !important; /* 118 ipv 120 */
+    background-color: var(--toolbarbutton-hover-background) !important; /* 220 ipv 218 */
+    border-color: var(--checkbox-checked-bgcolor) !important; /* 118 ipv 120 */
   }
   .urlbarView-row:is([type=switchtab], [type=remotetab]):is(:hover) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action:hover {
     background-color: var(--toolbarbutton-active-background) !important; /* 207 */
-    border-color: var(--win-checkbox-checked-bgcolor) !important; /* 118 ipv 120 */
+    border-color: var(--checkbox-checked-bgcolor) !important; /* 118 ipv 120 */
   }
 }
 #urlbar[actiontype="switchtab"] > #urlbar-input-container > #urlbar-label-box {
