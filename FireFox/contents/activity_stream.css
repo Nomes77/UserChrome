@@ -1,26 +1,25 @@
 /** Activity Stream ******************************************************************/
 @-moz-document url("about:home"), url("about:newtab"), url("about:privatebrowsing") {
   html {
+    --newtab-text-primary-color: rgb(131, 113, 131) !important;
+    --newtab-text-secondary-color: rgb(10, 125, 214) !important;
     --searchbar-bgcolor: rgb(255, 255, 255);
     --searchbar-bgcolor-hover: rgb(221, 221, 221);
   }
-  @media (prefers-color-scheme: dark) {
-    html {
-      --searchbar-bgcolor: rgb(43, 43, 43);
-      --searchbar-bgcolor-hover: rgb(61, 61, 61);
-    }
-  }
-  html.private {
-    --searchbar-bgcolor: rgb(43, 43, 43);
+  html[lwt-newtab-brighttext] {
+    --searchbar-bgcolor: rgb(23, 23, 23);
     --searchbar-bgcolor-hover: rgb(61, 61, 61);
+  }
+  .search-handoff-button .fake-textbox {
+    opacity: 1 !important;
   }
   /*= Background =========================================================*/
   @supports -moz-bool-pref("userChrome+Content.newTab.image") {
     @supports not -moz-bool-pref("userChrome+Content.newTab.image.Edge") {
       @supports -moz-bool-pref("userChrome+Content.zavety") {
         html.private {
-          --searchbar-bgcolor: color-mix(in srgb, rgb(43, 43, 43), transparent 60%) !important;
-          --searchbar-bgcolor-hover: color-mix(in srgb, rgb(61, 61, 61), transparent 60%) !important;
+          --searchbar-bgcolor: color-mix(in srgb, rgb(43, 43, 43), transparent 50%) !important;
+          --searchbar-bgcolor-hover: color-mix(in srgb, rgb(61, 61, 61), transparent 50%) !important;
         }
         html.private body {
           background-image: url("./../images/newtab/1.jpg") !important;
@@ -38,8 +37,13 @@
               -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_wijsheid") or
               -moz-bool-pref("userChrome+Content.newTab.image.Augustinus_kerk") {
       html:not(.private) {
-        --searchbar-bgcolor: color-mix(in srgb, rgb(255, 255, 255), transparent 60%) !important;
-        --searchbar-bgcolor-hover: color-mix(in srgb, rgb(221, 221, 221), transparent 60%) !important;
+        --newtab-text-primary-color: color-mix(in srgb, rgb(131, 113, 131), black 50%) !important;
+        --newtab-text-secondary-color: rgb(10, 125, 214) !important;
+        --searchbar-bgcolor: color-mix(in srgb, rgb(255, 255, 255), transparent 50%) !important;
+        --searchbar-bgcolor-hover: color-mix(in srgb, rgb(221, 221, 221), transparent 50%) !important;
+      }
+      html[lwt-newtab-brighttext]:not(.private)  {
+        --newtab-text-primary-color: color-mix(in srgb, rgb(131, 113, 131), black 50%) !important;
       }
       html:not(.private) #root > div > span,
       html:not(.private) .logo-and-wordmark {
@@ -94,6 +98,10 @@
       --in-content-button-background-active: rgba(12,12,13,.15) !important;
     }
   }
+  html.private {
+    --searchbar-bgcolor: rgb(43, 43, 43);
+    --searchbar-bgcolor-hover: rgb(61, 61, 61);
+  }
   html.private body {
     justify-content: normal !important;
     padding-top: 0px !important;
@@ -128,13 +136,13 @@
     border-radius: 4px !important;
     background-color: var(--searchbar-bgcolor) !important;
     box-shadow: none !important;
+    fill: rgb(141, 141, 141) !important;
   }
   html.private .search-handoff-button:hover {
     background-color: var(--searchbar-bgcolor-hover) !important;
   }
   html.private .fake-textbox {
     color: rgb(141, 141, 141) !important;
-    opacity: 1 !important;
   }
   html.private .fake-caret {
     background-color: rgb(245, 245, 245) !important;
@@ -287,53 +295,5 @@
   }
   .context-menu-item span[data-l10n-id="newtab-menu-delete-history"] {
     --menuitem-image: url("./../images/delete.svg");
-  }
-  /*= Activity Stream - Web Site Icon: full size =========================*/
-  @supports -moz-bool-pref("userContent.newTab.full_icon") {
-    .top-site-outer .tile {
-      overflow: hidden;
-    }
-    .top-site-outer .tile .icon-wrapper {
-      width: 100% !important;
-      /* Original: 48px */
-      height: 100% !important;
-      /* Original: 48px */
-    }
-  }
-  /*= Activity Stream - Animate ==========================================*/
-  @supports -moz-bool-pref("userContent.newTab.animate") {
-    @media (prefers-reduced-motion: no-preference) {
-      :root {
-        --animation-easing-function: cubic-bezier(0.07, 0.95, 0, 1);
-      }
-      /* Background */
-      .top-site-outer,
-      #searchSubmit,
-      button.icon,
-      button.close-button {
-        transition: background 1.5s var(--animation-easing-function);
-      }
-      .top-site-outer:hover,
-      #searchSubmit:hover,
-      button.icon:hover,
-      button.close-button:hover {
-        transition: background 0.5s var(--animation-easing-function);
-      }
-      /* Search Bar */
-      .search-inner-wrapper input {
-        transition: 1s var(--animation-easing-function);
-        transition-property: border-color, box-shadow;
-      }
-      .search-wrapper .search-inner-wrapper:active input,
-      .search-wrapper input:focus {
-        transition: border-color 0.5s var(--animation-easing-function), box-shadow 1s var(--animation-easing-function);
-      }
-      @supports -moz-bool-pref("userChrome+Content.page.field_border") {
-        .search-wrapper .search-inner-wrapper:hover input {
-          border-color: var(--newtab-primary-action-background) !important;
-          transition: border-color 0.5s var(--animation-easing-function);
-        }
-      }
-    }
   }
 }
