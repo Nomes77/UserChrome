@@ -2,8 +2,7 @@
 @-moz-document url("chrome://browser/content/places/places.xhtml"),
                url("chrome://browser/content/places/bookmarksSidebar.xhtml"),
                url("chrome://browser/content/places/historySidebar.xhtml") {
-  :root:not(:-moz-lwtheme),
-  :root[lwt-default-theme-in-dark-mode] {
+  :root:not(:-moz-lwtheme) {
     --default-focusring-width: 1px !important;
     --tree-color: var(--in-content-text-color);
     --tree-hover-background: rgb(236, 236, 236);
@@ -14,8 +13,7 @@
     --organizer-pane-background: var(--toolbar-bgcolor) !important;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not(:-moz-lwtheme),
-    :root[lwt-default-theme-in-dark-mode] {
+    :root:not(:-moz-lwtheme) {
       --tree-hover-background: rgb(97, 97, 97);
     }
   }
