@@ -1,10 +1,8 @@
 @supports -moz-bool-pref("userChrome+Content.theme.cool_breeze") {
-  :root:is(#main-window):not(:-moz-lwtheme, [privatebrowsingmode=temporary]),
-  :root[lwt-default-theme-in-dark-mode]:is(#main-window):not([privatebrowsingmode=temporary]) {
+  :root:is(#main-window):not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --win-component-bgcolor: rgb(163, 198, 218) !important;
   }
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]),
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) {
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --urlbar-box-hover-bgcolor: rgb(182, 200, 211) !important;
     --urlbar-box-active-bgcolor: rgb(153, 168, 177) !important;
     --win-toolbarbutton-hover-background: rgb(150, 182, 201) !important;
@@ -15,13 +13,11 @@
   :root:is(#main-window):not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #navigator-toolbox {
     border-bottom: 1px solid rgb(126, 153, 168) !important;
   }
-  :root[tabsintitlebar]:not(:-moz-window-inactive, :-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-color,
-  :root[tabsintitlebar][lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive, [privatebrowsingmode=temporary]) .titlebar-color {
+  :root[tabsintitlebar]:not(:-moz-window-inactive, :-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-color {
     color: AccentColorText;
     background-color: rgb(96, 157, 191) !important;
   }
-  :root[tabsintitlebar]:-moz-window-inactive:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-color,
-  :root[tabsintitlebar][lwt-default-theme-in-dark-mode]:-moz-window-inactive:not([privatebrowsingmode=temporary]) .titlebar-color {
+  :root[tabsintitlebar]:-moz-window-inactive:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-color {
     background-color: rgb(96, 157, 191) !important; 
   }
   /* Toolbar seperator line */
@@ -51,16 +47,6 @@
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #urlbar-label-box,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
-    #urlbar-zoom-button,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button, 
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button, 
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    #urlbar-label-box,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
     #urlbar-zoom-button {
       background-color: transparent !important;
   }
@@ -73,61 +59,39 @@
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #urlbar-label-box:hover,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
-    #urlbar-zoom-button:hover,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover, 
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover, 
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    #urlbar-label-box:hover,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
     #urlbar-zoom-button:hover {
       background-color: var(--urlbar-box-hover-bgcolor) !important;
   }
   /* Tab Color when Multiselected */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
-    .tab-background[multiselected="true"]:not([selected="true"]) > .tab-loading-burst:not([bursting]),
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
     .tab-background[multiselected="true"]:not([selected="true"]) > .tab-loading-burst:not([bursting]) {
       background-color: rgb(146, 187, 211) !important;
   }
   /* Menubar Text Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #main-menubar > menu,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"],
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"],
   /* Tabs Content Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]),
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]) {
-    color: black !important;
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]) {
+      color: black !important;
   }
   /* Titlebar Button Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .toolbarbutton-animatable-box,
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .toolbarbutton-1,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .toolbarbutton-animatable-box,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .toolbarbutton-1 {
-    color: black !important;
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .toolbarbutton-1 {
+      color: black !important;
   }
   /* :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
-      background-color: rgb(81,132,161) !important;
+      background-color: rgb(81, 132, 161) !important;
   } */
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-button {
-    stroke: black !important;
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button {
+      stroke: black !important;
   }
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button:hover,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-button:hover,
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"],
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"] { 
-    background-color: rgb(86,141,172) !important;
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-button:hover
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"] { 
+      background-color: rgb(86, 141, 172) !important;
   }
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-close:hover,
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .titlebar-close:hover { 
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .titlebar-close:hover { 
     background-color: hsl(355,86%,49%) !important;
   }
   /* Hover background for extensions */
@@ -135,58 +99,83 @@
     background-color: rgb(150, 182, 201) !important; /* var(--panel-item-hover-bgcolor) */
   }
   /* Hover in sidebar */
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary], [lwt-default-theme-in-dark-mode]) #sidebar-switcher-target:hover, 
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary], [lwt-default-theme-in-dark-mode]) #sidebar-switcher-target:hover:active,
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary], [lwt-default-theme-in-dark-mode]) #sidebar-switcher-target.active {
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #sidebar-switcher-target:hover, 
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #sidebar-switcher-target:hover:active,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #sidebar-switcher-target.active {
     background-color: rgb(229, 229, 229) !important;
   }
   /* Fixes for system dark theme */
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) {
-    --toolbarbutton-icon-fill: black !important;
-    --lwt-tab-text: black !important;
-  }
-  /* :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .tab-icon-image { 
-    fill: white !important;
-  } */
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) 
-    .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
+  @media (prefers-color-scheme: dark) {
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) toolbarseparator,
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) menuseparator::before {
+      border-top: 1px solid rgb(99, 99, 99) !important;
+    }
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
+      --toolbarbutton-icon-fill: black !important;
+      --lwt-tab-text: black !important;
+    }
+    :root:not(:-moz-lwtheme, [privarebrowsingmode=temporary]) .tab-text.tab-label,
+    :root:not(:-moz-lwtheme, [privarebrowsingmode=temporary]) .tab-close-button,
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
+        color: black !important;
+    }
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .browser-toolbar:not(.titlebar-color),
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #urlbar { 
       color: black !important;
-  }
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .browser-toolbar:not(.titlebar-color) {
-    color: black !important;
-  }
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) #urlbar { 
-    color: black !important;
-  }
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary])
-    #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-      background-color: white;
-  }
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .urlbarView-row:not([type="tip"], 
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) [type="dynamic"])[selected] > .urlbarView-row-inner, 
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .urlbarView-row-inner[selected] {
-    background-color: white !important;
-    color: black !important;
-  }
-  :root[lwt-default-theme-in-dark-mode]:not([privatebrowsingmode=temporary]) .urlbarView {
-    background-color: white !important;
+    }
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #urlbar[breakout][breakout-extend] > #urlbar-input-container,
+    :root:not(:-moz-lwtheme, [privarebrowsingmode=temporary]) #urlbar:is([focused="true"], [open]) > #urlbar-background,
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView {
+       background-color: white;
+    }
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView-row:not([type="tip"], 
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) [type="dynamic"])[selected] > .urlbarView-row-inner, 
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView-row-inner[selected] {
+      background-color: white !important;
+      color: black !important;
+    }
+    :root:not(:-moz-lwtheme, [privarebrowsingmode=temporary]) .urlbarView-row {
+      background-color: transparent !important;
+    }
   }
   /* Fixes for Private browsing */
-  :root[lwt-default-theme-in-dark-mode] #navigator-toolbox, 
-  :root[privatebrowsingmode=temporary] #navigator-toolbox {
+  toolbar[brighttext] .private-browsing-indicator-icon {
+    filter: invert(0) !important;
+  }
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) toolbarseparator,
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) menuseparator::before {
+    border-top: 1px solid rgb(99, 99, 99) !important;
+  }
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) #navigator-toolbox {
     border-bottom: 1px solid rgb(104, 104, 104) !important;
   }
-  :root[privatebrowsingmode=temporary] .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
-  :root[privatebrowsingmode=temporary] .tabbrowser-tab:not([selected="true"]) {
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .tabbrowser-tab:not([selected="true"]),
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]),
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .tabbrowser-tab:not([selected="true"]) .tab-text.tab-label,
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .tabbrowser-tab:not([selected="true"]) .tab-close-button {
     color: black !important;
   }
-  :root[privatebrowsingmode=temporary] .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
-    color: black !important;
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .tabbrowser-tab:not([selected="true"]) .tab-icon-image,
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) #tabs-newtab-button > .toolbarbutton-icon {
+    fill: black !important; 
   }
-  :root[privatebrowsingmode=temporary] #TabsToolbar #tabs-newtab-button > .toolbarbutton-icon {
-    color: black !important; 
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .tabbrowser-tab[selected="true"] .tab-text.tab-label,
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .tabbrowser-tab[selected="true"] .tab-close-button {
+    color: white !important;
   }
-  :root[privatebrowsingmode=temporary] 
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .urlbarView,
+  :root[privarebrowsingmode=temporary]:not(:-moz-lwtheme) .urlbarView-row,
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) #urlbar[breakout][breakout-extend] > #urlbar-input-container,
+  :root[privarebrowsingmode=temporary]:not(:-moz-lwtheme) #urlbar:is([focused="true"], [open]) > #urlbar-background {
+     background-color: transparent !important;
+  }
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .urlbarView-row:not([type="tip"], 
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) [type="dynamic"])[selected] > .urlbarView-row-inner, 
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .urlbarView-row-inner[selected] {
+    background-color: transparent !important;
+    color: white !important;
+  }
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) 
     #nav-bar:has(#nav-bar-customization-target toolbarbutton[cui-areatype="toolbar"]:not([hidden="true"]):nth-last-child(2), 
     toolbaritem[cui-areatype="toolbar"]:not([hidden="true"], #urlbar-container):nth-last-child(1)) 
     #PanelUI-button::after {
