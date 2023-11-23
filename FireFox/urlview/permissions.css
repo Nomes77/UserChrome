@@ -1,5 +1,5 @@
 /*= Permissions =====================================================================*/
-@supports -moz-bool-pref("userChrome+Content.urlview.permissions.hide_granted-icon") {
+@media (-moz-bool-pref: "userChrome+Content.urlview.permissions.hide_granted-icon") {
   #blocked-permissions-container > .blocked-permission-icon[showing] {
     display: none;
   }

@@ -16,7 +16,7 @@
   min-height: var(--urlbar-toolbar-height) !important;
 }
 /* MegaBar Style */
-@supports -moz-bool-pref("userChrome+Content.padding.megabar_style") {
+@media (-moz-bool-pref: "userChrome+Content.padding.megabar_style") {
   .urlbarView {
     --uc-urlView-padding: calc(5px + var(--urlbar-container-padding));
     --uc-urlView-padding-double: calc(var(--uc-urlView-padding) * 2); 
@@ -93,7 +93,7 @@
   display: none !important;
 }
 /*- URL View -----------------------------------------------------------*/
-@supports -moz-bool-pref("userChrome+Content.urlview.always_show_page_actions") {
+@media (-moz-bool-pref: "userChrome+Content.urlview.always_show_page_actions") {
   #urlbar:not([breakout-extend="true"]) #pageActionButton {
     display: block !important;
     visibility: visible !important;
