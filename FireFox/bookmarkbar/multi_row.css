@@ -1,5 +1,5 @@
 /** Bookmark Bar UI ******************************************************************/
-@supports -moz-bool-pref("userChrome+Content.bookmarkbar.multi_row") {
+@media (-moz-bool-pref: "userChrome+Content.bookmarkbar.multi_row") {
   #PersonalToolbar {
     --uc-multirow-bookmark-rows: 3;
     --uc-multirow-bookmark-row-margin: 2px;
