@@ -1,6 +1,6 @@
 /*= URL Bar - MegaBar Style =========================================================*/
 /* https://www.userchrome.org/megabar-styling-firefox-address-bar.html */
-@supports -moz-bool-pref("userChrome+Content.padding.megabar_style") {
+@media (-moz-bool-pref: "userChrome+Content.padding.megabar_style") {
   /*- General Preferences ------------------------------------------------*/
   #urlbar[breakout] {
     --mbarstyler-top-pixels: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2);

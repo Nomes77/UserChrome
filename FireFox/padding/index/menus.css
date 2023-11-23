@@ -8,7 +8,7 @@
 :root[uidensity="touch"] {
   --menu-padding: 0.5em;
 }
-@supports -moz-bool-pref("userChrome+Content.padding.menu_compact") {
+@media (-moz-bool-pref: "userChrome+Content.padding.menu_compact") {
   :root {
     --menu-padding: 2px;
   }
@@ -40,7 +40,7 @@ menupopup > menu {
     padding-inline-start: 0.5em;
   }
 }
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+@media (-moz-bool-pref: "layout.css.osx-font-smoothing.enabled") {
   #ContentSelectDropdown > menupopup > menucaption,
   #ContentSelectDropdown > menupopup > menuitem {
     padding-block: var(--menu-padding) !important;
@@ -70,7 +70,7 @@ menupopup > menu > menupopup {
 :root[uidensity="compact"] {
   --bookmark-menu-padding: 1.5px;
 }
-@supports -moz-bool-pref("userChrome+Content.padding.menu_compact") {
+@media (-moz-bool-pref: "userChrome+Content.padding.menu_compact") {
   :root {
     --bookmark-menu-padding: 2px;
   }
@@ -83,7 +83,7 @@ menupopup > menu > menupopup {
 :root:not([uidensity="touch"]) #PlacesToolbar menupopup[placespopup] .openintabs-menuitem {
   padding-block: var(--bookmark-menu-padding) !important;
 }
-@supports -moz-bool-pref("userChrome+Content.padding.menu_compact") or -moz-bool-pref("userChrome+Content.padding.bookmark_menu.compact") {
+@media (-moz-bool-pref: "userChrome+Content.padding.menu_compact") or (-moz-bool-pref: "userChrome+Content.padding.bookmark_menu.compact") {
   :root:not([uidensity="touch"]) #BMB_bookmarksPopup .bookmark-item,
   :root:not([uidensity="touch"]) #PlacesToolbar menupopup[placespopup] .bookmark-item {
     min-height: unset !important; /* Original: 24px */

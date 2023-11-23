@@ -49,3 +49,9 @@
 :root[uidensity="compact"] #downloadsListBox {
   margin: 0 !important;
 }
+
+
+:root[uidensity="compact"] .toolbarbutton-text.protections-popup-footer-button-label {
+  margin-left: -12px !important;
+}
+

@@ -1,11 +1,11 @@
 /* for First Tab Space */
-@supports -moz-bool-pref("userChrome+Content.padding.first_tab") {
+@media (-moz-bool-pref: "userChrome+Content.padding.first_tab") {
   #TabsToolbar {
     --uc-space-left-tabbar: 7px; /* If you want drag space, set to 8px */
   }
-  @supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.chrome") or 
-            -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.edge") or 
-            -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.wave") {
+  @media (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.chrome") or 
+         (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.edge") or 
+         (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.wave") {
     #TabsToolbar {
       --uc-space-left-tabbar: 0 !important; /* var(--uc-tab-corner-half-size) */
     }

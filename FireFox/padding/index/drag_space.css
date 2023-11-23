@@ -1,9 +1,9 @@
 /* for Extra Drag Space */
-@supports -moz-bool-pref("userChrome+Content.padding.drag_space") {
+@media (-moz-bool-pref: "userChrome+Content.padding.drag_space") {
   :root {
     --uc-space-above-tabbar: 8px; /* If you want drag space, set to 8px */
   }
-  @supports not -moz-bool-pref("userChrome+Content.autohide.menubar") {
+  @media (not (-moz-bool-pref: "userChrome+Content.autohide.menubar")) {
     @media (-moz-platform: windows) {
       :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"]:not([inactive]) {
         height: calc(var(--tab-min-height) + var(--uc-space-above-tabbar) - var(--tabs-navbar-shadow-size)) !important;
