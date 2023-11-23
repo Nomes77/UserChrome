@@ -1,5 +1,5 @@
 /** Video player *********************************************************************/
-@supports -moz-bool-pref("userChrome+Content.player") {
+@media (-moz-bool-pref: "userChrome+Content.player") {
   /* Control Bar UI */
   audio {
     --duration-color: #929292; /* Like Original */

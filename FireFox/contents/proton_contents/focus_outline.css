@@ -1,5 +1,5 @@
 /*= Focus Outline ============================================================*/
-@supports -moz-bool-pref("userChrome+Content.page.focus_outline_hidden") {
+@media (-moz-bool-pref: "userChrome+Content.page.focus_outline_hidden") {
   @-moz-document url-prefix("about:"),
                  url("about:preferences"),
                  url-prefix("about:preferences"),

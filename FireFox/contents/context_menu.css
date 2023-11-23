@@ -31,8 +31,8 @@
     background-image: var(--menuitem-image) !important;
   }
   /* For native context menus */
-  @supports -moz-bool-pref("widget.macos.native-context-menus") or 
-            -moz-bool-pref("widget.gtk.native-context-menus") {
+  @media (-moz-bool-pref: "widget.macos.native-context-menus") or 
+         (-moz-bool-pref: "widget.gtk.native-context-menus") {
     :not(menu, #ContentSelectDropdown)
       > menupopup:not(.in-menulist)
       > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),
@@ -79,7 +79,7 @@
     }
   }
   @media (-moz-platform: windows), (-moz-gtk-csd-available) {
-    @supports -moz-bool-pref("userChrome.theme.non_native_menu") {
+    @media (-moz-bool-pref: "userChrome.theme.non_native_menu") {
       :root {
         --context-menu-text-padding: 24px; /* calc(var(--arrowpanel-menuicon-width) + var(--arrowpanel-menutext-padding)) */
         --menu-background-padding-default: calc(var(--context-menu-background-padding) + var(--context-menu-text-padding));
