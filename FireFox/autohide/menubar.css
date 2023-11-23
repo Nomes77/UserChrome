@@ -1,5 +1,5 @@
 /*= Menubar =========================================================================*/
-@supports -moz-bool-pref("userChrome+Content.autohide.menubar") {
+@media (-moz-bool-pref: "userChrome+Content.autohide.menubar") {
   :root:not([chromehidden~="menubar"], [inFullscreen]) 
     #toolbar-menubar[autohide="true"]:not([inactive]) {
       height: unset !important;
@@ -15,7 +15,7 @@
     #toolbar-menubar[autohide="true"]:not([inactive]) .titlebar-buttonbox-container {
       display: none;
   }
-  @supports -moz-bool-pref("userChrome+Content.padding.drag_space") {
+  @media (-moz-bool-pref: "userChrome+Content.padding.drag_space") {
     @media (-moz-platform: windows), (-moz-gtk-csd-available) {
       :root[tabsintitlebar="true"][sizemode="normal"]:not([chromehidden~="menubar"], [inFullscreen]) 
         #titlebar:has(#toolbar-menubar[autohide="true"]) {
