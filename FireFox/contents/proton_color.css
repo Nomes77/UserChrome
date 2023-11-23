@@ -3,7 +3,7 @@
                url-prefix("chrome://"),
                url-prefix("view-source"),
                regexp("^((jar:)?file:///).*/$") {
-  @supports -moz-bool-pref("userChrome+Content.page.proton_color.dark_blue_accent") {
+  @media (-moz-bool-pref: "userChrome+Content.page.proton_color.dark_blue_accent") {
     @media (prefers-color-scheme: dark) {
       :host,
       :root {
@@ -30,7 +30,7 @@
       }
     }
   }
-  @supports -moz-bool-pref("userChrome+Content.page.proton_color.system_accent") {
+  @media (-moz-bool-pref: "userChrome+Content.page.proton_color.system_accent") {
     :host,
     :root {
       --in-content-primary-button-text-color: AccentColorText !important;

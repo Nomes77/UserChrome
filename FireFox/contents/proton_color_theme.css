@@ -244,7 +244,7 @@
       --menu-icon-opacity: var(--dark-menu-icon-opacity);
     }
   }
-  @supports -moz-bool-pref("userChrome+Content.theme.non_native_menu") {
+  @media (-moz-bool-pref: "userChrome+Content.theme.non_native_menu") {
     @media (-moz-gtk-csd-available) {
       :root {
         /* Override some menu color variables for light browser themes. */
