@@ -1,5 +1,5 @@
 @media (prefers-reduced-motion: no-preference) {
-  @supports -moz-bool-pref("userChrome+Content.decoration.animate") {
+  @media (-moz-bool-pref: "userChrome+Content.decoration.animate") {
     /*= Animate =========================================================================*/
     /*- Background Color ---------------------------------------------------*/
     button,
