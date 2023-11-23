@@ -43,7 +43,7 @@
     --win-urlbar-popup-hover-active-bgcolor: rgb(193, 193, 193);
 
   }
-  @supports -moz-bool-pref("userChrome+Content.compatibility.os.win11") {
+  @media (-moz-bool-pref: "userChrome+Content.compatibility.os.win11") {
     :root:not(:-moz-lwtheme) {
       --win-text-color: #1a1a1a;
       --win-bgcolor: #e8e8e8;
@@ -112,7 +112,7 @@
     --win-urlbar-popup-accent-color: rgb(143, 196, 236);
     --win-urlbar-popup-hover-active-bgcolor: rgb(69, 69, 69);
   }
-  @supports -moz-bool-pref("userChrome+Content.compatibility.os.win11") {
+  @media (-moz-bool-pref: "userChrome+Content.compatibility.os.win11") {
     :root:not(:-moz-lwtheme) {
       --win-bgcolor: #202020;
       --win-hover-bgcolor: #383838; /* also button-bgcolor */
@@ -153,7 +153,7 @@
     --tab-selected-bgcolor: unset !important;
     --tab-icon-overlay-fill: var(--win-text-color) !important;
     --tab-icon-overlay-stroke: var(--win-field-bgcolor) !important;
-    --tab-line-color: Highlight !important;
+    --tab-line-color: AccentColor !important;
     --tabs-border-color: transparent !important;
     /* Toolbar */
     --toolbar-color: var(--win-text-color) !important;
@@ -237,7 +237,7 @@
     --arrowpanel-border-color: var(--win-bgcolor) !important;
     --panel-separator-color: var(--win-bgcolor) !important;
   }
-  @supports -moz-bool-pref("userChrome+Content.compatibility.os.win11") {
+  @media (-moz-bool-pref: "userChrome+Content.compatibility.os.win11") {
     :root:not(:-moz-lwtheme) {
       --chrome-content-separator-color: var(--win11-chrome-separator-color) !important;
     }
