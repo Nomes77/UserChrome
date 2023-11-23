@@ -26,7 +26,7 @@
   }
 
 
-  @supports -moz-bool-pref("userChrome+Content.additions.about_config_compact") {
+  @media (-moz-bool-pref: "userChrome+Content.additions.about_config_compact") {
     #toolbar {
       height: 40px;
     }

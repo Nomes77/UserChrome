@@ -1,6 +1,6 @@
 /* About_Page_Scrollbars *****************************************************/
 @-moz-document url-prefix("about:") {
-  @supports -moz-bool-pref("userChrome+Content.additions.about_page_scrollbars") {
+  @media (-moz-bool-pref: "userChrome+Content.additions.about_page_scrollbars") {
     window,
     page,
     html,
