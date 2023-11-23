@@ -8,7 +8,7 @@
     background-color: color-mix(in srgb, currentColor 20%, transparent) !important; /* Original: -moz-menuhover */
   }
   /*= Linux - Titlebar button at lwtheme =================================*/
-  @supports not -moz-bool-pref("userChrome+Content.compatibility.os.linux_non_native_titlebar_button") {
+  @media (not (-moz-bool-pref: "userChrome+Content.compatibility.os.linux_non_native_titlebar_button")) {
     .titlebar-button:-moz-lwtheme {
       appearance: auto !important;
     }
