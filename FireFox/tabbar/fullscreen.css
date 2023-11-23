@@ -1,5 +1,5 @@
 /** Fullscreen - Overlap toolbar ***************************************************************/
-@supports -moz-bool-pref("userChrome+Content.fullscreen.overlap") {
+@media (-moz-bool-pref: "userChrome+Content.fullscreen.overlap") {
   /* Don't use display: flex at not fullscreen!! side effect #372 */
   :root[sizemode="fullscreen"] #navigator-toolbox {
     display: flex !important; /* Needed for content to take up entire height, compatibility with tabs on bottom */
@@ -16,7 +16,7 @@
   :root[sizemode="fullscreen"] #titlebar {
     -moz-appearance: none !important;
   }
-  @supports -moz-bool-pref("browser.fullscreen.autohide") {
+  @media (-moz-bool-pref: "browser.fullscreen.autohide") {
     :root[sizemode="fullscreen"] #navigator-toolbox {
       position: fixed !important; /* Needed for content to take up entire height */
       z-index: 1000 !important; /* Puts the UI above the content */
@@ -32,7 +32,7 @@
     }
   }
 }
-@supports -moz-bool-pref("userChrome+Content.fullscreen.show_bookmarkbar") {
+@media (-moz-bool-pref: "userChrome+Content.fullscreen.show_bookmarkbar") {
   :root:not([sizemode="fullscreen"]) #PersonalToolbar[initialized="true"]:not([collapsed="true"]),
   :root[sizemode="fullscreen"] #PersonalToolbar[initialized="true"] {
     visibility: unset !important; /* Makes the bookmarks toolbar visible if enabled */
