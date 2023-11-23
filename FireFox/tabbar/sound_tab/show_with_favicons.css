@@ -53,7 +53,7 @@
 .tab-icon-overlay[activemedia-blocked]:not([crashed], [pinned]) {
   border-radius: 2px !important; /* same as close button */
 }
-@supports -moz-bool-pref("userChrome+Content.tab.show_(un)muted_icon_pinned") {
+@media (-moz-bool-pref: "userChrome+Content.tab.show_(un)muted_icon_pinned") {
   .tab-icon-stack[pinned]:is([sharing], [soundplaying], [muted]) > .tab-icon-image {
     display: none !important;
   }

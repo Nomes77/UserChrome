@@ -1,12 +1,12 @@
 /*- Sound Tab - Hide and Show Label -------------------------------------------------*/
 /* Hide Label */
-@supports not -moz-bool-pref("userChrome+Content.tab.show_sound_label") {
+@media (not (-moz-bool-pref: "userChrome+Content.tab.show_sound_label")) {
   .tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
     display: none !important;
   }
 }
 /* Show Label */
-@supports -moz-bool-pref("userChrome+Content.tab.show_sound_label") {
+@media (-moz-bool-pref: "userChrome+Content.tab.show_sound_label") {
   .tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
     display: flex !important;
   }

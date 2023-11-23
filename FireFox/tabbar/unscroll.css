@@ -1,6 +1,6 @@
 /*= Unscroll ========================================================================*/
 /* Needs `layout.css.container-queries.enabled` set to `true` to work */
-@supports -moz-bool-pref("userChrome+Content.tab.unscroll") {
+@media (-moz-bool-pref: "userChrome+Content.tab.unscroll") {
   /* Disable scrollbox */
   spacer[part="overflow-start-indicator"] + .scrollbox-clip > scrollbox {
     overflow: -moz-hidden-unscrollable !important;

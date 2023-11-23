@@ -1,7 +1,7 @@
 /*- Selected Tab - Bottom Rounded Corner --------------------------------------------*/
-@supports not -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.chrome") {
-  @supports not -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.edge") {
-    @supports not -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.wave") {
+@media (not (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.chrome")) {
+  @media (not (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.edge")) {
+    @media (not (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.wave")) {
       #TabsToolbar {
         --tab-border-radius: 3px !important;
         --uc-tab-corner-rounding: var(--tab-border-radius); /* 10px looks about like chromium - 17px looks close to Australis tabs */
@@ -81,9 +81,9 @@
     }
   }
 }
-@supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.chrome") or 
-          -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.edge") or 
-          -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.wave") {
+@media (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.chrome") or 
+       (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.edge") or 
+       (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.wave") {
   #TabsToolbar {
     --uc-tab-corner-height: calc(var(--tab-min-height) + 1px);
     --uc-tab-corner-size: var(--uc-tab-corner-height);
@@ -91,7 +91,7 @@
     --uc-tab-corner-half-size-reverse: calc(var(--uc-tab-corner-half-size) * -1);
     --uc-tab-corner-bgimage: none;
   }
-  @supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.chrome") {
+  @media (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.chrome") {
     #TabsToolbar {
       --uc-tab-corner-left-side-svg: url("./../../images/tab/tab-bottom-corner-left-chrome.svg");
       --uc-tab-corner-left-side-clipPath: url("./../../images/tab/tab-bottom-corner-left-chrome.svg#svgClipPath");
@@ -102,7 +102,7 @@
       --uc-tab-corner-size: 16px;
     }
   }
-  @supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.edge") {
+  @media (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.edge") {
     #TabsToolbar {
       --uc-tab-corner-left-side-svg: url("./../../images/tab/tab-bottom-corner-left-edge.svg");
       --uc-tab-corner-left-side-clipPath: url("./../../images/tab/tab-bottom-corner-left-edge.svg#svgClipPath");
@@ -113,7 +113,7 @@
       --uc-tab-corner-size: 14px;
     }
   }
-  @supports -moz-bool-pref("userChrome+Content.tab.bottom_rounded_corner.wave") {
+  @media (-moz-bool-pref: "userChrome+Content.tab.bottom_rounded_corner.wave") {
     #TabsToolbar {
       --uc-tab-corner-left-side-svg: url("./../../images/tab/tab-bottom-corner-left-wave.svg");
       --uc-tab-corner-left-side-clipPath: url("../../../images/tab/tab-bottom-corner-left-wave.svg#svgClipPath");
@@ -199,7 +199,7 @@
   #tabbrowser-tabs[overflow] .tabbrowser-tab:is([first-visible-unpinned-tab], :nth-child(1 of :not([pinned], [hidden]))) {
     margin-left: calc(var(--uc-tab-corner-half-size) / 2) !important;
   }
-  @supports -moz-bool-pref("userChrome+Content.padding.first_tab") {
+  @media (-moz-bool-pref: "userChrome+Content.padding.first_tab") {
     #tabbrowser-tabs[overflow]:not([haspinnedtabs]) #tabbrowser-arrowscrollbox {
       margin-left: var(--uc-tab-corner-half-size) !important;
     }
