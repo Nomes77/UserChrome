@@ -1,6 +1,7 @@
 /* Preferences ***************************************************************/
 @-moz-document url("about:preferences"),
-               url-prefix(about:preferences) {
+               url-prefix("about:preferences"),
+               url-prefix("chrome://browser/content/preferences/") {
   .navigation {
     border-right: 2px solid rgb(182, 182, 182);
   }
@@ -69,5 +70,29 @@
   .textbox-search-sign {
     list-style-image: url("./../../images/search-glass.svg") !important;
     transform: rotateY(180deg);
+  }
+  .geo-icon {
+    list-style-image: url("./../../images/permissions/geo.svg") !important;
+  }
+  .xr-icon {
+    list-style-image: url("./../../images/permissions/xr.svg) !important;
+  }
+  .camera-icon {
+    list-style-image: url("./../../images/permissions/camera.svg) !important;
+  }
+  .microphone-icon {
+    list-style-image: url("./../../images/permissions/microphone.svg) !important;
+  }
+  .speaker-icon {
+    list-style-image: url("./../../images/audio.svg) !important;
+  }
+  .desktop-notification-icon {
+    list-style-image: url("./../../images/permissions/desktop-notification.svg) !important;
+  }
+  .autoplay-icon {
+    list-style-image: url("./../../images/permissions/autoplay-media.svg) !important;
+  }
+  .midi-icon {
+    list-style-image: url("./../../images/permissions/midi.svg) !important;
   }
 }

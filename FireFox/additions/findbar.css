@@ -1,5 +1,5 @@
 /* Other Problems ********************************************************************/
-@supports -moz-bool-pref("userChrome+Content.additions.floating_findbar_on_top") {
+@media (-moz-bool-pref: "userChrome+Content.additions.floating_findbar_on_top") {
   findbar {
     order: -1;
     margin-bottom: -33px;

@@ -1,6 +1,6 @@
 /* uBlock Origin *********************************************************************/
 @-moz-document url-prefix("moz-extension://a3405601-61e0-4e55-9f8e-9b37f2b5785a") {
-  @supports -moz-bool-pref("userChrome+Content.additions.uBlock_Origin.hide_default_unused") {
+  @media (-moz-bool-pref: "userChrome+Content.additions.uBlock_Origin.hide_default_unused") {
     body div#lists > .listEntries > .listEntry.expandable:not(.expanded, [data-key="user"]) > .listEntries > .listEntry.isDefault:not(.checked) {
       display: none !important;
     }
