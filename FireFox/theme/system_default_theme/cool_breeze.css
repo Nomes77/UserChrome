@@ -1,4 +1,4 @@
-@supports -moz-bool-pref("userChrome+Content.theme.cool_breeze") {
+@media (-moz-bool-pref: "userChrome+Content.theme.cool_breeze") {
   :root:is(#main-window):not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --win-component-bgcolor: rgb(163, 198, 218) !important;
   }

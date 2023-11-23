@@ -12,7 +12,7 @@
     background-color: var(--lwt-accent-color) !important;
   }
 }
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+@media (-moz-bool-pref: "layout.css.osx-font-smoothing.enabled") {
   :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"]) #navigator-toolbox,
   :root[style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"] #navigator-toolbox,
   :root[style*="--lwt-accent-color: rgb(237, 237, 241); --lwt-text-color: rgba(21, 20, 26);"] #navigator-toolbox {

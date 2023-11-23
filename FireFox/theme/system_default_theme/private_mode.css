@@ -1,6 +1,6 @@
 /*= Private Theme Mode ==============================================================*/
-@supports -moz-bool-pref("userChrome+Content.theme.private_mode") {
-  @supports not -moz-bool-pref("browser.theme.dark-private-windows") {
+@media (-moz-bool-pref: "userChrome+Content.theme.private_mode") {
+  @media (not (-moz-bool-pref: "browser.theme.dark-private-windows")) {
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) {
       --win-text-color: rgb(255, 255, 255);
       --win-bgcolor: #2b2b2b;
@@ -42,7 +42,7 @@
       --win-urlbar-popup-accent-color: rgb(143, 196, 236);
       --win-urlbar-popup-hover-active-bgcolor: rgb(69, 69, 69);
     }
-    @supports -moz-bool-pref("userChrome+Content.compatibility.os.win11") {
+    @media (-moz-bool-pref: "userChrome+Content.compatibility.os.win11") {
       :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) {
         --win-bgcolor: #202020;
         --win-hover-bgcolor: #383838; /* also button-bgcolor */
@@ -175,7 +175,7 @@
   }
 }
 /*= Private Theme Mode =======================================================*/
-@supports -moz-bool-pref("userChrome+Content.theme.private") {
+@media (-moz-bool-pref: "userChrome+Content.theme.private") {
   :root[privatebrowsingmode="temporary"],
   :root[lwtheme-mozlightdark]:not([lwthemetextcolor="bright"])[privatebrowsingmode="temporary"],
   :root[style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"][privatebrowsingmode="temporary"],

@@ -65,7 +65,7 @@
     --toolbarbutton-hover-background: rgba(232, 224, 255, 0.11999999731779099) !important;
   }
 }
-@supports -moz-bool-pref("userChrome+Content.theme.non_native_menu") {
+@media (-moz-bool-pref: "userChrome+Content.theme.non_native_menu") {
   @media (-moz-gtk-csd-available) {
     :is(html#main-window, window:is(#places, #bookmarksPanel, #history-panel))
       menupopup:not(.in-menulist) {
