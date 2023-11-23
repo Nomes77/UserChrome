@@ -21,7 +21,7 @@
     background-repeat: no-repeat;
  }
 }
-@supports -moz-bool-pref("userChrome+Content.theme.private_mode") {
+@media (-moz-bool-pref: "userChrome+Content.theme.private_mode") {
   :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .urlbarView-favicon[src="page-icon:chrome://global/"],
   :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
     fill: transparent !important;
