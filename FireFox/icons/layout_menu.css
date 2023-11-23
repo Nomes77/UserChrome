@@ -45,8 +45,8 @@ menupopup:is(#toolbar-context-menu, #contentAreaContextMenu) > menu > menupopup[
   background-image: var(--menuitem-image) !important;
 }
 /* For native context menus */
-@supports -moz-bool-pref("widget.macos.native-context-menus") or 
-          -moz-bool-pref("widget.gtk.native-context-menus") {
+@media (-moz-bool-pref: "widget.macos.native-context-menus") or 
+       (-moz-bool-pref: "widget.gtk.native-context-menus") {
   :not(menu, #ContentSelectDropdown)
     > menupopup:not(.in-menulist)
     > menuitem:not(.menuitem-iconic, .bookmark-item, .in-menulist, [checked="true"]),

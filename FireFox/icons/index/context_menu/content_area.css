@@ -173,7 +173,7 @@ richlistitem > .ac-login-item > .ac-settings-button {
 #context-pdfjs-undo {
   --menuitem-image: url("./../images/undo.svg");
 }
-#context-redo
+#context-redo,
 #context-pdfjs-redo {
   --menuitem-image: url("./../images/redo.svg");
 }
@@ -181,11 +181,11 @@ richlistitem > .ac-login-item > .ac-settings-button {
 #context-pdfjs-cut {
   --menuitem-image: url("./../images/edit-cut.svg");
 }
-#context-copy
+#context-copy,
 #context-pdfjs-copy {
   --menuitem-image: url("./../images/edit-copy.svg");
 }
-#context-paste
+#context-paste,
 #context-pdfjs-paste {
   --menuitem-image: url("./../images/edit-paste.svg");
 }

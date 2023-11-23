@@ -33,7 +33,7 @@ menupopup menupopup[emptyplacesresult] .menu-text,
   #PersonalToolbar menupopup[placespopup="true"] menu:not(.menu-iconic) {
     padding-inline-start: calc(var(--arrowpanel-menuitem-padding-inline) + 1px) !important;
   }
-  @supports -moz-bool-pref("userChrome+Content.theme.non_native_menu") {
+  @media (-moz-bool-pref: "userChrome+Content.theme.non_native_menu") {
     menupopup:is(#BMB_bookmarksPopup)[placespopup="true"] menuitem:not(.menuitem-iconic, [disabled="true"]),
     menupopup:is(#BMB_bookmarksPopup)[placespopup="true"] menu:not(.menu-iconic),
     #PersonalToolbar menupopup[placespopup="true"] menuitem:not(.menuitem-iconic, [disabled="true"]),
