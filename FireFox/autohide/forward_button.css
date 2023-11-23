@@ -1,6 +1,6 @@
 /*= Forward button ==================================================================*/
 @-moz-document url("chrome://browser/content/browser.xhtml") {
-  @supports -moz-bool-pref("userChrome+Content.autohide.forward_button") {
+  @media (-moz-bool-pref: "userChrome+Content.autohide.forward_button") {
     :root {
       --uc-toolbarbutton-hide-size: calc(-1 * (16px + (2 * (var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)))));
     }
