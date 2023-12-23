@@ -2,6 +2,9 @@
   :root:is(#main-window):not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --win-component-bgcolor: rgb(163, 198, 218) !important;
   }
+  .tab-background:is([selected]):not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
+    background-color: rgb(163, 198, 218) !important;
+  }
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --urlbar-box-hover-bgcolor: rgb(182, 200, 211) !important;
     --urlbar-box-active-bgcolor: rgb(153, 168, 177) !important;
@@ -64,7 +67,7 @@
   }
   /* Tab Color when Multiselected */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
-    .tab-background[multiselected="true"]:not([selected="true"]) > .tab-loading-burst:not([bursting]) {
+    .tab-background:is([multiselected="true"]) {
       background-color: rgb(146, 187, 211) !important;
   }
   /* Menubar Text Color */
