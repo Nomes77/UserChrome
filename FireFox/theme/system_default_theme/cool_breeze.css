@@ -2,9 +2,10 @@
   :root:is(#main-window):not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --win-component-bgcolor: rgb(163, 198, 218) !important;
   }
+  /*#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon:not(:-moz-lwtheme, [privatebrowsingmode=temporary]),
   .tab-background:is([selected]):not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     background-color: rgb(163, 198, 218) !important;
-  }
+  }*/
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) {
     --urlbar-box-hover-bgcolor: rgb(182, 200, 211) !important;
     --urlbar-box-active-bgcolor: rgb(153, 168, 177) !important;
@@ -66,10 +67,10 @@
       background-color: var(--urlbar-box-hover-bgcolor) !important;
   }
   /* Tab Color when Multiselected */
-  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+  /*:root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
     .tab-background:is([multiselected="true"]) {
       background-color: rgb(146, 187, 211) !important;
-  }
+  }*/
   /* Menubar Text Color */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) #main-menubar > menu[_moz-menuactive="true"],
@@ -131,17 +132,26 @@
     :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView {
        background-color: white;
     }
-    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView-row:not([type="tip"], 
-    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) [type="dynamic"])[selected] > .urlbarView-row-inner, 
-    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView-row-inner[selected] {
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView-row, 
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) [type="dynamic"])[selected] > .urlbarView-row-inner {
       background-color: white !important;
       color: black !important;
     }
-    :root:not(:-moz-lwtheme, [privarebrowsingmode=temporary]) .urlbarView-row {
-      background-color: transparent !important;
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView-row[selected] {
+      background-color: rgb(242, 242, 242) !important;
+    }
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView-row-inner[selected] {
+      color: black !important;
+    }
+    :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) .urlbarView-url {
+      color: rgb(0, 97, 224) !important;
     }
   }
   /* Fixes for Private browsing */
+  /*:root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) #TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon,
+  :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) .tab-background:is([selected]) {
+    background-color: rgb(59, 59, 59) !important;
+  }*/
   toolbar[brighttext] .private-browsing-indicator-icon {
     filter: invert(0) !important;
   }
