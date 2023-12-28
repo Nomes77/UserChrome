@@ -49,7 +49,7 @@ menupopup > menu {
 /*= Menus - Set Margin ==============================================================*/
 @media (-moz-platform: linux) or (-moz-platform: windows) {
   :not(#bookmarks-menu-button) menupopup {
-    --panel-padding: var(--panel-padding-block) var(--arrowpanel-menuitem-margin-menu) !important;
+    /*! --panel-padding: var(--panel-padding-block) var(--arrowpanel-menuitem-margin-menu) !important; */
   }
   #bookmarks-menu-button menupopup {
     --panel-padding: var(--panel-padding-block) 0 !important;
