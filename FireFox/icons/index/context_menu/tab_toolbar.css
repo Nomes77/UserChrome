@@ -52,7 +52,7 @@
 #context_closeTabOptions {
 }
 #context_undoCloseTab {
-  /* --menuitem-image: url("./../images/undo.svg");  */
+  --menuitem-image: url("./../images/undo.svg");
 }
 /*= new-tab-button-popup =====================================================================*/
 #new-tab-button-popup > menuitem[command="Browser:NewUserContextTab"],
