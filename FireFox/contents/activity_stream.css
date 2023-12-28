@@ -35,7 +35,14 @@
     }
     @media (-moz-bool-pref: "userChrome+Content.newTab.image.Edge") or
            (-moz-bool-pref: "userChrome+Content.newTab.image.Augustinus_wijsheid") or
-           (-moz-bool-pref: "userChrome+Content.newTab.image.Augustinus_kerk") {
+           (-moz-bool-pref: "userChrome+Content.newTab.image.Augustinus_kerk") or
+           (-moz-bool-pref: "userChrome+Content.newTab.image.alleen_zijn") or
+           (-moz-bool-pref: "userChrome+Content.newTab.image.begrepen") or
+           (-moz-bool-pref: "userChrome+Content.newTab.image.bidden") or
+           (-moz-bool-pref: "userChrome+Content.newTab.image.geleerdheid") or
+           (-moz-bool-pref: "userChrome+Content.newTab.image.groeten") or
+           (-moz-bool-pref: "userChrome+Content.newTab.image.zichzelf_zijn") or 
+           (not (-moz-bool-pref: "userChrome+Content.zavety")) {
       html:not(.private) {
         --newtab-text-primary-color: color-mix(in srgb, rgb(131, 113, 131), black 50%) !important;
         --newtab-text-secondary-color: rgb(10, 125, 214) !important;
@@ -53,34 +60,91 @@
         margin-top: -20px !important;
       }
     }
-    @media (-moz-bool-pref: "userChrome+Content.newTab.image.Edge") {
+    @media (-moz-bool-pref: "userChrome+Content.newTab.image.Edge") or
+           (not (-moz-bool-pref: "userChrome+Content.zavety")) {
       html:not(.private) {
         scrollbar-width: none;
       }
       html:not(.private) body {
-        background-image: url("./../images/newtab/Edge.jpg");
-        background-size: cover; /* or auto auto */
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
+        background-image: url("./../images/newtab/Edge.jpg") !important;
+        background-size: cover !important; /* or auto auto */
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-attachment: fixed !important;
       }
     }
-    @media (-moz-bool-pref: "userChrome+Content.newTab.image.Augustinus_wijsheid") {
-      html:not(.private) body {
-        background-image: url("./../images/newtab/Augustinus1.jpg") !important;
-        background-color: lightgreen !important;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+    @media (-moz-bool-pref: "userChrome+Content.zavety") {
+      @media (-moz-bool-pref: "userChrome+Content.newTab.image.Augustinus_wijsheid") {
+        html:not(.private) body {
+          background-image: url("./../images/newtab/Augustinus_wijsheid.jpg") !important;
+          background-color: lightgreen !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
       }
-    }
-    @media (-moz-bool-pref: "userChrome+Content.newTab.image.Augustinus_kerk") {
-      html:not(.private) body {
-        background-image: url("./../images/newtab/Augustinus2.jpg") !important;
-        background-color: black !important;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+      @media (-moz-bool-pref: "userChrome+Content.newTab.image.Augustinus_kerk") {
+        html:not(.private) body {
+          background-image: url("./../images/newtab/Augustinus_kerk.jpg") !important;
+          background-color: black !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+      @media (-moz-bool-pref: "userChrome+Content.newTab.image.alleen_zijn") {
+        html:not(.private) body {
+          background-image: url("./../images/newtab/alleen_zijn.jpg") !important;
+          background-color: #529cbf !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+      @media (-moz-bool-pref: "userChrome+Content.newTab.image.begrepen") {
+        html:not(.private) body {
+          background-image: url("./../images/newtab/begrepen.jpg") !important;
+          background-color: black !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+      @media (-moz-bool-pref: "userChrome+Content.newTab.image.bidden") {
+        html:not(.private) body {
+          background-image: url("./../images/newtab/bidden.png") !important;
+          background-color: #d5a976 !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+      @media (-moz-bool-pref: "userChrome+Content.newTab.image.geleerdheid") {
+        html:not(.private) body {
+          background-image: url("./../images/newtab/geleerdheid.jpg") !important;
+          background-color: gray !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+      @media (-moz-bool-pref: "userChrome+Content.newTab.image.groeten") {
+        html:not(.private) body {
+          background-image: url("./../images/newtab/groeten.jpg") !important;
+          background-color: darkred !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+      @media (-moz-bool-pref: "userChrome+Content.newTab.image.zichzelf_zijn") {
+        html:not(.private) body {
+          background-image: url("./../images/newtab/zichzelf_zijn.jpg") !important;
+          background-color: black !important;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
       }
     }
   }
