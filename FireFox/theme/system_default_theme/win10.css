@@ -38,10 +38,9 @@
     --win-checkbox-checked-bgcolor: rgb(118, 118, 118);
     --win-checkbox-checked-hover-bgcolor: rgb(97, 97, 97);
     --win-checkbox-checked-active-bgcolor: rgb(131, 131, 131);
-    --win-urlbar-box-hover-bgcolor: rgb(230, 230, 230);
-    --win-urlbar-popup-accent-color: rgb(0, 85, 215);
-    --win-urlbar-popup-hover-active-bgcolor: rgb(193, 193, 193);
-
+    --win-urlbar-box-hover-bgcolor: rgb(242, 242, 242);
+    --win-urlbar-popup-accent-color: rgb(22, 83, 127);
+    --win-urlbar-popup-hover-active-bgcolor: rgb(229, 229, 229);
   }
   @media (-moz-bool-pref: "userChrome+Content.compatibility.os.win11") {
     :root:not(:-moz-lwtheme) {
@@ -135,7 +134,7 @@
   :root:not(:-moz-lwtheme) {
     /* Buttons */
     --button-color: var(--win-text-color) !important;
-    --button-bgcolor: var(--win-button-bgcolor); !important;
+    --button-bgcolor: var(--win-button-bgcolor) !important;
     --button-hover-bgcolor: var(--win-button-hover-bgcolor) !important;
     --button-active-bgcolor: var(--win-button-active-bgcolor) !important;
     --button-primary-color: var(--win-accent-foreground-color) !important;
@@ -173,13 +172,19 @@
     --toolbarbutton-icon-fill: var(--win-text-color) !important;
     --toolbarbutton-icon-fill-attention: var(--win-accent-color) !important;
     /* Urlbar */
-    --urlbar-popup-action-color: var(--win-text-color) !important;
-    --urlbar-popup-url-color: var(--win-accent-content-color) !important;
+     --urlbar-popup-action-color: var(--win-text-color) !important;
+    --urlbar-box-text-color: var(--win-text-color) !important;
+    --urlbarView-highlight-color: var(--win-text-color) !important;
+    --urlbarView-action-color: var(--win-text-color) !important;
+    --urlbarView-result-button-selected-color: var(--win-text-color) !important;
+     --urlbar-popup-url-color: var(--win-accent-content-color) !important;
     --urlbar-box-bgcolor: transparent !important;
-    --urlbar-box-hover-bgcolor: var(--win-urlbar-box-hover-bgcolor) !important;
-    --urlbar-box-active-bgcolor: var(--win-urlbar-popup-hover-active-bgcolor) !important;
+     --urlbar-box-hover-bgcolor: var(--win-urlbar-box-hover-bgcolor) !important;
+    --urlbarView-hover-background: var(--win-urlbar-box-hover-bgcolor) !important;
+     --urlbar-box-active-bgcolor: var(--win-urlbar-popup-hover-active-bgcolor) !important;
+    --urlbarView-highlight-background: var(--win-urlbar-popup-hover-active-bgcolor) !important;
     --urlbar-box-focus-bgcolor: transparent !important;
-      /* --urlbar-icon-fill-opacity: 1 !important; */
+     /* --urlbar-icon-fill-opacity: 1 !important; */
     /* Checkbox */
     --checkbox-checked-color: var(--win-accent-foreground-color) !important;
     --checkbox-checked-bgcolor: var(--win-checkbox-checked-bgcolor) !important;
