@@ -163,6 +163,10 @@
     html[privatebrowsingmode=temporary]:not(:-moz-lwtheme) {
       color-scheme: dark;
     }
+    html[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
+      menupopup, panel {
+        color-scheme: dark !important;
+    }
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
       .tabbrowser-tab .tab-icon-image,
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
