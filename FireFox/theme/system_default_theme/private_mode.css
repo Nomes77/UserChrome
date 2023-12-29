@@ -189,7 +189,7 @@
     }
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
       .webextension-menuitem {
-        list-style-image: var(--webextension-menuitem-image-lught, inherit) !important;
+        list-style-image: var(--webextension-menuitem-image-light, inherit) !important;
     }
   }
 }
