@@ -3,12 +3,12 @@
   @media (not (-moz-bool-pref: "browser.theme.dark-private-windows")) {
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme) {
       --win-text-color: rgb(255, 255, 255);
-      --win-bgcolor: #2b2b2b;
+      --win-bgcolor: rgb(99, 99, 99);
       --win-disabled-color: #747474;
       --win-disabled-bgcolor: transparent;
       --win-hover-bgcolor: rgb(97, 97, 97);
       --win-hover-active-bgcolor: rgb(69, 69, 69);
-      --win-field-bgcolor: rgb(43, 43, 43);
+      --win-field-bgcolor: rgb(74, 74, 74);
       --win-component-bgcolor: rgb(59, 59, 59);
       --win-border-color: #5b5b5b;
       --win-tab-separator-color: linear-gradient(to right, color-mix(in srgb, currentColor 35%, currentColor 35%), color-mix(in srgb, currentColor 50%, currentColor 50%));
@@ -29,6 +29,7 @@
       --win-accent-active-color: rgb(0, 92, 163);
       --win-toolbarbutton-hover-background: rgb(74, 74, 74);
       --win-toolbarbutton-active-background: rgb(85, 85, 85);
+      --win-toolbar-field-bgcolor: rgb(43, 43, 43);
       --win-toolbar-field-focus-border-color: rgb(99, 173, 229);
       --win-toolbar-field-hover-border-color: rgb(101, 101, 101);
      --win-focus-outline-color: rgb(131, 131, 131);
@@ -162,6 +163,7 @@
     }
     html[privatebrowsingmode=temporary]:not(:-moz-lwtheme) {
       color-scheme: dark;
+      --toolbar-color-scheme: dark !important;
     }
     html[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
       menupopup, panel {
