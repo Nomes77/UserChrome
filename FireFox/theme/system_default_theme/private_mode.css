@@ -160,6 +160,9 @@
       --card-outline-color: var(--grey-60);
       --card-shadow-hover: var(--card-shadow), 0 0 0 5px var(--card-outline-color);
     }
+    html[privatebrowsingmode=temporary]:not(:-moz-lwtheme) {
+      color-scheme: dark;
+    }
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
       .tabbrowser-tab .tab-icon-image,
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
@@ -171,6 +174,22 @@
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
       .tabbrowser-tab:not([selected="true"]):hover > .tab-stack > .tab-content:not([pinned]) {
         color: black !important;
+    }
+    :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
+      #urlbar-container > #urlbar {
+        --uc-urlbarview-selected-border: rgb(117, 182, 232) !important;
+    }
+    :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
+      .webextension-browser-action {
+        list-style-image: var(--webextension-toolbar-image-light, inherit) !important;
+    }
+    :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
+      .webextension-browser-action toolbaritem:is([overflowedItem="true"], [cui-areatype="panel"]) > self {
+        list-style-image: var(--webextension-menupanel-image-light, inherit) !important;
+    }
+    :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
+      .webextension-menuitem {
+        list-style-image: var(--webextension-menuitem-image-lught, inherit) !important;
     }
   }
 }
