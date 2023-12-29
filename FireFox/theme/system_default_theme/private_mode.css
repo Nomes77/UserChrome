@@ -166,7 +166,9 @@
       --toolbar-color-scheme: dark !important;
     }
     html[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
-      menupopup, panel {
+      menupopup,
+    html[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
+      panel {
         color-scheme: dark !important;
     }
     :root[privatebrowsingmode=temporary]:not(:-moz-lwtheme)
