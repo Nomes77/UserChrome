@@ -43,13 +43,13 @@
   }
   /* Boxes in url-bar */
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
-    #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button, 
+    #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not([open="true"]), 
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
-    #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
+    #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not([open="true"]),
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
-    #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button, 
+    #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not([open="true"]), 
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
-    #urlbar-label-box,
+    #urlbar-label-box:not([open="true"]),
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
     #urlbar-zoom-button {
       background-color: transparent !important;
@@ -63,8 +63,24 @@
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
     #urlbar-label-box:hover,
   :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
-    #urlbar-zoom-button:hover {
+    #urlbar-zoom-button:hover,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #identity-box[pageproxystate="valid"].verifiedDomain > #notification-popup-box:hover {
       background-color: var(--urlbar-box-hover-bgcolor) !important;
+  }
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button[open="true"], 
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button[open="true"],
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button[open="true"], 
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary])
+    #urlbar-label-box:active,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #urlbar-zoom-button:active,
+  :root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
+    #identity-box[pageproxystate="valid"].verifiedDomain > #notification-popup-box[open="true"] {
+      background-color: var(--urlbar-box-active-bgcolor) !important;
   }
   /* Tab Color when Multiselected */
   /*:root:not(:-moz-lwtheme, [privatebrowsingmode=temporary]) 
